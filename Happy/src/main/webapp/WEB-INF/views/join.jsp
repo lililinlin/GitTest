@@ -258,6 +258,11 @@
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
+                       <td>전화번호</td>
+                       <td><input type="text" name="phone" size="46"></td>
+                       <tr><td><br></td></tr>
+                   </tr>
+                   <tr>
                        <td>생년월일</td>
                        <td><input type="text" name="birth_year" size="10">&nbsp;년&nbsp;
                            <input type="text" name="birth_month" size="8">&nbsp;월&nbsp;
