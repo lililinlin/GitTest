@@ -265,7 +265,21 @@
                    <tr>
                        <td>생년월일</td>
                        <td><input type="text" name="birth_year" size="10">&nbsp;년&nbsp;
-                           <input type="text" name="birth_month" size="8">&nbsp;월&nbsp;
+                           						<select name="birth_month">
+							<option value="">월</option>
+							<option value="01" >1</option>
+							<option value="02" >2</option>
+							<option value="03" >3</option>
+							<option value="04" >4</option>
+							<option value="05" >5</option>
+							<option value="06" >6</option>
+							<option value="07" >7</option>
+							<option value="08" >8</option>
+							<option value="09" >9</option>
+							<option value="10" >10</option>
+							<option value="11" >11</option>
+							<option value="12" >12</option>
+						</select>&nbsp;월&nbsp;
                            <input type="text" name="birth_day" size="8">&nbsp;일</td>
                            <tr><td><br></td></tr>
                    </tr>
