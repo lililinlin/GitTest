@@ -248,7 +248,7 @@
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>비밀번호체크&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                       <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
                        <td><input type="password" name="passwordcherk" size="46"></td>
                        <tr><td><br></td></tr>
                    </tr>
