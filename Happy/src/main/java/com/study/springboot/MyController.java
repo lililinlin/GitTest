@@ -24,6 +24,11 @@ public class MyController {
 	@RequestMapping("/join")
 	public String joinPage(Model model) {
 		
-		return "join"; //list.jsp 호출하면서 "list"객체를 넘겨줌.
+		return "join"; 
+	}
+	@RequestMapping("/login")
+	public String loginPage(Model model) {
+		
+		return "login"; 
 	}
 }
