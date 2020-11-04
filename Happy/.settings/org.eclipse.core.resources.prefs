@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/application.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/views/Home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/join.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav1-1_site.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav1-2_map.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav2-1_adopt.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav2-2_adopted.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav2-3_review.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav3-1_board.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav3-2_volunteer.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav4-1_QnA.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/nav4-2_notice.jsp=UTF-8
