@@ -220,7 +220,7 @@
                         <br>
                         <h5><a href="nav2-1_adopt">입양하기</a></h5><br>
                         <h5><a href="nav2-2_adopted">입양됐어요</a></h5><br>
-                        <h5><a href="nav2-3_map">입양후기</a></h5>
+                        <h5><a href="nav2-3_review">입양후기</a></h5>
                     </div>
                     <br><br>
                     <img src="images/sublogo.jpg" title="광고">

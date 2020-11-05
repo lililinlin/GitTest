@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양 됐어요 </title>
+    <title>입양후기</title>
     <style>
         h2 {
             font-family: 'Noto Sans KR', sans-serif;
@@ -220,7 +220,7 @@
                     <br>
                     <h5><a href="nav2-1_adopt">입양하기</a></h5><br>
                     <h5><a href="nav2-2_adopted">입양됐어요</a></h5><br>
-                    <h5><a href="nav2-3_map">입양후기</a></h5>
+                    <h5><a href="nav2-3_review">입양후기</a></h5>
                 </div>
                 <br><br>
                 <img src="images/sublogo.jpg"" title="광고">

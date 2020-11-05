@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양 됐어요 </title>
+    <title>자원봉사신청</title>
     <style>
         h2 {
             font-family: 'Noto Sans KR', sans-serif;
@@ -218,8 +218,8 @@
                 </div>
                 <div class="site_int">
                     <br>
-                    <h5><a href="nav2-1_adopt">게시판</a></h5><br>
-                    <h5><a href="nav2-2_adopted">자원봉사신청</a></h5><br>
+                    <h5><a href="nav3-1_board">게시판</a></h5><br>
+                    <h5><a href="nav3-2_volunteer">자원봉사신청</a></h5><br>
                 </div>
                 <br><br>
                 <img src="images/sublogo.jpg"" title="광고">
