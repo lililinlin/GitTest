@@ -322,7 +322,7 @@
                         controls: true,//Prev,Next 버튼 사용여부
                         prevText: "Prev", //이전버튼문구
                         nextText: "Next",//다음버튼 문구
-                        touchEnabled : (navigator.maxTouchPoints > 0), 
+                        touchEnabled : false, 
                         autoHover: true//마우스 올리면 일시 정지
 
                     });
