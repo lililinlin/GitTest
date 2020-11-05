@@ -251,7 +251,7 @@
     </table>
     <main>
         <div id="wrapper">
-            <h1>회원가입입니다</h1>
+            <h1>회원가입</h1>
             <form>
                 <table>
                    <tr>
