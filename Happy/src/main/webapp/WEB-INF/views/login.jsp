@@ -47,6 +47,9 @@
             background-color: #3F3931;
 
         }
+        #footer a{
+          color: white;
+        }
         table {
             margin: 0 auto;
             width: 1200px;
@@ -129,17 +132,26 @@
         .menumaintd:hover .hov {
             display: block;
         }
-        #tablelog{
-            text-align: center;
-        }
     </style>
+    <script>
+        function nwindow(num){
+            if(num == 1){
+                var url = "findid";
+            }
+            else if(num == 2){
+                var url = "findpw";
+            }
+            
+            window.open(url,"","width=500,height=450,left=600");
+        }
+    </script>
 </head>
 <body>
     <table class="head">
         <header>
-
+            
             <tr>
-                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
+                <td rowspan="2"><a href="home"><img src="images/logo.jpg" id="logo" alt="ddd"></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -195,34 +207,17 @@
         </header>
     </table>
 
-    <br>
-    <form action="">
-        <table id = "tablelog">
-            <tr>
-                <td colspan="2"><img src="images/logo.jpg" alt=""></td>
-            </tr>
-            <tr>
-                <td colspan="2"><br></td>
-            </tr>
-            <tr>
-                
-                <td colspan="2">아이디 :  <input type="text" name = "name" size = "42"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><br></td>
-            </tr>
-            <tr>
-                
-                <td colspan="2">비밀번호 : <input type="phone" name = "phone" size = "42"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><br></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="button" class="btn btn-primary">로그인</td>
-            </tr>
-        </table>
-    </form>
+    <div>
+             <img src="images/logo.jpg">
+         <form>
+             <br>
+             아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id" size="42"><br><br>
+             비밀번호&nbsp;&nbsp;<input type="password" name="password" size="42"><br><br><br>
+             <button type="button" class="btn btn-primary">로그인</button><br><br><br>
+         </form>
+         <a href="#" onclick="nwindow(1)">아이디찾기</a> | <a href="#" onclick="nwindow(2)">비밀번호찾기</a> | <a href="join" >회원가입</a>
+         <br><br><br><br><br><br><br><br><br>
+</div>
 </body>
 <div id="footer">
     <footer style="color: white;">

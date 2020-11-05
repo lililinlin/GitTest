@@ -67,8 +67,19 @@ public class MyController {
 		return "join"; 
 	}
 	@RequestMapping("/login")
-	public String loginPage(Model model) {
+	public String login(Model model) {
 		
 		return "login"; 
+	}
+	
+	@RequestMapping("/findid")
+	public String findid(Model model) {
+		
+		return "findid"; 
+	}
+	@RequestMapping("/findpw")
+	public String findpw(Model model) {
+		
+		return "findpw"; 
 	}
 }

@@ -96,7 +96,7 @@
             background-color: #3F3931;
         }
         footer a {
-            color: black;
+            color: white;
         }
  /* 메인 */
         
@@ -247,12 +247,12 @@
                 <div class="slider">
                     <img class="slide-img" src="images/catndog.jpg" title="슬라이더1">
                     <div class="exp"><h1>또 하나의 가족</h1><h3>사지말고 입양해요</h3></div>
-                    <input class="c-button" type="button" value="입양하기">
+                    <input class="c-button" type="button" onclick="location.href='nav2-1_adopt'" value="입양하기">
                 </div>
                 <div>
                     <img class="slide-img" src="images/doghand.jpg" title="슬라이더2">
                     <div class="exp"><h1>또 하나의 가족</h1><h3>가족이 된 아이들의 소식을 전해주세요</h3></div>
-                    <input class="c-button" type="button" value="입양후기">
+                    <input class="c-button" type="button" onclick="location.href='nav2-3_review'" value="입양후기">
                 </div>
                 <div>
                     <img class="slide-img" src="images/sky2.jpg" title="슬라이더3">
@@ -272,7 +272,7 @@
                         <p>귀여운 센터 아이들의 모습, 보도자료,
                             반려동물 관련 행사소식 등을 전해드립니다
                         </p><br>
-                        <input class="p-button" type="button" value="입양하기" style="margin-bottom: 20px;"><br>
+                        <input class="p-button" type="button" onclick="location.href='nav2-1_adopt'" value="입양하기" style="margin-bottom: 20px;"><br>
 
 
                     </div>
@@ -287,7 +287,7 @@
                         <p>회원들이 서로 소통하는 공간입니다.
                             회원가입 후 이용해주세요.
                         </p><br>
-                        <input class="p-button" type="button" value="커뮤니티" style="margin-bottom: 20px;"><br>
+                        <input class="p-button" type="button" onclick="location.href='nav3-1_board'" value="커뮤니티" style="margin-bottom: 20px;"><br>
                     </div>
                 </div>
                 <div class="price-item">
@@ -300,7 +300,7 @@
                         <p>동물과 공존하는 행복한 세상!
                             여러분의 관심과 사랑이 함께하면 현실이 됩니다.
                         </p><br>
-                        <input class="p-button" type="button" value="봉사신청" style="margin-bottom: 20px;"><br>
+                        <input class="p-button" type="button" onclick="location.href='nav3-2_volunteer'" value="봉사신청" style="margin-bottom: 20px;"><br>
                     </div>
                 </div>
             </div>

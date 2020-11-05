@@ -26,6 +26,9 @@
             background-color: #3F3931;
 
         }
+        footer a {
+              color: white;
+        }
 
         table {
             margin: 0 auto;

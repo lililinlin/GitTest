@@ -97,7 +97,7 @@
             background-color: #3F3931;
         }
         footer a {
-            color: black;
+              color: white;
         }
 /* 메인 */
 

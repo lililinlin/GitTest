@@ -33,6 +33,10 @@
             background-color: #3F3931;
 
         }
+        #footer a{
+          color: white;
+        }
+        
         .headerlogtd {
             text-align: right;
             vertical-align: bottom;
