@@ -318,7 +318,7 @@
                         mode: "horizontal",//vertical(아래에서 위로 올라감), fade(위 아래 변화없이 서서히 바뀜) 전환효과
                         speed: 700,//슬라이딩 속도
                         adaptiveHeight: false,//이미지 높이에 따라 슬라이드 높이 결정
-                        touchEnabled: true,//터치 스와이프 사용 결정 이미지를 잡아서 옆으로 넘길 수 있다구
+                        touchEnabled: true,//터치 스와이프 사용 결정 이미지를 잡아서 옆으로 넘길 수 있다
                         controls: true,//Prev,Next 버튼 사용여부
                         prevText: "Prev", //이전버튼문구
                         nextText: "Next",//다음버튼 문구
