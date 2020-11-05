@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>회원가입</title>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <style>
         h2 {
             font-family: 'Noto Sans KR', sans-serif;
@@ -171,6 +172,23 @@
                 }
             }).open();
         }
+        $(function(){
+            $('#password').keyup(function(){
+            $('#chkNotice').html('');
+            });
+
+            $('#passwordcherk').keyup(function(){
+
+                if($('#password').val() != $('#passwordcherk').val()){
+                $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+                $('#chkNotice').attr('color', '#f82a2aa3');
+                } else{
+                $('#chkNotice').html('비밀번호 일치함<br><br>');
+                $('#chkNotice').attr('color', '#199894b3');
+                }
+
+            });
+        });
     </script>
     <table class="head">
         <header>
@@ -244,13 +262,13 @@
                    </tr>
                    <tr>
                        <td>비밀번호</td>
-                       <td><input type="password" name="password" size="46"></td>
+                       <td><input type="password" id="password"name="password" size="46"></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                       <td><input type="password" name="passwordcherk" size="46"></td>
-                       <tr><td><br></td></tr>
+                       <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+                       <tr><td><td><br><h6 id="chkNotice" size="2"></h6></td></td></tr>
                    </tr>
                    <tr>
                        <td>이름</td>
@@ -264,7 +282,7 @@
                    </tr>
                    <tr>
                        <td>생년월일</td>
-                       <td><input type="text" name="birth_year" size="10">&nbsp;년&nbsp;
+                       <td><input type="text" name="birth_year" size="10" placeholder="4자리">&nbsp;년&nbsp;
                            						<select name="birth_month">
 							<option value=""> </option>
 							<option value="01" >1</option>
