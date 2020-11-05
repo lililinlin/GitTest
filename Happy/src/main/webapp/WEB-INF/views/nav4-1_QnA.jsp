@@ -155,53 +155,53 @@
         <header>
 
             <tr>
-                <td rowspan="2"><a href="home.html"><img src="images/logo3.jpg" id="logo" alt=""></a></td>
+                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="headerlogtd"><span><a href="login.html" class="headerlog">로그인<h> | </h></a><a href="join.html"
+                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> | </h></a><a href="join"
                             class="headerlog">회원가입</a></span></td>
             </tr>
             <tr>
                 <ul id="menu">
                     <td class="menumaintd">
-                        <li><a href="nav1-1_site.html" class="mainmenu">
+                        <li><a href="nav1-1_site" class="mainmenu">
                                 <h6><b>사이트소개</b></h6>
                             </a>
                             <ul class="hov">
-                                <li><a href="nav1-1_site.html">사이트소개</a></li>
-                                <li><a href="nav1-2_map.html">오시는길</a></li>
+                                <li><a href="nav1-1_site">사이트소개</a></li>
+                                <li><a href="nav1-2_map">오시는길</a></li>
                             </ul>
                         </li>
                     </td>
                     <td class="menumaintd">
-                        <li><a href="nav2-1_adopt.html" class="mainmenu">
+                        <li><a href="nav2-1_adopt" class="mainmenu">
                                 <h6><b>입양하기</b></h6>
                             </a>
                             <ul class="hov">
-                                <li><a href="nav2-1_adopt.html">입양하기</a></li>
-                                <li><a href="nav2-2_adopted.html">입양됐어요</a></li>
-                                <li><a href="nav2-3_review.html">입양후기</a></li>
+                                <li><a href="nav2-1_adopt">입양하기</a></li>
+                                <li><a href="nav2-2_adopted">입양됐어요</a></li>
+                                <li><a href="nav2-3_review">입양후기</a></li>
                             </ul>
                         </li>
                     </td>
                     <td class="menumaintd">
-                        <li><a href="nav3-1_board.html" class="mainmenu">
+                        <li><a href="nav3-1_board" class="mainmenu">
                                 <h6><b>커뮤니티</b></h6>
                             </a>
                             <ul class="hov">
-                                <li><a href="nav3-1_board.html">게시판</a></li>
-                                <li><a href="nav3-2_volunteer.html">자원봉사신청</a></li>
+                                <li><a href="nav3-1_board">게시판</a></li>
+                                <li><a href="nav3-2_volunteer">자원봉사신청</a></li>
                             </ul>
                         </li>
                     </td>
                     <td class="menumaintd">
-                        <li><a href="nav4-1_QnA.html" class="mainmenu">
+                        <li><a href="nav4-1_QnA" class="mainmenu">
                                 <h6><b>고객센터</b></h6>
                             </a>
                             <ul class="hov">
-                                <li><a href="nav4-1_QnA.html">Q&A</a></li>
-                                <li><a href="nav4-2_notice.html">공지사항</a></li>
+                                <li><a href="nav4-1_QnA">Q&A</a></li>
+                                <li><a href="nav4-2_notice">공지사항</a></li>
                             </ul>
                         </li>
                     </td>
@@ -218,8 +218,8 @@
                 </div>
                 <div class="site_int">
                     <br>
-                    <h5><a href="nav4-1_QnA.html">Q&A</a></h5><br>
-                    <h5><a href="nav4-2_notice.html">공지사항</a></h5><br>
+                    <h5><a href="nav4-1_QnA">Q&A</a></h5><br>
+                    <h5><a href="nav4-2_notice">공지사항</a></h5><br>
                 </div>
                 <br><br>
                 <img src="images/sublogo.jpg"" title="광고">

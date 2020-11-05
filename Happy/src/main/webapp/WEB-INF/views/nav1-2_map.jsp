@@ -170,7 +170,7 @@
         <header>
 
             <tr>
-                <td rowspan="2"><a href="home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
+                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
