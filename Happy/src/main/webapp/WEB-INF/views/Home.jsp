@@ -331,8 +331,8 @@
     <div id="footer">
         <footer style="color: white;">
             <br>
-            <p><small><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
-                        href="#">&nbsp;이메일주소무단수집거부</a><br>
+           <p><small><a href="footer_yak">이용약관&nbsp;&nbsp;</a> | <a href="footer_info">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
+                        href="footer_email">&nbsp;이메일주소무단수집거부</a><br>
                     서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
                     Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
                     site.</p></small>

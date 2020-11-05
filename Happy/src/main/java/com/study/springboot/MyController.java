@@ -82,4 +82,21 @@ public class MyController {
 		
 		return "findpw"; 
 	}
+	
+// footer 
+	@RequestMapping("/footer_yak")
+	public String footer_yak(Model model) {
+		
+		return "footer_yak"; 
+	}
+	@RequestMapping("/footer_info")
+	public String footer_info(Model model) {
+		
+		return "footer_info"; 
+	}
+	@RequestMapping("/footer_email")
+	public String footer_email(Model model) {
+		
+		return "footer_email"; 
+	}
 }

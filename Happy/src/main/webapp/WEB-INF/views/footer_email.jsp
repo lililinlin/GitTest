@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,44 +13,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>로그인</title>
+    <title>Document</title>
     <style>
-         .head {
-            width: auto;
+        h2,p,h5,h1 {
+            font-family: 'Noto Sans KR', sans-serif;
         }
-      div{   
-          text-align: center;
-          margin-top: 250px;
-      }
-      input{
-          width: 350px;
-          height: 60px;
-          font-size: 30px;
-      }
-      button{
-        width: 430px;
-          height: 60px;
+       #table_email td{
+           padding: 40px 40px 40px 40px;
           
-      }
-      img{
-          width: 500px;
-          height: 150px;
-      }
-      .head {
-            width: auto;
-        }
-        #footer {
-            text-align: center;
-            margin: 0 auto;
-            height: 110px;
-            width: 1200px;
-            background-color: #3F3931;
-
-        }
-        #footer a{
-          color: white;
-        }
-        table {
+       }
+      
+    /* 헤더 */
+        .head {
             margin: 0 auto;
             width: 1200px;
             /* border:1px solid red; */
@@ -58,23 +32,19 @@
             border-bottom: 2px solid grey;
             margin-bottom: 10px;
         }
-
-        .headerlogtd {
-            text-align: right;
-            vertical-align: bottom;
-        }
-
         #logo {
             width: 400px;
             height: 100px;
         }
-
+        .headerlogtd {
+            text-align: right;
+            vertical-align: bottom;
+        }
         .headerlog {
             color: rgb(150, 147, 147);
             font-size: 13px;
             text-decoration: none;
         }
-
         .menumaintd {
             width: 200px;
             list-style-type: none;
@@ -82,9 +52,10 @@
             color: rgb(150, 147, 147);
             text-align: right;
         }
-
-       
-
+        .mainmenu {
+            text-decoration: none;
+            color: black;
+        }
         .hov {
             background-color: white;
             font-size: 25px;
@@ -101,19 +72,11 @@
             padding-left: 0px;
             margin-left: 110px;
             text-align: center;
-
         }
-
         .hov a {
             color: black;
             font-size: 13px;
         }
-
-        .mainmenu {
-            text-decoration: none;
-            color: black;
-        }
-
         .hov:hover ul {
             display: block;
         }
@@ -125,33 +88,44 @@
         .hov li:nth-child(n):hover a {
             color: white;
         }
-
         /* .hov:hover li:nth-child(n){
          background-color: hotpink;
         } */
         .menumaintd:hover .hov {
             display: block;
         }
-    </style>
-    <script>
-        function nwindow(num){
-            if(num == 1){
-                var url = "findid";
-            }
-            else if(num == 2){
-                var url = "findpw";
-            }
-            
-            window.open(url,"","width=500,height=450,left=600");
+        /* 푸터 */
+        #footer {
+            text-align: center;
+            margin: 0 auto;
+            height: 110px;
+            width: 1200px;
+            background-color: #3F3931;
         }
-    </script>
+        footer a {
+            color: white;
+        }
+ /* 메인 */
+        
+        #wrapper {
+            /* text-align: center; */
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #yak{
+            border: 10px solid rgb(238, 238, 238);
+            padding: 20px 20px 20px 20px;
+        }
+
+    </style>
 </head>
+
 <body>
     <table class="head">
         <header>
-            
+
             <tr>
-                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt="ddd"></a></td>
+                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -206,27 +180,31 @@
 
         </header>
     </table>
+    <main>
+        <div id="wrapper">
+          <br><br><h1><b>이메일주소무단수집거부</b></h2><br><br>
+          <div id="yak">
+           <table id="table_email">
+               <tr>
+                   <td><img src="images/mail.png" style="width: 200px;"></td>
+                   <td>우리 "해피퍼피" 회원에게 무차별적으로 보내지는 타사의 메일을 차단하기 위해, 본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, 이를 위반 시 정보통신망법에 의해 형사처벌됨을 유념하시기 바랍니다.
 
-    <div>
-             <img src="images/logo.jpg">
-         <form>
-             <br>
-             아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id" size="42"><br><br>
-             비밀번호&nbsp;&nbsp;<input type="password" name="password" size="42"><br><br><br>
-             <button type="button" class="btn btn-primary">로그인</button><br><br><br>
-         </form>
-         <a href="#" onclick="nwindow(1)">아이디찾기</a> | <a href="#" onclick="nwindow(2)">비밀번호찾기</a> | <a href="join" >회원가입</a>
-         <br><br><br><br><br><br><br><br><br>
-</div>
+                    게시일 2020년 11월 26일</td>
+               </tr>
+           </table>
+        </div>
+    </div><br><br><br>
+    </main>
+    <div id="footer">
+        <footer style="color: white;">
+            <br>
+            <p><small><a href="footer_yak">이용약관&nbsp;&nbsp;</a> | <a href="footer_info">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
+                        href="footer_email">&nbsp;이메일주소무단수집거부</a><br>
+                    서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
+                    Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
+                    site.</p></small>
+        </footer>
+    </div>
 </body>
-<div id="footer">
-    <footer style="color: white;">
-        <br>
-        <p><small><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
-                    href="#">&nbsp;이메일주소무단수집거부</a><br>
-                서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
-                Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
-                site.</p></small>
-    </footer>
-</div>
+
 </html>
