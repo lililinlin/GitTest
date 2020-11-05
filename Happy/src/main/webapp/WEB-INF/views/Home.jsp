@@ -313,7 +313,7 @@
                         slideWidth: 2000,
                         caption: true,//주석 이미지 title내용이 나옴.
                         auto: true,//자동재생
-                        autoControls: true,//start/stop 버튼사용
+                        autoControls: false,//start/stop 버튼사용
                         stopAutoOnClick: true,
                         mode: "horizontal",//vertical(아래에서 위로 올라감), fade(위 아래 변화없이 서서히 바뀜) 전환효과
                         speed: 700,//슬라이딩 속도
