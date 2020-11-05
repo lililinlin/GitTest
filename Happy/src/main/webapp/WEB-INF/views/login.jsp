@@ -20,7 +20,8 @@
         }
       div{   
           text-align: center;
-          margin-top: 250px;
+          margin-top : 100px;
+          margin-bottom: -100px;
       }
       input{
           width: 350px;
