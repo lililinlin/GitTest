@@ -266,7 +266,7 @@
                        <td>생년월일</td>
                        <td><input type="text" name="birth_year" size="10">&nbsp;년&nbsp;
                            						<select name="birth_month">
-							<option value="">월</option>
+							<option value=""> </option>
 							<option value="01" >1</option>
 							<option value="02" >2</option>
 							<option value="03" >3</option>
