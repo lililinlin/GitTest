@@ -125,6 +125,30 @@
 
 <body>
     <script>
+    function checkValue()
+	{
+		if(!document.userInfo.id.value){
+			alert("아이디를 입력하세요.");
+			return false; //submit 취소
+		}
+		
+		var idChecked = $('#check_hidden').val();
+		if( idChecked != "yes") {
+			alert("아이디 중복확인을 해주세요.");
+			return false;
+		}
+		
+		if(!document.userInfo.password.value){
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+		
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+	}
         function sample6_execDaumPostcode() {
             new daum.Postcode({
                 oncomplete: function(data) {
@@ -252,7 +276,8 @@
     <main>
         <div id="wrapper">
             <h1>회원가입</h1>
-            <form>
+            <form method="post" action="MemberJoinAction" 
+				name="userInfo" onsubmit="return checkValue()">
                 <table>
                    <tr>
                        <td>아이디</td>
@@ -303,14 +328,14 @@
                    </tr>
                    <tr>
                        <td>주소</td>
-                       <td><input type="text" id="sample6_postcode" placeholder="우편번호">
+                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호">
                         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
-                        <input type="text" id="sample6_address" placeholder="주소"><br><br>
-                        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                        <input type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
+                        <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>
+                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
+                        <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
                    </tr>
                    <tr><td><br></td></tr>
-                   <tr><td></td><td><button type="button" class="btn btn-primary" style="width: 370px;">확인</button></td></tr>
+                   <tr><td></td><td><input type="submit" class="btn btn-primary" value="확인" style="width: 370px;"></button></td></tr>
    
                 </table>
                
