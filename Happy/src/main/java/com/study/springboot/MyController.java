@@ -99,4 +99,9 @@ public class MyController {
 		
 		return "footer_email"; 
 	}
+	@RequestMapping("/join_agree")
+	public String join_agree(Model model) {
+		
+		return "join_agree"; 
+	}
 }

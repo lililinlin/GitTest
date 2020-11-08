@@ -190,7 +190,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> | </h></a><a href="join"
+                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> | </h></a><a href="join_agree"
                             class="headerlog">회원가입</a></span></td>
             </tr>
             <tr>
