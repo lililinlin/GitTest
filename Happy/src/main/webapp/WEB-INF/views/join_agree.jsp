@@ -246,7 +246,7 @@
     </table>
     <main>
         <br>
-        <form action="ex01.html" id="form1">
+        <form action="join" id="form1">
             <div id = "mid">
                 <h1><b>약관동의</b></h1>
                 
