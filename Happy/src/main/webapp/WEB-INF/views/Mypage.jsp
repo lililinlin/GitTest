@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,45 +12,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>로그인</title>
+    <title>마이페이지</title>
     <style>
-         .head {
-            width: auto;
+        h2 {
+            font-family: 'Noto Sans KR', sans-serif;
         }
-      div{   
-          text-align: center;
-          margin-top : 100px;
-          margin-bottom: -100px;
-      }
-      input{
-          width: 350px;
-          height: 60px;
-          font-size: 30px;
-      }
-      button{
-        width: 430px;
-          height: 60px;
-          
-      }
-      img{
-          width: 500px;
-          height: 150px;
-      }
-      .head {
-            width: auto;
-        }
-        #footer {
-            text-align: center;
-            margin: 0 auto;
-            height: 110px;
-            width: 1200px;
-            background-color: #3F3931;
-
-        }
-        #footer a{
-          color: white;
-        }
-        table {
+    /* 헤더 */
+        .head {
             margin: 0 auto;
             width: 1200px;
             /* border:1px solid red; */
@@ -59,23 +26,19 @@
             border-bottom: 2px solid grey;
             margin-bottom: 10px;
         }
-
-        .headerlogtd {
-            text-align: right;
-            vertical-align: bottom;
-        }
-
         #logo {
             width: 400px;
             height: 100px;
         }
-
+        .headerlogtd {
+            text-align: right;
+            vertical-align: bottom;
+        }
         .headerlog {
             color: rgb(150, 147, 147);
             font-size: 13px;
             text-decoration: none;
         }
-
         .menumaintd {
             width: 200px;
             list-style-type: none;
@@ -83,9 +46,10 @@
             color: rgb(150, 147, 147);
             text-align: right;
         }
-
-       
-
+        .mainmenu {
+            text-decoration: none;
+            color: black;
+        }
         .hov {
             background-color: white;
             font-size: 25px;
@@ -102,19 +66,11 @@
             padding-left: 0px;
             margin-left: 110px;
             text-align: center;
-
         }
-
         .hov a {
             color: black;
             font-size: 13px;
         }
-
-        .mainmenu {
-            text-decoration: none;
-            color: black;
-        }
-
         .hov:hover ul {
             display: block;
         }
@@ -126,33 +82,75 @@
         .hov li:nth-child(n):hover a {
             color: white;
         }
-
         /* .hov:hover li:nth-child(n){
          background-color: hotpink;
         } */
         .menumaintd:hover .hov {
             display: block;
         }
-    </style>
-    <script>
-        function nwindow(num){
-            if(num == 1){
-                var url = "findid";
-            }
-            else if(num == 2){
-                var url = "findpw";
-            }
-            
-            window.open(url,"","width=500,height=450,left=600");
+        /* 푸터 */
+        #footer {
+            text-align: center;
+            margin: 0 auto;
+            height: 110px;
+            width: 1200px;
+            background-color: #3F3931;
         }
-    </script>
+        footer a {
+            color: black;
+        }
+/* 메인 */
+        .wrapper {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .left {
+            width: 350px;
+            height: 100%;
+            font-family: 'Noto Sans KR', sans-serif;   
+        }
+        .left a{
+            color: black;
+            /* font-weight: bold; */
+        }
+        .site_int {
+            margin:20px;
+            border-top: 1px solid #b2b2a2;
+        }
+        .right{
+	        width: 1650px;
+            height: 100%;
+            margin:20px;
+        }
+       
+        #right-site{
+            display:inline-block;
+            background-color: rgb(250, 250, 250);
+        }
+        #right-1{
+            background-color: rgb(250, 250, 250);
+        }
+       
+
+        
+
+        #introduce_title{
+            color: rgb(132, 189, 246);
+        }
+
+        /* *{
+            border: 1px solid red;
+        } */
+    </style>
 </head>
+
 <body>
     <table class="head">
         <header>
-            
+
             <tr>
-                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt="ddd"></a></td>
+                <td rowspan="2"><img src="images/logo.jpg" id="logo" alt=""></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -207,27 +205,75 @@
 
         </header>
     </table>
+    <main>
+        <div class="wrapper">
+            <div class="left"><br>
+                <div>
+                    <h3 style="text-align: center;">마이페이지</h3>
+                </div>
+                <div class="site_int">
+                    <br>
+                    <h5><a href="Modify">내 정보</a></h5><br>
+                    <h5><a href="Modify">회원정보수정</a></h5><br>
+                    <h5><a href="">내가 작성한 글</a></h5><br>
+                    <h5><a href="">후원 내역</a></h5>
+                </div>
+                <br><br>
+                <img src="images/sublogo.jpg" title="광고">
+            </div>
+            <div class="right">
+               <h1><b>내 정보</b></h1><br>
+                  <form method="post" action="MemberMypageAction" 
+				name="userInfo" onsubmit="return checkValue()">
+                <table>
+                   <tr>
+                       <td>아이디</td>
+                       <td><%-- <%=%> --%></td>
+                       <td></td>
+                       <tr><td><br></td></tr>
+                   </tr>
+                   <tr>
+                    <td>이름</td>
+                    <td><%-- <%=%> --%></td>
+                    <td></td>
+                    <tr><td><br></td></tr>
+                   </tr>
+                   <tr>
+                       <td>전화번호</td>
+                       <td><%-- <%=%> --%></td>
+                       <tr><td><br></td></tr>
+                   </tr>
+                   <tr>
+                       <td>생년월일</td>
+                       <td><%-- <%= %> --%></td>
+                           <tr><td><br></td></tr>
+                   </tr>
+                   <tr>
+                       <td>주소</td>
+                       <td><%-- <%= %> --%></td>
+                   </tr>
+                   <tr><td><br><br></td></tr>
+                   <tr><td></td><td><input type="submit" class="btn btn-primary" value="수정하기" style="width: 150px;"></button></td></tr>
+   
+                </table>
+               
+   
+               
+               </form><br><br>
+            </div>
 
-    <div>
-             <img src="images/logo.jpg">
-         <form  method="post" action="MemberLoginAction" >
-             <br>
-             아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id" size="42"><br><br>
-             비밀번호&nbsp;&nbsp;<input type="password" name="password" size="42"><br><br><br>
-             <input type="submit" class="btn btn-primary"  value="로그인"><br><br><br>
-         </form>
-         <a href="#" onclick="nwindow(1)">아이디찾기</a> | <a href="#" onclick="nwindow(2)">비밀번호찾기</a> | <a href="join" >회원가입</a>
-         <br><br><br><br><br><br><br><br><br>
-</div>
+        </div>
+    </main>
+    <div id="footer">
+        <footer style="color: white;">
+            <br>
+            <p><small><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
+                        href="#">&nbsp;이메일주소무단수집거부</a><br>
+                    서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
+                    Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
+                    site.</p></small>
+        </footer>
+    </div>
 </body>
-<div id="footer">
-    <footer style="color: white;">
-        <br>
-        <p><small><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
-                    href="#">&nbsp;이메일주소무단수집거부</a><br>
-                서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
-                Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
-                site.</p></small>
-    </footer>
-</div>
+
 </html>

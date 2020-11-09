@@ -191,8 +191,14 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> | </h></a><a href="join_agree"
-                            class="headerlog">회원가입</a></span></td>
+                <%
+				// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+				if(session.getAttribute("sessionID")==null){ 
+				%>
+                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> |</h></a><a href="join_agree" class="headerlog">회원가입</a></span></td>
+                  <% }else{ %>
+                  <td class="headerlogtd"><span><a href="login" class="headerlog">로그아웃<h> |</h></a><a href="Mypage" class="headerlog">&nbsp;마이페이지</a></span></td>        
+            	<%} %>
             </tr>
             <tr>
                 <ul id="menu">

@@ -1,6 +1,7 @@
 package com.study.springboot;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -120,6 +121,31 @@ public class MyController {
 		
 		return String.valueOf( nResult );
 	}
+	@RequestMapping("/MemberLoginAction")
+	public String MemberLoginAction(HttpServletRequest req, Model model) {
+		String id = req.getParameter("id");
+		String pw = req.getParameter("password");
+		
+		int nResult = member_service.loginCheck(id, pw);
+		if( nResult <= 0 ) {
+			System.out.println("로그인 실패");
+			
+	        model.addAttribute("msg","로그인 실패 - 아이디나 암호를 확인해주세요");
+	        model.addAttribute("url","/LoginForm");
+		}else {
+			System.out.println("로그인 성공");
+			
+			//로그인 성공 -> 세션에 아이디를 저장
+			HttpSession session = req.getSession();
+	   		session.setAttribute("sessionID", id);
+			
+			model.addAttribute("msg","로그인 성공");
+            model.addAttribute("url","/");
+		}
+		
+        
+		return "redirect"; //redirect.jsp
+	}
 	@RequestMapping("/findid")
 	public String findid(Model model) {
 		
@@ -129,6 +155,16 @@ public class MyController {
 	public String findpw(Model model) {
 		
 		return "findpw"; 
+	}
+	@RequestMapping("/modify")
+	public String modify(Model model) {
+		
+		return "modify"; 
+	}
+	@RequestMapping("/Mypage")
+	public String Mypage(Model model) {
+		
+		return "Mypage"; 
 	}
 	
 // footer 
