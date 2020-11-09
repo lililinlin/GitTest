@@ -213,6 +213,40 @@
 
             });
         });
+        function idCheck() {
+			var user_id = $('#input_userId').val();
+			
+			if(!user_id){
+				alert("아이디를 입력하세요.");
+				return false;
+			}
+			// ajax 용도 : 화면 갱신(reload,redirect)가 없이
+			//            부분화면 갱신(통신)을 js에서 한다.
+			//           예)네이버 - 실시간검색어, 실시간날씨
+			
+			// 아이디 유효성 검사(1 = 중복 / 0 != 중복)
+			$.ajax({
+				/* url : 'http://localhost:8080/servlet3_LoginJoinDB/IdCheckAction.do?id='+ user_id, */
+				url : '${pageContext.request.contextPath}/IdCheckAction?id='+ user_id,
+				type : 'get',
+				success : function(data) {
+					console.log("1 = 중복됨, 0 = 중복안됨 : "+ data);							
+					
+					if (data == 1) {
+						// 1 : 아이디가 중복되는 문구
+						alert("아이디가 중복됩니다.");
+						$('#check_hidden').val("no");
+					} else {
+						// 0 : 아이디가 안됨.
+						alert("아이디가 사용가능합니다.");
+						$('#check_hidden').val("yes");
+					}
+				}, 
+				error : function() {
+						console.log("실패");
+				}
+			});
+		}
     </script>
     <table class="head">
         <header>
@@ -281,8 +315,10 @@
                 <table>
                    <tr>
                        <td>아이디</td>
-                       <td><input type="text" name="id" size="46"></td>
-                       <td> &nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary">중복확인</button></td>
+                       <td><input id="input_userId" type="text" name="id" size="46"></td>
+                       <td> &nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-primary" value="중복확인" onclick="idCheck()">
+                       <input id="check_hidden" type="hidden"	value="no" />
+                       </td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>

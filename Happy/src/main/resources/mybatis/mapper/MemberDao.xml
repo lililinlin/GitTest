@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.IMemberDao"> 
+
+	<insert id="insertMemberDao" parameterType="com.study.springboot.dto.MemberDto">
+      insert into happy_member (id, password, name, birth, phone, address, reg)
+           values (#{id}, #{password}, #{name}, #{birth}, #{phone}, #{address}, #{reg})
+   </insert>
+	
+	<!-- "_int" int -->
+	<!-- "int" Integer -->
+	<select id="idCheckDao" resultType="_int"> 
+		select count(*) from happy_member where id = #{id}
+	</select>
+			
+	<!-- #{param1}을 #{id}로 사용하려면 Mapper Class에서  -->
+	<!-- @Param("id") String id; 로 지정해야됨. -->
+	<select id="loginCheckDao" resultType="_int">
+		select count(*) from happy_member where id = #{id} and password = #{pw}
+	</select>
+	
+	<select id="getUserInfoDao" resultType="com.study.springboot.dto.MemberDto"> 
+		select * from happy_member where id = #{id}
+	</select>
+	
+	<select id="userListDao" resultType="com.study.springboot.dto.MemberDto"> 
+		select * from happy_member order by id desc
+	</select> 
+	
+	<update id="updateMemberDao" parameterType="com.study.springboot.dto.MemberDto" >
+        update happy_member set password = #{password},phone =  #{phone}, address =  #{address} where id = #{id}
+   </update>
+   
+   <delete id="deleteMemberDao">
+		delete from happy_member where id = #{id} and password = #{pw}
+	</delete>
+   
+</mapper>
+

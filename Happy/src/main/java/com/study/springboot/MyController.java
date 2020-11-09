@@ -1,11 +1,21 @@
 package com.study.springboot;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.study.springboot.service.IMemberService;
 
 @Controller
 public class MyController {
+	@Autowired
+	IMemberService member_service;
+	
 	@RequestMapping("/")
 	public String root() throws Exception {
 		//return "트랜잭션 없음(예제1)";
@@ -66,12 +76,50 @@ public class MyController {
 		
 		return "join"; 
 	}
+	@RequestMapping(value="/MemberJoinAction", method=RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String MemberJoinAction(HttpServletRequest req, Model model) throws Exception {
+		
+		//req.setCharacterEncoding("utf-8"); // 인코딩
+		req.setCharacterEncoding("UTF-8");
+		
+		int nResult = member_service.insertMember( req );
+		if( nResult <= 0 ) {
+			System.out.println("회원가입 실패");
+			
+	        model.addAttribute("msg","회원가입 실패");
+	        model.addAttribute("url","/");
+		}else {
+			System.out.println("회원가입 성공");
+			
+			model.addAttribute("msg","회원가입 성공");
+            model.addAttribute("url","/");
+		}
+		
+        
+		return "redirect"; //redirect.jsp
+	}
 	@RequestMapping("/login")
 	public String login(Model model) {
 		
 		return "login"; 
 	}
-	
+	@RequestMapping(value="/IdCheckAction", method=RequestMethod.GET)
+	public @ResponseBody String IdCheckAction(HttpServletRequest req, Model model) {
+		
+		System.out.println( "userID:" + req.getParameter("id"));
+		
+		
+		int nResult = member_service.idCheck( req.getParameter("id") );
+		if( nResult > 0 ) {
+			System.out.println("중복된 아이디 있음");
+			
+		}else {
+			System.out.println("중복된 아이디 없음");
+			
+		}
+		
+		return String.valueOf( nResult );
+	}
 	@RequestMapping("/findid")
 	public String findid(Model model) {
 		
