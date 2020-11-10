@@ -243,8 +243,7 @@
             </div>
             <div class="right">
                <h1><b>내 정보</b></h1><br>
-                  <form method="post" action="MemberMypageAction" 
-				name="userInfo" onsubmit="return checkValue()">
+                  <form>
                 <table>
                    <tr>
                        <td>아이디</td>
@@ -276,7 +275,7 @@
                        <td>&nbsp;&nbsp;<%=member.getAddress() %></td>
                    </tr>
                    <tr><td><br><br></td></tr>
-                   <tr><td></td><td><input type="submit" class="btn btn-primary" value="수정하기" style="width: 150px;"></button></td></tr>
+                   <tr><td></td><td><input  onclick="location.href='modify'" type="button" class="btn btn-primary" value="수정하기" style="width: 150px;"></td></tr>
    
                 </table>
                
