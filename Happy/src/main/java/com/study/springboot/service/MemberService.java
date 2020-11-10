@@ -66,7 +66,11 @@ public class MemberService implements IMemberService{
 //		String mail2 = req.getParameter("mail2");
 		//memberDto.setMail( mail1 + "@" + mail2 );
 		memberDto.setPhone(req.getParameter("phone"));
-		memberDto.setAddress(req.getParameter("address"));
+		String add1 = req.getParameter("add1");
+		String add2 = req.getParameter("add2");
+		String add3 = req.getParameter("add3");
+		String add4 = req.getParameter("add4");
+		memberDto.setAddress( "("+add1+") "+add2+" "+add3+" "+add4 );
 		
 		int nResult = memberDao.updateMemberDao(memberDto);
 		return nResult;

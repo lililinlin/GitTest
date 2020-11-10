@@ -32,7 +32,7 @@
 	</select> 
 	
 	<update id="updateMemberDao" parameterType="com.study.springboot.dto.MemberDto" >
-        update happy_member set password = #{password},phone =  #{phone}, address =  #{address} where id = #{id}
+        update happy_member set password = #{password}, phone =  #{phone}, address =  #{address} where id = #{id}
    </update>
    
    <delete id="deleteMemberDao">

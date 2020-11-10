@@ -349,7 +349,7 @@
                    </tr>
                    <tr>
                        <td>전화번호</td>
-                       <td><input type="text" name="phone" size="46" placeholder="우편번호"></td>
+                       <td><input type="text" name="phone" size="46" <%=member.getPhone() %>></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
@@ -366,7 +366,7 @@
                         <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
                    </tr>
                    <tr><td><br></td></tr>
-                   <tr><td></td><td><input type="submit" class="btn btn-primary" value="수정" style="width: 370px;"></button></td></tr>
+                   <tr><td></td><td><input type="submit" class="btn btn-primary" value="수정" style="width: 370px;"></td></tr>
    
                 </table>
                
