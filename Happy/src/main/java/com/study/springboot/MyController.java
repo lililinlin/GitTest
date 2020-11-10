@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.study.springboot.dto.MemberDto;
 import com.study.springboot.service.IMemberService;
 
 @Controller
@@ -183,10 +185,16 @@ public class MyController {
 		
 		return "modify"; 
 	}
+
 	@RequestMapping("/Mypage")
-	public String Mypage(Model model) {
+	public String MemberInfoAction(HttpServletRequest req, RedirectAttributes redirect) {
+		String id = req.getSession().getAttribute("sessionID").toString();
 		
-		return "Mypage"; 
+		MemberDto dto = member_service.getUserInfo(id);
+		
+		req.getSession().setAttribute("memberInfo", dto);
+		redirect.addAttribute("Mypage.jsp");        
+		return "Mypage";
 	}
 	
 // footer 

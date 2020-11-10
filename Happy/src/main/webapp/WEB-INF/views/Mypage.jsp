@@ -1,5 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+    <%@ page import="com.study.springboot.dao.IMemberDao" %>    
+<%@ page import="com.study.springboot.dto.MemberDto" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Calendar" %>
+    <%
+	MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    Date birth = (Date)member.getBirth();
+	int birthYear = 2000;
+	int birthMonth = 1;
+	int birthDay = 1;
+	if( birth != null ) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(birth);
+		birthYear = cal.get(Calendar.YEAR)-1900;
+		birthMonth = cal.get(Calendar.MONTH)+1;
+		birthDay = cal.get(Calendar.DAY_OF_MONTH);
+	}
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -228,29 +248,32 @@
                 <table>
                    <tr>
                        <td>아이디</td>
-                       <td><%-- <%=%> --%></td>
+                       <td>&nbsp;&nbsp;<%=member.getId() %></td>
                        <td></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
                     <td>이름</td>
-                    <td><%-- <%=%> --%></td>
+                    <td>&nbsp;&nbsp;<%=member.getName() %></td>
                     <td></td>
                     <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>전화번호</td>
-                       <td><%-- <%=%> --%></td>
+                       <td>&nbsp;&nbsp;<%=member.getPhone() %></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>생년월일</td>
-                       <td><%-- <%= %> --%></td>
+                       <td>&nbsp;&nbsp;
+					<%=birthYear %>년 
+					<%=birthMonth %>월 
+					<%=birthDay %>일</td>
                            <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>주소</td>
-                       <td><%-- <%= %> --%></td>
+                       <td>&nbsp;&nbsp;<%=member.getAddress() %></td>
                    </tr>
                    <tr><td><br><br></td></tr>
                    <tr><td></td><td><input type="submit" class="btn btn-primary" value="수정하기" style="width: 150px;"></button></td></tr>
