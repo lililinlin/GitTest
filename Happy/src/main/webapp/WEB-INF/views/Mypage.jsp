@@ -18,7 +18,7 @@
 		birthYear = cal.get(Calendar.YEAR)-1900;
 		birthMonth = cal.get(Calendar.MONTH)+1;
 		birthDay = cal.get(Calendar.DAY_OF_MONTH);
-	}
+	} 
 %>
 <!DOCTYPE html>
 <html lang="en">

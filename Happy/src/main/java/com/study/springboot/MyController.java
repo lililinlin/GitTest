@@ -120,7 +120,6 @@ public class MyController {
 			System.out.println("중복된 아이디 없음");
 			
 		}
-		
 		return String.valueOf( nResult );
 	}
 	@RequestMapping("/MemberLoginAction")
