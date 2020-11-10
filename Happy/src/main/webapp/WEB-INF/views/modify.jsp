@@ -1,5 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Calendar" %>
+<%
+	MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    Date birth = (Date)member.getBirth();
+	int birthYear = 2000;
+	int birthMonth = 1;
+	int birthDay = 1;
+	if( birth != null ) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(birth);
+		birthYear = cal.get(Calendar.YEAR)-1900;
+		birthMonth = cal.get(Calendar.MONTH)+1;
+		birthDay = cal.get(Calendar.DAY_OF_MONTH);
+	} 
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -310,7 +327,7 @@
                 <table>
                    <tr>
                        <td>아이디</td>
-                       <td><%-- <%=%> --%></td>
+                       <td><%=member.getId() %></td>
                        <td></td>
                        <tr><td><br></td></tr>
                    </tr>
@@ -326,23 +343,23 @@
                    </tr>
                    <tr>
                     <td>이름</td>
-                    <td><%-- <%=%> --%></td>
+                    <td><%=member.getName() %></td>
                     <td></td>
                     <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>전화번호</td>
-                       <td><input type="text" name="phone" size="46"></td>
+                       <td><input type="text" name="phone" size="46" placeholder="우편번호"></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>생년월일</td>
-                       <td><%-- <%= %> --%></td>
+                       <td><%=birthYear %>년 <%=birthMonth %>월 <%=birthDay %>일</td>
                            <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>주소</td>
-                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호">
+                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호" >
                         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
                         <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>
                         <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
