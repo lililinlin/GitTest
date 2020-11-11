@@ -49,61 +49,61 @@ public class MyController {
 	@RequestMapping("/nav1-1_site")
 	public String navsitePage(Model model) {
 
-		return "nav1-1_site"; // list.jsp 호출하면서 "list"객체를 넘겨줌.
+		return "nav/nav1-1_site"; // list.jsp 호출하면서 "list"객체를 넘겨줌.
 	}
 
 	@RequestMapping("/nav1-2_map")
 	public String navmapPage(Model model) {
 
-		return "nav1-2_map";
+		return "nav/nav1-2_map";
 	}
 
 	@RequestMapping("/nav2-1_adopt")
 	public String navadoptPage(Model model) {
 
-		return "nav2-1_adopt";
+		return "nav/nav2-1_adopt";
 	}
 
 	@RequestMapping("/nav2-2_adopted")
 	public String navadoptedPage(Model model) {
 
-		return "nav2-2_adopted";
+		return "nav/nav2-2_adopted";
 	}
 
 	@RequestMapping("/nav2-3_review")
 	public String navreview(Model model) {
 
-		return "nav2-3_review";
+		return "nav/nav2-3_review";
 	}
 
 	@RequestMapping("/nav3-1_board")
 	public String navboardPage(Model model) {
 
-		return "nav3-1_board";
+		return "nav/nav3-1_board";
 	}
 
 	@RequestMapping("/nav3-2_volunteer")
 	public String navvolunteerPage(Model model) {
 
-		return "nav3-2_volunteer";
+		return "nav/nav3-2_volunteer";
 	}
 
 	@RequestMapping("/nav4-1_QnA")
 	public String navQnAPage(Model model) {
 
-		return "nav4-1_QnA";
+		return "nav/nav4-1_QnA";
 	}
 
 	@RequestMapping("/nav4-2_notice")
 	public String navnoticePage(Model model) {
 
-		return "nav4-2_notice";
+		return "nav/nav4-2_notice";
 	}
 
 	@RequestMapping("/join")
 	public String joinPage(Model model) {
 
-		return "join";
+		return "member/join";
 	}
 
 	@RequestMapping(value = "/MemberJoinAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
@@ -131,7 +131,7 @@ public class MyController {
 	@RequestMapping("/login")
 	public String login(Model model) {
 
-		return "login";
+		return "member/login";
 	}
 
 	@RequestMapping(value = "/IdCheckAction", method = RequestMethod.GET)
@@ -160,7 +160,7 @@ public class MyController {
 			System.out.println("로그인 실패");
 
 			model.addAttribute("msg", "로그인 실패 - 아이디나 암호를 확인해주세요");
-			model.addAttribute("url", "/LoginForm");
+			model.addAttribute("url", "member/LoginForm");
 		} else {
 			System.out.println("로그인 성공");
 
@@ -199,13 +199,13 @@ public class MyController {
 	@RequestMapping("/findid")
 	public String findid(Model model) {
 
-		return "findid";
+		return "member/findid";
 	}
 
 	@RequestMapping("/findpw")
 	public String findpw(Model model) {
 
-		return "findpw";
+		return "member/findpw";
 	}
 
 	@RequestMapping("/modify")
@@ -216,7 +216,7 @@ public class MyController {
 
 		req.getSession().setAttribute("memberInfo", dto);
 		redirect.addAttribute("modify.jsp");
-		return "modify";
+		return "member/modify";
 	}
 
 	@RequestMapping(value="/MemberModifyAction", method=RequestMethod.POST, produces = "text/html; charset=UTF-8")
@@ -228,7 +228,7 @@ public class MyController {
 		if (nResult <= 0) {
 			
 			System.out.println("회원수정 실패");
-
+			//
 			model.addAttribute("msg", "회원수정 실패");
 			model.addAttribute("url", "/Modify");
 		} else {
@@ -240,8 +240,31 @@ public class MyController {
 
 		return "redirect";
 	}
+	@RequestMapping(value="/idSearchAction", method=RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String idSearchAction(HttpServletRequest req, Model model) throws Exception {
+		req.setCharacterEncoding("utf-8"); // 인코딩
+		String name = req.getParameter("name");
+		String phone = req.getParameter("phone");
+		
+		String search = member_service.idSearch(name, phone);
+		
+		System.out.println(search);
+		if (search != null) {
+			
+			System.out.println("회원아이디 찾기 성공");
+			//
+			model.addAttribute("msg", search);
+			model.addAttribute("url", "login");
+		} else {
+			System.out.println("회원아이디 찾기 실패");
+			//
+			model.addAttribute("msg", "정보 다름");
+			model.addAttribute("url", "findid");
+		}
 
-
+		return "redirect";
+	}
+	
 	@RequestMapping("/Mypage")
 	public String MemberInfoAction(HttpServletRequest req, RedirectAttributes redirect) {
 		String id = req.getSession().getAttribute("sessionID").toString();
@@ -250,7 +273,7 @@ public class MyController {
 
 		req.getSession().setAttribute("memberInfo", dto);
 		redirect.addAttribute("Mypage.jsp");
-		return "Mypage";
+		return "member/Mypage";
 	}
 	@RequestMapping("/write")
 	   public String write(Model model) {
@@ -278,7 +301,7 @@ public class MyController {
 	            byte[] bytes = upload.getBytes();
 	            
 	            //이미지 경로 생성
-	            String path = "C:/Users/i5D-02/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는 전역 변수라 그냥 이미지 경로 설정해주면 된다.
+	            String path = "C:/Users/01072/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는 전역 변수라 그냥 이미지 경로 설정해주면 된다.
 	            String ckUploadPath = path + uid + "_" + fileName;
 	            File folder = new File(path);
 	            
@@ -394,6 +417,6 @@ public class MyController {
 	@RequestMapping("/join_agree")
 	public String join_agree(Model model) {
 
-		return "join_agree";
+		return "member/join_agree";
 	}
 }

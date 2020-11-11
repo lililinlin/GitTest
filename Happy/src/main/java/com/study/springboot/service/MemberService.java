@@ -105,6 +105,18 @@ public class MemberService implements IMemberService{
 	public int logoutDao() {
 		return 1; //항상 성공
 	}
+
+	@Override
+	public String idSearch(String name, String phone) {
+		String search = memberDao.idSearchDao(name, phone);
+		return search;
+	}
+
+	@Override
+	public String pwSearch(String id, String phone) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

@@ -38,7 +38,7 @@
           height: 150px;
       }
       .head {
-            width: auto;
+            width: 1200px;
         }
         #footer {
             text-align: center;

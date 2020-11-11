@@ -15,4 +15,6 @@ public interface IMemberService {
 	public ArrayList<MemberDto> userList();
 	public int idCheck(String id);
 	public int logoutDao();
+	public String idSearch(String name, String phone);
+	public String pwSearch(String id, String phone);
 }

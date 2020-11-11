@@ -39,7 +39,7 @@
 </head>
 <body>
     <br>
-    <form action="">
+    <form action="idSearchAction" method="post">
         <table>
             <tr>
                 <td colspan="2"><img src="images/logo.jpg" alt=""></td>
@@ -68,7 +68,7 @@
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td colspan="2"><button type="button" class="btn btn-primary">아이디 찾기</td>
+                <td colspan="2"><input type="submit" class="btn btn-primary">아이디 찾기</td>
             </tr>
         </table>
     </form>

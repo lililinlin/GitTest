@@ -38,6 +38,8 @@
    <delete id="deleteMemberDao">
 		delete from happy_member where id = #{id} and password = #{pw}
 	</delete>
-   
+   <select id="idSearchDao" resultType="String" >
+   		select id from happy_member where name = #{name} and phone = #{phone}
+   </select>
 </mapper>
 

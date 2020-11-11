@@ -19,4 +19,6 @@ public interface IMemberDao {
 	public int loginCheckDao(@Param("id") String id, @Param("pw") String pw);
 	public ArrayList<MemberDto> userListDao();
 	public int idCheckDao(@Param("id") String id);
+	public String idSearchDao(@Param("name") String name, @Param("phone") String phone);
+	public String pwSearchDao(@Param("id") String id, @Param("phone") String phone);
 }
