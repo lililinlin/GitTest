@@ -14,95 +14,115 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>사이트소개</title>
     <style>
+    	a:link { text-decoration: none;}
+    	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
+ 		a:hover { text-decoration: none;}
         h2 {
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-    /* 헤더 */
-        .head {
-            margin: 0 auto;
-            width: 1200px;
-            /* border:1px solid red; */
-            height: 100px;
-            border-bottom: 2px solid grey;
-            margin-bottom: 10px;
-        }
-        #logo {
-            width: 400px;
-            height: 100px;
-        }
-        .headerlogtd {
-            text-align: right;
-            vertical-align: bottom;
-        }
-        .headerlog {
-            color: rgb(150, 147, 147);
-            font-size: 13px;
-            text-decoration: none;
-        }
-        .menumaintd {
-            width: 200px;
-            list-style-type: none;
-            text-decoration: none;
-            color: rgb(150, 147, 147);
-            text-align: right;
-        }
-        .mainmenu {
-            text-decoration: none;
-            color: black;
-        }
-        .hov {
-            background-color: white;
-            font-size: 25px;
-            width: 100px;
-            margin-top: -8px;
-            display: none;
-            position: absolute;
-            list-style-type: none;
-            text-decoration: none;
-            z-index: 100;
-            padding-top: 0px;
-            border-top: 2px solid rgb(132, 189, 246);
-            border-bottom: 2px solid rgb(132, 189, 246);
-            padding-left: 0px;
-            margin-left: 110px;
-            text-align: center;
-        }
-        .hov a {
-            color: black;
-            font-size: 13px;
-        }
-        .hov:hover ul {
-            display: block;
-        }
-
-        .hov li:nth-child(n):hover {
-            background-color: rgb(132, 189, 246);
-        }
-
-        .hov li:nth-child(n):hover a {
-            color: white;
-        }
-        /* .hov:hover li:nth-child(n){
-         background-color: hotpink;
-        } */
-        .menumaintd:hover .hov {
-            display: block;
-        }
+			font-family: 'Noto Sans KR', sans-serif;
+	    }
+	    /* 헤더 */
+	    #headroom {
+	        border-bottom: 1px solid rgb(235, 235, 235);
+	        margin-bottom: 10px;
+	    }
+	
+	    .head {
+	        margin: 0 auto;
+	        width: 1200px;
+	        height: 100px;
+	    }
+	
+	    #logo {
+	        width: 400px;
+	        height: 100px;
+	    }
+	
+	    .headerlogtd {
+	        text-align: right;
+	        vertical-align: bottom;
+	    }
+	
+	    .headerlog {
+	        color: rgb(150, 147, 147);
+	        font-size: 13px;
+	        text-decoration: none;
+	    }
+	
+	    .menumaintd {
+	        width: 200px;
+	        list-style-type: none;
+	        text-decoration: none;
+	        color: rgb(150, 147, 147);
+	        text-align: center;
+	    }
+	
+	    .mainmenu {
+	        text-decoration: none;
+	        color: black;
+	    }
+	    a:link { text-decoration: none;}
+	    /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
+	    a:hover { text-decoration: none;}
+	    .hov {
+	        background-color: white;
+	        font-size: 25px;
+	        width: 180px;
+	        margin-top: 14px;
+	        display: none;
+	        position: absolute;
+	        list-style-type: none;
+	        text-decoration: none;
+	        z-index: 100;
+	        padding-top: 0px;
+	        border-top: 2px solid rgb(189, 189, 193);
+	        border-bottom: 2px solid rgb(189, 189, 193);
+	        padding-left: 0px;
+	        margin-left: 10px;
+	        text-align: center;
+	    }
+	
+	    .hov li {
+	        border-bottom: 2px solid rgb(189, 189, 193);
+	    }
+	
+	    .hov a {
+	        color: black;
+	        font-size: 13px;
+	    }
+	
+	    .hov:hover ul {
+	        display: block;
+	    }
+	
+	    .hov li:nth-child(n):hover {
+	        background-color: rgb(118, 118, 118);
+	    }
+	
+	    .hov li:nth-child(n):hover a {
+	        color: white;
+	    }
+	    /* .hov:hover li:nth-child(n){
+	            background-color: hotpink;
+	            } */
+	    .menumaintd:hover .hov {
+	        display: block;
+	    }
         /* 푸터 */
-        #footer {
-            text-align: center;
-            margin: 0 auto;
-            height: 110px;
-            width: 1200px;
-            background-color: #3F3931;
-        }
-        footer a {
-              color: white;
-        }
+    #footer {
+        text-align: center;
+        margin: 0 auto;
+        height: 200px;
+        width: 100%;
+        background-color: #424141;
+    }
+
+    footer a {
+        color: white;
+    }
 /* 메인 */
 
         .right{
-	        width: 1650px;
+           width: 1650px;
             height: 100%;
             margin:20px;
  
@@ -121,6 +141,7 @@
             display: flex;
             width: 1200px;
             margin: 0 auto;
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
         .left {
@@ -139,8 +160,18 @@
         }
         #introduce_title{
             color: rgb(132, 189, 246);
+            margin:0px;
         }
-
+        #imag{
+            height:320px;
+            margin-right:50px;
+        }
+        #right-site p, #right-site h5{
+            margin-left:30px;
+        }
+        #right-bottom{
+            margin-left:30px;
+        }
         /* *{
             border: 1px solid red;
         } */
@@ -148,65 +179,70 @@
 </head>
 
 <body>
-    <table class="head">
-        <header>
-
-            <tr>
-                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> | </h></a><a href="join"
+    <header id="headroom">
+            <table class="head">
+                <tr>
+                    <td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
+                            id="logo" alt=""></a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                    <td class="headerlogtd"><span><a href="login"
+                            class="headerlog">로그인<h> |&nbsp;</h></a><a href="join_agree"
                             class="headerlog">회원가입</a></span></td>
-            </tr>
-            <tr>
-                <ul id="menu">
-                    <td class="menumaintd">
-                        <li><a href="nav1-1_site" class="mainmenu">
-                                <h6><b>사이트소개</b></h6>
+                </tr>
+                <tr>
+                    <ul id="menu">
+                        <td class="menumaintd">
+                            <li><a href="nav1-1_site" class="mainmenu">
+                                    <h6>
+                                        <b>사이트소개</b>
+                                    </h6>
                             </a>
-                            <ul class="hov">
-                                <li><a href="nav1-1_site">사이트소개</a></li>
-                                <li><a href="nav1-2_map">오시는길</a></li>
-                            </ul>
-                        </li>
-                    </td>
-                    <td class="menumaintd">
-                        <li><a href="nav2-1_adopt" class="mainmenu">
-                                <h6><b>입양하기</b></h6>
+                                <ul class="hov">
+                                    <li><a href="nav1-1_site">사이트소개</a></li>
+                                    <li><a href="nav1-2_map">오시는길</a></li>
+                                </ul></li>
+                        </td>
+                        <td class="menumaintd">
+                            <li><a href="nav2-1_adopt" class="mainmenu">
+                                    <h6>
+                                        <b>입양하기</b>
+                                    </h6>
                             </a>
-                            <ul class="hov">
-                                <li><a href="nav2-1_adopt">입양하기</a></li>
-                                <li><a href="nav2-2_adopted">입양됐어요</a></li>
-                                <li><a href="nav2-3_review">입양후기</a></li>
-                            </ul>
-                        </li>
-                    </td>
-                    <td class="menumaintd">
-                        <li><a href="nav3-1_board" class="mainmenu">
-                                <h6><b>커뮤니티</b></h6>
+                                <ul class="hov">
+                                    <li><a href="nav2-1_adopt">입양하기</a></li>
+                                    <li><a href="nav2-2_adopted">입양됐어요</a></li>
+                                    <li><a href="nav2-3_review">입양후기</a></li>
+                                </ul></li>
+                        </td>
+                        <td class="menumaintd">
+                            <li><a href="nav3-1_board" class="mainmenu">
+                                    <h6>
+                                        <b>커뮤니티</b>
+                                    </h6>
                             </a>
-                            <ul class="hov">
-                                <li><a href="nav3-1_board">게시판</a></li>
-                                <li><a href="nav3-2_volunteer">자원봉사신청</a></li>
-                            </ul>
-                        </li>
-                    </td>
-                    <td class="menumaintd">
-                        <li><a href="nav4-1_QnA" class="mainmenu">
-                                <h6><b>고객센터</b></h6>
+                                <ul class="hov">
+                                    <li><a href="nav3-1_board">게시판</a></li>
+                                    <li><a href="nav3-2_volunteer">자원봉사신청</a></li>
+                                </ul></li>
+                        </td>
+                        <td class="menumaintd">
+                            <li><a href="nav4-1_QnA" class="mainmenu">
+                                    <h6>
+                                        <b>고객센터</b>
+                                    </h6>
                             </a>
-                            <ul class="hov">
-                                <li><a href="nav4-1_QnA">Q&A</a></li>
-                                <li><a href="nav4-2_notice">공지사항</a></li>
-                            </ul>
-                        </li>
-                    </td>
-                </ul>
-            </tr>
-
+                                <ul class="hov">
+                                    <li><a href="nav4-1_QnA">Q&A</a></li>
+                                    <li><a href="nav4-2_notice">공지사항</a></li>
+                                </ul></li>
+                        </td>
+                    </ul>
+                </tr>
+            </table>
         </header>
-    </table>
     <main>
         <div class="wrapper">
             <div class="left"><br>
@@ -219,13 +255,13 @@
                     <h5><a href="nav1-2_map">오시는 길</a></h5>
                 </div>
                 <br><br>
-                <img src="images/sublogo.jpg"" title="광고">
+                <img src="images/sublogo.jpg" title="광고">
             </div>
             <div class="right">
+                <h1><b>센터 소개</b></h1><br>
                 <div id="right-1">
                     <div id = "right-site">
                         <br>
-                        <h4><b>사이트 소개</b></h4><br>
                         <h5>안녕하세요? 해피퍼피입니다.</h5>
                         <p>저희 입양센터에서는 유기동물을 보호하고,<br>
                         새로운 가족을 만날 수 있도록 도움을 드리고 있습니다.<br><br>
@@ -242,7 +278,7 @@
                 <img src="images/dog_12.jpg" title="소개" id = "imag">
                 </div>
                 <br>
-                <div>
+                <div id = "right-bottom">
                     <h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br>
                     <p><b>1. 동물보호 캠페인 및 홍보 :</b> 동물의 보호 및 유기동물입양 증대를 위한 홍보<br>
                         
@@ -260,18 +296,20 @@
                 </div>
             </div>
 
-        </div>
+       </div><br><br>
     </main>
     <div id="footer">
-        <footer style="color: white;">
-            <br>
-            <p><small><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
-                        href="#">&nbsp;이메일주소무단수집거부</a><br>
-                    서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
-                    Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
-                    site.</p></small>
-        </footer>
-    </div>
+		<footer style="color: white;">
+			<br> <br> <br>
+			<p>
+				<a href="footer_yak">이용약관&nbsp;&nbsp;</a> | <a href="footer_info">&nbsp;개인정보취급방침&nbsp;&nbsp;</a>
+				| <a href="footer_email">&nbsp;이메일주소무단수집거부</a><br> 서울특별시 노원구 ｜
+				전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표
+				: 강이린<br> Copyright ⓒ 2019, Seoul Abandoned Animal Adoption
+				Center All rights reserved. This is a nonprofit site.
+			</p>
+		</footer>
+	</div>
 </body>
 
 </html>

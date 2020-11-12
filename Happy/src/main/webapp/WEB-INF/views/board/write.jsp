@@ -21,6 +21,9 @@
 	%>
     <title>게시판</title>
     <style>
+     a:link { text-decoration: none;}
+     /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
+     a:hover { text-decoration: none;}
         h2 , h1{
             font-family: 'Noto Sans KR', sans-serif;
         }

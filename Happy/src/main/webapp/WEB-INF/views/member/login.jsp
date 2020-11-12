@@ -17,6 +17,9 @@
 	rel="stylesheet">
 <title>메인페이지</title>
 <style>
+ a:link { text-decoration: none;}
+    /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
+ a:hover { text-decoration: none;}
 h2 {
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -224,7 +227,7 @@ footer a {
 	</header>
 	<main>
 		<div id="mid_login">
-			<img id="login_img" src="images/logo.jpg">
+			<img id="login_img" src="images/logo2.jpg">
 			<form method="post" action="MemberLoginAction">
 				<br> 아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="idpw"
 					type="text" name="id" size="42"><br> <br>
