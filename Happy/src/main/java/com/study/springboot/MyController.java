@@ -275,11 +275,17 @@ public class MyController {
 		redirect.addAttribute("Mypage.jsp");
 		return "member/Mypage";
 	}
+	
 	@RequestMapping("/write")
-	   public String write(Model model) {
-	      
-	      return "write"; //list.jsp
+	   public String write(HttpServletRequest req, RedirectAttributes redirect,Model model) {
+		HttpSession session = req.getSession();
+		String id = session.getAttribute("sessionID").toString();
+		MemberDto dto = member_service.getUserInfo(id);
+		session.setAttribute("memberInfo", dto);
+	     System.out.println(id);
+		return "board/write"; //list.jsp
 	   }
+	
 	   @RequestMapping(value="/images/imageUpload.do", method = RequestMethod.POST)
 	    public void imageUpload(HttpServletRequest request,
 	            HttpServletResponse response, MultipartHttpServletRequest multiFile
@@ -418,5 +424,21 @@ public class MyController {
 	public String join_agree(Model model) {
 
 		return "member/join_agree";
+	}
+//	board
+	@RequestMapping(value = "/writeAction", method = RequestMethod.POST)
+	public @ResponseBody String writeAction(HttpServletRequest req, Model model) {
+
+		System.out.println("userID:" + req.getParameter("id"));
+
+		int nResult = member_service.idCheck(req.getParameter("id"));
+		if (nResult > 0) {
+			System.out.println("중복된 아이디 있음");
+
+		} else {
+			System.out.println("중복된 아이디 없음");
+
+		}
+		return String.valueOf(nResult);
 	}
 }

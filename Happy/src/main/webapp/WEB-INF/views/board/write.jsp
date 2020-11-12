@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +16,12 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src = "js/ckeditor/ckeditor.js"></script>
+    <%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
     <title>게시판</title>
     <style>
-        h2 {
+        h2 , h1{
             font-family: 'Noto Sans KR', sans-serif;
         }
 
@@ -238,9 +244,9 @@
                 <div id = "site">
                     <br>
                     <h1>글쓰기</h1><hr>
-                     <form>
-                        작성자:&nbsp;작성자아이디<hr>
-                        제목:&nbsp;<input tpye="text" size="50"/><hr>
+                     <form action="writeAction" method="post">
+                        작성자 :&nbsp;&nbsp;<%=member.getName()%><hr>
+                        제목 :&nbsp;<input type="text" size="50" id = "btitle"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
    
                     <script>
