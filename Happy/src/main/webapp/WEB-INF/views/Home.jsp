@@ -38,33 +38,36 @@
             font-size: 13px;
             text-decoration: none;
         }
-        .menumaintd {
+         .menumaintd {
             width: 200px;
             list-style-type: none;
             text-decoration: none;
             color: rgb(150, 147, 147);
-            text-align: right;
+            text-align: center;
         }
         .mainmenu {
             text-decoration: none;
             color: black;
         }
-        .hov {
+ 		.hov {
             background-color: white;
             font-size: 25px;
-            width: 100px;
-            margin-top: -8px;
+            width: 180px;
+            margin-top: 14px;
             display: none;
             position: absolute;
             list-style-type: none;
             text-decoration: none;
             z-index: 100;
             padding-top: 0px;
-            border-top: 2px solid rgb(132, 189, 246);
-            border-bottom: 2px solid rgb(132, 189, 246);
+            border-top: 2px solid  rgb(189, 189, 193);
+            border-bottom: 2px solid rgb(189, 189, 193);
             padding-left: 0px;
-            margin-left: 110px;
+            margin-left: 10px;
             text-align: center;
+        }
+        .hov li{
+            border-bottom: 2px solid rgb(189, 189, 193);
         }
         .hov a {
             color: black;
@@ -74,8 +77,8 @@
             display: block;
         }
 
-        .hov li:nth-child(n):hover {
-            background-color: rgb(132, 189, 246);
+         .hov li:nth-child(n):hover {
+            background-color:  rgb(118, 118, 118);
         }
 
         .hov li:nth-child(n):hover a {
@@ -88,12 +91,12 @@
             display: block;
         }
         /* 푸터 */
-        #footer {
+         #footer {
             text-align: center;
             margin: 0 auto;
-            height: 110px;
-            width: 1200px;
-            background-color: #3F3931;
+            height: 200px;
+            width: 100%;
+            background-color: #424141;
         }
         footer a {
             color: white;
@@ -130,10 +133,12 @@
             font-size: 1.25rem;
             line-height: 1.5;
             border-radius: 0.3rem;
-            background-color: transparent;
+            background-color: rgb(29, 95, 142);
             background-image: none;
             border-color: #b2b2a2;
-            color: rgb(2, 2, 2);
+            color: white;
+            width: 370px;
+            height: 80px;
         }
         .c-button {
             position: absolute;
@@ -187,7 +192,7 @@
         <header>
 
             <tr>
-                <td rowspan="2"><a href="Home"><img src="images/logo.jpg" id="logo" alt=""></a></td>
+                <td rowspan="2"><a href="Home"><img src="images/logo2.jpg" id="logo" alt=""></a></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -195,7 +200,7 @@
 				// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if(session.getAttribute("sessionID")==null){ 
 				%>
-                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> |</h></a><a href="join_agree" class="headerlog">회원가입</a></span></td>
+                <td class="headerlogtd"><span><a href="login" class="headerlog">로그인<h> |&nbsp;</h></a><a href="join_agree" class="headerlog">회원가입</a></span></td>
                   <% }else{ %>
                   <td class="headerlogtd"><span><a href="MemberLogoutAction" class="headerlog">로그아웃<h> |</h></a><a href="Mypage" class="headerlog">&nbsp;마이페이지</a></span></td>        
             	<%} %>
@@ -338,13 +343,13 @@
         </div>
     </main>
     <div id="footer">
-        <footer style="color: white;">
-            <br>
-           <p><small><a href="footer_yak">이용약관&nbsp;&nbsp;</a> | <a href="footer_info">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
-                        href="footer_email">&nbsp;이메일주소무단수집거부</a><br>
+      <footer style="color:white;">
+            <br><br><br>
+            <p><a href="#">이용약관&nbsp;&nbsp;</a> | <a href="#">&nbsp;개인정보취급방침&nbsp;&nbsp;</a> | <a
+                        href="#">&nbsp;이메일주소무단수집거부</a><br>
                     서울특별시 노원구 ｜ 전화 : 02-1111-1111 ｜ 팩스 : 02-1111-1111 ｜ 사업자등록번호 : 111-11-11111 ｜ 대표 : 강이린<br>
                     Copyright ⓒ 2019, Seoul Abandoned Animal Adoption Center All rights reserved. This is a nonprofit
-                    site.</p></small>
+                    site.</p>
         </footer>
     </div>
 </body>
