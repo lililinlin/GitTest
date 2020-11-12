@@ -142,6 +142,10 @@ footer a {
 	width: 425px;
 	height: 80px;
 }
+
+.login_search{
+    color:gray;
+}
 </style>
 
 </head>
@@ -232,12 +236,11 @@ footer a {
 				<br> 아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="idpw"
 					type="text" name="id" size="42"><br> <br>
 				비밀번호&nbsp;&nbsp;<input type="password" class="idpw" name="password"
-					size="42"><br> <br> <br> <input
-					type="submit" id="submit_login" class="btn btn-dark" value="로그인"><br>
+					size="42"><br> <br> <br> 
+					<input type="submit" id="submit_login" class="btn btn-dark" value="로그인"><br>
 				<br> <br>
 			</form>
-			<a href="#" onclick="nwindow(1)">아이디찾기</a> | <a href="#"
-				onclick="nwindow(2)">비밀번호찾기</a> | <a href="join">회원가입</a> <br>
+			<a href="" class="login_search"><b>아이디찾기</b></a> &nbsp;|&nbsp; <a  href="" class = "login_search"><b>비밀번호찾기</b></a> &nbsp;|&nbsp; <a href="" class = "login_search"><b>회원가입</b></a> <br>
 			<br> <br> <br> <br> <br> <br> <br>
 			<br>
 		</div>

@@ -75,7 +75,6 @@ h2 {
 	z-index: 100;
 	padding-top: 0px;
 	border-top: 2px solid rgb(189, 189, 193);
-	border-bottom: 2px solid rgb(189, 189, 193);
 	padding-left: 0px;
 	margin-left: 10px;
 	text-align: center;

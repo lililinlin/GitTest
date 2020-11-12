@@ -65,7 +65,6 @@
             z-index: 100;
             padding-top: 0px;
             border-top: 2px solid rgb(132, 189, 246);
-            border-bottom: 2px solid rgb(132, 189, 246);
             padding-left: 0px;
             margin-left: 110px;
             text-align: center;

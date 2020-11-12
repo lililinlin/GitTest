@@ -17,7 +17,7 @@
     	a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
-        h2 {
+        h2,h1 {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
 	    /* 헤더 */
@@ -75,7 +75,6 @@
 	        z-index: 100;
 	        padding-top: 0px;
 	        border-top: 2px solid rgb(189, 189, 193);
-	        border-bottom: 2px solid rgb(189, 189, 193);
 	        padding-left: 0px;
 	        margin-left: 10px;
 	        text-align: center;
@@ -172,6 +171,12 @@
         #right-bottom{
             margin-left:30px;
         }
+        .site_int h5:nth-child(n):hover a{
+        	font-size:22px;
+        	font-weight: bold;
+        	color:rgb(118, 118, 118);
+        }
+        
         /* *{
             border: 1px solid red;
         } */
@@ -258,7 +263,7 @@
                 <img src="images/sublogo.jpg" title="광고">
             </div>
             <div class="right">
-                <h1><b>센터 소개</b></h1><br>
+                <h1><b>사이트 소개</b></h1><br>
                 <div id="right-1">
                     <div id = "right-site">
                         <br>

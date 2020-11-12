@@ -24,7 +24,7 @@
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
-        h2 {
+        h2,h1 {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
 	    /* 헤더 */
@@ -82,7 +82,6 @@
 	        z-index: 100;
 	        padding-top: 0px;
 	        border-top: 2px solid rgb(189, 189, 193);
-	        border-bottom: 2px solid rgb(189, 189, 193);
 	        padding-left: 0px;
 	        margin-left: 10px;
 	        text-align: center;
@@ -174,6 +173,11 @@
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 20px;
         }
+        .site_int h5:nth-child(n):hover a{
+        	font-size:22px;
+        	font-weight: bold;
+        	color:rgb(118, 118, 118);
+        }
     </style>
 </head>
 
@@ -258,8 +262,7 @@
             </div>
             <div class="right">
                 <div id = "right-site">
-                    <br>
-                    <h1>오시는길</h1><br>
+                    <h1><b>오시는길</b></h1><br>
 
                     
                     <table id="table2">
