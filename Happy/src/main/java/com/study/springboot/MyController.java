@@ -28,12 +28,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.service.IMemberService;
+import com.study.springboot.service.INoticeService;
 
 @Controller
 public class MyController {
 	@Autowired
 	IMemberService member_service;
-
+	@Autowired
+	INoticeService notice_service;
+	
 	@RequestMapping("/")
 	public String root() throws Exception {
 		// return "트랜잭션 없음(예제1)";
@@ -307,7 +310,7 @@ public class MyController {
 	            byte[] bytes = upload.getBytes();
 	            
 	            //이미지 경로 생성
-	            String path = "C:/Users/01072/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는 전역 변수라 그냥 이미지 경로 설정해주면 된다.
+	            String path = "C:/Users/01072/git/Happy/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는 전역 변수라 그냥 이미지 경로 설정해주면 된다.
 	            String ckUploadPath = path + uid + "_" + fileName;
 	            File folder = new File(path);
 	            
@@ -361,7 +364,7 @@ public class MyController {
 	 throws ServletException, IOException{
 	        
 	        //서버에 저장된 이미지 경로
-	        String path = "C:/Users/01072/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";
+	        String path = "C:/Users/01072/git/Happy/Happy/src/main/resources/static/images" + "ckImage/";
 	    
 	        String sDirPath = path + uid + "_" + fileName;
 	    
@@ -426,19 +429,26 @@ public class MyController {
 		return "member/join_agree";
 	}
 //	board
-	@RequestMapping(value = "/writeAction", method = RequestMethod.POST)
-	public @ResponseBody String writeAction(HttpServletRequest req, Model model) {
+	@RequestMapping(value = "/writeAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String writeAction(HttpServletRequest req, Model model) throws Exception{
+		req.setCharacterEncoding("UTF-8");
+		
 
-		System.out.println("userID:" + req.getParameter("id"));
+		int nResult = notice_service.write(req);
+		if (nResult < 1) {
+			System.out.println("글쓰기 실패");
 
-		int nResult = member_service.idCheck(req.getParameter("id"));
-		if (nResult > 0) {
-			System.out.println("중복된 아이디 있음");
+			model.addAttribute("msg", "글쓰기 실패");
+			model.addAttribute("url", "/");
 
 		} else {
-			System.out.println("중복된 아이디 없음");
+			System.out.println("글쓰기 성공");
+
+			model.addAttribute("msg", "글쓰기 성공");
+			model.addAttribute("url", "/");
 
 		}
-		return String.valueOf(nResult);
+		return "redirect";
 	}
+
 }

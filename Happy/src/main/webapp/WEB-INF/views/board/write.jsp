@@ -275,7 +275,7 @@
                     <h1>글쓰기</h1><hr>
                      <form action="writeAction" method="post">
                         작성자 :&nbsp;&nbsp;<%=member.getName()%><hr>
-                        제목 :&nbsp;<input type="text" size="50" id = "btitle"/><hr>
+                        제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
    
                     <script>
