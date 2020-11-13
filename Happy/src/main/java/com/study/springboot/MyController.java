@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
@@ -27,6 +28,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.MemberDto;
+import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
 
@@ -450,5 +452,10 @@ public class MyController {
 		}
 		return "redirect";
 	}
-
+	@RequestMapping("/list")
+	public String content_view(HttpServletRequest req) {
+		ArrayList<NoticeDto> list = notice_service.list();
+		req.getSession().setAttribute("listBoard", list);
+		return "board/list";
+	}
 }

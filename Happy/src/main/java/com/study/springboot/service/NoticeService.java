@@ -3,7 +3,6 @@ package com.study.springboot.service;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +24,14 @@ public class NoticeService implements INoticeService {
 		noticeDto.setContent(req.getParameter("editor4"));
 		int nResult = noticeDao.writeDao(noticeDto);
 		return nResult;
+	}
+
+	
+
+	@Override
+	public ArrayList<NoticeDto> list() {
+		ArrayList<NoticeDto> list = noticeDao.list();
+		return list;
 	}
 
 }
