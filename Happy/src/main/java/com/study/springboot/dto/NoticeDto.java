@@ -16,10 +16,6 @@ public class NoticeDto
     private String nbTitle;
     private String nbContent;
     private Date nbDate;
-    private int nbHit;
-    private int nbGrooup;
-    private int nbStep;
-    private int nbIndent;
     
 
 	

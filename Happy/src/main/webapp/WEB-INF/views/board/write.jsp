@@ -274,10 +274,12 @@
                     <br>
                     <h1>글쓰기</h1><hr>
                      <form action="writeAction" method="post">
-                        작성자 :&nbsp;&nbsp;<%=member.getName()%><hr>
+                        작성자 :&nbsp;&nbsp;<%=member.getName()%>
+                        <input type="hidden" id="id" name="id" value="<%=member.getId()%>">
+                        <input type="hidden" id="name" name="name" value="<%=member.getName()%>"><hr>
                         제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
-   
+   						<input type="hidden" name="idx" value="1" id="bidx">
                     <script>
                         CKEDITOR.replace('editor4',{width:800,height:400,
                         filebrowserUploadUrl:'/images/imageUpload.do'});

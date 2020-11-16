@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
@@ -28,7 +27,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.MemberDto;
-import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
 
@@ -434,9 +432,15 @@ public class MyController {
 	@RequestMapping(value = "/writeAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 	public String writeAction(HttpServletRequest req, Model model) throws Exception{
 		req.setCharacterEncoding("UTF-8");
+		String nbName = req.getParameter("name");
+		String nbTitle = req.getParameter("title");
+		String nbContent=req.getParameter("editor4");
+		String Id=req.getParameter("id");
+		String idx=req.getParameter("idx");
+		int bidx=Integer.parseInt(idx);
+		System.out.println(nbName+nbTitle+nbContent+bidx);
+		int nResult = notice_service.write(nbName,bidx,nbTitle,nbContent,Id);
 		
-
-		int nResult = notice_service.write(req);
 		if (nResult < 1) {
 			System.out.println("글쓰기 실패");
 
@@ -454,8 +458,8 @@ public class MyController {
 	}
 	@RequestMapping("/list")
 	public String content_view(HttpServletRequest req) {
-		ArrayList<NoticeDto> list = notice_service.list();
-		req.getSession().setAttribute("listBoard", list);
+		//ArrayList<NoticeDto> list = notice_service.list();
+		//req.getSession().setAttribute("listBoard", list);
 		return "board/list";
 	}
 }

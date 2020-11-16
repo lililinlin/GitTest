@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.study.springboot.dto.NoticeDto" %>   
+<%@ page import="java.util.ArrayList"%> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +14,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <%
+		ArrayList<NoticeDto> list = (ArrayList<NoticeDto>)session.getAttribute("listBoard");
+	%>
     <title>사이트소개</title>
     <style>
         h2 {
