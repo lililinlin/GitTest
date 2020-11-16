@@ -1,5 +1,7 @@
 package com.study.springboot.dto;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -8,9 +10,17 @@ import lombok.Data;
 @Data
 public class NoticeDto 
 {
-
-    private String title;
-    private String content;
+	private String Id;
+	private String nbName;
+	private int bidx;
+    private String nbTitle;
+    private String nbContent;
+    private Date nbDate;
+    private int nbHit;
+    private int nbGrooup;
+    private int nbStep;
+    private int nbIndent;
+    
 
 	
 	//기본생성자함수
