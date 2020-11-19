@@ -27,7 +27,7 @@
         h2,h1 {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
-	    /* 헤더 */
+/* 헤더 */
 	    #headroom {
 	        border-bottom: 1px solid rgb(235, 235, 235);
 	        margin-bottom: 10px;
@@ -67,9 +67,6 @@
 	        text-decoration: none;
 	        color: black;
 	    }
-	    a:link { text-decoration: none;}
-	    /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
-	    a:hover { text-decoration: none;}
 	    .hov {
 	        background-color: white;
 	        font-size: 25px;
@@ -113,18 +110,19 @@
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }
-        /* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
-
-    footer a {
-        color: white;
-    }
+/* 푸터 */
+	    #footer {
+	        text-align: center;
+	        margin: 0 auto;
+	        height: 200px;
+	        width: 100%;
+	        background-color: #424141;
+	    }
+	
+	    footer a {
+	        color: white;
+	    }
+ /* 메인 */
         .right{
 	        width: 1650px;
             height: 100%;
@@ -191,9 +189,22 @@
                     <td></td>
                     <td></td>
                     
-                    <td class="headerlogtd"><span><a href="login"
-                            class="headerlog">로그인<h> |&nbsp;</h></a><a href="join_agree"
-                            class="headerlog">회원가입</a></span></td>
+                    <%
+					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+				if (session.getAttribute("sessionID") == null) {
+				%>
+				<td class="headerlogtd"><span><a href="login"
+						class="headerlog">로그인<h> |&nbsp;</h></a><a href="join_agree"
+						class="headerlog">회원가입</a></span></td>
+				<%
+					} else {
+				%>
+				<td class="headerlogtd"><span><a
+						href="MemberLogoutAction" class="headerlog">로그아웃<h> |</h></a><a
+						href="Mypage" class="headerlog">&nbsp;마이페이지</a></span></td>
+				<%
+					}
+				%>
                 </tr>
                 <tr>
                     <ul id="menu">
