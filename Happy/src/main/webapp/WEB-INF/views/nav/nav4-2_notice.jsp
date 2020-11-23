@@ -15,7 +15,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <%
-		ArrayList<NoticeDto> list = (ArrayList<NoticeDto>)session.getAttribute("listBoard");
+    ArrayList<NoticeDto> list = (ArrayList<NoticeDto>)session.getAttribute("listBoard");
 	%>
     <title>공지사항</title>
     <style>
@@ -155,12 +155,17 @@
        
         #notice_table td,#notice_table th{
             padding-left: 10px;
-           border-bottom: 2px solid #e9e9e3;
+            border-bottom: 2px solid #e9e9e3;
             height : 80px;
             font-family: 'Noto Sans KR', sans-serif;
             color: black;
+            text-decoration: none;
         }
-        
+        #notice_table a{
+	        font-family: 'Noto Sans KR', sans-serif;
+	        color: black;
+        }
+             
         small{
             color:  #a2a2a1;
         }
@@ -272,37 +277,33 @@
             <div class="right">
                 <h1><b>공지사항</b></h1><br>
                 <table id="notice_table" width="850" cellpadding="0" cellspacing="0" >
-                    <tr>    
-                        <td><h6><b><img src="images/notice2.jpg">title</b></h6>
-                        <small>id | date | hit</small></td>
-                    </tr>
-                    <tr>    
-                        <td><h6><b><img src="images/notice2.jpg">입양/파양관련 공지사항(꼭 먼저 읽어보시고 신청해주세요)</b></h6>
-                        <small>해피퍼피관리자 | 2020-11-09 | 100</small></td>
-                    </tr>
-                    <tr>    
-                        <td><h6><b><img src="images/notice2.jpg">구조 관련 Q&A</b></h6>
-                        <small>해피퍼피관리자 | 2020-11-11 | 1000</small></td>
-                     </tr>
-                     <tr>    
-                        <td><h6><b><img src="images/notice2.jpg">봉사 관련 Q&A</b></h6>
-                        <small>해피퍼피관리자 | 2020-11-11 | 1000</small></td>
-                     </tr>
-                     <c:forEach var="dto" items="${ listBoard }" >
+                      <%
+				for (int i = 0; i < list.size(); i++) {
+					%>
                      <tr>
-                         <td><h6><b><img src="images/notice2.jpg"><a href="content_view?bid=${ dto.bid }">${ dto.btitle }</a></b></h6>
-                            <small>${ dto.bname } |
-                             <c:forEach begin="1" end="${ dto.bindent }">-</c:forEach>
-                             | ${ dto.bdate } |${ dto.bhit }</small></td>
+                         <td><h6><b><img src="images/notice2.jpg">
+                         <a href="content_view?btitle=$<%=list.get(i).getNbTitle()%>"><%=list.get(i).getNbTitle()%></a></b></h6>
+                            <small><%=list.get(i).getNbName()%>&nbsp;&nbsp;|&nbsp;&nbsp;
+                             <%=list.get(i).getNbDate()%></small>
+                             </td>
                      </tr>
-                     </c:forEach>
-            
-                    <tr>
-                        <td><a href="write_view">글작성</a></td>
+       			<%
+					}
+				%>
+                    <tr> <%
+					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
+				if (session.getAttribute("sessionID") == null) {
+				%>
+				<%
+					} else {
+				%>
+						 <td><a href="write">글작성</a></td>
+				<%
+					}
+				%>
                     </tr>
                 </table>
             </div>
-
         </div>
     </main>
      <div id="footer">

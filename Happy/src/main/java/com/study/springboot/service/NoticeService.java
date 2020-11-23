@@ -1,5 +1,6 @@
 package com.study.springboot.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,9 +26,9 @@ public class NoticeService implements INoticeService {
 
 
 	@Override
-	public List<NoticeDto> list(String page) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<NoticeDto> list() {
+		ArrayList<NoticeDto> list=noticeDao.list();
+		return list;
 	}
 
 

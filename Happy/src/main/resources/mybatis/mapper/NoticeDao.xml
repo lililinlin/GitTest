@@ -12,7 +12,7 @@
    	</insert>
   
   <select id="list" resultType="com.study.springboot.dto.NoticeDto"> 
-		select * from notice
+		select * from notice_board
    	</select>
 	
 </mapper>
