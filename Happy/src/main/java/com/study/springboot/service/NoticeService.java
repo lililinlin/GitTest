@@ -36,7 +36,7 @@ public class NoticeService implements INoticeService {
 	@Override
 	public NoticeDto contentView(String bid_str) {
 		// TODO Auto-generated method stub
-		return null;
+		return noticeDao.contentView(bid_str);
 	}
 
 }

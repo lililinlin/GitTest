@@ -11,9 +11,13 @@
       		values (#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
    	</insert>
   
-  <select id="list" resultType="com.study.springboot.dto.NoticeDto"> 
+   <select id="list" resultType="com.study.springboot.dto.NoticeDto"> 
 		select * from notice_board
    	</select>
 	
+	<select id="contentView" resultType="com.study.springboot.dto.NoticeDto"> 
+		select * from notice_board where nbtitle=#{param1}
+   	</select>
+   	
 </mapper>
 
