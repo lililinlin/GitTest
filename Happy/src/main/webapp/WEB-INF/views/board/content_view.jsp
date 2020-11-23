@@ -274,7 +274,7 @@
           	  </div>
            
       <div class="right">
-			<h1><%=content_view.NbTitle %></h1>
+			<h1></h1>
 			<hr>
 			<form action="modify" method="post">
 			<table width="500" cellpadding="0" cellspacing="0" border="1">
@@ -286,7 +286,7 @@
 		        </tr>
 		        <tr>
 		            <td>이름</td>
-		            <td><input type="text" name="nbname" value="${content_view.NbName}"></td>
+		            <td><%-- <%=content_view.getId()%> --%><input type="text" name="nbname" value="${content_view.NbName}"></td>
 		        </tr>
 		        <tr>
 		            <td>제목</td>
