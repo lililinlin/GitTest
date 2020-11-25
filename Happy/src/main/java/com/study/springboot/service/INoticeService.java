@@ -10,8 +10,9 @@ public interface INoticeService {
 //	public int write(HttpServletRequest req); // 글작성
 //	public ArrayList<NoticeDto> list();
 	
-	 public int write(String nbName,int bidx, String nbTitle, String nbContent, String Id); //글작성
+	 public int write(String nbName,String nbTitle, String nbContent, String Id); //글작성
 	 public ArrayList<NoticeDto> list(); //글목록
 	 public NoticeDto contentView(String bid_str); //글내용
+	 public int delete(String bid); 
 	
 }

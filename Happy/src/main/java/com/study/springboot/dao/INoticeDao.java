@@ -10,9 +10,9 @@ import com.study.springboot.dto.NoticeDto;
 @Mapper
 public interface INoticeDao 
 {
-	public int writeDao(String nbName,int bidx,String nbTitle, String nbContent, String id); //글작성
+	public int writeDao(String nbName,String nbTitle, String nbContent, String id); //글작성
     public ArrayList<NoticeDto> list(); //글목록
     public NoticeDto contentView(String bid_str); //글내용
-    
+    public int delete(String bid); //글삭제
 }
 

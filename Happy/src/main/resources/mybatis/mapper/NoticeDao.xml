@@ -7,8 +7,8 @@
 <mapper namespace="com.study.springboot.dao.INoticeDao"> 
 	
    	<insert id="writeDao" parameterType="com.study.springboot.dto.NoticeDto">
-    	insert into notice_board(nbName,bIdx,nbTitle,nbContent,id) 
-      		values (#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
+    	insert into notice_board(bidx,nbName,nbTitle,nbContent,Id) 
+      		values (nt_seq.nextval, #{param1},#{param2}, #{param3}, #{param4})
    	</insert>
   
    <select id="list" resultType="com.study.springboot.dto.NoticeDto"> 
@@ -16,8 +16,12 @@
    	</select>
 	
 	<select id="contentView" resultType="com.study.springboot.dto.NoticeDto"> 
-		select * from notice_board where nbtitle=#{param1}
+		select * from notice_board where bidx=#{param1}
    	</select>
+   	
+   	<delete id="delete">
+		delete from notice_board where bidx=#{param1}
+	</delete>
    	
 </mapper>
 

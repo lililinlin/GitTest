@@ -123,11 +123,12 @@
         .right{
            width: 1650px;
             height: 100%;
-            margin:20px;
+            margin:20px 20px 100px 20px;
  
         }
         .right img{
-            float:right;
+            height: 15px;
+            margin-right:5px
         }
         #right-site{
             display:inline-block;
@@ -151,7 +152,11 @@
         }
         .left a{
             color: black;
-            /* font-weight: bold; */
+        }
+        /* 목록으로 가는 a태그 */
+        #list{
+        	text-align: center;
+        	color: black;
         }
         .site_int {
             margin:20px;
@@ -176,9 +181,10 @@
         	font-weight: bold;
         	color:rgb(118, 118, 118);
         }
-        /* *{
-            border: 1px solid red;
-        } */
+         small{
+            color:  #a2a2a1;
+        }
+     	
     </style>
 </head>
 <body>
@@ -274,38 +280,20 @@
           	  </div>
            
       <div class="right">
-			<h1></h1>
+      			<div  style="border-bottom: 1px solid rgb(9, 51, 85);">
+				<h1><b>공지사항</b></h1><br><br>
+				</div><br>
+			<h4><%= content_view.getNbTitle() %></h4>
+			<img src="images/notice_user.jpg"><small><%= content_view.getNbName() %>&nbsp;&nbsp;&nbsp;<%= content_view.getNbDate() %>&nbsp;&nbsp;</small>
 			<hr>
-			<form action="modify" method="post">
-			<table width="500" cellpadding="0" cellspacing="0" border="1">
-			        <input type="hidden" name="id" value="${ content_view.Id }">
-			        
-		        <tr>
-		            <td>번호</td>
-		            <td>${content_view.Id}</td>
-		        </tr>
-		        <tr>
-		            <td>이름</td>
-		            <td><%-- <%=content_view.getId()%> --%><input type="text" name="nbname" value="${content_view.NbName}"></td>
-		        </tr>
-		        <tr>
-		            <td>제목</td>
-		            <td><input type="text" name="nbtitle" value="${content_view.NbTitle}"></td>
-		        </tr>
-		        <tr>
-		            <td>글내용</td>
-		            <td><input type="text" name="nbcontent" value="${content_view.NbContent}"></td>
-		        </tr>
-		        <tr>
-		            <td colspan="2">
-		            <input type="submit" value="수정">&nbsp;&nbsp;
-		            <a href="nav4-2_notice">목록 보기</a>&nbsp;&nbsp;
-		            <a href="delete?id=${content_view.Id}">글 삭제</a>&nbsp;&nbsp;
-		            </td>
-		       	 </tr>
-		   		 </table>
-			</form>
-		 </div><br><br>
+			<div style="margin: 30px 30px 100px 30px;">
+				<small><%= content_view.getNbContent() %></small>
+			</div>
+			<input  onclick="location.href='nav4-2_notice'" type="button" class="btn btn-dark"  value="목록으로" style="width: 100px;">&nbsp;&nbsp;&nbsp;
+			<button type="button" class="btn btn-dark" style="width: 100px;"><a href="delete?bidx=<%= content_view.getBidx()%> "  style="color:white">글 삭제</a></button>
+			<%-- <a href="delete?bidx=<%= content_view.getBidx()%> " ><b>글 삭제</b></a> --%>
+
+		 </div>
 	</div>
 	</main>
 	 <div id="footer">

@@ -279,7 +279,6 @@
                         <input type="hidden" id="name" name="name" value="<%=member.getName()%>"><hr>
                         제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
-   						<input type="hidden" name="idx" value="1" id="bidx">
                     <script>
                         CKEDITOR.replace('editor4',{width:800,height:400,
                         filebrowserUploadUrl:'/images/imageUpload.do'});

@@ -19,8 +19,8 @@ public class NoticeService implements INoticeService {
 	NoticeDto noticeDto;
 
 	@Override 				
-	public int write(String nbName,int bidx, String nbTitle, String nbContent, String Id) {
-		int nResult = noticeDao.writeDao(nbName,bidx,nbTitle, nbContent, Id);
+	public int write(String nbName,String nbTitle, String nbContent, String Id) {
+		int nResult = noticeDao.writeDao(nbName,nbTitle, nbContent, Id);
 		return nResult;
 	}
 
@@ -39,4 +39,7 @@ public class NoticeService implements INoticeService {
 		return noticeDao.contentView(bid_str);
 	}
 
+	public int delete(String bid) {
+		return noticeDao.delete(bid);
+	}
 }
