@@ -8,6 +8,7 @@
 <!-- bxslider의 css 추가 -->
 <link rel="stylesheet" href="css/jquery.bxslider.css">
 <!-- Bootstrap CSS -->
+ <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -16,202 +17,216 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <title>메인페이지</title>
+	<script>
+        $(function() { 
+             var lnb = $("#nav_wrapper").offset().top;
+             $(window).scroll(function() {
+                var window = $(this).scrollTop();
+ 
+                if(lnb <= window) {
+                   $("#nav_wrapper").addClass("fixed");
+                } else {
+                   $("#nav_wrapper").removeClass("fixed");
+                }
+             })
+          });
+    </script>
 <style>
  a:link { text-decoration: none;}
     /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  a:hover { text-decoration: none;}
-h2 {
-	font-family: 'Noto Sans KR', sans-serif;
-}
-/* 헤더 */
-#headroom{
-	border-bottom: 1px solid rgb(235,235,235);
-	margin-bottom: 10px;
-}
-.head {
-	margin: 0 auto;
-	width: 1200px;
-	height: 100px;
+* {
+	  font-family: 'Noto Sans KR', sans-serif;
 }
 
-#logo {
-	width: 400px;
-	height: 100px;
-}
+/* header */
 
-.headerlogtd {
-	text-align: right;
-	vertical-align: bottom;
-}
+	#head {
+		margin: 0 auto;
+		width: 1200px;
+		height: 100px;
+		background-color: white; 
+	}
+	#logo {
+		width: 400px;
+		height: 100px;
+	}
+	.headerlogtd {
+		text-align: right;
+		vertical-align: bottom;
+	}
+	.headerlog {
+		color: rgb(150, 147, 147);
+		font-size: 13px;
+		text-decoration: none;
+	} 
+	#nav_wrapper{
+	 /* border-bottom: 1px solid rgb(235,235,235);
+		margin-bottom: 10px; */
+	    width:100%;
+	    padding-bottom: 2px;
+		box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
+	         }
+	#nav_wrapper.fixed{
+	    position: fixed;
+	    padding-bottom: 20px;
+/* 	    padding-top:-20px; */
+	    left: 0; 
+	    top: 0; 
+	    width: 100%; 
+	    height:115px;
+	    background-color: white; 
+	    z-index:100; 
+	    /* border-bottom: 1px solid #4eac87; */
+	        }
+	
+	.menumaintd {
+		width: 200px;
+		list-style-type: none;
+		text-decoration: none;
+		color: rgb(150, 147, 147);
+		text-align: center;
+	}
+	.mainmenu {
+		text-decoration: none;
+		color: black;
+	}
+	.hov {
+		background-color: white;
+		font-size: 25px;
+		width: 180px;
+		margin-top: 14px;
+		display: none;
+		position: absolute;
+		list-style-type: none;
+		text-decoration: none;
+		z-index: 100;
+		padding-top: 0px;
+		border-top: 2px solid rgb(189, 189, 193);
+		padding-left: 0px;
+		margin-left: 10px;
+		text-align: center;
+	}
+	.hov li {
+		height:47px;
+		border-bottom: 2px solid rgb(189, 189, 193);
+	}
+	.hov a {
+		color: black;
+		font-size: 13px;
+	}
+	.hov:hover ul {
+		display: block;
+	}
+	.hov li:nth-child(n):hover {
+		background-color: rgb(118, 118, 118);
+	}
+	.hov li:nth-child(n):hover a {
+		color: white;
+	}
+	/* .hov:hover li:nth-child(n){
+	         background-color: hotpink;
+	        } */
+	.menumaintd:hover .hov {
+		display: block;
+	}
 
-.headerlog {
-	color: rgb(150, 147, 147);
-	font-size: 13px;
-	text-decoration: none;
-}
+/* main */
 
-.menumaintd {
-	width: 200px;
-	list-style-type: none;
-	text-decoration: none;
-	color: rgb(150, 147, 147);
-	text-align: center;
-}
+	#wrapper {
+		text-align: center;
+		width: 1200px;
+		margin: 0 auto;
+	}
+	#main_bottom {
+		text-align: center;
+	}
+	.prices {
+		width: 1200px;
+		display: flex;
+		text-align: center;
+	}
+	.price-item {
+		border-radius: 1rem;
+		text-align: center;
+		margin: 10px 10px 50px 10px;
+		background-color: rgb(250, 250, 250);
+	}
+	.prices-item-price {
+		font-size: 2.5rem;
+		font-weight: bold;
+		padding: 20px;
+	}
+	.p-button {
+		padding: .5rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1.5;
+		border-radius: 0.3rem;
+		background-color: rgb(29, 95, 142);
+		background-image: none;
+		border-color: #b2b2a2;
+		color: white;
+		width: 370px;
+		height: 80px;
+	}
+	.c-button {
+		position: absolute;
+		bottom: 50px;
+		left: 525px;
+		width: 150px;
+		height: 60px;
+		z-index: 100;
+		background-color: transparent !important;
+		background-image: none !important;
+		border: 0.5px solid white;
+		border-radius: 0.2rem;
+		color: #FFFFFF;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	.exp {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 5rem;
+		color: white;
+		z-index: 2;
+		text-align: center;
+	}
+	.slider {
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	.main_image {
+		height: 250px;
+		width: 380px;
+	}
+	.slide-img {
+		width: 1200px;
+		height: 500px;
+	}
+	
+/* footer */
+	#footer {
+		text-align: center;
+		margin: 0 auto;
+		height: 200px;
+		width: 100%;
+		background-color: #424141;
+	}
+	
+	footer a {
+		color: white;
+	}
 
-.mainmenu {
-	text-decoration: none;
-	color: black;
-}
-
-.hov {
-	background-color: white;
-	font-size: 25px;
-	width: 180px;
-	margin-top: 14px;
-	display: none;
-	position: absolute;
-	list-style-type: none;
-	text-decoration: none;
-	z-index: 100;
-	padding-top: 0px;
-	border-top: 2px solid rgb(189, 189, 193);
-	padding-left: 0px;
-	margin-left: 10px;
-	text-align: center;
-}
-
-.hov li {
-	border-bottom: 2px solid rgb(189, 189, 193);
-}
-
-.hov a {
-	color: black;
-	font-size: 13px;
-}
-
-.hov:hover ul {
-	display: block;
-}
-
-.hov li:nth-child(n):hover {
-	background-color: rgb(118, 118, 118);
-}
-
-.hov li:nth-child(n):hover a {
-	color: white;
-}
-/* .hov:hover li:nth-child(n){
-         background-color: hotpink;
-        } */
-.menumaintd:hover .hov {
-	display: block;
-}
-/* 푸터 */
-#footer {
-	text-align: center;
-	margin: 0 auto;
-	height: 200px;
-	width: 100%;
-	background-color: #424141;
-}
-
-footer a {
-	color: white;
-}
-/* 메인 */
-#wrapper {
-	text-align: center;
-	width: 1200px;
-	margin: 0 auto;
-}
-
-#main_bottom {
-	text-align: center;
-}
-
-.prices {
-	width: 1200px;
-	display: flex;
-	text-align: center;
-}
-
-.price-item {
-	border-radius: 1rem;
-	text-align: center;
-	margin: 10px 10px 50px 10px;
-	background-color: rgb(250, 250, 250);
-}
-
-.prices-item-price {
-	font-size: 2.5rem;
-	font-weight: bold;
-	padding: 20px;
-}
-
-.p-button {
-	padding: .5rem 1rem;
-	font-size: 1.25rem;
-	line-height: 1.5;
-	border-radius: 0.3rem;
-	background-color: rgb(29, 95, 142);
-	background-image: none;
-	border-color: #b2b2a2;
-	color: white;
-	width: 370px;
-	height: 80px;
-}
-
-.c-button {
-	position: absolute;
-	bottom: 50px;
-	left: 525px;
-	width: 150px;
-	height: 60px;
-	z-index: 100;
-	background-color: transparent !important;
-	background-image: none !important;
-	border: 0.5px solid white;
-	border-radius: 0.2rem;
-	color: #FFFFFF;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-
-.exp {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 5rem;
-	color: white;
-	z-index: 2;
-	text-align: center;
-}
-
-.slider {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-
-.main_image {
-	height: 250px;
-	width: 380px;
-}
-
-.slide-img {
-	width: 1200px;
-	height: 500px;
-}
-/* *{
-            border: 1px solid red;
-        } */
 </style>
 
-</head>
 
 <body>
-	<header id="headroom">
-		<table class="head">
+
+	 <div id ="nav_wrapper">
+		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
 						id="logo" alt=""></a></td>
@@ -256,7 +271,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav2-1_adopt">입양하기</a></li>
-								<li><a href="nav2-2_adopted">입양됐어요</a></li>
 								<li><a href="nav2-3_review">입양후기</a></li>
 							</ul></li>
 					</td>
@@ -268,7 +282,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
-								<li><a href="nav3-2_volunteer">자원봉사신청</a></li>
 							</ul></li>
 					</td>
 					<td class="menumaintd">
@@ -283,12 +296,11 @@ footer a {
 							</ul></li>
 					</td>
 				</ul>
-			</tr>
+				</tr>
+			</table>
+		</div>
 
 
-		</table>
-	</header>
-	<main>
 		<div id="wrapper">
 			<div class="bxslider">
 				<div class="slider">
@@ -313,7 +325,7 @@ footer a {
 					<img class="slide-img" src="images/sky2.jpg" title="슬라이더3">
 					<div class="exp">
 						<h1>후원해요</h1>
-						<h2>신한 전준하 110-248-137950</h2>
+						<h2>신한 해피퍼피 110-234-123456</h2>
 					</div>
 
 				</div>
@@ -322,7 +334,7 @@ footer a {
 			<div class="prices">
 				<div class="price-item">
 					<div class="price-item-title">
-						<img class="main_image" src="images/adopt2.jpg">
+						<img class="main_image" src="images/dog1.jpg">
 					</div>
 					<div class="price-item-price">
 						<br>
@@ -330,17 +342,17 @@ footer a {
 							<b>입양센터 소식</b>
 						</h3>
 						<br>
-						<p>귀여운 센터 아이들의 모습, 보도자료, 반려동물 관련 행사소식 등을 전해드립니다</p>
+						<p>귀여운 센터 아이들의 모습, 보도자료, 반려동물<br> 관련 행사소식 등을 전해드립니다</p>
 						<br> <input class="p-button" type="button"
 							onclick="location.href='nav2-1_adopt'" value="입양하기"
 							style="margin-bottom: 20px;"><br>
 
-
+ 
 					</div>
 				</div>
 				<div class="price-item">
 					<div class="price-item-title">
-						<img class="main_image" src="images/commu.jpg">
+						<img class="main_image" src="images/adopt2.jpg">
 					</div>
 					<div class="price-item-price">
 						<br>
@@ -348,7 +360,7 @@ footer a {
 							<b>소통해요</b>
 						</h3>
 						<br>
-						<p>회원들이 서로 소통하는 공간입니다. 회원가입 후 이용해주세요.</p>
+						<p>회원들이 서로 소통하는 공간입니다.<br> 회원가입 후 이용해주세요.</p>
 						<br> <input class="p-button" type="button"
 							onclick="location.href='nav3-1_board'" value="커뮤니티"
 							style="margin-bottom: 20px;"><br>
@@ -356,17 +368,17 @@ footer a {
 				</div>
 				<div class="price-item">
 					<div class="price-item-title">
-						<img class="main_image" src="images/vol.jpg">
-					</div>
+						<img class="main_image" src="images/logo.jpg">
+					</div> 
 					<div class="price-item-price">
 						<br>
 						<h3>
 							<b>봉사해요</b>
 						</h3>
 						<br>
-						<p>동물과 공존하는 행복한 세상! 여러분의 관심과 사랑이 함께하면 현실이 됩니다.</p>
+						<p>동물과 공존하는 행복한 세상!<br> 여러분의 관심과 사랑이 함께하면 현실이 됩니다.</p>
 						<br> <input class="p-button" type="button"
-							onclick="location.href='nav3-2_volunteer'" value="봉사신청"
+							onclick="location.href='nav3-1_board'" value="봉사신청"
 							style="margin-bottom: 20px;"><br>
 					</div>
 				</div>
@@ -383,10 +395,10 @@ footer a {
 						autoControls : false,//start/stop 버튼사용
 						stopAutoOnClick : true,
 						mode : "horizontal",//vertical(아래에서 위로 올라감), fade(위 아래 변화없이 서서히 바뀜) 전환효과
-						speed : 700,//슬라이딩 속도
+						speed : 500,//슬라이딩 속도
 						adaptiveHeight : false,//이미지 높이에 따라 슬라이드 높이 결정
 						touchEnabled : true,//터치 스와이프 사용 결정 이미지를 잡아서 옆으로 넘길 수 있다
-						controls : true,//Prev,Next 버튼 사용여부
+						controls : false,//Prev,Next 버튼 사용여부
 						prevText : "Prev", //이전버튼문구
 						nextText : "Next",//다음버튼 문구
 						touchEnabled : false,
@@ -397,7 +409,6 @@ footer a {
 				});
 			</script>
 		</div>
-	</main>
 	<div id="footer">
 		<footer style="color: white;">
 			<br>
