@@ -310,7 +310,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<%
+				<% 
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
