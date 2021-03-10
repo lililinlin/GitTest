@@ -144,7 +144,8 @@
         }
 
         .left {
-            width: 350px;
+        	border:1px solid red;
+            width: 500px;
             height: 100%;
             font-family: 'Noto Sans KR', sans-serif;
             
@@ -180,6 +181,24 @@
         /* *{
             border: 1px solid red;
         } */
+        #side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;	
+			margin-top:100px;
+		}
+		#side_img img{
+			width:160px;
+			height:200px;
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
     </style>
 </head>
 
@@ -273,8 +292,9 @@
                     <h5><a href="nav1-2_map">오시는 길</a></h5>
                 </div>
                 <br><br>
-                <img src="images/sublogo.jpg" title="광고">
+                
             </div>
+           
             <div class="right">
                 <h1><b>사이트 소개</b></h1><br>
                 <div id="right-1">
@@ -295,6 +315,7 @@
                     </div>
                 <img src="images/dog_12.jpg" title="소개" id = "imag">
                 </div>
+                
                 <br>
                 <div id = "right-bottom">
                     <h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br>
@@ -312,10 +333,28 @@
                         
                     <b>해피퍼피 드림.</b></p>
                 </div>
+                
             </div>
-
+			<div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/Advertising1.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
        </div><br><br>
+        
     </main>
+    
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
