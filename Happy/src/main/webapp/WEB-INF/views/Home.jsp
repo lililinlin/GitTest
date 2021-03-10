@@ -215,7 +215,7 @@
 	#side_img{
 		float:right;
 		width:180px;
-		margin-right:30px;	
+		margin-right:38px;	
 		margin-top:100px;
 	}
 	#side_img img{
