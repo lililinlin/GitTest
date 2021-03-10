@@ -354,7 +354,7 @@
 					<div class="price-item-title">
 						<img class="main_image" src="images/adopt2.jpg">
 					</div>
-					<div class="price-item-price">
+					<div class="price-item-price"> 
 						<br>
 						<h3>
 							<b>소통해요</b>
