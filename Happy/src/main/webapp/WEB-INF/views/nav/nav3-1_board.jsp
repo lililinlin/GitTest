@@ -249,7 +249,6 @@
                 <div id = "site">
                     <h1><b>게시판</b></h1>
                   
-                </div>
                
                 
             </div>
