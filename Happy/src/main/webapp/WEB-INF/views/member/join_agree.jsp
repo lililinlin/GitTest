@@ -19,111 +19,127 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
         crossorigin="anonymous">
     </script>
+    <script>
+        $(function() { 
+             var lnb = $("#nav_wrapper").offset().top;
+             $(window).scroll(function() {
+                var window = $(this).scrollTop();
+ 
+                if(lnb <= window) {
+                   $("#nav_wrapper").addClass("fixed");
+                } else {
+                   $("#nav_wrapper").removeClass("fixed");
+                }
+             })
+          });
+    </script>
     <style>
          a:link { text-decoration: none;}
          /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
          a:hover { text-decoration: none;}
 
-h2 {
-	font-family: 'Noto Sans KR', sans-serif;
+*{
+	 font-family: 'Noto Sans KR', sans-serif;
 }
-/* 헤더 */
-#headroom {
-	border-bottom: 1px solid rgb(235, 235, 235);
-	margin-bottom: 10px;
-}
+/* header */
 
-.head {
-	margin: 0 auto;
-	width: 1200px;
-	height: 100px;
-}
+	#head {
+		margin: 0 auto;
+		width: 1200px;
+		height: 100px;
+		background-color: white; 
+	}
+	
+	#logo {
+		width: 400px;
+		height: 100px;
+	}
+	
+	.headerlogtd {
+		text-align: right;
+		vertical-align: bottom;
+	}
+	
+	.headerlog {
+		color: rgb(150, 147, 147);
+		font-size: 13px;
+		text-decoration: none;
+	}
+	#nav_wrapper{
+	 /* border-bottom: 1px solid rgb(235,235,235);
+		margin-bottom: 10px; */
+	    width:100%;
+	    padding-bottom: 2px;
+		box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
+	}
+	#nav_wrapper.fixed{
+	    position: fixed;
+	    padding-bottom: 20px;
+	    left: 0; 
+	    top: 0; 
+	    width: 100%; 
+	    height:115px;
+	    background-color: white; 
+	    z-index:100; 
+	}
 
-#logo {
-	width: 400px;
-	height: 100px;
-}
-
-.headerlogtd {
-	text-align: right;
-	vertical-align: bottom;
-}
-
-.headerlog {
-	color: rgb(150, 147, 147);
-	font-size: 13px;
-	text-decoration: none;
-}
-
-.menumaintd {
-	width: 200px;
-	list-style-type: none;
-	text-decoration: none;
-	color: rgb(150, 147, 147);
-	text-align: center;
-}
-
-.mainmenu {
-	text-decoration: none;
-	color: black;
-}
-
-.hov {
-	background-color: white;
-	font-size: 25px;
-	width: 180px;
-	margin-top: 14px;
-	display: none;
-	position: absolute;
-	list-style-type: none;
-	text-decoration: none;
-	z-index: 100;
-	padding-top: 0px;
-	border-top: 2px solid rgb(189, 189, 193);
-	padding-left: 0px;
-	margin-left: 10px;
-	text-align: center;
-}
-
-.hov li {
-	border-bottom: 2px solid rgb(189, 189, 193);
-}
-
-.hov a {
-	color: black;
-	font-size: 13px;
-}
-
-.hov:hover ul {
-	display: block;
-}
-
-.hov li:nth-child(n):hover {
-	background-color: rgb(118, 118, 118);
-}
-
-.hov li:nth-child(n):hover a {
-	color: white;
-}
-/* .hov:hover li:nth-child(n){
-         background-color: hotpink;
-        } */
-.menumaintd:hover .hov {
-	display: block;
-}
-/* 푸터 */
-#footer {
-	text-align: center;
-	margin: 0 auto;
-	height: 200px;
-	width: 100%;
-	background-color: #424141;
-}
-
-footer a {
-	color: white;
-}
-
+	.menumaintd {
+		width: 200px;
+		list-style-type: none;
+		text-decoration: none;
+		color: rgb(150, 147, 147);
+		text-align: center;
+	}
+	
+	.mainmenu {
+		text-decoration: none;
+		color: black;
+	}
+	
+	.hov {
+		background-color: white;
+		font-size: 25px;
+		width: 180px;
+		margin-top: 14px;
+		display: none;
+		position: absolute;
+		list-style-type: none;
+		text-decoration: none;
+		z-index: 100;
+		padding-top: 0px;
+		border-top: 2px solid rgb(189, 189, 193);
+		padding-left: 0px;
+		margin-left: 10px;
+		text-align: center;
+	}
+	
+	.hov li {
+		height:47px;
+		border-bottom: 2px solid rgb(189, 189, 193);
+	}
+	
+	.hov a {
+		color: black;
+		font-size: 13px;
+	}
+	
+	.hov:hover ul {
+		display: block;
+	}
+	
+	.hov li:nth-child(n):hover {
+		background-color: rgb(118, 118, 118);
+	}
+	
+	.hov li:nth-child(n):hover a {
+		color: white;
+	}
+	/* .hov:hover li:nth-child(n){
+	         background-color: hotpink;
+	        } */
+	.menumaintd:hover .hov {
+		display: block;
+	}
         .right{
            width: 1650px;
             height: 100%;
@@ -184,26 +200,47 @@ footer a {
             width:20px;
             height:20px;
         }
-        input[type="submit"],input[type="reset"]{
-            width:100px;
-            height:50px;
+        input[type="submit"]{
+        	width:240px;
+            height:60px;
+        }
+        input[type="reset"]{
+        	margin-left:10px;
+            width:240px;
+            height:60px;
         }
         #bottom_button{
             text-align: center;
+            margin-bottom:50px;
         }
+        #bottom_button h5{
+        	margin-top:30px;
+        	margin-bottom:30px;
+        }
+        /* 푸터 */
+	#footer {
+		text-align: center;
+		margin: 0 auto;
+		height: 200px;
+		width: 100%;
+		background-color: #424141;
+	}
+	
+	footer a {
+		color: white;
+	}
     </style>
-</head>
+
 
 <body>
-    <header id="headroom">
-		<table class="head">
+    <div id ="nav_wrapper">
+		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
 						id="logo" alt=""></a></td>
 				<td></td>
 				<td></td>
 				<td></td>
-				
 				<%
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
@@ -242,7 +279,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav2-1_adopt">입양하기</a></li>
-								<li><a href="nav2-2_adopted">입양됐어요</a></li>
 								<li><a href="nav2-3_review">입양후기</a></li>
 							</ul></li>
 					</td>
@@ -254,7 +290,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
-								<li><a href="nav3-2_volunteer">자원봉사신청</a></li>
 							</ul></li>
 					</td>
 					<td class="menumaintd">
@@ -269,12 +304,10 @@ footer a {
 							</ul></li>
 					</td>
 				</ul>
-			</tr>
+				</tr>
+			</table>
+		</div>
 
-
-		</table>
-	</header>
-    <main>
         <br>
         <form action="join" id="form1">
             <div id = "mid">
@@ -394,7 +427,7 @@ footer a {
             this.submit(); 
             }; 
         </script>
-    </main>
+
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>

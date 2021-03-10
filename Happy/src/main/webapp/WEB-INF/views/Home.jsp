@@ -66,19 +66,17 @@
 	    width:100%;
 	    padding-bottom: 2px;
 		box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
-	         }
+	}
 	#nav_wrapper.fixed{
 	    position: fixed;
 	    padding-bottom: 20px;
-/* 	    padding-top:-20px; */
 	    left: 0; 
 	    top: 0; 
 	    width: 100%; 
 	    height:115px;
 	    background-color: white; 
 	    z-index:100; 
-	    /* border-bottom: 1px solid #4eac87; */
-	        }
+	}
 	
 	.menumaintd {
 		width: 200px;
