@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>사이트소개</title>
     <style>
     	a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
-        h2,h1 {
-			font-family: 'Noto Sans KR', sans-serif;
-	    }
+        * {
+	 		 font-family: 'Noto Sans KR', sans-serif;
+		}
+
 	    /* 헤더 */
 	    #headroom {
 	        border-bottom: 1px solid rgb(235, 235, 235);
@@ -121,9 +123,12 @@
 /* 메인 */
 
         .right{
-           width: 1650px;
-            height: 100%;
-            margin:20px;
+           width: 1000px;
+           height: 800px;
+           margin-top:20px;
+           margin-left:20px;
+           margin-bottom:20px;
+           
  
         }
         .right img{
@@ -138,14 +143,15 @@
         }
        .wrapper {
             display: flex;
-            width: 1200px;
+            width: 1800px;
             margin: 0 auto;
             font-family: 'Noto Sans KR', sans-serif;
         }
 
         .left {
-            width: 350px;
-            height: 100%;
+            width: 300px;
+            height: 800px;
+            margin-left:310px;
             font-family: 'Noto Sans KR', sans-serif;
             
         }
@@ -158,13 +164,14 @@
             border-top: 1px solid #b2b2a2;
         }
         #introduce_title{
-            color: rgb(132, 189, 246);
+            color: #22409a;
             margin:0px;
         }
         #imag{
             height:320px;
             margin-right:50px;
         }
+        
         #right-site p, #right-site h5{
             margin-left:30px;
         }
@@ -180,6 +187,25 @@
         /* *{
             border: 1px solid red;
         } */
+        #side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;	
+			margin-left:100px;
+			margin-top:90px;
+		}
+		#side_img img{
+			width:160px;
+			height:200px;
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
     </style>
 </head>
 
@@ -262,6 +288,32 @@
             </table>
         </header>
     <main>
+    	<!-- 사이드광고 자동 스크롤 -->
+    	<script>
+	      $(function(){ 
+	         var $win = $(window); 
+	         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+	         /*사용자 설정 값 시작*/ 
+	         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+	         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+	         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+	         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+	         $layer.css('position', 'relative').css('z-index', '1'); 
+	         /*사용자 설정 값 끝*/ 
+	         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+	         if (top > 0 ) 
+	            $win.scrollTop(layerTopOffset+top); 
+	            else $win.scrollTop(0); 
+	            //스크롤이벤트가 발생하면 
+	            $(window).scroll(function(){ 
+	               yPosition = $win.scrollTop() - 50; //이부분을 조정해서 화면에 보이도록 맞추세요 
+	               if (yPosition < 0) { 
+	                  yPosition = 0; 
+	               } 
+	               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+	         }); 
+	      }); 
+	   </script>
         <div class="wrapper">
             <div class="left"><br>
                 <div>
@@ -273,11 +325,13 @@
                     <h5><a href="nav1-2_map">오시는 길</a></h5>
                 </div>
                 <br><br>
-                <img src="images/sublogo.jpg" title="광고">
+                
             </div>
+           
             <div class="right">
                 <h1><b>사이트 소개</b></h1><br>
                 <div id="right-1">
+                	<img src="images/dog_12.jpg" title="소개" id = "imag">
                     <div id = "right-site">
                         <br>
                         <h5>안녕하세요? 해피퍼피입니다.</h5>
@@ -293,8 +347,9 @@
                         <br> 하실 수 있습니다.<br>
                         또한 '후원하기'를 통해 입양센터를 후원하실 수 있습니다.<br></p>
                     </div>
-                <img src="images/dog_12.jpg" title="소개" id = "imag">
+                
                 </div>
+                
                 <br>
                 <div id = "right-bottom">
                     <h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br>
@@ -312,10 +367,28 @@
                         
                     <b>해피퍼피 드림.</b></p>
                 </div>
+                
             </div>
-
+			<div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/Advertising1.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
        </div><br><br>
+        
     </main>
+    
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>

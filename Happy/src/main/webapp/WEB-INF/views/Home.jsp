@@ -13,6 +13,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
@@ -204,7 +205,26 @@
 		width: 1200px;
 		height: 500px;
 	}
-	
+	/* 따라오는 사이드 바 */
+	#side_table td{
+			border:1px solid  #e5e5e5;
+			background-color: white;
+	}
+	#side_img{
+		float:right;
+		width:180px;
+		margin-right:38px;	
+		margin-top:100px;
+	}
+	#side_img img{
+		width:160px;
+		height:200px;
+	}
+	.side_p{
+		width:156px;
+		padding-top:10px;
+		text-align: center;
+	}
 /* footer */
 	#footer {
 		text-align: center;
@@ -297,8 +317,48 @@
 				</tr>
 			</table>
 		</div>
-
-
+		<!-- 사이드광고 자동 스크롤 -->
+    	<script>
+	      $(function(){ 
+	         var $win = $(window); 
+	         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+	         /*사용자 설정 값 시작*/ 
+	         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+	         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+	         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+	         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+	         $layer.css('position', 'relative').css('z-index', '1'); 
+	         /*사용자 설정 값 끝*/ 
+	         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+	         if (top > 0 ) 
+	            $win.scrollTop(layerTopOffset+top); 
+	            else $win.scrollTop(0); 
+	            //스크롤이벤트가 발생하면 
+	            $(window).scroll(function(){ 
+	               yPosition = $win.scrollTop() + 100; //이부분을 조정해서 화면에 보이도록 맞추세요 
+	               if (yPosition < 0) { 
+	                  yPosition = 0; 
+	               } 
+	               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+	         }); 
+	      }); 
+	   </script>
+		<div id ="side_img" class="float_sidebar">
+			<table id ="side_table">
+				<tr>
+					<td><img src="images/Advertising1.jpg"></td>
+				</tr>
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+				</tr> 
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+				</tr>
+				<tr>
+					<td><p class="side_p">1600-1111</p></td>
+				</tr>
+			</table>
+		</div>
 		<div id="wrapper">
 			<div class="bxslider">
 				<div class="slider">
