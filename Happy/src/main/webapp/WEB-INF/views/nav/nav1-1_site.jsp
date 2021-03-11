@@ -132,7 +132,7 @@
         	width:1200px;
         	display:flax;
         	height:800px;
-			margin:0 auto;
+			margin:0 auto; 
         }
         /* 왼쪽 카테고리 */
         #left_menu{
