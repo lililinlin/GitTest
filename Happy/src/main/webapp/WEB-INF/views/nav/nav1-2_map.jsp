@@ -24,11 +24,10 @@
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
-        * {
-	 		 font-family: 'Noto Sans KR', sans-serif;
-		}
-
-	    /* 헤더 */
+        h2,h1 {
+			font-family: 'Noto Sans KR', sans-serif;
+	    }
+/* 헤더 */
 	    #headroom {
 	        border-bottom: 1px solid rgb(235, 235, 235);
 	        margin-bottom: 10px;
@@ -68,9 +67,6 @@
 	        text-decoration: none;
 	        color: black;
 	    }
-	    a:link { text-decoration: none;}
-	    /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
-	    a:hover { text-decoration: none;}
 	    .hov {
 	        background-color: white;
 	        font-size: 25px;
@@ -114,40 +110,33 @@
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }
-        /* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
-
-    footer a {
-        color: white;
-    }
-/* 메인 */
-
+/* 푸터 */
+	    #footer {
+	        text-align: center;
+	        margin: 0 auto;
+	        height: 200px;
+	        width: 100%;
+	        background-color: #424141;
+	    }
+	
+	    footer a {
+	        color: white;
+	    }
+ /* 메인 */
         .right{
-           width: 1000px;
-           height: 800px;
-           margin-top:20px;
-           margin-left:20px;
-           margin-bottom:20px;
-           
- 
+	        width: 1650px;
+            height: 100%;
+            margin:20px;
+            font-family: 'Noto Sans KR', sans-serif;
         }
         .right img{
             float:right;
         }
         #right-site{
             display:inline-block;
-            background-color: rgb(250, 250, 250);
         }
-        #right-1{
-            background-color: rgb(250, 250, 250);
-        }
-       .wrapper {
+
+	    .wrapper {
             display: flex;
             width: 1800px;
             margin: 0 auto;
@@ -169,49 +158,26 @@
             margin:20px;
             border-top: 1px solid #b2b2a2;
         }
-        #introduce_title{
-            color: #22409a;
-            margin:0px;
+        /* *{
+            border: 1px solid red;
+        } */
+        #table2 img{
+            margin-right: 70px;
+            text-align: center;
+            width: 150px;
         }
-        #imag{
-            height:320px;
-            margin-right:50px;
-        }
-        
-        #right-site p, #right-site h5{
-            margin-left:30px;
-        }
-        #right-bottom{
-            margin-left:30px;
+        #table2{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 100px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 20px;
         }
         .site_int h5:nth-child(n):hover a{
         	font-size:22px;
         	font-weight: bold;
         	color:rgb(118, 118, 118);
         }
-        
-        /* *{
-            border: 1px solid red;
-        } */
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;	
-			margin-left:100px;
-			margin-top:90px;
-		}
-		#side_img img{
-			width:160px;
-			height:200px;
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
     </style>
 </head>
 

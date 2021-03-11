@@ -109,93 +109,91 @@
 	        display: block;
 	    }
         /* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
-
-    footer a {
-        color: white;
-    }
-/* 메인 */
-
-        .right{
-           width: 1000px;
-           height: 800px;
-           margin-top:20px;
-           margin-left:20px;
-           margin-bottom:20px;
-           
- 
+    	#footer {
+	        text-align: center;
+	        margin: 0 auto;
+	        height: 200px;
+	        width: 100%;
+	        background-color: #424141;
+	    }
+	
+	    footer a {
+	        color: white;
+	    }
+	/* 메인 */
+		main{
+			width:1200px;
+			height:850px;
+			margin-top:30px;
+			margin:0 auto;
+		}
+		 /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{
+        	width:1200px;
+        	display:flax;
+        	height:800px;
+			margin:0 auto;
         }
-        .right img{
-            float:right;
+        /* 왼쪽 카테고리 */
+        #left_menu{
+        	float:left;
+			
+			width:300px;
+			margin-top:30px;
+		}
+        #left_menu table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
         }
-        #right-site{
-            display:inline-block;
-            background-color: rgb(250, 250, 250);
+        #left_menu table td{
+            height: 50px;
+            padding-left: 20px;
         }
-        #right-1{
-            background-color: rgb(250, 250, 250);
+        #left_menu table tr{
+            border: 1px solid rgb(231, 231, 231);
         }
-       .wrapper {
-            display: flex;
-            width: 1800px;
-            margin: 0 auto;
-            font-family: 'Noto Sans KR', sans-serif;
+        #left_menu tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #22409a;
         }
-
-        .left {
-            width: 300px;
-            height: 800px;
-            margin-left:310px;
-            font-family: 'Noto Sans KR', sans-serif;
-            
+        /* 메인 컨텐트 이미지 */
+        #imag{
+        	margin-top:-30px;
+        	margin-left:-22px;
         }
-        .left a{
-            color: black;
-            /* font-weight: bold; */
+        /* 메인 div */
+        #main_content{
+        	width:890px;
         }
-        .site_int {
-            margin:20px;
-            border-top: 1px solid #b2b2a2;
+        /* 메인 상단 div */
+        #content{
+        	margin-left:300px;
+        	margin-top:30px;
+        	width:800px;
+        	padding:30px 0px 10px 30px;
+        	background-color:#fafafa;
+        }
+        /* 메인 하단 div */
+        #content2{
+        	margin-top:30px;
+        	margin-left:300px;
         }
         #introduce_title{
-            color: #22409a;
-            margin:0px;
+        	color:#22409a;
         }
-        #imag{
-            height:320px;
-            margin-right:50px;
-        }
-        
-        #right-site p, #right-site h5{
-            margin-left:30px;
-        }
-        #right-bottom{
-            margin-left:30px;
-        }
-        .site_int h5:nth-child(n):hover a{
-        	font-size:22px;
-        	font-weight: bold;
-        	color:rgb(118, 118, 118);
-        }
-        
-        /* *{
-            border: 1px solid red;
-        } */
-        #side_table td{
-			border:1px solid  #e5e5e5;
-			background-color: white;
+        /* 따라오는 사이드 바 */
+		#side_table td{
+				border:1px solid  #e5e5e5;
+				background-color: white;
 		}
 		#side_img{
 			float:right;
-			width:180px;	
-			margin-left:100px;
-			margin-top:90px;
+			width:180px;
+			margin-right:38px;
+			margin-top:-729px;
+			
 		}
 		#side_img img{
 			width:160px;
@@ -289,32 +287,75 @@
         </header>
     <main>
     	<!-- 사이드광고 자동 스크롤 -->
-    	<script>
-	      $(function(){ 
-	         var $win = $(window); 
-	         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-	         /*사용자 설정 값 시작*/ 
-	         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-	         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-	         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-	         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-	         $layer.css('position', 'relative').css('z-index', '1'); 
-	         /*사용자 설정 값 끝*/ 
-	         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-	         if (top > 0 ) 
-	            $win.scrollTop(layerTopOffset+top); 
-	            else $win.scrollTop(0); 
-	            //스크롤이벤트가 발생하면 
-	            $(window).scroll(function(){ 
-	               yPosition = $win.scrollTop() - 50; //이부분을 조정해서 화면에 보이도록 맞추세요 
-	               if (yPosition < 0) { 
-	                  yPosition = 0; 
-	               } 
-	               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
-	         }); 
-	      }); 
-	   </script>
-        <div class="wrapper">
+    <script>
+	    $(function(){ 
+	        var $win = $(window); 
+	        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+	        /*사용자 설정 값 시작*/ 
+	        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+	        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+	        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+	        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+	        $layer.css('position', 'relative').css('z-index', '1'); 
+	        /*사용자 설정 값 끝*/ 
+	        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+	        if (top > 0 ) 
+	           $win.scrollTop(layerTopOffset+top); 
+	           else $win.scrollTop(0); 
+	           //스크롤이벤트가 발생하면 
+	           $(window).scroll(function(){ 
+	              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+	              if (yPosition < 0) { 
+	                 yPosition = 0; 
+	              } 
+	              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+	        }); 
+	     });   
+	</script>
+	
+	<div id ="main_wrapper">
+		<div id="left_menu">
+			<h3><b>사이트 소개</b></h3>
+			<table>
+				<tr onclick="location.href='nav1-1_site'">
+					<td>사이트 소개</td>
+					<td>></td>
+				</tr>
+				<tr onclick="location.href='nav1-2_map'">
+					<td>오시는 길</td>
+					<td>></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="main_content">
+			<div id="content">
+				<h3 style="margin-bottom: 10px;">해피퍼피 소갯말</h3>
+				<br>
+	            <img src="images/dog_12.jpg" title="소개" id = "imag">
+            </div>
+            
+            <div id ="content2">
+            	<h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br>
+                <p><b>1. 동물보호 캠페인 및 홍보 :</b> 동물의 보호 및 유기동물입양 증대를 위한 홍보<br>
+                        
+                <b>2. 동물보호를 위한 교육사업 :</b> 유기동물 발생 방지를 위한 교육자료 기획 배포 및 동물보호 교육실시<br>
+                        
+                <b>3. 입양지원 :</b> 유기동물의 안락사 수를 줄이고 입양을 통한 새 삶의 기회 부여<br>
+                        
+                <b>4. 개인보호소 지원 :</b> 열악한 개인보호소 지원을 통한 동물보호 및 자립심 부여<br><br>
+                        
+                입양센터에서는 자원봉사자 여러분의 커뮤니티 활동 활성화를 위해<br>
+                동물아트 전시회, 원데이 클래스 등을 진행하고 있습니다.<br>
+                반려동물을 사랑하고, 유기동물 보호에 관심있는 많은 분들의 참여를 기다립니다.<br>
+                        
+                <b>해피퍼피 드림.</b></p>
+            </div>
+		</div>
+	</div>
+	
+	
+        <!-- <div class="wrapper">
             <div class="left"><br>
                 <div>
                     <h3 style="text-align: center;">사이트 소개</h3>
@@ -386,9 +427,24 @@
 		</table>
 	</div>
        </div><br><br>
-        
+         -->
     </main>
-    
+    <div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/Advertising1.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
