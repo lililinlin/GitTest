@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양하기</title>
-     <script>
+    <title>샘플</title>
+      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
              $(window).scroll(function() {
@@ -29,14 +29,14 @@
           });
     </script>
     <style>
-        a:link { text-decoration: none;}
+         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
-/* 헤더 */
         * {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
- 		#head {
+/* 헤더 */
+	   #head {
 			margin: 0 auto;
 			width: 1200px;
 			height: 100px;
@@ -130,23 +130,23 @@
 	        display: block;
 	    }
 /* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
-
-    footer a {
-        color: white;
-    }
-/* 메인 */
+	    #footer {
+	        text-align: center;
+	        margin: 0 auto;
+	        height: 200px;
+	        width: 100%;
+	        background-color: #424141;
+	    }
+	
+	    footer a {
+	        color: white;
+	    }
+ /* 메인 */
         .right{
 	        width: 1650px;
             height: 100%;
             margin:20px;
-
+           
         }
         .right img{
             float:right;
@@ -178,10 +178,10 @@
             border: 1px solid red;
         } */
     </style>
-
+</head>
 
 <body>
-     <div id ="nav_wrapper">
+  <div id ="nav_wrapper">
 		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
@@ -255,88 +255,27 @@
 				</tr>
 			</table>
 		</div>
-
         <div class="wrapper">
-                <div class="left"><br>
-                    <div>
-                        <h3 style="text-align: center;">입양하기</h3>
-                    </div>
-                    <div class="site_int">
-                        <br>
-                        <h5><a href="nav2-1_adopt">입양하기</a></h5><br>
-                        <h5><a href="nav2-3_review">입양후기</a></h5>
-                    </div>
-                    <br><br>
-                    <img src="images/sublogo.jpg" title="광고">
+            <div class="left"><br>
+                <div>
+                    <h3 style="text-align: center;">샘플</h3>
                 </div>
+                <div class="site_int">
+                    <br>
+                    <h5><a href="#">샘플</a></h5><br>
+                </div>
+                <br><br>
+                <img src="images/sublogo.jpg"" title="광고">
+            </div>
             <div class="right">
                 <div id = "site">
-                    <h2><b>입양하기</b></h2>
-                  <div id="container">
-				<!-- <div>
-					<img src="images/tr1.jpg">
-					<h2>발리 - 따나롯 해상 사원</h2>			
-					<p>만조 때는 바닷물이 밀려들어 사원과 육지가 떨어지고 썰물이 되면 다시 육지와 연결된다.  </p>
-				</div>
-				<div>
-					<img src="images/tr2.jpg">
-					<h2>남원 - 홍명희 혼불 문학관</h2>			
-					<p>홍명희가 만 17년간 집필한  '혼불'에 대한 모든 것이 모여있는 곳. </p>
-				</div>
-				<div>
-					<img src="images/tr3.jpg">
-					<h2>고창 - 도솔산 선운사</h2>					
-					<p>정유재란 때 피해를 입었으나 광해군 때 재건하여 지금까지 보존해 오는 절.</p>
-				</div>
-				<div>
-					<img src="images/tr4.jpg">
-					<h2>발리 - 울룬다누 사원</h2>				
-					<p>브라딴 호수 위의 사원. 강과 호수를 관장하는 물의 여신 '데위 다뉘'를 위해 지어진 사원이라네요. </p>
-				</div>	
-				<div>
-					<img src="images/tr1.jpg">
-					<h2>발리 - 따나롯 해상 사원</h2>			
-					<p>만조 때는 바닷물이 밀려들어 사원과 육지가 떨어지고 썰물이 되면 다시 육지와 연결된다.  </p>
-				</div>
-				<div>
-					<img src="images/tr2.jpg">
-					<h2>남원 - 홍명희 혼불 문학관</h2>			
-					<p>홍명희가 만 17년간 집필한  '혼불'에 대한 모든 것이 모여있는 곳. </p>
-				</div>
-				<div>
-					<img src="images/tr3.jpg">
-					<h2>고창 - 도솔산 선운사</h2>					
-					<p>정유재란 때 피해를 입었으나 광해군 때 재건하여 지금까
-					지 보존해 오는 절.</p>
-				</div>
-				<div>
-					<img src="images/tr4.jpg">
-					<h2>발리 - 울룬다누 사원</h2>				
-					<p>브라딴 호수 위의 사원. 강과 호수를 관장하는 물의 여신 '데위 다뉘'를 위해 지어진 사원이라네요. </p>
-				</div>	 -->
-		</div>	
-
-		<!-- body태그 뒤에서 script를 넣는 이유 -->
-		<!-- 문서객체를 로딩후에 호출한다. -->
-		<script src="js/jquery-2.2.4.min.js"></script>
-		<script src="js/jquery.vgrid.min.js"></script>
-		<script>
-			$("#container").vgrid(
-				{ 
-					// Key-Value 객체로 값을 넣어준다.
-					time: 400, //애니메이션 실행 시간
-					delay: 30, //애니메이션 지연 시간
-					wait: 500 //애니메이션 대기 시간
-				}
-			);
-		</script>
+                    <h2><b>샘플</b></h2>
                   
-                </div>
                
                 
             </div>
         </div>
-    </main>
+</div>
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
