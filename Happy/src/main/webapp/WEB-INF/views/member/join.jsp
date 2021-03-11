@@ -139,26 +139,73 @@
  /* 메인 */
         
         #wrapper {
-            width: 1200px;
+            width: 800px;
             margin: 0 auto;
         }
         #main_top_div{
         	margin: 0 auto;
-        	width: 700px;
+        	width: 720px;
         	text-align:center;
-        	border-bottom:2px solid gray;
+        	border-bottom:1px solid rgb(172, 172, 172);
         }
         #main_top{
-        	margin-top:50px;
-        	margin-bottom:30px;
+        	margin-top:60px;
+        	margin-bottom:50px;
         	width:700px;
         }
-       
-        table{
-            margin: 0 auto;
-            margin:40px 0px 0px 0px;
-            border: 1px solid red;
+        #content_box{
+        	padding-left: 40px;
+        	width: 800px;
+			margin-bottom: 130px;
         }
+        table{
+        	width: 700px;
+            margin: 0 auto;
+            margin:50px 0px 100px 0px;
+        }
+        .title{ /* 테이블 1번째 열 */
+            width: 140px;
+            height: 40px;
+        }
+        #input_userId{ /* 아이디 input */
+            width: 450px;
+        }
+        #id_check{ /* 중복확인 버튼 */
+            width: 90px;
+        }
+        #password,#passwordcherk,#name, #phone{
+            width: 450px;
+        }
+        select{ /* 월 선택 */
+            width: 114px;
+            height: 40px;
+        }
+        #sample6_postcode{ /* 우편 번호 */
+            width: 450px;
+        }
+        #find_address{ /* 우편번호 찾기*/
+            margin-top: 20px;
+            width: 220px;
+            border: 1px solid rgb(111, 111, 111);
+            background-color: white;
+            color: rgb(135, 135, 135);
+        }
+        #sample6_address{ /* 주소 input */
+            width: 450px;
+        }
+        #sample6_detailAddress { /* 상세주소 input */
+            width: 450px;
+        }
+        #sample6_extraAddress { /* 참고항목 input */
+            width: 450px;
+        }
+        #content_box input{
+            height: 40px;
+        }
+        #final{ /* 확인 버튼 */
+            width: 450px;
+        }
+       
 /* 푸터 */
 	#footer {
 		text-align: center;
@@ -383,39 +430,40 @@
 		            <h2><b>회원가입</b></h2>
 		        </div>
 	        </div>
+	        <div id="content_box">
             <form method="post" action="MemberJoinAction" 
 				name="userInfo" onsubmit="return checkValue()">
                 <table>
                    <tr>
-                       <td>아이디</td>
+                       <td class="title">아이디</td>
                        <td><input id="input_userId" type="text" name="id" size="46"></td>
-                       <td> &nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-dark"  value="중복확인" onclick="idCheck()">
+                       <td id="check"> &nbsp;&nbsp;&nbsp;<input type="button" id="id_check" class="btn btn-dark"  value="중복확인" onclick="idCheck()">
                        <input id="check_hidden" type="hidden"	value="no" />
                        </td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>비밀번호</td>
-                       <td><input type="password" id="password"name="password" size="46"></td>
+                       <td class="title">비밀번호</td>
+                       <td><input type="password" id="password" name="password" size="46"></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td class="title">비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
                        <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
                        <tr><td><td><br><h6 id="chkNotice" size="2"></h6></td></td></tr>
                    </tr>
                    <tr>
-                       <td>이름</td>
-                       <td><input type="text" name="name" size="46"></td>
+                        <td class="title">이름</td>
+                       <td><input type="text" id="name" name="name" size="46"></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>전화번호</td>
-                       <td><input type="text" name="phone" size="46"></td>
+                        <td class="title">전화번호</td>
+                       <td><input type="text" id="phone" name="phone" size="46"></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>생년월일</td>
+                         <td class="title">생년월일</td>
                        <td><input type="text" name="birth_year" size="10" placeholder="4자리">&nbsp;년&nbsp;
                            						<select name="birth_month">
 							<option value=""> </option>
@@ -436,18 +484,19 @@
                            <tr><td><br></td></tr>
                    </tr>
                    <tr>
-                       <td>주소</td>
-                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+                    <td class="title">주소</td>
+                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호"><br>
+                        <input type="button" id="find_address" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
                         <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>
-                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
+                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소"><br><br>
                         <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
                    </tr>
                    <tr><td><br></td></tr>
-                   <tr><td></td><td><input type="submit" class="btn btn-dark"  value="확인" style="width: 370px;"></button></td></tr>
+                   <tr><td></td><td><input type="submit" id="final" class="btn btn-dark"  value="확인" style="height: 60px;"></button></td></tr>
    
                 </table>
                </form>
+               </div>
         </div>
    <div id="footer">
 		<footer style="color: white;">
