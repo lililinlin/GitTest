@@ -346,7 +346,7 @@
 		<div id ="side_img" class="float_sidebar">
 			<table id ="side_table">
 				<tr>
-					<td><img src="images/Advertising1.jpg"></td>
+					<td><img src="images/side_img.jpg"></td>
 				</tr>
 				<tr>
 					<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>

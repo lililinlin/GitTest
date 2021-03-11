@@ -332,7 +332,7 @@
 			<div id="content">
 				<h3 style="margin-bottom: 10px;">해피퍼피 소갯말</h3>
 				<br>
-	            <img src="images/dog_12.jpg" title="소개" id = "imag">
+	            <img src="images/introduce_img.jpg" title="소개" id = "imag">
             </div>
             
             <div id ="content2">
@@ -432,7 +432,7 @@
     <div id ="side_img" class="float_sidebar">
 		<table id ="side_table">
 			<tr>
-				<td><img src="images/Advertising1.jpg"></td>
+				<td><img src="images/side_img.jpg"></td>
 			</tr>
 			<tr>
 				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
