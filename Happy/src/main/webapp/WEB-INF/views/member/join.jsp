@@ -16,6 +16,7 @@
     <title>회원가입</title>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;

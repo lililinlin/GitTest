@@ -12,6 +12,7 @@
     <!-- bxslider의 css 추가 -->
     <link rel="stylesheet" href="css/jquery.bxslider.css">
     <!-- Bootstrap CSS -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -20,18 +21,34 @@
    			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
 	%>
     <title>게시판</title>
+     <script>
+        $(function() { 
+             var lnb = $("#nav_wrapper").offset().top;
+             $(window).scroll(function() {
+                var window = $(this).scrollTop();
+ 
+                if(lnb <= window) {
+                   $("#nav_wrapper").addClass("fixed");
+                } else {
+                   $("#nav_wrapper").removeClass("fixed");
+                }
+             })
+          });
+    </script>
     <style>
      a:link { text-decoration: none;}
      /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
      a:hover { text-decoration: none;}
-        h2 , h1{
+        *{
             font-family: 'Noto Sans KR', sans-serif;
         }
-        #headroom{
-			border-bottom: 1px solid rgb(235,235,235);
-			margin-bottom: 10px;
+		#head {
+			margin: 0 auto;
+			width: 1200px;
+			height: 100px;
+			background-color: white; 
 		}
-		
+	
 		.head {
 			margin: 0 auto;
 			width: 1200px;
@@ -52,7 +69,21 @@
             font-size: 13px;
             text-decoration: none;
         }
-
+		#nav_wrapper{
+		    width:100%;
+		    padding-bottom: 2px;
+			box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
+		}
+		#nav_wrapper.fixed{
+		    position: fixed;
+		    padding-bottom: 20px;
+		    left: 0; 
+		    top: 0; 
+		    width: 100%; 
+		    height:115px;
+		    background-color: white; 
+		    z-index:100; 
+		}	
         .menumaintd {
             width: 200px;
             list-style-type: none;
@@ -85,6 +116,7 @@
 		}
 		
 		.hov li {
+			height:47px;
 			border-bottom: 2px solid rgb(189, 189, 193);
 		}
 		
@@ -173,18 +205,17 @@
 			color: white;
 		}
     </style>
-</head>
 
 <body>
-    <header id="headroom">
-		<table class="head">
+       <div id ="nav_wrapper">
+		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
 						id="logo" alt=""></a></td>
 				<td></td>
 				<td></td>
-				<td></td>
-				<%
+				<td></td> 
+				<% 
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -222,7 +253,6 @@
 						</a>
 							<ul class="hov">
 								<li><a href="nav2-1_adopt">입양하기</a></li>
-								<li><a href="nav2-2_adopted">입양됐어요</a></li>
 								<li><a href="nav2-3_review">입양후기</a></li>
 							</ul></li>
 					</td>
@@ -234,7 +264,6 @@
 						</a>
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
-								<li><a href="nav3-2_volunteer">자원봉사신청</a></li>
 							</ul></li>
 					</td>
 					<td class="menumaintd">
@@ -249,13 +278,10 @@
 							</ul></li>
 					</td>
 				</ul>
-			</tr>
+				</tr>
+			</table>
+		</div>
 
-
-		</table>
-	</header>
-    </table>
-    <main>
         <div class="wrapper">
             <div class="left"><br>
                 <div>
@@ -272,7 +298,7 @@
             <div class="right">
                 <div id = "site">
                     <br>
-                    <h1>글쓰기</h1><hr>
+                    <h2><b>글쓰기</b></h2><hr>
                      <form action="writeAction" method="post">
                         작성자 :&nbsp;&nbsp;<%=member.getName()%>
                         <input type="hidden" id="id" name="id" value="<%=member.getId()%>">
@@ -293,7 +319,6 @@
                 </div>
             </div>
         </div>
-    </main>
     <div id="footer">
 		<footer style="color: white;">
 			<br>
