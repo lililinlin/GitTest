@@ -158,6 +158,7 @@
         height: 200px;
         width: 100%;
         background-color: #424141;
+        margin-top:200px;
     }
 
     footer a {
@@ -195,17 +196,48 @@
         #right-1{
             background-color: rgb(250, 250, 250);
         }
-       
-
-        
+		#h2_box{
+			border-bottom: 1px solid rgb(52, 52, 52);
+			margin-bottom: 35px;
+		}
+		
+       #main_table{
+		   height: 400px;
+		   width: 700px;
+	   }
+	   #main_table tr:nth-child(2n+1){
+		   background-color: rgb(240, 240, 240);
+	   }
+	   #main_right{
+		   width: 700px;
+	   }
+	   #btn_box{
+		   text-align: center;
+	   }
+	   input[type=button]{
+		   width: 300px;
+		   height: 70px;
+		   background-color: rgb(75, 75, 75);
+		   border: 1px solid gray;
+		   color: white;
+		   margin-top: 70px;
+	   }
+        .title{
+			width: 140px;
+			text-align: center;
+			border-right:1px solid rgb(216, 216, 216);
+		}
+		.content{
+			padding-left: 40px;
+		}
 
         #introduce_title{
             color: rgb(132, 189, 246);
         }
 
-        /* *{
+         /* *{
             border: 1px solid red;
-        } */
+        }  */
     </style>
 
 <body>
@@ -298,47 +330,45 @@
                 <br><br>
                 <img src="images/sublogo.jpg" title="광고">
             </div>
-            <div class="right">
-               <h2><b>내 정보</b></h2><br>
-                  <form>
-                <table>
-                   <tr>
-                       <td>아이디</td>
-                       <td>&nbsp;&nbsp;<%=member.getId() %></td>
-                       <td></td>
-                       <tr><td><br></td></tr>
-                   </tr>
-                   <tr>
-                    <td>이름</td>
-                    <td>&nbsp;&nbsp;<%=member.getName() %></td>
-                    <td></td>
-                    <tr><td><br></td></tr>
-                   </tr>
-                   <tr>
-                       <td>전화번호</td>
-                       <td>&nbsp;&nbsp;<%=member.getPhone() %></td>
-                       <tr><td><br></td></tr>
-                   </tr>
-                   <tr>
-                       <td>생년월일</td>
-                       <td>&nbsp;&nbsp;
-					<%=birthYear %>년 
-					<%=birthMonth %>월 
-					<%=birthDay %>일</td>
-                           <tr><td><br></td></tr>
-                   </tr>
-                   <tr>
-                       <td>주소</td>
-                       <td>&nbsp;&nbsp;<%=member.getAddress() %></td>
-                   </tr>
-                   <tr><td><br><br></td></tr>
-                   <tr><td></td><td><input  onclick="location.href='modify'" type="button" class="btn btn-dark"  value="수정하기" style="width: 150px;"></td></tr>
-   
-                </table>
-               
-   
-               
-               </form><br><br>
+            <div class="right"><br>
+				<div id="main_right">
+					<div id="h2_box">
+						<h2><b>내 정보</b></h2><br>
+					</div>
+						<form>
+						
+							<table id="main_table">
+								<tr>
+									<td class="title">아이디</td>
+									<td class="content"><%=member.getId() %></td>
+								</tr>
+								<tr>
+										<td class="title">이름</td>
+										<td class="content"><%=member.getName() %></td>
+								</tr>
+								<tr>
+										<td class="title">전화번호</td>
+										<td class="content"><%=member.getPhone() %></td>
+								</tr>
+								<tr>
+										<td class="title">생년월일</td>
+										<td class="content">
+										<%=birthYear %>년 
+										<%=birthMonth %>월 
+										<%=birthDay %>일</td>
+								</tr>
+								<tr>
+									<td class="title">주소</td>
+									<td class="content"><%=member.getAddress() %></td>
+								</tr>
+							</table>
+
+							<div id="btn_box">
+								<input  onclick="location.href='modify'" type="button" value="수정하기">
+							</div>
+						</form>
+					<br><br>
+				</div>
             </div>
 
         </div>

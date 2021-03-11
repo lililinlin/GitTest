@@ -155,6 +155,7 @@
 	    }
         /* 푸터 */
     #footer {
+		margin-top: 200px;
         text-align: center;
         margin: 0 auto;
         height: 200px;
@@ -169,6 +170,7 @@
         .wrapper {
             display: flex;
             width: 1200px;
+            height:980px;
             margin: 0 auto;
         }
         .left {
@@ -197,17 +199,46 @@
         #right-1{
             background-color: rgb(250, 250, 250);
         }
-       
-
-        
+        #find_address{
+        	width: 220px;
+        	background-color:white;
+        	border: 1px solid gray;
+			color: gray;
+			height: 40px;
+        }
+		#password,
+		#passwordcherk,#phone{
+			width: 430px;
+			height: 40px;
+		}
+		#sample6_postcode,
+		#sample6_address,
+		#sample6_detailAddress,
+		#sample6_extraAddress {
+			width: 430px;
+			margin-bottom: 25px;
+			height: 40px;
+		}
+		#h2_box{
+			width: 560px;	
+			border-bottom: 1px solid rgb(162, 162, 162);
+			margin-bottom: 20px;
+		}
+        #btn{
+			width: 430px;
+			height: 60px;
+			background-color: rgb(75, 75, 75);
+		    border: 1px solid gray;
+		    color: white;
+		}
 
         #introduce_title{
             color: rgb(132, 189, 246);
         }
-
-        /* *{
+/* 
+         *{
             border: 1px solid red;
-        } */
+        }  */
     </style>
     
 </head>
@@ -381,8 +412,10 @@
                 <br><br>
                 <img src="images/sublogo.jpg" title="광고">
             </div>
-            <div class="right">
-               <h2><b>회원정보수정</b></h2><br>
+            <div class="right"><br>
+				<div id="h2_box">
+              		 <h2><b>회원정보수정</b></h2><br>
+				</div>
                   <form method="post" action="MemberModifyAction" 
 				name="userInfo" onsubmit="return checkValue()">
                 <table>
@@ -394,12 +427,12 @@
                    </tr>
                    <tr>
                        <td>비밀번호</td>
-                       <td><input type="password" id="password"name="password" size="46"></td>
+                       <td><input type="password" id="password"name="password" ></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
                        <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                       <td><input type="password" id="passwordcherk" name="passwordcherk" size="46"></td>
+                       <td><input type="password" id="passwordcherk" name="passwordcherk"></td>
                        <tr><td><td><br><h6 id="chkNotice" size="2"></h6></td></td></tr>
                    </tr>
                    <tr>
@@ -410,7 +443,7 @@
                    </tr>
                    <tr>
                        <td>전화번호</td>
-                       <td><input type="text" name="phone" size="46" <%=member.getPhone() %>></td>
+                       <td><input type="text" id="phone" name="phone" <%=member.getPhone() %>></td>
                        <tr><td><br></td></tr>
                    </tr>
                    <tr>
@@ -420,24 +453,21 @@
                    </tr>
                    <tr>
                        <td>주소</td>
-                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="우편번호" >
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
-                        <input name="add2" type="text" id="sample6_address" placeholder="주소"><br><br>
-                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="상세주소">
-                        <input name="add4" type="text" id="sample6_extraAddress" placeholder="참고항목"></td>
+                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="  우편번호" ><br>
+                        <input type="button" id="find_address" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+                        <input name="add2" type="text" id="sample6_address" placeholder="  주소"><br>
+                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="  상세주소"><br>
+                        <input name="add4" type="text" id="sample6_extraAddress" placeholder="  참고항목"></td>
                    </tr>
                    <tr><td><br></td></tr>
-                   <tr><td></td><td><input type="submit" class="btn btn-dark"  value="수정" style="width: 370px;"></td></tr>
+                   <tr><td></td><td><input type="submit" id="btn" value="수정" ></td></tr>
    
                 </table>
-               
-   
-               
+
                </form><br><br>
             </div>
 
         </div>
-    </main>
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
