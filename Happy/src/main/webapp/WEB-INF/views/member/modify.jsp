@@ -166,7 +166,7 @@
     footer a {
         color: white;
     }
-/* 메인 */
+/* 메인 */ 
         .wrapper {
             display: flex;
             width: 1200px;
@@ -189,7 +189,7 @@
         .right{ 
 	        width: 1650px;
             height: 100%;
-            margin:20px;
+            margin:20px 20px 20px 90px;
         }
        
         #right-site{
@@ -222,7 +222,8 @@
 		#h2_box{ /* 회원정보수정 글씨 박스 */ 
 			width: 560px;	
 			border-bottom: 1px solid rgb(162, 162, 162);
-			margin-bottom: 20px;
+			margin-bottom: 25px;
+			text-align: center;
 		}
         #btn{ /* 수정 버튼 */
 			width: 430px;

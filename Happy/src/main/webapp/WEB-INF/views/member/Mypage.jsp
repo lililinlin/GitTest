@@ -299,7 +299,7 @@
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
 							</ul></li>
-					</td>
+					</td> 
 					<td class="menumaintd">
 						<li><a href="nav4-1_QnA" class="mainmenu">
 								<h6>
