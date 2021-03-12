@@ -24,6 +24,9 @@
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  		a:hover { text-decoration: none;}
+        * {
+	 		 font-family: 'Noto Sans KR', sans-serif;
+		}
         h2,h1 {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
@@ -85,6 +88,7 @@
 	    }
 	
 	    .hov li {
+	    	height:47px;
 	        border-bottom: 2px solid rgb(189, 189, 193);
 	    }
 	
@@ -123,61 +127,87 @@
 	        color: white;
 	    }
  /* 메인 */
-        .right{
-	        width: 1650px;
-            height: 100%;
-            margin:20px;
-            font-family: 'Noto Sans KR', sans-serif;
+        main{
+			width:1800px;
+			height:850px;
+			margin:0 auto;
+			margin-top:50px;
+			margin-bottom:70px;
+		}
+		 /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{
+        	width:1200px;
+        	display:flax;
+        	height:800px;
+			margin:0 auto; 
         }
-        .right img{
-            float:right;
+        /* 왼쪽 카테고리 */
+        #left_menu{
+        	float:left;
+			
+			width:300px;
+			margin-top:0px;
+		}
+        #left_menu table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
         }
-        #right-site{
-            display:inline-block;
+        #left_menu table td{
+            height: 50px;
+            padding-left: 20px;
         }
-
-	    .wrapper {
-            display: flex;
-            width: 1800px;
-            margin: 0 auto;
-            font-family: 'Noto Sans KR', sans-serif;
+        #left_menu table tr{
+            border: 1px solid rgb(231, 231, 231);
         }
-
-        .left {
-            width: 300px;
-            height: 800px;
-            margin-left:310px;
-            font-family: 'Noto Sans KR', sans-serif;
-            
+        #left_menu tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #22409a;
         }
-        .left a{
-            color: black;
-            /* font-weight: bold; */
+        /* 메인 div */
+        #main_content{
+        	width:890px;
         }
-        .site_int {
-            margin:20px;
-            border-top: 1px solid #b2b2a2;
+        /* 메인 상단 div */
+        #content{
+        	margin-left:300px;
+        	margin-top:30px;
+        	width:600px;
+        	padding:30px 0px 10px 30px;
         }
-        /* *{
-            border: 1px solid red;
-        } */
-        #table2 img{
-            margin-right: 70px;
-            text-align: center;
-            width: 150px;
-        }
-        #table2{
-            width: 100%;
+        
+       #table2{
+            width: 800px;
             text-align: center;
             margin-bottom: 100px;
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 20px;
         }
-        .site_int h5:nth-child(n):hover a{
-        	font-size:22px;
-        	font-weight: bold;
-        	color:rgb(118, 118, 118);
+        #table2 img{
+            width: 160px;
         }
+        /* 따라오는 사이드 바 */
+		#side_table td{
+				border:1px solid  #e5e5e5;
+				background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:38px;
+			margin-top:-869px;
+			
+		}
+		#side_img img{
+			width:160px;
+			height:200px;
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
     </style>
 </head>
 
@@ -260,48 +290,85 @@
             </table>
         </header>
     <main>
-        <div class="wrapper">
-            <div class="left"><br>
-                <div>
-                    <h3 style="text-align: center;">사이트 소개</h3>
-                </div>
-                <div class="site_int">
-                    <br>
-                    <h5><a href="nav1-1_site">사이트 소개</a></h5><br>
-                    <h5><a href="nav1-2_map">오시는 길</a></h5>
-                </div>
-                <br><br>
-                <img src="images/sublogo.jpg" title="광고">
-            </div>
-            <div class="right">
-                <div id = "right-site">
-                    <h1><b>오시는길</b></h1><br>
-
-                    
-                    <table id="table2">
-                        <tr>
-                            <td style="width: 300px;"><img src="/images/metro.png"></td>
-                            <td style="width: 300px;"><img src="/images/car.png"></td>
-                            <td style="width: 300px;"><img src="/images/bus.png"></td>
-                        </tr>
-                        <tr>
-                            <td><b>버스</b><br><br>버스정류장(11-211) </td>
-                            <td><b>자차</b><br><br>건물 옆 유료주차장 이용 가능 </td>
-                            <td><b>지하철</b><br><br>4호선 노원역2번 출구에서41m</td>
-                        </tr>
-                    </table> 
-            
-                    <div style="width: 850px; height: 400px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.719533018484!2d127.06023691559015!3d37.65579732676832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb941d9c739c5%3A0x8ecd52574c78556d!2z7J207KCg7JWE7Lm0642w66-47Lu07ZOo7YSw7ZWZ7JuQIOuFuOybkOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1604370144648!5m2!1sko!2skr" 
-                    width="850" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                       
-                       </div><br><br>
-                  </div>
-               
-                
-            </div>
-        </div>
+    	<script>
+		    $(function(){ 
+		        var $win = $(window); 
+		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+		        /*사용자 설정 값 시작*/ 
+		        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+		        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+		        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+		        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+		        $layer.css('position', 'relative').css('z-index', '1'); 
+		        /*사용자 설정 값 끝*/ 
+		        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+		        if (top > 0 ) 
+		           $win.scrollTop(layerTopOffset+top); 
+		           else $win.scrollTop(0); 
+		           //스크롤이벤트가 발생하면 
+		           $(window).scroll(function(){ 
+		              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+		              if (yPosition < 0) { 
+		                 yPosition = 0; 
+		              } 
+		              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+		        }); 
+		     });   
+		</script>
+		
+		<div id="main_wrapper">
+			<div id="left_menu">
+				<h3><b>오시는 길</b></h3>
+				<table>
+					<tr onclick="location.href='nav1-1_site'">
+						<td>사이트 소개</td>
+						<td>></td>
+					</tr>
+					<tr onclick="location.href='nav1-2_map'">
+						<td>오시는 길</td>
+						<td>></td>
+					</tr>
+				</table>
+			</div>
+			<h3><b>오시는 길</b></h3>
+			<div id ="main_content">
+				<div id ="content">
+					<table id="table2">
+	                	<tr>
+		                    <td style="width: 300px;"><img src="/images/metro.png"></td>
+		                    <td style="width: 300px;"><img src="/images/car.png"></td>
+		                    <td style="width: 300px;"><img src="/images/bus.png"></td>
+	                    </tr>
+	                    <tr>
+		                    <td><b>버스</b><br><br>버스정류장(11-211) </td>
+		                    <td><b>자차</b><br><br>건물 옆 유료주차장 이용 가능 </td>
+		                    <td><b>지하철</b><br><br>4호선 노원역2번 출구에서41m</td>
+	                    </tr>
+	                </table> 
+	                <div style="width: 850px; height: 400px;">
+	                	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.719533018484!2d127.06023691559015!3d37.65579732676832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb941d9c739c5%3A0x8ecd52574c78556d!2z7J207KCg7JWE7Lm0642w66-47Lu07ZOo7YSw7ZWZ7JuQIOuFuOybkOy6oO2NvOyKpA!5e0!3m2!1sko!2skr!4v1604370144648!5m2!1sko!2skr" 
+	                    width="850" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	                </div><br><br>
+				</div>
+			</div>
+		</div>
     </main>
+    <div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/side_img.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
