@@ -333,7 +333,7 @@
 			<h3><b>오시는 길</b></h3>
 			<div id ="main_content"> 
 				<div id ="content">
-					<table id="table2">
+					<table id="table2"> 
 	                	<tr>
 		                    <td style="width: 300px;"><img src="/images/metro.png"></td>
 		                    <td style="width: 300px;"><img src="/images/car.png"></td>
