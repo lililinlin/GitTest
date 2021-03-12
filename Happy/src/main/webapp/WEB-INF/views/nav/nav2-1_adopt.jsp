@@ -149,7 +149,7 @@
 			margin-top:60px;
 			margin-bottom:100px;
 		}
-		 /* 왼쪽 오른쪽 담은 div */
+/* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
         	width:1200px;
         	height:750px;
@@ -186,18 +186,11 @@
         .right img{
             float:right;
         }
+/* 오른쪽 배너 */
         #site{
             display:inline-block;
         }
 
-	    .wrapper {
-            display: flex;
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        
-    
         #side_table td{
 				border:1px solid  #e5e5e5;
 				background-color: white;
@@ -299,16 +292,16 @@
 				</tr>
 			</table>
 		</div>
-
+<main>
       		<div id="main_wrapper">
               <div id="left_menu">
 				<h3><b>입양하기</b></h3>
 				<table>
-					<tr onclick="location.href='nav1-1_site'">
+					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
 						<td>></td>
 					</tr>
-					<tr onclick="location.href='nav1-2_map'">
+					<tr onclick="location.href='nav2-3_review'">
 						<td>입양후기</td>
 						<td>></td>
 					</tr>
