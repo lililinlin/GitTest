@@ -380,12 +380,7 @@
 						onclick="location.href='nav2-3_review'" value="입양후기">
 				</div>
 				<div>
-					<img class="slide-img" src="images/sky2.jpg" title="슬라이더3">
-					<div class="exp">
-						<h1>후원해요</h1>
-						<h2>신한 해피퍼피 110-234-123456</h2>
-					</div>
-
+					<img class="slide-img" src="images/dog_banner3.jpg" title="슬라이더3">
 				</div>
 
 			</div>
@@ -431,12 +426,12 @@
 					<div class="price-item-price">
 						<br>
 						<h3>
-							<b>봉사해요</b>
+							<b>해피퍼피 소식</b>
 						</h3>
 						<br>
 						<p>동물과 공존하는 행복한 세상!<br> 여러분의 관심과 사랑이 함께하면 현실이 됩니다.</p>
 						<br> <input class="p-button" type="button"
-							onclick="location.href='nav3-1_board'" value="봉사신청"
+							onclick="location.href='nav4-2_notice'" value="공지사항"
 							style="margin-bottom: 20px;"><br>
 					</div>
 				</div>
