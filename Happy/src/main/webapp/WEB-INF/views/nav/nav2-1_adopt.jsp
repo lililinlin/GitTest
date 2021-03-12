@@ -142,6 +142,41 @@
         color: white;
     }
 /* 메인 */
+ 		main{
+			width:1200px;
+			height:820px;
+			margin:0 auto;
+			margin-top:60px;
+			margin-bottom:100px;
+		}
+		 /* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{
+        	width:1200px;
+        	height:750px;
+			margin:0 auto;
+        }
+/* 왼쪽 카테고리 */
+		#left_menu{
+        	float:left;
+			width:300px;
+		}
+        #left_menu table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 80px;
+        }
+        #left_menu table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #left_menu table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #left_menu tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #22409a;
+        }
         .right{
 	        width: 1650px;
             height: 100%;
@@ -161,19 +196,28 @@
             margin: 0 auto;
         }
 
-        .left {
-            width: 350px;
-            height: 100%;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        .left a{
-            color: black;
-            /* font-weight: bold; */
-        }
-        .site_int {
-            margin:20px;
-            border-top: 1px solid #b2b2a2;
-        }
+        
+    
+        #side_table td{
+				border:1px solid  #e5e5e5;
+				background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:38px;
+			margin-top:-880px;
+			
+		}
+		#side_img img{
+			width:160px;
+			height:200px;
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
         /* *{
             border: 1px solid red;
         } */
@@ -256,87 +300,78 @@
 			</table>
 		</div>
 
-        <div class="wrapper">
-                <div class="left"><br>
-                    <div>
-                        <h3 style="text-align: center;">입양하기</h3>
-                    </div>
-                    <div class="site_int">
-                        <br>
-                        <h5><a href="nav2-1_adopt">입양하기</a></h5><br>
-                        <h5><a href="nav2-3_review">입양후기</a></h5>
-                    </div>
-                    <br><br>
-                    <img src="images/sublogo.jpg" title="광고">
-                </div>
+      		<div id="main_wrapper">
+              <div id="left_menu">
+				<h3><b>입양하기</b></h3>
+				<table>
+					<tr onclick="location.href='nav1-1_site'">
+						<td>입양하기</td>
+						<td>></td>
+					</tr>
+					<tr onclick="location.href='nav1-2_map'">
+						<td>입양후기</td>
+						<td>></td>
+					</tr>
+				</table>
+			</div>
             <div class="right">
                 <div id = "site">
                     <h2><b>입양하기</b></h2>
                   <div id="container">
-				<!-- <div>
-					<img src="images/tr1.jpg">
-					<h2>발리 - 따나롯 해상 사원</h2>			
-					<p>만조 때는 바닷물이 밀려들어 사원과 육지가 떨어지고 썰물이 되면 다시 육지와 연결된다.  </p>
-				</div>
-				<div>
-					<img src="images/tr2.jpg">
-					<h2>남원 - 홍명희 혼불 문학관</h2>			
-					<p>홍명희가 만 17년간 집필한  '혼불'에 대한 모든 것이 모여있는 곳. </p>
-				</div>
-				<div>
-					<img src="images/tr3.jpg">
-					<h2>고창 - 도솔산 선운사</h2>					
-					<p>정유재란 때 피해를 입었으나 광해군 때 재건하여 지금까지 보존해 오는 절.</p>
-				</div>
-				<div>
-					<img src="images/tr4.jpg">
-					<h2>발리 - 울룬다누 사원</h2>				
-					<p>브라딴 호수 위의 사원. 강과 호수를 관장하는 물의 여신 '데위 다뉘'를 위해 지어진 사원이라네요. </p>
-				</div>	
-				<div>
-					<img src="images/tr1.jpg">
-					<h2>발리 - 따나롯 해상 사원</h2>			
-					<p>만조 때는 바닷물이 밀려들어 사원과 육지가 떨어지고 썰물이 되면 다시 육지와 연결된다.  </p>
-				</div>
-				<div>
-					<img src="images/tr2.jpg">
-					<h2>남원 - 홍명희 혼불 문학관</h2>			
-					<p>홍명희가 만 17년간 집필한  '혼불'에 대한 모든 것이 모여있는 곳. </p>
-				</div>
-				<div>
-					<img src="images/tr3.jpg">
-					<h2>고창 - 도솔산 선운사</h2>					
-					<p>정유재란 때 피해를 입었으나 광해군 때 재건하여 지금까
-					지 보존해 오는 절.</p>
-				</div>
-				<div>
-					<img src="images/tr4.jpg">
-					<h2>발리 - 울룬다누 사원</h2>				
-					<p>브라딴 호수 위의 사원. 강과 호수를 관장하는 물의 여신 '데위 다뉘'를 위해 지어진 사원이라네요. </p>
-				</div>	 -->
+				
 		</div>	
 
-		<!-- body태그 뒤에서 script를 넣는 이유 -->
-		<!-- 문서객체를 로딩후에 호출한다. -->
-		<script src="js/jquery-2.2.4.min.js"></script>
-		<script src="js/jquery.vgrid.min.js"></script>
-		<script>
-			$("#container").vgrid(
-				{ 
-					// Key-Value 객체로 값을 넣어준다.
-					time: 400, //애니메이션 실행 시간
-					delay: 30, //애니메이션 지연 시간
-					wait: 500 //애니메이션 대기 시간
-				}
-			);
+
+		    	<script>
+		    $(function(){ 
+		        var $win = $(window); 
+		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+		        /*사용자 설정 값 시작*/ 
+		        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+		        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+		        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+		        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+		        $layer.css('position', 'relative').css('z-index', '1'); 
+		        /*사용자 설정 값 끝*/ 
+		        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+		        if (top > 0 ) 
+		           $win.scrollTop(layerTopOffset+top); 
+		           else $win.scrollTop(0); 
+		           //스크롤이벤트가 발생하면 
+		           $(window).scroll(function(){ 
+		              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+		              if (yPosition < 0) { 
+		                 yPosition = 0; 
+		              } 
+		              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+		        }); 
+		     });   
 		</script>
+		
+
                   
                 </div>
-               
+               </div>
                 
             </div>
-        </div>
     </main>
+     <div id ="side_img" class="float_sidebar">
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/side_img.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
+        
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
