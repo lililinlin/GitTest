@@ -132,13 +132,14 @@
 			height:850px;
 			margin:0 auto;
 			margin-top:60px;
+			margin-bottom:100px;
 		}
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
         	width:1200px;
         	display:flax;
         	height:800px;
-			margin:0 auto; 
+			margin:0 auto;
         }
         /* 왼쪽 카테고리 */
         #left_menu{
@@ -167,6 +168,7 @@
         /* 메인 div */
         #main_content{
         	width:890px;
+        	
         }
         /* 메인 상단 div */
         #content{
@@ -174,6 +176,7 @@
         	margin-top:30px;
         	width:800px;
         	padding:30px 0px 10px 30px;
+        	
         }
         
        #table2{
@@ -182,6 +185,7 @@
             margin-bottom: 100px;
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 20px;
+            
         }
         #table2 img{
             width: 160px;
@@ -195,7 +199,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-809px;
+			margin-top:-909px;
 			
 		}
 		#side_img img{
