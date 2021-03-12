@@ -146,7 +146,7 @@
         	float:left;
 			
 			width:300px;
-			margin-top:30px;
+			
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;

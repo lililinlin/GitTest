@@ -136,10 +136,8 @@
         }
         /* 왼쪽 카테고리 */
         #left_menu{
-        	float:left;
-			
+        	float:left;	
 			width:300px;
-			margin-top:30px;
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;
