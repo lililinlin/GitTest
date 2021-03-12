@@ -166,7 +166,7 @@
     footer a {
         color: white;
     }
-/* 메인 */
+/* 메인 */ 
         .wrapper {
             display: flex;
             width: 1200px;
@@ -186,10 +186,10 @@
             margin:20px;
             border-top: 1px solid #b2b2a2;
         }
-        .right{
+        .right{ 
 	        width: 1650px;
             height: 100%;
-            margin:20px;
+            margin:20px 20px 20px 90px;
         }
        
         #right-site{
@@ -199,7 +199,7 @@
         #right-1{
             background-color: rgb(250, 250, 250);
         }
-        #find_address{
+        #find_address{ /* 우편번호 찾기 버튼 */
         	width: 220px;
         	background-color:white;
         	border: 1px solid gray;
@@ -207,11 +207,11 @@
 			height: 40px;
         }
 		#password,
-		#passwordcherk,#phone{
+		#passwordcherk,#phone{ /* 비밀번호 비밀번호체크 전화번호 input */
 			width: 430px;
 			height: 40px;
 		}
-		#sample6_postcode,
+		#sample6_postcode, /* 우편번호 주소 상세주소 참고항목 input */
 		#sample6_address,
 		#sample6_detailAddress,
 		#sample6_extraAddress {
@@ -219,12 +219,13 @@
 			margin-bottom: 25px;
 			height: 40px;
 		}
-		#h2_box{
+		#h2_box{ /* 회원정보수정 글씨 박스 */ 
 			width: 560px;	
 			border-bottom: 1px solid rgb(162, 162, 162);
-			margin-bottom: 20px;
+			margin-bottom: 25px;
+			text-align: center;
 		}
-        #btn{
+        #btn{ /* 수정 버튼 */
 			width: 430px;
 			height: 60px;
 			background-color: rgb(75, 75, 75);
@@ -405,9 +406,9 @@
                 <div class="site_int">
                     <br>
                     <h5><a href="Mypage">내 정보</a></h5><br>
-                    <h5><a href="Modify">회원정보수정</a></h5><br>
+                    <h5><a href="modify">회원정보수정</a></h5><br>
                     <h5><a href="">내가 작성한 글</a></h5><br>
-                    <h5><a href="">후원 내역</a></h5>
+                    <h5><a href="">후원 내역</a></h5> 
                 </div>
                 <br><br>
                 <img src="images/sublogo.jpg" title="광고">

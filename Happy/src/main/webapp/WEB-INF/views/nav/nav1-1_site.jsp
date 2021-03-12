@@ -83,7 +83,6 @@
 	    }
 	
 	    .hov li {
-	    	height:47px;
 	        border-bottom: 2px solid rgb(189, 189, 193);
 	    }
 	
@@ -123,11 +122,10 @@
 	    }
 	/* 메인 */
 		main{
-			width:1800px;
+			width:1200px;
 			height:850px;
 			margin:0 auto;
-			margin-top:50px;
-			margin-bottom:70px;
+			margin-top:60px;
 		}
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
@@ -141,7 +139,7 @@
         	float:left;
 			
 			width:300px;
-			margin-top:0px;
+			margin-top:30px;
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;
@@ -194,7 +192,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-869px;
+			margin-top:-729px;
 			
 		}
 		#side_img img{

@@ -299,7 +299,7 @@
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
 							</ul></li>
-					</td>
+					</td> 
 					<td class="menumaintd">
 						<li><a href="nav4-1_QnA" class="mainmenu">
 								<h6>
@@ -322,8 +322,8 @@
                 </div>
                 <div class="site_int">
                     <br>
-                    <h5><a href="Modify">내 정보</a></h5><br>
-                    <h5><a href="Modify">회원정보수정</a></h5><br>
+                    <h5><a href="Mypage">내 정보</a></h5><br>
+                    <h5><a href="modify">회원정보수정</a></h5><br>
                     <h5><a href="">내가 작성한 글</a></h5><br>
                     <h5><a href="">후원 내역</a></h5>
                 </div>
