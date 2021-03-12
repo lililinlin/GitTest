@@ -124,8 +124,8 @@
 		main{
 			width:1200px;
 			height:850px;
-			margin-top:30px;
 			margin:0 auto;
+			margin-top:60px;
 		}
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
