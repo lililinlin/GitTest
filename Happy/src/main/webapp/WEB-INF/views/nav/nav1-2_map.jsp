@@ -15,6 +15,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     
     <title>오시는길</title>
+     <script>
+        $(function() { 
+             var lnb = $("#nav_wrapper").offset().top;
+             $(window).scroll(function() {
+                var window = $(this).scrollTop();
+ 
+                if(lnb <= window) {
+                   $("#nav_wrapper").addClass("fixed");
+                } else {
+                   $("#nav_wrapper").removeClass("fixed");
+                }
+             })
+          });
+    </script>
     <script 
         src="https://code.jquery.com/jquery-3.5.1.js" 
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
@@ -27,20 +41,14 @@
         * {
 	 		 font-family: 'Noto Sans KR', sans-serif;
 		}
-        h2,h1 {
-			font-family: 'Noto Sans KR', sans-serif;
-	    }
+      
 /* 헤더 */
-	    #headroom {
-	        border-bottom: 1px solid rgb(235, 235, 235);
-	        margin-bottom: 10px;
-	    }
-	
-	    .head {
-	        margin: 0 auto;
-	        width: 1200px;
-	        height: 100px;
-	    }
+	   #head {
+			margin: 0 auto;
+			width: 1200px;
+			height: 100px;
+			background-color: white; 
+		}
 	
 	    #logo {
 	        width: 400px;
@@ -57,6 +65,21 @@
 	        font-size: 13px;
 	        text-decoration: none;
 	    }
+	     #nav_wrapper{
+		    width:100%;
+		    padding-bottom: 2px;
+			box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
+		}
+		#nav_wrapper.fixed{
+		    position: fixed;
+		    padding-bottom: 20px;
+		    left: 0; 
+		    top: 0; 
+		    width: 100%; 
+		    height:115px;
+		    background-color: white; 
+		    z-index:100; 
+		}	
 	
 	    .menumaintd {
 	        width: 200px;
@@ -129,7 +152,7 @@
  /* 메인 */
        main{
 			width:1200px;
-			height:850px;
+			height:820px;
 			margin:0 auto;
 			margin-top:60px;
 			margin-bottom:100px;
@@ -137,16 +160,13 @@
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
         	width:1200px;
-        	display:flax;
-        	height:800px;
+        	height:750px;
 			margin:0 auto;
         }
         /* 왼쪽 카테고리 */
         #left_menu{
         	float:left;
-			
 			width:300px;
-			
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;
@@ -168,7 +188,6 @@
         /* 메인 div */
         #main_content{
         	width:890px;
-        	
         }
         /* 메인 상단 div */
         #content{
@@ -176,7 +195,6 @@
         	margin-top:30px;
         	width:800px;
         	padding:30px 0px 10px 30px;
-        	
         }
         
        #table2{
@@ -199,7 +217,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-909px;
+			margin-top:-880px;
 			
 		}
 		#side_img img{
@@ -215,16 +233,15 @@
 </head>
 
 <body>
-    <header id="headroom">
-            <table class="head">
-                <tr>
-                    <td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
-                            id="logo" alt=""></a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                    <%
+    <div id ="nav_wrapper">
+		<table id="head">
+			<tr>
+				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
+						id="logo" alt=""></a></td>
+				<td></td>
+				<td></td>
+				<td></td> 
+				<% 
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -240,58 +257,56 @@
 				<%
 					}
 				%>
-                </tr>
-                <tr>
-                    <ul id="menu">
-                        <td class="menumaintd">
-                            <li><a href="nav1-1_site" class="mainmenu">
-                                    <h6>
-                                        <b>사이트소개</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav1-1_site">사이트소개</a></li>
-                                    <li><a href="nav1-2_map">오시는길</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav2-1_adopt" class="mainmenu">
-                                    <h6>
-                                        <b>입양하기</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav2-1_adopt">입양하기</a></li>
-                                    <li><a href="nav2-2_adopted">입양됐어요</a></li>
-                                    <li><a href="nav2-3_review">입양후기</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav3-1_board" class="mainmenu">
-                                    <h6>
-                                        <b>커뮤니티</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav3-1_board">게시판</a></li>
-                                    <li><a href="nav3-2_volunteer">자원봉사신청</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav4-1_QnA" class="mainmenu">
-                                    <h6>
-                                        <b>고객센터</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav4-1_QnA">Q&A</a></li>
-                                    <li><a href="nav4-2_notice">공지사항</a></li>
-                                </ul></li>
-                        </td>
-                    </ul>
-                </tr>
-            </table>
-        </header>
+			</tr>
+			<tr>
+				<ul id="menu">
+					<td class="menumaintd">
+						<li><a href="nav1-1_site" class="mainmenu">
+								<h6>
+									<b>사이트소개</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav1-1_site">사이트소개</a></li>
+								<li><a href="nav1-2_map">오시는길</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav2-1_adopt" class="mainmenu">
+								<h6>
+									<b>입양하기</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav2-1_adopt">입양하기</a></li>
+								<li><a href="nav2-3_review">입양후기</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav3-1_board" class="mainmenu">
+								<h6>
+									<b>커뮤니티</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav3-1_board">게시판</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav4-1_QnA" class="mainmenu">
+								<h6>
+									<b>고객센터</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav4-1_QnA">Q&A</a></li>
+								<li><a href="nav4-2_notice">공지사항</a></li>
+							</ul></li>
+					</td>
+				</ul>
+				</tr>
+			</table>
+		</div>
     <main>
     	<script>
 		    $(function(){ 

@@ -130,18 +130,7 @@
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }
-/* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
 
-    footer a {
-        color: white;
-    }
 /* 메인 */
 	    .wrapper {
             display: flex;
@@ -165,14 +154,49 @@
         .right{
 	        width: 1650px;
             height: 100%;
-            margin:20px;
-           
+            margin:20px; 
         }
+		#h2_box{
+			border-bottom: 1px solid rgb(6, 15, 138);
+		}
+		#main_table{
+			width: 870px;
+			margin-bottom: 400px;
 
+		}
+		#main_table tr{
+			border-bottom: 1px solid rgb(233, 233, 233);
+		}
+		#main_table th{
+			text-align: center;
+			height: 60px;
+			font-weight: normal;
+		}
+		.num{
+			width: 80px;
+			text-align: center;
+			height: 50px;
+		}
+		.title{
+			padding-left: 20px;
+		}
+
+/* 푸터 */
+		#footer {
+				text-align: center;
+				margin: 0 auto;
+				height: 200px;
+				width: 100%;
+				background-color: #424141;
+		}
+
+		footer a {
+			color: white;
+		}
 
         /* *{
             border: 1px solid red;
-        } */
+        }  */
     </style>
 </head>
 
@@ -265,9 +289,37 @@
                 <br><br>
                 <img src="images/sublogo.jpg"" title="광고">
             </div>
-            <div class="right">
-                    <h2><b>Q&A</b></h2><br>
-                  
+            <div class="right"><br>
+				<div id="h2_box">
+                    <h2><b>Q&A</b></h2><small>고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</small><br>
+				</div>
+                  <table id="main_table">
+					  <tr>
+						  <th>번호</th>
+						  <th>제목</th>
+					  </tr>
+					  <tr>
+							<td class="num">1</td>
+							<td class="title">동물을 입양하고 싶어요.</td>
+					  </tr>
+					  <tr>
+							<td class="num">2</td>
+							<td class="title">봉사활동 하고 싶은데 신청은 어디서 하나요?</td>
+					</tr>
+					  <tr>
+							<td class="num">3</td>
+							<td class="title">후원하고 싶습니다.</td>
+					  </tr>
+					  <tr>
+							<td class="num">4</td>
+							<td class="title">방문하고 싶습니다.</td>
+					  </tr>
+					  <tr>
+							<td class="num">5</td>
+							<td class="title">후원하고 싶습니다.</td>
+					  </tr>
+
+				  </table>
 
                
                 

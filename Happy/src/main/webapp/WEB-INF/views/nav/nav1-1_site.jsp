@@ -14,6 +14,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>사이트소개</title>
+    <script>
+        $(function() { 
+             var lnb = $("#nav_wrapper").offset().top;
+             $(window).scroll(function() {
+                var window = $(this).scrollTop();
+ 
+                if(lnb <= window) {
+                   $("#nav_wrapper").addClass("fixed");
+                } else {
+                   $("#nav_wrapper").removeClass("fixed");
+                }
+             })
+          });
+    </script>
     <style>
     	a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -23,16 +37,13 @@
 		}
 
 	    /* 헤더 */
-	    #headroom {
-	        border-bottom: 1px solid rgb(235, 235, 235);
-	        margin-bottom: 10px;
-	    }
+	   #head {
+			margin: 0 auto;
+			width: 1200px;
+			height: 100px;
+			background-color: white; 
+		}
 	
-	    .head {
-	        margin: 0 auto;
-	        width: 1200px;
-	        height: 100px;
-	    }
 	
 	    #logo {
 	        width: 400px;
@@ -49,6 +60,22 @@
 	        font-size: 13px;
 	        text-decoration: none;
 	    }
+	    #nav_wrapper{
+		    width:100%;
+		    padding-bottom: 2px;
+			box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
+		}
+		#nav_wrapper.fixed{
+		    position: fixed;
+		    padding-bottom: 20px;
+		    left: 0; 
+		    top: 0; 
+		    width: 100%; 
+		    height:115px;
+		    background-color: white; 
+		    z-index:100; 
+		}	
+	
 	
 	    .menumaintd {
 	        width: 200px;
@@ -83,6 +110,7 @@
 	    }
 	
 	    .hov li {
+	    	height:47px;
 	        border-bottom: 2px solid rgb(189, 189, 193);
 	    }
 	
@@ -123,21 +151,22 @@
 	/* 메인 */
 		main{
 			width:1200px;
-			height:850px;
+			height:950px;
 			margin:0 auto;
-			margin-top:60px;
+			margin-top:20px;
 		}
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
         	width:1200px;
-        	display:flax;
-        	height:800px;
+/*         	display:flax; */
+        	height:900px;
 			margin:0 auto; 
         }
         /* 왼쪽 카테고리 */
         #left_menu{
-        	float:left;	
+        	float:left;
 			width:300px;
+			margin-top:30px;
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;
@@ -175,8 +204,10 @@
         }
         /* 메인 하단 div */
         #content2{
+       		width:800px;
         	margin-top:30px;
         	margin-left:300px;
+        	padding-left: 20px;
         }
         #introduce_title{
         	color:#22409a;
@@ -190,7 +221,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-809px;
+			margin-top:-880px;
 			
 		}
 		#side_img img{
@@ -206,16 +237,15 @@
 </head>
 
 <body>
-    <header id="headroom">
-            <table class="head">
-                <tr>
-                    <td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
-                            id="logo" alt=""></a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                <%
+   <div id ="nav_wrapper">
+		<table id="head">
+			<tr>
+				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
+						id="logo" alt=""></a></td>
+				<td></td>
+				<td></td>
+				<td></td> 
+				<% 
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -231,58 +261,56 @@
 				<%
 					}
 				%>
-                </tr>
-                <tr>
-                    <ul id="menu">
-                        <td class="menumaintd">
-                            <li><a href="nav1-1_site" class="mainmenu">
-                                    <h6>
-                                        <b>사이트소개</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav1-1_site">사이트소개</a></li>
-                                    <li><a href="nav1-2_map">오시는길</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav2-1_adopt" class="mainmenu">
-                                    <h6>
-                                        <b>입양하기</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav2-1_adopt">입양하기</a></li>
-                                    <li><a href="nav2-2_adopted">입양됐어요</a></li>
-                                    <li><a href="nav2-3_review">입양후기</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav3-1_board" class="mainmenu">
-                                    <h6>
-                                        <b>커뮤니티</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav3-1_board">게시판</a></li>
-                                    <li><a href="nav3-2_volunteer">자원봉사신청</a></li>
-                                </ul></li>
-                        </td>
-                        <td class="menumaintd">
-                            <li><a href="nav4-1_QnA" class="mainmenu">
-                                    <h6>
-                                        <b>고객센터</b>
-                                    </h6>
-                            </a>
-                                <ul class="hov">
-                                    <li><a href="nav4-1_QnA">Q&A</a></li>
-                                    <li><a href="nav4-2_notice">공지사항</a></li>
-                                </ul></li>
-                        </td>
-                    </ul>
-                </tr>
-            </table>
-        </header>
+			</tr>
+			<tr>
+				<ul id="menu">
+					<td class="menumaintd">
+						<li><a href="nav1-1_site" class="mainmenu">
+								<h6>
+									<b>사이트소개</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav1-1_site">사이트소개</a></li>
+								<li><a href="nav1-2_map">오시는길</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav2-1_adopt" class="mainmenu">
+								<h6>
+									<b>입양하기</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav2-1_adopt">입양하기</a></li>
+								<li><a href="nav2-3_review">입양후기</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav3-1_board" class="mainmenu">
+								<h6>
+									<b>커뮤니티</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav3-1_board">게시판</a></li>
+							</ul></li>
+					</td>
+					<td class="menumaintd">
+						<li><a href="nav4-1_QnA" class="mainmenu">
+								<h6>
+									<b>고객센터</b>
+								</h6>
+						</a>
+							<ul class="hov">
+								<li><a href="nav4-1_QnA">Q&A</a></li>
+								<li><a href="nav4-2_notice">공지사항</a></li>
+							</ul></li>
+					</td>
+				</ul>
+				</tr>
+			</table>
+		</div>
     <main>
     	<!-- 사이드광고 자동 스크롤 -->
     <script>
@@ -334,18 +362,18 @@
             </div>
             
             <div id ="content2">
-            	<h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br>
-                <p><b>1. 동물보호 캠페인 및 홍보 :</b> 동물의 보호 및 유기동물입양 증대를 위한 홍보<br>
+            	<h5 id ="introduce_title"><b>소중한 후원금은 동물들을 위해 다음과 같이 쓰입니다.</b></h5><br><br>
+                <p><b>1. 동물보호 캠페인 및 홍보 :</b> 동물의 보호 및 유기동물입양 증대를 위한 홍보<br><br>
                         
-                <b>2. 동물보호를 위한 교육사업 :</b> 유기동물 발생 방지를 위한 교육자료 기획 배포 및 동물보호 교육실시<br>
+                <b>2. 동물보호를 위한 교육사업 :</b> 유기동물 발생 방지를 위한 교육자료 기획 배포 및 동물보호 교육실시<br><br>
                         
-                <b>3. 입양지원 :</b> 유기동물의 안락사 수를 줄이고 입양을 통한 새 삶의 기회 부여<br>
+                <b>3. 입양지원 :</b> 유기동물의 안락사 수를 줄이고 입양을 통한 새 삶의 기회 부여<br><br>
                         
                 <b>4. 개인보호소 지원 :</b> 열악한 개인보호소 지원을 통한 동물보호 및 자립심 부여<br><br>
                         
                 입양센터에서는 자원봉사자 여러분의 커뮤니티 활동 활성화를 위해<br>
                 동물아트 전시회, 원데이 클래스 등을 진행하고 있습니다.<br>
-                반려동물을 사랑하고, 유기동물 보호에 관심있는 많은 분들의 참여를 기다립니다.<br>
+                반려동물을 사랑하고, 유기동물 보호에 관심있는 많은 분들의 참여를 기다립니다.<br><br>
                         
                 <b>해피퍼피 드림.</b></p>
             </div>
