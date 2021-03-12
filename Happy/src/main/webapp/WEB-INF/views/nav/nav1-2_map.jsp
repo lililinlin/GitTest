@@ -127,12 +127,11 @@
 	        color: white;
 	    }
  /* 메인 */
-        main{
-			width:1800px;
+       main{
+			width:1200px;
 			height:850px;
 			margin:0 auto;
-			margin-top:50px;
-			margin-bottom:70px;
+			margin-top:60px;
 		}
 		 /* 왼쪽 오른쪽 담은 div */
         #main_wrapper{
@@ -146,7 +145,7 @@
         	float:left;
 			
 			width:300px;
-			margin-top:0px;
+			margin-top:30px;
 		}
         #left_menu table{
             margin: 30px 0px 0px 10px;
@@ -173,7 +172,7 @@
         #content{
         	margin-left:300px;
         	margin-top:30px;
-        	width:600px;
+        	width:800px;
         	padding:30px 0px 10px 30px;
         }
         
@@ -196,7 +195,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-869px;
+			margin-top:-809px;
 			
 		}
 		#side_img img{

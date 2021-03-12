@@ -192,7 +192,7 @@
 			float:right;
 			width:180px;
 			margin-right:38px;
-			margin-top:-729px;
+			margin-top:-809px;
 			
 		}
 		#side_img img{
