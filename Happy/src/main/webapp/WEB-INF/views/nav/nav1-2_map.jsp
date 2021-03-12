@@ -331,7 +331,7 @@
 				</table>
 			</div>
 			<h3><b>오시는 길</b></h3>
-			<div id ="main_content">
+			<div id ="main_content"> 
 				<div id ="content">
 					<table id="table2">
 	                	<tr>
