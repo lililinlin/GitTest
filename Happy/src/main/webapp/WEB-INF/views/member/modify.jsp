@@ -167,20 +167,40 @@
         color: white;
     }
 /* 메인 */ 
-        .wrapper {
-            display: flex;
-            width: 1200px;
-            height:980px;
-            margin: 0 auto;
+	main{
+			width:1200px;
+			height:820px;
+			margin:0 auto;
+			margin-top:60px;
+			margin-bottom:100px;
+		}
+/* 왼쪽 오른쪽 담은 div */
+        #main_wrapper{
+        	width:1200px;
+        	height:750px;
+			margin:0 auto;
         }
-        .left {
-            width: 350px;
-            height: 100%;
-            font-family: 'Noto Sans KR', sans-serif;   
+/* 왼쪽 카테고리 */
+		#left_menu{
+        	float:left;
+			width:300px;
+		}
+        #left_menu table{
+            margin: 30px 0px 0px 10px;
+            width: 200px;
+            height: 40px;
         }
-        .left a{
-            color: black;
-            /* font-weight: bold; */
+        #left_menu table td{
+            height: 50px;
+            padding-left: 20px;
+        }
+        #left_menu table tr{
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #left_menu tr:hover{
+            background-color: rgb(251, 249, 249);            
+            cursor: pointer;
+            color: #22409a;
         }
         .site_int {
             margin:20px;
@@ -233,9 +253,35 @@
 		    color: white;
 		}
 
-        #introduce_title{
-            color: rgb(132, 189, 246);
+        .right img{
+            float:right;
         }
+        #site{
+            display:inline-block;
+        }
+        #container{
+        	margin-top:30px;
+        }
+        /* 따라오는 사이드 바 */
+		#side_table td{
+				border:1px solid  #e5e5e5;
+				background-color: white;
+		}
+		#side_img{
+			float:right;
+			width:180px;
+			margin-right:38px;	
+			margin-top:100px;
+		}
+		#side_img img{
+			width:160px;
+			height:200px;
+		}
+		.side_p{
+			width:156px;
+			padding-top:10px;
+			text-align: center;
+		}
 /* 
          *{
             border: 1px solid red;
@@ -245,6 +291,31 @@
 </head>
 
 <body>
+	<script>
+	      $(function(){ 
+	         var $win = $(window); 
+	         var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+	         /*사용자 설정 값 시작*/ 
+	         var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+	         var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+	         var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+	         var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+	         $layer.css('position', 'relative').css('z-index', '1'); 
+	         /*사용자 설정 값 끝*/ 
+	         // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+	         if (top > 0 ) 
+	            $win.scrollTop(layerTopOffset+top); 
+	            else $win.scrollTop(0); 
+	            //스크롤이벤트가 발생하면 
+	            $(window).scroll(function(){ 
+	               yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+	               if (yPosition < 0) { 
+	                  yPosition = 0; 
+	               } 
+	               $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+	         }); 
+	      }); 
+	   </script>
  <script>
     function checkValue()
 	{
@@ -398,8 +469,100 @@
 				</tr>
 			</table>
 		</div>
-        <div class="wrapper">
-            <div class="left"><br>
+		<div id ="side_img" class="float_sidebar">
+			<table id ="side_table">
+				<tr>
+					<td><img src="images/side_img.jpg"></td>
+				</tr>
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+				</tr> 
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+				</tr>
+				<tr>
+					<td><p class="side_p">1600-1111</p></td>
+				</tr>
+			</table>
+		</div>
+		<main>
+			<div id="main_wrapper">
+            	<div id="left_menu">
+					<h3><b>마이페이지</b></h3>
+					<table>
+						<tr onclick="location.href='Mypage'">
+							<td>내정보</td>
+							<td>></td>
+						</tr>
+						<tr onclick="location.href='modify'">
+							<td>회원정보수정</td>
+							<td>></td>
+						</tr>
+						<tr onclick="location.href='my_Write'">
+							<td>내가 작성한 글</td>
+							<td>></td>
+						</tr>
+					</table>
+				</div>
+            	<div class="right">
+                	<div id = "site">
+                    	<h2><b>회원정보수정</b></h2>
+                  		<div id="container">
+							<form method="post" action="MemberModifyAction" 
+								name="userInfo" onsubmit="return checkValue()">
+				                <table>
+				                   <tr>
+				                       <td>아이디</td>
+				                       <td><%=member.getId() %></td>
+				                       <td></td>
+				                       <tr><td><br></td></tr>
+				                   </tr>
+				                   <tr>
+				                       <td>비밀번호</td>
+				                       <td><input type="password" id="password"name="password" ></td>
+				                       <tr><td><br></td></tr>
+				                   </tr>
+				                   <tr>
+				                       <td>비밀번호확인&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				                       <td><input type="password" id="passwordcherk" name="passwordcherk"></td>
+				                       <tr><td><td><br><h6 id="chkNotice" size="2"></h6></td></td></tr>
+				                   </tr>
+				                   <tr>
+				                    <td>이름</td>
+				                    <td><%=member.getName() %></td>
+				                    <td></td>
+				                    <tr><td><br></td></tr>
+				                   </tr>
+				                   <tr>
+				                       <td>전화번호</td>
+				                       <td><input type="text" id="phone" name="phone" <%=member.getPhone() %>></td>
+				                       <tr><td><br></td></tr>
+				                   </tr>
+				                   <tr>
+				                       <td>생년월일</td>
+				                       <td><%=birthYear %>년 <%=birthMonth %>월 <%=birthDay %>일</td>
+				                           <tr><td><br></td></tr>
+				                   </tr>
+				                   <tr>
+				                       <td>주소</td>
+				                       <td><input name="add1" type="text" id="sample6_postcode" placeholder="  우편번호" ><br>
+				                        <input type="button" id="find_address" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br><br>
+				                        <input name="add2" type="text" id="sample6_address" placeholder="  주소"><br>
+				                        <input name="add3" type="text" id="sample6_detailAddress" placeholder="  상세주소"><br>
+				                        <input name="add4" type="text" id="sample6_extraAddress" placeholder="  참고항목"></td>
+				                   </tr>
+				                   <tr><td><br></td></tr>
+				                   <tr><td></td><td><input type="submit" id="btn" value="수정" ></td></tr>
+				                </table>
+				              </form><br><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</main>
+        <%-- <div class="wrapper">
+            <div class="left"><br>	
                 <div>
                     <h3 style="text-align: center;">마이페이지</h3>
                 </div>
@@ -467,8 +630,23 @@
 
                </form><br><br>
             </div>
-
-        </div>
+			<div id ="side_img" class="float_sidebar">
+				<table id ="side_table">
+					<tr>
+						<td><img src="images/side_img.jpg"></td>
+					</tr>
+					<tr>
+						<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+					</tr> 
+					<tr>
+						<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+					</tr>
+					<tr>
+						<td><p class="side_p">1600-1111</p></td>
+					</tr>
+				</table>
+			</div>
+        </div> --%>
     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
