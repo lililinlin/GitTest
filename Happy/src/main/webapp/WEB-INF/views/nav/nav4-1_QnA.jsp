@@ -323,7 +323,7 @@
      		<div id="main_wrapper">
             
              <div id="left_menu">
-				<h3><b>입양하기</b></h3>
+				<h3><b>고객센터</b></h3>
 				<table>
 					<tr onclick="location.href='nav4-1_QnA'">
 						<td>Q&A</td>
