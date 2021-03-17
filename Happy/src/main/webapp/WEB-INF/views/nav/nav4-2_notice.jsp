@@ -398,7 +398,7 @@
 		        }); 
 		     });   
 		</script>
-		
+		 
                        	
         </main>
          <div id ="side_img" class="float_sidebar">

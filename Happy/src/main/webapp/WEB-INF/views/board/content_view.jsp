@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.NoticeDto" %>   
 <%@ page import="java.util.ArrayList"%> 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 	<meta charset="UTF-8">

@@ -126,7 +126,7 @@
 	    }
 	    /* .hov:hover li:nth-child(n){
 	            background-color: hotpink;
-	            } */
+	            } */ 
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }

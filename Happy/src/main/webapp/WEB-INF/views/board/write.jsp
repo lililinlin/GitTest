@@ -163,7 +163,7 @@
             width: 200px;
             height: 80px;
         }
-        #left_menu table td{
+        #left_menu table td{ 
             height: 50px;
             padding-left: 20px;
         }
