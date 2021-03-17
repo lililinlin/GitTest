@@ -190,6 +190,7 @@
       /* 오른쪽배너 */
     	 #site{
             display:inline-block;
+            width:800px;
         }
 
         #side_table td{
@@ -311,6 +312,7 @@
 				</table>
 			</div>
       <div class="right">
+      	<div id="site">
       			<div  style="border-bottom: 1px solid rgb(9, 51, 85);">
 				<h2><b>공지사항</b></h2><br><br>
 				</div><br>
@@ -320,11 +322,12 @@
 			<div style="margin: 30px 30px 100px 30px;">
 				<small><%= content_view.getNbContent() %></small>
 			</div>
-			<input  onclick="location.href='nav4-2_notice'" type="button" class="btn btn-dark"  value="목록으로" style="width: 100px;">&nbsp;&nbsp;&nbsp;
-			<button type="button" class="btn btn-dark" style="width: 100px;"><a href="delete?bidx=<%= content_view.getBidx()%> "  style="color:white">글 삭제</a></button>
+			<input  onclick="location.href='nav4-2_notice'" type="button" class="btn btn-dark"  value="목록으로" style="width: 150px; height:50px;">&nbsp;&nbsp;&nbsp;
+			<button type="button" class="btn btn-dark" style="width: 150px; height:50px;"><a href="delete?bidx=<%= content_view.getBidx()%> "  style="color:white">글 삭제</a></button>
 			<%-- <a href="delete?bidx=<%= content_view.getBidx()%> " ><b>글 삭제</b></a> --%>
 
-		 </div>
+			 </div>
+		</div>
 	</div>
 	<script>
 		    $(function(){ 

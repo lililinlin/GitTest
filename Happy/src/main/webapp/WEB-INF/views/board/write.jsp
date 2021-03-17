@@ -163,7 +163,7 @@
             width: 200px;
             height: 80px;
         }
-        #left_menu table td{ 
+        #left_menu table td{
             height: 50px;
             padding-left: 20px;
         }
@@ -180,21 +180,26 @@
             height: 100%;
             margin:20px; 
         }
+		#footer_button{
+          text-align: center;
+		  padding-top: 20px;
+        }
         input[type=submit]{
            width:250px;
-           height:50px;
-           background-color:blue;
+           height:60px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
         }
         input[type=button]{
           margin-left:10px;
           width:250px;
-          height:50px;
+          height:60px;
           border:1px solid gray;
+		  background-color: white;
+		  color: gray;
+		  
         }
-        #footer_button{
-          text-align: center;
-        }
-
 		#h2_box{
 			margin-left:280px;
 			width:870px;
@@ -213,6 +218,7 @@
 			height: 60px;
 			font-weight: normal;
 		}
+		
 		#title{ width:700px; margin-left:10px}
 		#editor4{width:700px; height: 400px; margin-left:50px;}
 /* 오른쪽 배너 */
@@ -368,8 +374,8 @@
                     </script>
                      <hr>
                      <div id = "footer_button">
-                        <input type="submit"  value = "등록"/>
-                        <input type="button"  value = "취소" onclick="location.href='nav4-1_QnA.html'"/>
+                        <input type="submit"  value = "등 록"/>
+                        <input type="button"  value = "취 소" onclick="location.href='nav4-2_notice'"/>
                     </div>
                     </form>
                  

@@ -219,6 +219,14 @@
         #introduce_title{
             color: rgb(132, 189, 246);
         }
+        #write_btn{
+        	margin-left:980px;
+           width:150px;
+           height:45px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
+        }
 /* 오른쪽배너 */
     	 #site{
             display:inline-block;
@@ -367,10 +375,12 @@
             <%
                } else {
             %>
-                   <input onclick="location.href='write'" type="button" class="btn btn-dark"  value="글작성" style="width: 100px;">
+                   <input onclick="location.href='write'" type="button" id="write_btn" value="글작성" >
             <%
                }
-            %> </div> 
+            %> 
+            </div> 
+            
             
             </div>
             <script>
