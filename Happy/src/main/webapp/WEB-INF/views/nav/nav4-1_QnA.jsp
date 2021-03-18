@@ -180,8 +180,7 @@
 		}
 		#main_table{
 			width: 870px;
-			margin-bottom: 400px;
-
+			margin-bottom: 100px;
 		}
 		#main_table tr{
 			border-bottom: 1px solid rgb(233, 233, 233);
@@ -198,6 +197,21 @@
 		}
 		.title{
 			padding-left: 20px;
+		}
+		.title a{
+			cursor: pointer;
+			color: black;
+		}
+		#btn_box{
+			margin-left: 500px;
+		}
+		#btn_box input{
+			margin-left:500px;
+           width:150px;
+           height:45px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
 		}
 /* 오른쪽 배너 */
 		#site{
@@ -337,7 +351,7 @@
 			</div>
             <div class="right">
 				<div id="h2_box">
-                    <h3><b>Q&A</b></h3><small>- 고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</small><br><br>
+                    <b style="font-size: 30px;">Q&A &nbsp;&nbsp;</b><small>- 고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</small><br><br>
 				</div>
                   <table id="main_table">
 					  <tr>
@@ -346,26 +360,18 @@
 					  </tr>
 					  <tr>
 							<td class="num">1</td>
-							<td class="title">동물을 입양하고 싶어요.</td>
-					  </tr>
+							<td class="title"><a href="content_view">동물을 입양하고 싶어요.</a></td>
+					  </tr>	
 					  <tr>
 							<td class="num">2</td>
-							<td class="title">봉사활동 하고 싶은데 신청은 어디서 하나요?</td>
+							<td class="title"><a href="content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
 					</tr>
-					  <tr>
-							<td class="num">3</td>
-							<td class="title">후원하고 싶습니다.</td>
-					  </tr>
-					  <tr>
-							<td class="num">4</td>
-							<td class="title">방문하고 싶습니다.</td>
-					  </tr>
-					  <tr>
-							<td class="num">5</td>
-							<td class="title">후원하고 싶습니다.</td>
-					  </tr>
 
-				  </table>
+				</table>
+				<div id="btn_box">
+					<input onclick="location.href='write'" type="button" value="글작성">
+				</div>
+
 				   </div>
         	</div>
 <script>
