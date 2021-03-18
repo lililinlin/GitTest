@@ -266,6 +266,11 @@ public class MyController {
 
       return "member/my_Write_View";
    }
+   @RequestMapping("/my_Write_Edit")
+   public String my_Write_Edit(Model model) {
+
+      return "member/my_Write_Edit";
+   }
    @RequestMapping(value = "/MemberModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
    public String MemberModifyFormAction(HttpServletRequest req, Model model) throws Exception {
       req.setCharacterEncoding("utf-8"); // 인코딩
@@ -323,7 +328,7 @@ public class MyController {
       redirect.addAttribute("Mypage.jsp");
       return "member/Mypage";
    }
-
+   
    @RequestMapping("/write")
    public String write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
       HttpSession session = req.getSession();
