@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.study.springboot.dto.MemberDto" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>고객센터</title>
+       
+    
      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +32,9 @@
              })
           });
     </script>
+    <%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -173,80 +180,51 @@
             height: 100%;
             margin:20px; 
         }
+		#footer_button{
+          text-align: center;
+		  padding-top: 20px;
+        }
+        input[type=submit]{
+           width:250px;
+           height:60px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
+        }
+        input[type=button]{
+          margin-left:10px;
+          width:250px;
+          height:60px;
+          border:1px solid gray;
+		  background-color: white;
+		  color: gray;
+		  
+        }
 		#h2_box{
 			margin-left:280px;
 			width:870px;
 			border-bottom: 1px solid rgb(6, 15, 138);
 		}
+		#main_table{
+			width: 870px;
+			margin-bottom: 400px;
 
-		#contents_table{/* 상단 테이블(제목,작성자,작성일,조회수) */
-			border:1px solid red;
-			font-size:15px;
-			width:870px;
 		}
-		#contents_table td,th{
-			height:50px;
-			border:1px solid #efefef;
-			padding-left:20px;
+		#main_table tr{
+			border-bottom: 1px solid rgb(233, 233, 233);
 		}
-		#contents_table th{
-			font-weight:normal;
-			padding-left:57px;
-			background-color: #f5f5f5;
+		#main_table th{
+			text-align: center;
+			height: 60px;
+			font-weight: normal;
 		}
-		#main_contents{/* 컨텐츠 내용 */
-			width:870px;
-			margin-left:280px;
-			padding-left:20px;
-			padding-top:35px;
-			padding-bottom:35px;
-			border-bottom:1px solid rgb(6, 15, 138);
-		}
-		#backbutton{/* 목록버튼 */
-			width:140px;
-			height:40px;
-			margin-left:980px;
-			border: 1px solid #00af85;
-            background-color: #00af85; 
-            color: #fff;
-		}
-		#main_bottom{ /* 댓글 부분 전체 묶은 div*/
-			width:870px;
-            margin-left:280px;
-            padding: 30px 0 80px 0;
-            margin-top:-30px;
-            border-top: 1px solid rgb(180, 180, 180);
-        }
-        #anser{ /* 댓글 textarea */
-            margin-left: 20px;
-            float: left;
-            width: 650px;
-            height: 100px;
-            margin-right: 20px;
-        }
-        #main_bottom input{ /* 댓글등록 버튼 */
-            width: 150px;
-            height: 100px;
-            border: #353a40;
-            background-color: #353a40; 
-            color: #fff;
-        }
-        #buttons{
-        	height:20px;
-        	margin-top:-30px;
-        	margin-left:845px;
-        }
-        .write_button{
-        	width:90px;
-        	height:50px;
-        	background-color:rgb(27, 40, 138);
-		    color: white;
-		    border: none;
-		    margin-left:10px;
-        }
+		
+		#title{ width:700px; margin-left:10px}
+		#editor4{width:700px; height: 400px; margin-left:50px;}
 /* 오른쪽 배너 */
 		#site{
             display:inline-block;
+            width:800px;
         }
 
         #side_table td{
@@ -271,11 +249,11 @@
 		}
 /* 푸터 */
 		#footer {
-			text-align: center;
-			margin: 0 auto;
-			height: 200px;
-			width: 100%;
-			background-color: #424141;
+				text-align: center;
+				margin: 0 auto;
+				height: 200px;
+				width: 100%;
+				background-color: #424141;
 		}
 
 		footer a {
@@ -369,7 +347,7 @@
             
              <div id="left_menu">
 				<h3><b>마이페이지</b></h3>
-					<table>
+				<table>
 						<tr onclick="location.href='Mypage'">
 							<td>내정보</td>
 							<td>></td>
@@ -385,107 +363,75 @@
 					</table>
 			</div>
             <div class="right">
-				<div id="h2_box">
-                    <h3><b>내가 작성한 글</b></h3><br><br>
-				</div>
-                	<table id="contents_table">
-    			<tr>
-    				<th>제목</th>
-    				<td colspan="3">후원 하고 싶어요</td>
-    			</tr>
-    			<tr>
-    				<th>작성자</th>
-    				<td>이정현</td>
-    				<th>카테고리</th>
-    				<td>Q&A</td>
-    			</tr>
-    			<tr>
-    				<th width="20%">작성일</th>
-    				<td width="30%">2020-12-08</td>
-    				<th width="20%">조회수</th>
-    				<td width="30%">400</td>
-    			</tr>
-    		</table>
-    		<div id="main_contents">
-    			<p>컨텐츠 내용들~~~~~~~~~~~~~~~~~~~~~~~~~<br>
-    			Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br>
-    			 Maxime enim tempora incidunt eum doloribus autem animi quasi<br>
-    			  dolorum ea, dolor voluptatum est, architecto repellat? Atque<br>
-    			   a reiciendis nostrum vel debitis.</p>
-    		</div><br><br>
-    		<br>
-    		<!-- form name="onetoone_anser" action="OnetooneAnserAction" method="post">
-	            <div id="main_bottom">
-		            <textarea id="anser" name="anserarea"></textarea>
-		            <input type="submit" value="댓글등록">
-	            </div>
-            </form> -->
-            <form name="edit_and_delete" method="post">
-	            <div id="buttons">
-		            <!-- <input class="write_button" type="submit" value="수정" onclick='btn_click("write_modify")'> -->
-		            <input class="write_button" type="button" value="수정" onclick="location.href='my_Write_Edit'">
-		            <input class="write_button" type="submit" value="삭제" onclick='btn_click("write_delete")'>
-		    		<input class="write_button" type="button" value="목록" onclick="location.href='my_Write'">
-	    		</div>
-    		</form>
-    		<script>
-				function btn_click(str){
-					if(str=="write_modify"){
-						edit_and_delete.action="write_modify";
-					}
-					else if(str=="write_delete"){
-						edit_and_delete.action="write_delete";
-					}
-				}
-    		</script>
-		</div>
-       </div>
-			<script>
-			    $(function(){ 
-			        var $win = $(window); 
-			        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-			        /*사용자 설정 값 시작*/ 
-			        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-			        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-			        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-			        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-			        $layer.css('position', 'relative').css('z-index', '1'); 
-			        /*사용자 설정 값 끝*/ 
-			        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-			        if (top > 0 ) 
-			           $win.scrollTop(layerTopOffset+top); 
-			           else $win.scrollTop(0); 
-			           //스크롤이벤트가 발생하면 
-			           $(window).scroll(function(){ 
-			              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
-			              if (yPosition < 0) { 
-			                 yPosition = 0; 
-			              } 
-			              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
-			        }); 
-			     });   
-			</script>
+                 <div id = "site">
+                    <br>
+                    <h2><b>글쓰기</b></h2><hr>
+                     <form action="writeAction" method="post">
+                        작성자 :&nbsp;&nbsp;<%=member.getName()%>
+                        <input type="hidden" id="id" name="id" value="<%=member.getId()%>">
+                        <input type="hidden" id="name" name="name" value="<%=member.getName()%>"><hr>
+                        제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
+                        <textarea id = "editor4" name = "editor4" ></textarea>
+                    <script>
+                        CKEDITOR.replace('editor4',{width:800,height:400,
+                        filebrowserUploadUrl:'/images/imageUpload.do'});
+                    </script>
+                     <hr>
+                     <div id = "footer_button">
+                        <input type="submit"  value = "등 록"/>
+                        <input type="button"  value = "취 소" onclick="location.href='nav4-2_notice'"/>
+                    </div>
+                    </form>
+                 
+                </div> 
+            </div>
+        	</div>
+<script>
+		    $(function(){ 
+		        var $win = $(window); 
+		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+		        /*사용자 설정 값 시작*/ 
+		        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+		        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+		        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+		        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+		        $layer.css('position', 'relative').css('z-index', '1'); 
+		        /*사용자 설정 값 끝*/ 
+		        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+		        if (top > 0 ) 
+		           $win.scrollTop(layerTopOffset+top); 
+		           else $win.scrollTop(0); 
+		           //스크롤이벤트가 발생하면 
+		           $(window).scroll(function(){ 
+		              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+		              if (yPosition < 0) { 
+		                 yPosition = 0; 
+		              } 
+		              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
+		        }); 
+		     });   
+		</script>
 		
                
                 
            	
         </main>
          <div id ="side_img" class="float_sidebar">
-			<table id ="side_table">
-				<tr>
-					<td><img src="images/side_img.jpg"></td>
-				</tr>
-				<tr>
-					<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
-				</tr> 
-				<tr>
-					<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
-				</tr>
-				<tr>
-					<td><p class="side_p">1600-1111</p></td>
-				</tr>
-			</table>
-		</div>
+		<table id ="side_table">
+			<tr>
+				<td><img src="images/side_img.jpg"></td>
+			</tr>
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+			</tr> 
+			<tr>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+			</tr>
+			<tr>
+				<td><p class="side_p">1600-1111</p></td>
+			</tr>
+		</table>
+	</div>
      <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
