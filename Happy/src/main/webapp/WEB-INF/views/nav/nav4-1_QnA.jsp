@@ -369,7 +369,7 @@
 
 				</table>
 				<div id="btn_box">
-					<input onclick="location.href='write'" type="button" value="글작성">
+					<input onclick="location.href='Q_A_write'" type="button" value="글작성">
 				</div>
 
 				   </div>
