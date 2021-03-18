@@ -223,6 +223,7 @@
 		#editor4{width:700px; height: 400px; margin-left:50px;}
 /* 오른쪽 배너 */
 		#site{
+			margin-top:-23px;
             display:inline-block;
             width:800px;
         }
@@ -365,7 +366,7 @@
             <div class="right">
                  <div id = "site">
                     <br>
-                    <h2><b>글쓰기</b></h2><hr>
+                    <h2><b>내가 작성한 글 수정</b></h2><hr>
                      <form action="writeAction" method="post">
                         작성자 :&nbsp;&nbsp;<%=member.getName()%>
                         <input type="hidden" id="id" name="id" value="<%=member.getId()%>">

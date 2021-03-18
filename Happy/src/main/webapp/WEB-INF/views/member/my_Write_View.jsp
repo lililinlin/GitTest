@@ -386,7 +386,7 @@
 			</div>
             <div class="right">
 				<div id="h2_box">
-                    <h3><b>내가 작성한 글</b></h3><br><br>
+                    <h2><b>내가 작성한 글</b></h2><br><br>
 				</div>
                 	<table id="contents_table">
     			<tr>
