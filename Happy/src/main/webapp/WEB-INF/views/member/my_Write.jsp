@@ -196,8 +196,13 @@
 			text-align: center;
 			height: 50px;
 		}
+		.category{
+			width: 150px;
+			text-align: center;
+		}
 		.title{
 			padding-left: 20px;
+			cursor: pointer;
 		}
 /* 오른쪽 배너 */
 		#site{
@@ -346,29 +351,59 @@
                   <table id="main_table">
 					  <tr>
 						  <th>번호</th>
+						  <th>카테고리</th>
 						  <th>제목</th>
 					  </tr>
 					  <tr>
 							<td class="num">1</td>
-							<td class="title">동물을 입양하고 싶어요.</td>
+							<td class="category">게시판</td>
+							<td class="title" onclick="location.href='my_Write_View'">동물을 입양하고 싶어요.</td>
 					  </tr>
 					  <tr>
 							<td class="num">2</td>
-							<td class="title">봉사활동 하고 싶은데 신청은 어디서 하나요?</td>
+							<td class="category">게시판</td>
+							<td class="title" onclick="location.href='my_Write_View'">봉사활동 하고 싶은데 신청은 어디서 하나요?</td>
 					</tr>
 					  <tr>
 							<td class="num">3</td>
-							<td class="title">후원하고 싶습니다.</td>
+							<td class="category">Q&A</td>
+							<td class="title" onclick="location.href='my_Write_View'">후원하고 싶습니다.</td>
 					  </tr>
 					  <tr>
 							<td class="num">4</td>
-							<td class="title">방문하고 싶습니다.</td>
+							<td class="category">Q&A</td>
+							<td class="title" onclick="location.href='my_Write_View'">방문하고 싶습니다.</td>
 					  </tr>
 					  <tr>
 							<td class="num">5</td>
-							<td class="title">후원하고 싶습니다.</td>
+							<td class="category">Q&A</td>
+							<td class="title" onclick="location.href='my_Write_View'">후원하고 싶습니다.</td>
 					  </tr>
-
+					   <tr>
+							<td class="num">6</td>
+							<td class="category">입양후기</td>
+							<td class="title" onclick="location.href='my_Write_View'">이번에 새로운 가족이 생겼어요</td>
+					  </tr>
+					  <tr>
+							<td class="num">7</td>
+							<td class="category">입양후기</td>
+							<td class="title" onclick="location.href='my_Write_View'">입양한 미미 근황</td>
+					  </tr>
+					  <tr>
+							<td class="num">8</td>
+							<td class="category">Q&A</td>
+							<td class="title" onclick="location.href='my_Write_View'">후원하고 싶습니다.</td>
+					  </tr>
+					  <tr>
+							<td class="num">9</td>
+							<td class="category">게시판</td>
+							<td class="title" onclick="location.href='my_Write_View'">감사합니다.</td>
+					  </tr>
+					  <tr>
+							<td class="num">10</td>
+							<td class="category">게시판</td>
+							<td class="title" onclick="location.href='my_Write_View'">감사합니다.</td>
+					  </tr>
 				  </table>
 				   </div>
         	</div>
@@ -403,21 +438,21 @@
            	
         </main>
          <div id ="side_img" class="float_sidebar">
-		<table id ="side_table">
-			<tr>
-				<td><img src="images/side_img.jpg"></td>
-			</tr>
-			<tr>
-				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
-			</tr> 
-			<tr>
-				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
-			</tr>
-			<tr>
-				<td><p class="side_p">1600-1111</p></td>
-			</tr>
-		</table>
-	</div>
+			<table id ="side_table">
+				<tr>
+					<td><img src="images/side_img.jpg"></td>
+				</tr>
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
+				</tr> 
+				<tr>
+					<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+				</tr>
+				<tr>
+					<td><p class="side_p">1600-1111</p></td>
+				</tr>
+			</table>
+		</div>
      <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
