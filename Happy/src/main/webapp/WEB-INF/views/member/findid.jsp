@@ -17,7 +17,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<title>메인페이지</title>
+<title>아이디찾기</title>
 	<script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -141,32 +141,48 @@
 		margin: 0 auto;
 		padding-top:130px;
 	}
+	#content_title{
+		width:420px;
+		height:150px;
+		display:flex;
+		margin-left:680px;
+	}
+	#content_title img{
+		margin-top:10px;
+		width:130px;
+		height:130px;
+	}
+	#content_title h2{
+		font-weight:bold;
+		margin-left:30px;
+		line-height: 150px;
+	}
 	#mid_login {
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 70px;
 	height:494px;
 	padding-top:30px;
-	margin-bottom:55px;
+	margin-bottom:105px;
 	}
 	#mid_login h2{
 		margin-bottom:50px;
 	}
 
-.idpw {
-	width: 350px;
-	height: 60px;
-	font-size: 30px;
-}
-
-#login_img {
-	width: 500px;
-	height: 150px;
-}
-
-#submit_login {
-	width: 425px;
-	height: 80px;
-}
+	.idpw {
+		width: 350px;
+		height: 60px;
+		font-size: 30px;
+	}
+	
+	#login_img {
+		width: 500px;
+		height: 150px;
+	}
+	
+	#submit_login {
+		width: 425px;
+		height: 80px;
+	}
 	
 /* footer */
 	#footer {
@@ -262,11 +278,14 @@
 		</div>
 		<!-- 사이드광고 자동 스크롤 -->
 		<div id="mid_login">
-			<h2>아이디 찾기</h2>
-			<form method="post" action="MemberLoginAction">
+			<div id ="content_title">
+				<img src="images/logo3.jpg">
+				<h2>아이디 찾기</h2>
+			</div>
+			<form method="post" action="MemberIdSearchAction">
 				<br> 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="idpw"
-					type="text" name="id" size="42"><br> <br>
-				전화번호&nbsp;&nbsp;<input type="password" class="idpw" name="password"
+					type="text" name="name" size="42"><br> <br>
+				전화번호&nbsp;&nbsp;<input type="password" class="idpw" name="phone"
 					size="42"><br> <br> <br> 
 					<input type="submit" id="submit_login" class="btn btn-dark" value="확인"><br>
 				<br> <br>

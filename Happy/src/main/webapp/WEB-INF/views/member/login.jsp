@@ -240,7 +240,7 @@ footer a {
 					<input type="submit" id="submit_login" class="btn btn-dark" value="로그인"><br>
 				<br> <br>
 			</form>
-			<a href="findid" class="login_search"><b>아이디찾기</b></a> &nbsp;|&nbsp; <a  href="" class = "login_search"><b>비밀번호찾기</b></a> &nbsp;|&nbsp; <a href="" class = "login_search"><b>회원가입</b></a> <br>
+			<a href="findid" class="login_search"><b>아이디찾기</b></a> &nbsp;|&nbsp; <a  href="findpw" class = "login_search"><b>비밀번호찾기</b></a> &nbsp;|&nbsp; <a href="join_agree" class = "login_search"><b>회원가입</b></a> <br>
 			<br> <br> <br> <br> <br> <br> <br>
 			<br>
 		</div>

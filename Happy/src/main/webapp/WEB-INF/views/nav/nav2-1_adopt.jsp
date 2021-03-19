@@ -1,232 +1,262 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bxslider의 css 추가 -->
-    <link rel="stylesheet" href="css/jquery.bxslider.css">
-    <!-- Bootstrap CSS -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양하기</title>
-     <script>
-        $(function() { 
-             var lnb = $("#nav_wrapper").offset().top;
-             $(window).scroll(function() {
-                var window = $(this).scrollTop();
- 
-                if(lnb <= window) {
-                   $("#nav_wrapper").addClass("fixed");
-                } else {
-                   $("#nav_wrapper").removeClass("fixed");
-                }
-             })
-          });
-    </script>
-    <style>
-        a:link { text-decoration: none;}
-    	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
- 		a:hover { text-decoration: none;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- bxslider의 css 추가 -->
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<!-- Bootstrap CSS -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+<title>입양하기</title>
+<script>
+	$(function() {
+		var lnb = $("#nav_wrapper").offset().top;
+		$(window).scroll(function() {
+			var window = $(this).scrollTop();
+
+			if (lnb <= window) {
+				$("#nav_wrapper").addClass("fixed");
+			} else {
+				$("#nav_wrapper").removeClass("fixed");
+			}
+		})
+	});
+</script>
+<style>
+a:link {
+	text-decoration: none;
+}
+/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
+a:hover {
+	text-decoration: none;
+}
 /* 헤더 */
-        * {
-			font-family: 'Noto Sans KR', sans-serif;
-	    }
- 		#head {
-			margin: 0 auto;
-			width: 1200px;
-			height: 100px;
-			background-color: white; 
-		}
-	
-	    #logo {
-	        width: 400px;
-	        height: 100px;
-	    }
-	
-	    .headerlogtd {
-	        text-align: right;
-	        vertical-align: bottom;
-	    }
-	
-	    .headerlog {
-	        color: rgb(150, 147, 147);
-	        font-size: 13px;
-	        text-decoration: none;
-	    }
-		#nav_wrapper{
-		    width:100%;
-		    padding-bottom: 2px;
-			box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
-		}
-		#nav_wrapper.fixed{
-		    position: fixed;
-		    padding-bottom: 20px;
-		    left: 0; 
-		    top: 0; 
-		    width: 100%; 
-		    height:115px;
-		    background-color: white; 
-		    z-index:100; 
-		}	
-	    .menumaintd {
-	        width: 200px;
-	        list-style-type: none;
-	        text-decoration: none;
-	        color: rgb(150, 147, 147);
-	        text-align: center;
-	    }
-	
-	    .mainmenu {
-	        text-decoration: none;
-	        color: black;
-	    }
-	    .hov {
-	        background-color: white;
-	        font-size: 25px;
-	        width: 180px;
-	        margin-top: 14px;
-	        display: none;
-	        position: absolute;
-	        list-style-type: none;
-	        text-decoration: none;
-	        z-index: 100;
-	        padding-top: 0px;
-	        border-top: 2px solid rgb(189, 189, 193);
-	        padding-left: 0px;
-	        margin-left: 10px;
-	        text-align: center;
-	    }
-	
-	    .hov li {
-	    	height:47px;
-	        border-bottom: 2px solid rgb(189, 189, 193);
-	    }
-	
-	    .hov a {
-	        color: black;
-	        font-size: 13px;
-	    }
-	
-	    .hov:hover ul {
-	        display: block;
-	    }
-	
-	    .hov li:nth-child(n):hover {
-	        background-color: rgb(118, 118, 118);
-	    }
-	
-	    .hov li:nth-child(n):hover a {
-	        color: white;
-	    }
-	    /* .hov:hover li:nth-child(n){
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#head {
+	margin: 0 auto;
+	width: 1200px;
+	height: 100px;
+	background-color: white;
+}
+
+#logo {
+	width: 400px;
+	height: 100px;
+}
+
+.headerlogtd {
+	text-align: right;
+	vertical-align: bottom;
+}
+
+.headerlog {
+	color: rgb(150, 147, 147);
+	font-size: 13px;
+	text-decoration: none;
+}
+
+#nav_wrapper {
+	width: 100%;
+	padding-bottom: 2px;
+	box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
+}
+
+#nav_wrapper.fixed {
+	position: fixed;
+	padding-bottom: 20px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 115px;
+	background-color: white;
+	z-index: 100;
+}
+
+.menumaintd {
+	width: 200px;
+	list-style-type: none;
+	text-decoration: none;
+	color: rgb(150, 147, 147);
+	text-align: center;
+}
+
+.mainmenu {
+	text-decoration: none;
+	color: black;
+}
+
+.hov {
+	background-color: white;
+	font-size: 25px;
+	width: 180px;
+	margin-top: 14px;
+	display: none;
+	position: absolute;
+	list-style-type: none;
+	text-decoration: none;
+	z-index: 100;
+	padding-top: 0px;
+	border-top: 2px solid rgb(189, 189, 193);
+	padding-left: 0px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.hov li {
+	height: 47px;
+	border-bottom: 2px solid rgb(189, 189, 193);
+}
+
+.hov a {
+	color: black;
+	font-size: 13px;
+}
+
+.hov:hover ul {
+	display: block;
+}
+
+.hov li:nth-child(n):hover {
+	background-color: rgb(118, 118, 118);
+}
+
+.hov li:nth-child(n):hover a {
+	color: white;
+}
+/* .hov:hover li:nth-child(n){
 	            background-color: hotpink;
 	            } */
-	    .menumaintd:hover .hov {
-	        display: block;
-	    }
+.menumaintd:hover .hov {
+	display: block;
+}
 /* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
+#footer {
+	text-align: center;
+	margin: 0 auto;
+	height: 200px;
+	width: 100%;
+	background-color: #424141;
+}
 
-    footer a {
-        color: white;
-    }
+footer a {
+	color: white;
+}
 /* 메인 */
- 		main{
-			width:1200px;
-			height:820px;
-			margin:0 auto;
-			margin-top:60px;
-			margin-bottom:100px;
-		}
+main {
+	width: 1200px;
+	height: 820px;
+	margin: 0 auto;
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
 /* 왼쪽 오른쪽 담은 div */
-        #main_wrapper{
-        	width:1200px;
-        	height:750px;
-			margin:0 auto;
-        }
+#main_wrapper {
+	width: 1200px;
+	height: 750px;
+	margin: 0 auto;
+}
 /* 왼쪽 카테고리 */
-		#left_menu{
-        	float:left;
-			width:300px;
-		}
-        #left_menu table{
-            margin: 30px 0px 0px 10px;
-            width: 200px;
-            height: 80px;
-        }
-        #left_menu table td{
-            height: 50px;
-            padding-left: 20px;
-        }
-        #left_menu table tr{
-            border: 1px solid rgb(231, 231, 231);
-        }
-        #left_menu tr:hover{
-            background-color: rgb(251, 249, 249);            
-            cursor: pointer;
-            color: #22409a;
-        }
-        .right{
-	        width: 1650px;
-            height: 100%;
-            margin:20px;
+#left_menu {
+	border:1px solid green;
+	float: left;
+	width: 250px;
+}
 
-        }
-        .right img{
-            float:right;
-        }
+#left_menu table {
+	margin: 30px 0px 0px 10px;
+	width: 200px;
+	height: 80px;
+}
+
+#left_menu table td {
+	height: 50px;
+	padding-left: 20px;
+}
+
+#left_menu table tr {
+	border: 1px solid rgb(231, 231, 231);
+}
+
+#left_menu tr:hover {
+	background-color: rgb(251, 249, 249);
+	cursor: pointer;
+	color: #22409a;
+}
+
+.right {
+	border:1px solid red;
+	width: 1000px;
+	height: 100%;
+	margin: 20px;
+	margin-left:250px;
+}
+#container{
+	width:1000px;
+	border:1px solid blue;
+}
+.content_piece{
+	border:1px solid black;
+	width:300px;
+	height:500px;
+}
+.content_piece_img img{
+	width:350px;
+	height:250px;
+}
 /* 오른쪽 배너 */
-        #site{
-            display:inline-block;
-        }
+#site {
+	display: inline-block;
+}
 
-        #side_table td{
-				border:1px solid  #e5e5e5;
-				background-color: white;
-		}
-		#side_img{
-			float:right;
-			width:180px;
-			margin-right:38px;
-			margin-top:-880px;
-			
-		}
-		#side_img img{
-			width:160px;
-			height:200px;
-		}
-		.side_p{
-			width:156px;
-			padding-top:10px;
-			text-align: center;
-		}
-        /* *{
+#side_table td {
+	border: 1px solid #e5e5e5;
+	background-color: white;
+}
+
+#side_img {
+	float: right;
+	width: 180px;
+	margin-right: 38px;
+	margin-top: -880px;
+}
+
+#side_img img {
+	width: 160px;
+	height: 200px;
+}
+
+.side_p {
+	width: 156px;
+	padding-top: 10px;
+	text-align: center;
+}
+/* *{
             border: 1px solid red;
         } */
-    </style>
-
-
+</style>
 <body>
-     <div id ="nav_wrapper">
+	<div id="nav_wrapper">
 		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
 						id="logo" alt=""></a></td>
 				<td></td>
 				<td></td>
-				<td></td> 
-				<% 
+				<td></td>
+				<%
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -289,13 +319,15 @@
 							</ul></li>
 					</td>
 				</ul>
-				</tr>
-			</table>
-		</div>
-<main>
-      		<div id="main_wrapper">
-              <div id="left_menu">
-				<h3><b>입양하기</b></h3>
+			</tr>
+		</table>
+	</div>
+	<main>
+		<div id="main_wrapper">
+			<div id="left_menu">
+				<h3>
+					<b>입양하기</b>
+				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
@@ -307,65 +339,81 @@
 					</tr>
 				</table>
 			</div>
-            <div class="right">
-                <div id = "site">
-                    <h2><b>입양하기</b></h2>
-                  <div id="container">
-				
-		</div>	
+			<div class="right">
+				<div id="site">
+					<h2>
+						<b>입양하기</b>
+					</h2>
+					<div id="container">
+						<div class = "content_piece">
+							<div class ="content_piece_img">
+								<img src="images/dog1.jpg">
+							</div>
+							<div class ="content_piece_coment">
+								
+							</div>
+						</div>
+					</div>
 
 
-		    	<script>
-		    $(function(){ 
-		        var $win = $(window); 
-		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-		        /*사용자 설정 값 시작*/ 
-		        var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-		        var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-		        var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-		        var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-		        $layer.css('position', 'relative').css('z-index', '1'); 
-		        /*사용자 설정 값 끝*/ 
-		        // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-		        if (top > 0 ) 
-		           $win.scrollTop(layerTopOffset+top); 
-		           else $win.scrollTop(0); 
-		           //스크롤이벤트가 발생하면 
-		           $(window).scroll(function(){ 
-		              yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
-		              if (yPosition < 0) { 
-		                 yPosition = 0; 
-		              } 
-		              $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false}); 
-		        }); 
-		     });   
-		</script>
-		
+					<script>
+						$(function() {
+							var $win = $(window);
+							var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+							/*사용자 설정 값 시작*/
+							var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+							var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+							var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+							var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+							$layer.css('position', 'relative').css('z-index',
+									'1');
+							/*사용자 설정 값 끝*/
+							// 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+							if (top > 0)
+								$win.scrollTop(layerTopOffset + top);
+							else
+								$win.scrollTop(0);
+							//스크롤이벤트가 발생하면 
+							$(window).scroll(function() {
+								yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+								if (yPosition < 0) {
+									yPosition = 0;
+								}
+								$layer.animate({
+									"top" : yPosition
+								}, {
+									duration : speed,
+									easing : easing,
+									queue : false
+								});
+							});
+						});
+					</script>
+				</div>
+			</div>
 
-                  
-                </div>
-               </div>
-                
-            </div>
-    </main>
-     <div id ="side_img" class="float_sidebar">
-		<table id ="side_table">
+		</div>
+	</main>
+	<div id="side_img" class="float_sidebar">
+		<table id="side_table">
 			<tr>
 				<td><img src="images/side_img.jpg"></td>
 			</tr>
 			<tr>
-				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"style="cursor: pointer;">입양하기</p></td>
-			</tr> 
+				<td><p class="side_p" onclick="location.href='nav2-1_adopt'"
+						style="cursor: pointer;">입양하기</p></td>
+			</tr>
 			<tr>
-				<td><p class="side_p" onclick="location.href='nav2-3_review'"style="cursor: pointer;">입양후기</p></td>
+				<td><p class="side_p" onclick="location.href='nav2-3_review'"
+						style="cursor: pointer;">입양후기</p></td>
 			</tr>
 			<tr>
 				<td><p class="side_p">1600-1111</p></td>
 			</tr>
 		</table>
 	</div>
-        
-    <div id="footer">
+
+	<div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
 			<p>
