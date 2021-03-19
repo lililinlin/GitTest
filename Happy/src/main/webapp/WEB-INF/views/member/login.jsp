@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
+	rel="stylesheet"> 
 <title>메인페이지</title>
 <style>
  a:link { text-decoration: none;}

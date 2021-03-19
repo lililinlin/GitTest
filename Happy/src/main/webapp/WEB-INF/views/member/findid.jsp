@@ -274,7 +274,7 @@
 					</td>
 				</ul>
 				</tr>
-			</table>
+			</table> 
 		</div>
 		<!-- 사이드광고 자동 스크롤 -->
 		<div id="mid_login">
