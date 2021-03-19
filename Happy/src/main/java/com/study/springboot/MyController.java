@@ -272,6 +272,12 @@ public class MyController {
       return "member/my_Write_Edit";
    }
    
+   @RequestMapping("/Q_A_Write")
+   public String Q_A_Write(Model model) {
+	   
+	   return "board/Q_A_Write";
+   }
+   
    @RequestMapping("/Q_A_content_view")
    public String Q_A_content_view(Model model) {
 	   

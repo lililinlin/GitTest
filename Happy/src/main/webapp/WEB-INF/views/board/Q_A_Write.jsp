@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.study.springboot.dto.MemberDto" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>고객센터</title>
+       
+    
      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +32,9 @@
              })
           });
     </script>
+    <%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -126,7 +133,7 @@
 	    }
 	    /* .hov:hover li:nth-child(n){
 	            background-color: hotpink;
-	            } */ 
+	            } */
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }
@@ -173,6 +180,26 @@
             height: 100%;
             margin:20px; 
         }
+		#footer_button{
+          text-align: center;
+		  padding-top: 20px;
+        }
+        input[type=submit]{
+           width:250px;
+           height:60px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
+        }
+        input[type=button]{
+          margin-left:10px;
+          width:250px;
+          height:60px;
+          border:1px solid gray;
+		  background-color: white;
+		  color: gray;
+		  
+        }
 		#h2_box{
 			margin-left:280px;
 			width:870px;
@@ -180,7 +207,8 @@
 		}
 		#main_table{
 			width: 870px;
-			margin-bottom: 100px;
+			margin-bottom: 400px;
+
 		}
 		#main_table tr{
 			border-bottom: 1px solid rgb(233, 233, 233);
@@ -190,32 +218,14 @@
 			height: 60px;
 			font-weight: normal;
 		}
-		.num{
-			width: 80px;
-			text-align: center;
-			height: 50px;
-		}
-		.title{
-			padding-left: 20px;
-		}
-		.title a{
-			cursor: pointer;
-			color: black;
-		}
-		#btn_box{
-			margin-left: 500px;
-		}
-		#btn_box input{
-			margin-left:500px;
-           width:150px;
-           height:45px;
-           background-color:rgb(27, 40, 138);
-		   color: white;
-		   border: none;
-		}
+		
+		#title{ width:700px; margin-left:10px}
+		#editor4{width:700px; height: 400px; margin-left:50px;}
 /* 오른쪽 배너 */
 		#site{
+			margin-top:-23px;
             display:inline-block;
+            width:800px;
         }
 
         #side_table td{
@@ -336,43 +346,42 @@
 <main>
      		<div id="main_wrapper">
             
-             <div id="left_menu">
-				<h3><b>고객센터</b></h3>
-				<table>
-					<tr onclick="location.href='nav4-1_QnA'">
-						<td>Q&A</td>
-						<td>></td>
-					</tr>
-					<tr onclick="location.href='nav4-2_notice'">
-						<td>공지사항</td>
-						<td>></td>
-					</tr>
-				</table>
-			</div>
+				<div id="left_menu">
+					<h3><b>고객센터</b></h3>
+					<table>
+						<tr onclick="location.href='nav4-1_QnA'">
+							<td>Q&A</td>
+							<td>></td>
+						</tr>
+						<tr onclick="location.href='nav4-2_notice'">
+							<td>공지사항</td>
+							<td>></td>
+						</tr>
+					</table>
+				</div>
             <div class="right">
-				<div id="h2_box">
-                    <b style="font-size: 30px;">Q&A &nbsp;&nbsp;</b><small>- 고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</small><br><br>
-				</div>
-                  <table id="main_table">
-					  <tr>
-						  <th>번호</th>
-						  <th>제목</th>
-					  </tr>
-					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="Q_A_content_view">동물을 입양하고 싶어요.</a></td>
-					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="Q_A_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-					</tr>
-
-				</table>
-				<div id="btn_box">
-					<input onclick="location.href='Q_A_Write'" type="button" value="글작성">
-				</div>
-
-				   </div>
+                 <div id = "site">
+                    <br>
+                    <h2><b>Q & A 작성하기</b></h2><hr>
+                     <form action="writeAction" method="post">
+                        작성자 :&nbsp;&nbsp;<%=member.getName()%>
+                        <input type="hidden" id="id" name="id" value="<%=member.getId()%>">
+                        <input type="hidden" id="name" name="name" value="<%=member.getName()%>"><hr>
+                        제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
+                        <textarea id = "editor4" name = "editor4" ></textarea>
+                    <script>
+                        CKEDITOR.replace('editor4',{width:800,height:400,
+                        filebrowserUploadUrl:'/images/imageUpload.do'});
+                    </script>
+                     <hr>
+                     <div id = "footer_button">
+                        <input type="submit"  value = "등 록"/>
+                        <input type="button"  value = "취 소" onclick="location.href='nav4-2_notice'"/>
+                    </div>
+                    </form>
+                 
+                </div> 
+            </div>
         	</div>
 <script>
 		    $(function(){ 
