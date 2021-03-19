@@ -213,6 +213,18 @@
 		   color: white;
 		   border: none;
 		}
+		#right_title{
+			border-bottom: 1px solid rgb(216, 216, 216);
+			height: 50px;
+		}
+		#right_table{
+			width: 870px;
+			border-bottom: 1px solid rgb(27, 40, 138);
+			margin-bottom: 50px;
+		}
+		#main_content{
+			padding: 40px 20px 40px 20px;
+		}
 /* 오른쪽 배너 */
 		#site{
             display:inline-block;
@@ -353,23 +365,21 @@
 				<div id="h2_box">
                     <b style="font-size: 30px;">Q&A &nbsp;&nbsp;</b><small>- 고객님들께서 가장 자주하시는 질문을 모두 모았습니다.</small><br><br>
 				</div>
-                  <table id="main_table">
-					  <tr>
-						  <th>번호</th>
-						  <th>제목</th>
-					  </tr>
-					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="Q_A_content_view">동물을 입양하고 싶어요.</a></td>
-					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="Q_A_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-					</tr>
-
-				</table>
+                  <div>
+					 <table id="right_table">
+						 <tr id="right_title"><td style="width: 600px; padding-left: 20px;">강아지를 입양하고 싶어요</td>
+							 <td><small>2021.03.19</small></td>
+							 <td><small>조회 15,421</small></td>
+						</tr>
+						<tr>
+							<td colspan="3" id="main_content">강아지를 입양하길 원하신다면
+								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.
+							</td>
+						</tr>
+					 </table>
+				  </div>
 				<div id="btn_box">
-					<input onclick="location.href='Q_A_write'" type="button" value="글작성">
+					<input onclick="location.href='write'" type="button" value="목록">
 				</div>
 
 				   </div>

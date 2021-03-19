@@ -271,6 +271,12 @@ public class MyController {
 
       return "member/my_Write_Edit";
    }
+   
+   @RequestMapping("/Q_A_content_view")
+   public String Q_A_content_view(Model model) {
+	   
+	   return "board/Q_A_content_view";
+   }
    @RequestMapping(value = "/MemberModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
    public String MemberModifyFormAction(HttpServletRequest req, Model model) throws Exception {
       req.setCharacterEncoding("utf-8"); // 인코딩
