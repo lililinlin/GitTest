@@ -221,6 +221,9 @@
 		
 		#title{ width:700px; margin-left:10px}
 		#editor4{width:700px; height: 400px; margin-left:50px;}
+		#site h3{
+			margin-top:5px;
+		}
 /* 오른쪽 배너 */
 		#site{
 			margin-top:-23px;
@@ -362,11 +365,8 @@
             <div class="right">
                  <div id = "site">
                     <br>
-                    <h2><b>Q & A 작성하기</b></h2><hr>
-                     <form action="writeAction" method="post">
-                        작성자 :&nbsp;&nbsp;<%=member.getName()%>
-                        <input type="hidden" id="id" name="id" value="<%=member.getId()%>">
-                        <input type="hidden" id="name" name="name" value="<%=member.getName()%>"><hr>
+                    <h3><b>Q & A 작성하기</b></h3>
+                     <form action="Q_A_writeAction" method="post"><hr>
                         제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
                     <script>
