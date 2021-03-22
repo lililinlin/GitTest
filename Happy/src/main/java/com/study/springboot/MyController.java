@@ -64,11 +64,17 @@ public class MyController {
 	}
 
 	@RequestMapping("/nav2-1_adopt")
-	public String navadoptPage(Model model) {
-
+	public String navadoptPage(HttpServletRequest req, Model model) {
+		if(req.getSession().getAttribute("sessionID") ==null) {
+			
+		}else {
+			String id = req.getSession().getAttribute("sessionID").toString();
+			MemberDto dto = member_service.getUserInfo(id);
+			req.getSession().setAttribute("memberInfo", dto);
+		}
+		
 		return "nav/nav2-1_adopt";
 	}
-
 	@RequestMapping("/nav2-2_adopted")
 	public String navadoptedPage(Model model) {
 

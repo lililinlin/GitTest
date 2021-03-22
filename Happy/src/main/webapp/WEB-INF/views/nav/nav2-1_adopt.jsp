@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +33,9 @@
 		})
 	});
 </script>
+<%
+    MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+   %>
 <style>
 a:link {
 	text-decoration: none;
@@ -199,58 +203,64 @@ main {
 	width: 950px;
 	height: 100%;
 	margin: 20px;
-	margin-left:250px;
+	margin-left: 250px;
 }
-#site{
+
+#site {
 	width: 800px;
-	margin:0 auto;
+	margin: 0 auto;
 }
-#piese_ul{
+
+#piese_ul {
 	list-style: none;
-	border-bottom:1px solid #aaa;
+	border-bottom: 1px solid #aaa;
 }
-.piese_img{
-	float:left;
-	width:200px;
-	height:200px;
-	margin-top:30px;
-	margin-right:50px;
-	margin-bottom:50px;
+
+.piese_img {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin-top: 30px;
+	margin-right: 50px;
+	margin-bottom: 50px;
 }
-.piese_img a{
-	display:block;
-	color:rgb(27, 40, 138);
+
+.piese_img a {
+	display: block;
+	color: rgb(27, 40, 138);
 }
-.piese_img a thumb{
+
+.piese_img a thumb {
 	position: relative;
-	display:block;
+	display: block;
 	background-color: #ccc;
-	height:200px;
+	height: 200px;
 	color: #666;
 	text-align: center;
-	line-height:200px;
+	line-height: 200px;
 }
-.piese_img p{
-	color:#767676;
-	font-size:.9em;
+
+.piese_img p {
+	color: #767676;
+	font-size: .9em;
 }
-.piese_img img{
-	width:200px;
-	height:200px;
+
+.piese_img img {
+	width: 200px;
+	height: 200px;
 }
-#write{
-	margin-left:590px;
-	margin-top:50px;
-    width:150px;
-    height:45px;
-    background-color:rgb(27, 40, 138);
+
+#write {
+	margin-left: 590px;
+	margin-top: 50px;
+	width: 150px;
+	height: 45px;
+	background-color: rgb(27, 40, 138);
 	color: white;
 	border: none;
 }
 
 /* 오른쪽 배너 */
-
-
 #side_table td {
 	border: 1px solid #e5e5e5;
 	background-color: white;
@@ -375,66 +385,44 @@ main {
 						<b>입양하기</b>
 					</h2>
 					<ul id="piese_ul">
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog1.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog2.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog3.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog4.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog5.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog6.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog1.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog2.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog3.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog4.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog5.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
+						<li class="piese_img"><a href="adopt_content_view"> <span
+								class="thumb"> <img src="images/dog6.jpg">
+							</span> <strong>이미지 제목</strong>
+						</a>
+							<p>2021-2-01</p></li>
 					</ul>
+					<% if( session.getAttribute("sessionID") != null){
+							if(member.getId().equals("admin") ){ %> 
+							<input type="button"id="write" value="글작성" onclick="location.href='adopt_write'">
+					<%} %>
 					<%
-						if (session.getAttribute("sessionID").equals("admin")) {
+						}
 					%>
-						<input type="button" id="write" value ="글작성" onclick="location.href='adopt_write'">
-					<% } %>
 					<script>
 						$(function() {
 							var $win = $(window);
