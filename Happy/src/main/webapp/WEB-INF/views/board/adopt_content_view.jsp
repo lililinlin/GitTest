@@ -1,23 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- bxslider의 css 추가 -->
 <link rel="stylesheet" href="css/jquery.bxslider.css">
 <!-- Bootstrap CSS -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<title>메인페이지</title>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>고객센터</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;
@@ -32,6 +33,9 @@
 		})
 	});
 </script>
+<%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
 <style>
 a:link {
 	text-decoration: none;
@@ -40,12 +44,11 @@ a:link {
 a:hover {
 	text-decoration: none;
 }
-
+/* 헤더 */
 * {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* header */
 #head {
 	margin: 0 auto;
 	width: 1200px;
@@ -70,8 +73,6 @@ a:hover {
 }
 
 #nav_wrapper {
-	/* border-bottom: 1px solid rgb(235,235,235);
-		margin-bottom: 10px; */
 	width: 100%;
 	padding-bottom: 2px;
 	box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
@@ -140,97 +141,132 @@ a:hover {
 	color: white;
 }
 /* .hov:hover li:nth-child(n){
-	         background-color: hotpink;
-	        } */
+	            background-color: hotpink;
+	            } */
 .menumaintd:hover .hov {
 	display: block;
 }
 
-/* main */
-#wrapper {
-	text-align: center;
+/* 메인 */
+/* 메인 */
+main {
 	width: 1200px;
+	height: 820px;
+	margin: 0 auto;
+	margin-top: 60px;
+	margin-bottom: 100px;
+}
+/* 왼쪽 오른쪽 담은 div */
+#main_wrapper {
+	width: 1200px;
+	height: 750px;
 	margin: 0 auto;
 }
-
-#main_bottom {
-	text-align: center;
+/* 왼쪽 카테고리 */
+#left_menu {
+	float: left;
+	width: 300px;
 }
 
-.prices {
-	width: 1200px;
-	display: flex;
-	text-align: center;
-}
-
-.price-item {
-	border-radius: 1rem;
-	text-align: center;
-	margin: 10px 10px 50px 10px;
-	background-color: rgb(250, 250, 250);
-}
-
-.prices-item-price {
-	font-size: 2.5rem;
-	font-weight: bold;
-	padding: 20px;
-}
-
-.p-button {
-	padding: .5rem 1rem;
-	font-size: 1.25rem;
-	line-height: 1.5;
-	border-radius: 0.3rem;
-	background-color: rgb(29, 95, 142);
-	background-image: none;
-	border-color: #b2b2a2;
-	color: white;
-	width: 370px;
+#left_menu table {
+	margin: 30px 0px 0px 10px;
+	width: 200px;
 	height: 80px;
 }
 
-.c-button {
-	position: absolute;
-	bottom: 50px;
-	left: 525px;
-	width: 150px;
-	height: 60px;
-	z-index: 100;
-	background-color: transparent !important;
-	background-image: none !important;
-	border: 0.5px solid white;
-	border-radius: 0.2rem;
-	color: #FFFFFF;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+#left_menu table td {
+	height: 50px;
+	padding-left: 20px;
 }
 
-.exp {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 5rem;
-	color: white;
-	z-index: 2;
+#left_menu table tr {
+	border: 1px solid rgb(231, 231, 231);
+}
+
+#left_menu tr:hover {
+	background-color: rgb(251, 249, 249);
+	cursor: pointer;
+	color: #22409a;
+}
+
+.right {
+	width: 1650px;
+	height: 100%;
+	margin: 20px;
+}
+
+#h2_box {
+	margin-left: 280px;
+	width: 870px;
+	border-bottom: 1px solid rgb(6, 15, 138);
+}
+
+#main_table {
+	width: 870px;
+	margin-bottom: 100px;
+}
+
+#main_table tr {
+	border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+#main_table th {
 	text-align: center;
+	height: 60px;
+	font-weight: normal;
 }
 
-.slider {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+.num {
+	width: 80px;
+	text-align: center;
+	height: 50px;
 }
 
-.main_image {
-	height: 250px;
-	width: 380px;
+.title {
+	padding-left: 20px;
 }
 
-.slide-img {
-	width: 1200px;
-	height: 500px;
+.title a {
+	cursor: pointer;
+	color: black;
 }
-/* 따라오는 사이드 바 */
+
+#btn_box1 { /* admin 로그인시 */
+	margin-left: 500px;
+}
+
+#btn_box2 { /* 비로그인, 일반사용자 로그인시  */
+	margin-left: 650px;
+}
+
+#modify, #delete, .list { /* 버튼들 */
+	width: 150px;
+	height: 50px;
+	background-color: rgb(27, 40, 138);
+	color: white;
+	border: none;
+	margin-right: 10px;
+}
+
+#right_title {
+	border-bottom: 1px solid rgb(216, 216, 216);
+	height: 50px;
+}
+
+#right_table {
+	width: 870px;
+	border-bottom: 1px solid rgb(27, 40, 138);
+	margin-bottom: 50px;
+}
+
+#main_content {
+	padding: 40px 20px 40px 20px;
+}
+/* 오른쪽 배너 */
+#site {
+	display: inline-block;
+}
+
 #side_table td {
 	border: 1px solid #e5e5e5;
 	background-color: white;
@@ -240,7 +276,7 @@ a:hover {
 	float: right;
 	width: 180px;
 	margin-right: 38px;
-	margin-top: 100px;
+	margin-top: -880px;
 }
 
 #side_img img {
@@ -253,7 +289,7 @@ a:hover {
 	padding-top: 10px;
 	text-align: center;
 }
-/* footer */
+/* 푸터 */
 #footer {
 	text-align: center;
 	margin: 0 auto;
@@ -265,9 +301,14 @@ a:hover {
 footer a {
 	color: white;
 }
-</style>
-<body>
 
+/* *{
+            border: 1px solid red;
+        }  */
+</style>
+</head>
+
+<body>
 	<div id="nav_wrapper">
 		<table id="head">
 			<tr>
@@ -276,7 +317,7 @@ footer a {
 				<td></td>
 				<td></td>
 				<td></td>
-				<%
+				<% 
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -342,41 +383,124 @@ footer a {
 			</tr>
 		</table>
 	</div>
-	<!-- 사이드광고 자동 스크롤 -->
-	<script>
-		$(function() {
-			var $win = $(window);
-			var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
-			/*사용자 설정 값 시작*/
-			var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
-			var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
-			var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
-			var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
-			$layer.css('position', 'relative').css('z-index', '1');
-			/*사용자 설정 값 끝*/
-			// 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
-			if (top > 0)
-				$win.scrollTop(layerTopOffset + top);
-			else
-				$win.scrollTop(0);
-			//스크롤이벤트가 발생하면 
-			$(window).scroll(function() {
-				yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
-				if (yPosition < 0) {
-					yPosition = 0;
+
+	<main>
+		<div id="main_wrapper">
+
+			<div id="left_menu">
+				<h3>
+					<b>입양하기</b>
+				</h3>
+				<table>
+					<tr onclick="location.href='nav4-1_QnA'">
+						<td>입양하기</td>
+						<td>></td>
+					</tr>
+					<tr onclick="location.href='nav4-2_notice'">
+						<td>입양후기</td>
+						<td>></td>
+					</tr>
+				</table>
+			</div>
+			<div class="right">
+				<div id="h2_box">
+					<b style="font-size: 30px;">입양하기 &nbsp;&nbsp;</b><small>-
+						고객님들의 소중한 가족이 기다립니다.</small><br>
+					<br>
+				</div>
+				<div>
+					<table id="right_table">
+						<tr id="right_title">
+							<td style="width: 600px; padding-left: 20px;">루루는 소중한 가족이 필요해요</td>
+							<td><small>2021.03.19</small></td>
+							<td><small>조회 15,421</small></td>
+						</tr>
+						<tr>
+							<td colspan="3" id="main_content">강아지를 입양하길 원하신다면<br>
+								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
+							<br> Lorem ipsum dolor sit amet, consectetur adipisicing
+								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
+								pariatur animi quo. Nobis, impedit accusantium. <br> Alias
+								numquam fuga voluptatem minus qui, non quidem modi similique
+								accusantium.<br> Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+								laudantium, pariatur animi quo. Nobis,<br>
+							<br> impedit accusantium. Alias numquam fuga voluptatem
+								minus qui, non quidem modi <br> similique accusantium.
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+								Excepturi quod ducimus perspiciatis<br> laudantium,
+								pariatur animi quo. Nobis, impedit accusantium.<br> Alias
+								numquam fuga voluptatem minus qui, non quidem modi similique
+								accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing
+								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
+								pariatur animi quo. Nobis, impedit accusantium. <br>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<%
+				String id = member.getId();
+				if( id.equals("admin")) {
+				%>
+				<div id="btn_box1">
+					<form action="adopt_modify" method="post">
+						<input onclick="location.href='adopt_write'" id="modify" type="button" value="수정"> 
+						<input id="delete" type="submit" value="삭제">
+						<input onclick="location.href='nav2-1_adopt'" class="list" type="button" value="목록">
+					</form>
+				</div>
+				<%
+				} else{
+				%>
+				<div id="btn_box2">
+					<input onclick="location.href='nav4-1_QnA'" class="list"
+						type="button" value="목록">
+				</div>
+				<%
 				}
-				$layer.animate({
-					"top" : yPosition
-				}, {
-					duration : speed,
-					easing : easing,
-					queue : false
+				%>
+
+			</div>
+		</div>
+		<script>
+			$(function() {
+				var $win = $(window);
+				var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
+				/*사용자 설정 값 시작*/
+				var speed = 700; // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec) 
+				var easing = 'linear'; // 따라다니는 방법 기본 두가지 linear, swing 
+				var $layer = $('.float_sidebar'); // 레이어 셀렉팅 
+				var layerTopOffset = 0; // 레이어 높이 상한선, 단위:px 
+				$layer.css('position', 'relative').css('z-index', '1');
+				/*사용자 설정 값 끝*/
+				// 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해 
+				if (top > 0)
+					$win.scrollTop(layerTopOffset + top);
+				else
+					$win.scrollTop(0);
+				//스크롤이벤트가 발생하면 
+				$(window).scroll(function() {
+					yPosition = $win.scrollTop() + 10; //이부분을 조정해서 화면에 보이도록 맞추세요 
+					if (yPosition < 0) {
+						yPosition = 0;
+					}
+					$layer.animate({
+						"top" : yPosition
+					}, {
+						duration : speed,
+						easing : easing,
+						queue : false
+					});
 				});
 			});
-		});
-	</script>
+		</script>
+
+
+
+
+	</main>
 	<div id="side_img" class="float_sidebar">
-		<table id="side_table">
+		<table id="side_table"> 
 			<tr>
 				<td><img src="images/side_img.jpg"></td>
 			</tr>
@@ -392,115 +516,6 @@ footer a {
 				<td><p class="side_p">1600-1111</p></td>
 			</tr>
 		</table>
-	</div>
-	<div id="wrapper">
-		<div class="bxslider">
-			<div class="slider">
-				<img class="slide-img" src="images/catndog.jpg" title="슬라이더1">
-				<div class="exp">
-					<h1>또 하나의 가족</h1>
-					<h3>사지말고 입양해요</h3>
-				</div>
-				<input class="c-button" type="button"
-					onclick="location.href='nav2-1_adopt'" value="입양하기">
-			</div>
-			<div>
-				<img class="slide-img" src="images/doghand.jpg" title="슬라이더2">
-				<div class="exp">
-					<h1>또 하나의 가족</h1>
-					<h3>가족이 된 아이들의 소식을 전해주세요</h3>
-				</div>
-				<input class="c-button" type="button"
-					onclick="location.href='nav2-3_review'" value="입양후기">
-			</div>
-			<div>
-				<img class="slide-img" src="images/dog_banner3.jpg" title="슬라이더3">
-			</div>
-
-		</div>
-		<div class="prices">
-			<div class="price-item">
-				<div class="price-item-title">
-					<img class="main_image" src="images/dog1.jpg">
-				</div>
-				<div class="price-item-price">
-					<br>
-					<h3>
-						<b>입양센터 소식</b>
-					</h3>
-					<br>
-					<p>
-						귀여운 센터 아이들의 모습, 보도자료, 반려동물<br> 관련 행사소식 등을 전해드립니다
-					</p>
-					<br> <input class="p-button" type="button"
-						onclick="location.href='nav2-1_adopt'" value="입양하기"
-						style="margin-bottom: 20px;"><br>
-
-
-				</div>
-			</div>
-			<div class="price-item">
-				<div class="price-item-title">
-					<img class="main_image" src="images/adopt2.jpg">
-				</div>
-				<div class="price-item-price">
-					<br>
-					<h3>
-						<b>소통해요</b>
-					</h3>
-					<br>
-					<p>
-						회원들이 서로 소통하는 공간입니다.<br> 회원가입 후 이용해주세요.
-					</p>
-					<br> <input class="p-button" type="button"
-						onclick="location.href='nav3-1_board'" value="커뮤니티"
-						style="margin-bottom: 20px;"><br>
-				</div>
-			</div>
-			<div class="price-item">
-				<div class="price-item-title">
-					<img class="main_image" src="images/logo.jpg">
-				</div>
-				<div class="price-item-price">
-					<br>
-					<h3>
-						<b>해피퍼피 소식</b>
-					</h3>
-					<br>
-					<p>
-						동물과 공존하는 행복한 세상!<br> 여러분의 관심과 사랑이 함께하면 현실이 됩니다.
-					</p>
-					<br> <input class="p-button" type="button"
-						onclick="location.href='nav4-2_notice'" value="공지사항"
-						style="margin-bottom: 20px;"><br>
-				</div>
-			</div>
-		</div>
-		<script src="js/jquery-2.2.4.min.js"></script>
-		<script src="js/jquery.bxslider.js"></script>
-		<script>
-			$(function() {
-				$('.bxslider').bxSlider({
-
-					slideWidth : 2000,
-					caption : true,//주석 이미지 title내용이 나옴.
-					auto : true,//자동재생
-					autoControls : false,//start/stop 버튼사용
-					stopAutoOnClick : true,
-					mode : "horizontal",//vertical(아래에서 위로 올라감), fade(위 아래 변화없이 서서히 바뀜) 전환효과
-					speed : 500,//슬라이딩 속도
-					adaptiveHeight : false,//이미지 높이에 따라 슬라이드 높이 결정
-					touchEnabled : true,//터치 스와이프 사용 결정 이미지를 잡아서 옆으로 넘길 수 있다
-					controls : false,//Prev,Next 버튼 사용여부
-					prevText : "Prev", //이전버튼문구
-					nextText : "Next",//다음버튼 문구
-					touchEnabled : false,
-					autoHover : true
-				//마우스 올리면 일시 정지
-
-				});
-			});
-		</script>
 	</div>
 	<div id="footer">
 		<footer style="color: white;">

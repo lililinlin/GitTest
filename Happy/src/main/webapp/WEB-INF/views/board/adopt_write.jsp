@@ -219,7 +219,6 @@ main {
 }
 .piese_img a{
 	display:block;
-	color:rgb(27, 40, 138);
 }
 .piese_img a thumb{
 	position: relative;
@@ -374,67 +373,7 @@ main {
 					<h2>
 						<b>입양하기</b>
 					</h2>
-					<ul id="piese_ul">
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog1.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog2.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog3.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog4.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog5.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-						<li class="piese_img">
-							<a href="adopt_content_view">
-								<span class="thumb">
-									<img src="images/dog6.jpg">
-								</span>
-								<strong>이미지 제목</strong>
-							</a>
-							<p>2021-2-01</p>
-						</li>
-					</ul>
-					<%
-						if (session.getAttribute("sessionID").equals("admin")) {
-					%>
-						<input type="button" id="write" value ="글작성" onclick="location.href='adopt_write'">
-					<% } %>
+					
 					<script>
 						$(function() {
 							var $win = $(window);

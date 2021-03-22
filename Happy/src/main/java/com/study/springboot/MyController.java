@@ -368,7 +368,16 @@ public class MyController {
 
 		return "redirect";
 	}
+	@RequestMapping("/adopt_write")
+	public String adopt_write(Model model) {
 
+		return "board/adopt_write";
+	}
+	@RequestMapping("/adopt_content_view")
+	public String adopt_content_view(Model model) {
+
+		return "board/adopt_content_view";
+	}
 	@RequestMapping("/Mypage")
 	public String MemberInfoAction(HttpServletRequest req, RedirectAttributes redirect) {
 		String id = req.getSession().getAttribute("sessionID").toString();
