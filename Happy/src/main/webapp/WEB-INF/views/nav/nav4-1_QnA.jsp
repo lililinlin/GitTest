@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +29,9 @@
              })
           });
     </script>
+    <%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -368,10 +372,22 @@
 					</tr>
 
 				</table>
-				<div id="btn_box">
-					<input onclick="location.href='Q_A_Write'" type="button" value="글작성">
-				</div>
+				<%
+				if( session.getAttribute("sessionID") != null){
+					if( member.getId().equals("admin") ){
+				%>		
+						<div id="btn_box">
+						<input onclick="location.href='Q_A_Write'" type="button" value="글작성">
+					</div>
+					<%
+					}
+					%>
 
+				<%
+				}
+				%>
+
+				
 				   </div>
         	</div>
 <script>

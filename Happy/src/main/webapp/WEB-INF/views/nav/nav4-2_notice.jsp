@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="com.study.springboot.dto.NoticeDto" %>   
+    <%@ page import="com.study.springboot.dto.NoticeDto" %>  
+    <%@ page import="com.study.springboot.dto.MemberDto"%> 
 <%@ page import="java.util.ArrayList"%> 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <%
     ArrayList<NoticeDto> list = (ArrayList<NoticeDto>)session.getAttribute("listBoard");
+    MemberDto member = (MemberDto)session.getAttribute("memberInfo");
    %>
     <title>공지사항</title>
     <script>
@@ -369,16 +371,17 @@
        
    
             <%
-               // 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
-            if (session.getAttribute("sessionID") == null) {
-            %>
-            <%
-               } else {
+			if( session.getAttribute("sessionID") != null){
+				if( member.getId().equals("admin") ){
             %>
                    <input onclick="location.href='write'" type="button" id="write_btn" value="글작성" >
             <%
                }
             %> 
+            <%
+			}
+            %>
+
             </div> 
             
             

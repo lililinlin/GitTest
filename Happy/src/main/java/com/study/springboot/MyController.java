@@ -94,15 +94,30 @@ public class MyController {
 	}
 
 	@RequestMapping("/nav4-1_QnA")
-	public String navQnAPage(Model model) {
-
+	public String navQnAPage(HttpServletRequest req,Model model) {
+		if(req.getSession().getAttribute("sessionID") ==null) {
+			
+		}
+		else {
+			String id = req.getSession().getAttribute("sessionID").toString();
+			MemberDto dto = member_service.getUserInfo(id);
+			req.getSession().setAttribute("memberInfo", dto);
+		}
 		return "nav/nav4-1_QnA";
 	}
 
 	@RequestMapping("/nav4-2_notice")
 	public String navnoticePage(HttpServletRequest req) {
-		ArrayList<NoticeDto> list = notice_service.list();
-		req.getSession().setAttribute("listBoard", list);
+		if(req.getSession().getAttribute("sessionID") ==null) {
+			ArrayList<NoticeDto> list = notice_service.list();
+			req.getSession().setAttribute("listBoard", list);
+		}else {
+			ArrayList<NoticeDto> list = notice_service.list();
+			req.getSession().setAttribute("listBoard", list);
+			String id = req.getSession().getAttribute("sessionID").toString();
+			MemberDto dto = member_service.getUserInfo(id);
+			req.getSession().setAttribute("memberInfo", dto);
+		}
 		return "nav/nav4-2_notice";
 	}
 
@@ -113,6 +128,11 @@ public class MyController {
 		NoticeDto dto = notice_service.contentView(bid_str);
 		System.out.println("xml ??" + dto);
 		req.getSession().setAttribute("content_view", dto);
+		if(req.getSession().getAttribute("sessionID") != null ) {
+			String id = req.getSession().getAttribute("sessionID").toString();
+			MemberDto memberdto = member_service.getUserInfo(id);
+			req.getSession().setAttribute("memberInfo", memberdto);
+		}
 		return "board/content_view";
 	}
 

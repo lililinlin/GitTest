@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.NoticeDto" %>   
+    <%@ page import="com.study.springboot.dto.MemberDto"%> 
 <%@ page import="java.util.ArrayList"%> 
 <!DOCTYPE html> 
 <html>
@@ -27,6 +28,7 @@
     </script>
 	<%
 		NoticeDto content_view = (NoticeDto)session.getAttribute("content_view");
+		 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
 	%>
 	<style>
       a:link { text-decoration: none;}
@@ -187,6 +189,12 @@
             height: 100%;
             margin:20px; 
         }
+        .btn_list{width:150px; height:50px;  background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;}
+        #btn_delete{width:150px; height:50px; background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;}
       /* 오른쪽배너 */
     	 #site{
             display:inline-block;
@@ -322,8 +330,24 @@
 			<div style="margin: 30px 30px 100px 30px;">
 				<small><%= content_view.getNbContent() %></small>
 			</div>
-			<input  onclick="location.href='nav4-2_notice'" type="button" class="btn btn-dark"  value="목록으로" style="width: 150px; height:50px;">&nbsp;&nbsp;&nbsp;
-			<button type="button" class="btn btn-dark" style="width: 150px; height:50px;"><a href="delete?bidx=<%= content_view.getBidx()%> "  style="color:white">글 삭제</a></button>
+			<%
+				if( session.getAttribute("sessionID") != null){
+					if( member.getId().equals("admin") ){
+				%>
+				
+			<input  onclick="location.href='nav4-2_notice'" class="btn_list" type="button" value="목록으로">&nbsp;&nbsp;&nbsp;
+			<button type="button" id="btn_delete"><a href="delete?bidx=<%= content_view.getBidx()%> "  style="color:white">글 삭제</a></button>
+			<%
+					}else{
+					%>
+					<input  onclick="location.href='nav4-2_notice'" type="button"   value="목록으로">
+					<%
+					}
+						%>
+						<% 
+					}
+			%>
+		
 			<%-- <a href="delete?bidx=<%= content_view.getBidx()%> " ><b>글 삭제</b></a> --%>
 
 			 </div>
