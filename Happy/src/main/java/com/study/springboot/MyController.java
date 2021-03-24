@@ -127,6 +127,11 @@ public class MyController {
 		return "nav/nav4-2_notice";
 	}
 
+	@RequestMapping("/community_content_view")
+	public String community_content_view(Model model) {
+		
+		return "board/community_content_viewr";
+	}
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
 		System.out.println("bidx ?? " + req.getParameter("bidx"));
