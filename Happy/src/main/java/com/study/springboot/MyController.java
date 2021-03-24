@@ -380,8 +380,21 @@ public class MyController {
 		return "board/adopt_write";
 	}
 	@RequestMapping("/adopt_content_view")
-	public String adopt_content_view(Model model) {
+	public String adopt_content_view(HttpServletRequest req, RedirectAttributes redirect,Model model) {
+		if(req.getSession().getAttribute("sessionID") ==null) {
+			model.addAttribute("msg", "로그인이 필요합니다.");
+			model.addAttribute("url", "/login");
+			return "redirect";
+		}
+		
+		if (req.getSession().getAttribute("sessionID") !=null){
+		String id = req.getSession().getAttribute("sessionID").toString();
 
+		MemberDto dto = member_service.getUserInfo(id);
+
+		req.getSession().setAttribute("memberInfo", dto);
+		
+		}
 		return "board/adopt_content_view";
 	}
 	@RequestMapping("/Mypage")
