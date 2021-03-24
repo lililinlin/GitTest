@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +15,13 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+<script src="js/ckeditor/ckeditor.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+<%
+	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+%>
 <title>입양하기</title>
 <script>
 	$(function() {
@@ -196,60 +201,38 @@ main {
 }
 
 .right {
-	width: 950px;
+	width: 1650px;
 	height: 100%;
-	margin: 20px;
-	margin-left:250px;
+	margin-left:-125px;
 }
-#site{
-	width: 800px;
-	margin:0 auto;
-}
-#piese_ul{
-	list-style: none;
-	border-bottom:1px solid #aaa;
-}
-.piese_img{
-	float:left;
-	width:200px;
-	height:200px;
-	margin-top:30px;
-	margin-right:50px;
-	margin-bottom:50px;
-}
-.piese_img a{
-	display:block;
-}
-.piese_img a thumb{
-	position: relative;
-	display:block;
-	background-color: #ccc;
-	height:200px;
-	color: #666;
+
+#footer_button {
 	text-align: center;
-	line-height:200px;
+	padding-top: 20px;
 }
-.piese_img p{
-	color:#767676;
-	font-size:.9em;
+
+#site {
+	width: 800px;
+	margin: 0 auto;
 }
-.piese_img img{
-	width:200px;
-	height:200px;
-}
-#write{
-	margin-left:590px;
-	margin-top:50px;
-    width:150px;
-    height:45px;
-    background-color:rgb(27, 40, 138);
+
+input[type=submit] {
+	width: 250px;
+	height: 60px;
+	background-color: rgb(27, 40, 138);
 	color: white;
 	border: none;
 }
 
+input[type=button] {
+	margin-left: 10px;
+	width: 250px;
+	height: 60px;
+	border: 1px solid gray;
+	background-color: white;
+	color: gray;
+}
 /* 오른쪽 배너 */
-
-
 #side_table td {
 	border: 1px solid #e5e5e5;
 	background-color: white;
@@ -373,7 +356,31 @@ main {
 					<h2>
 						<b>입양하기</b>
 					</h2>
-					
+					<hr>
+					<form action="adoptwriteAction" method="post">
+						작성자 :&nbsp;&nbsp;<%=member.getName()%>
+						<input type="hidden" id="id" name="id" value="<%=member.getId()%>">
+						<input type="hidden" id="name" name="name"
+							value="<%=member.getName()%>">
+						<hr>
+						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
+						<hr>
+						<textarea id="editor4" name="editor4"></textarea>
+						<input type="hidden" name="idx" value="1" id="bidx">
+						<script>
+							CKEDITOR.replace('editor4', {
+								width : 800,
+								height : 400,
+								filebrowserUploadUrl : '/images/imageUpload.do'
+							});
+						</script>
+						<hr>
+						<div id="footer_button">
+							<input type="submit" class="btn btn-primary" value="등록" /> <input
+								type="button" class="btn btn-secondary" value="취소"
+								onclick="location.href='nav2-1_adopt'" />
+						</div>
+					</form>
 					<script>
 						$(function() {
 							var $win = $(window);
