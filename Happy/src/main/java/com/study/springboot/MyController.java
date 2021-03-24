@@ -130,7 +130,7 @@ public class MyController {
 	@RequestMapping("/community_content_view")
 	public String community_content_view(Model model) {
 		
-		return "board/community_content_viewr";
+		return "board/community_content_view";
 	}
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
