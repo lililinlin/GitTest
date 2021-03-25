@@ -65,16 +65,17 @@ public class MyController {
 
 	@RequestMapping("/nav2-1_adopt")
 	public String navadoptPage(HttpServletRequest req, Model model) {
-		if(req.getSession().getAttribute("sessionID") ==null) {
-			
-		}else {
+		if (req.getSession().getAttribute("sessionID") == null) {
+
+		} else {
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
 		}
-		
+
 		return "nav/nav2-1_adopt";
 	}
+
 	@RequestMapping("/nav2-2_adopted")
 	public String navadoptedPage(Model model) {
 
@@ -100,11 +101,10 @@ public class MyController {
 	}
 
 	@RequestMapping("/nav4-1_QnA")
-	public String navQnAPage(HttpServletRequest req,Model model) {
-		if(req.getSession().getAttribute("sessionID") ==null) {
-			
-		}
-		else {
+	public String navQnAPage(HttpServletRequest req, Model model) {
+		if (req.getSession().getAttribute("sessionID") == null) {
+
+		} else {
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
@@ -114,10 +114,10 @@ public class MyController {
 
 	@RequestMapping("/nav4-2_notice")
 	public String navnoticePage(HttpServletRequest req) {
-		if(req.getSession().getAttribute("sessionID") ==null) {
+		if (req.getSession().getAttribute("sessionID") == null) {
 			ArrayList<NoticeDto> list = notice_service.list();
 			req.getSession().setAttribute("listBoard", list);
-		}else {
+		} else {
 			ArrayList<NoticeDto> list = notice_service.list();
 			req.getSession().setAttribute("listBoard", list);
 			String id = req.getSession().getAttribute("sessionID").toString();
@@ -129,9 +129,10 @@ public class MyController {
 
 	@RequestMapping("/community_content_view")
 	public String community_content_view(Model model) {
-		
+
 		return "board/community_content_view";
 	}
+
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
 		System.out.println("bidx ?? " + req.getParameter("bidx"));
@@ -139,7 +140,7 @@ public class MyController {
 		NoticeDto dto = notice_service.contentView(bid_str);
 		System.out.println("xml ??" + dto);
 		req.getSession().setAttribute("content_view", dto);
-		if(req.getSession().getAttribute("sessionID") != null ) {
+		if (req.getSession().getAttribute("sessionID") != null) {
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto memberdto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", memberdto);
@@ -312,23 +313,23 @@ public class MyController {
 	}
 
 	@RequestMapping("/Q_A_content_view")
-	public String Q_A_content_view(HttpServletRequest req, RedirectAttributes redirect,Model model) {
-		if(req.getSession().getAttribute("sessionID") ==null) {
+	public String Q_A_content_view(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+		if (req.getSession().getAttribute("sessionID") == null) {
 			model.addAttribute("msg", "로그인이 필요합니다.");
 			model.addAttribute("url", "/login");
 			return "redirect";
 		}
-		
-		if (req.getSession().getAttribute("sessionID") !=null){
-		String id = req.getSession().getAttribute("sessionID").toString();
 
-		MemberDto dto = member_service.getUserInfo(id);
+		if (req.getSession().getAttribute("sessionID") != null) {
+			String id = req.getSession().getAttribute("sessionID").toString();
 
-		req.getSession().setAttribute("memberInfo", dto);
-		/*
-		 * model.addAttribute("msg", "회원수정 실패"); model.addAttribute("url",
-		 * "/Q_A_content_view");
-		 */
+			MemberDto dto = member_service.getUserInfo(id);
+
+			req.getSession().setAttribute("memberInfo", dto);
+			/*
+			 * model.addAttribute("msg", "회원수정 실패"); model.addAttribute("url",
+			 * "/Q_A_content_view");
+			 */
 		}
 		return "board/Q_A_content_view";
 	}
@@ -379,29 +380,36 @@ public class MyController {
 
 		return "redirect";
 	}
-	@RequestMapping("/adopt_write")
-	public String adopt_write(Model model) {
 
-		return "board/adopt_write";
+	@RequestMapping("/adopt_write")
+	public String adopt_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+		HttpSession session = req.getSession();
+		String id = session.getAttribute("sessionID").toString();
+		MemberDto dto = member_service.getUserInfo(id);
+		session.setAttribute("memberInfo", dto);
+		System.out.println(id);
+		return "board/adopt_write"; // list.jsp
 	}
+
 	@RequestMapping("/adopt_content_view")
-	public String adopt_content_view(HttpServletRequest req, RedirectAttributes redirect,Model model) {
-		if(req.getSession().getAttribute("sessionID") ==null) {
+	public String adopt_content_view(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+		if (req.getSession().getAttribute("sessionID") == null) {
 			model.addAttribute("msg", "로그인이 필요합니다.");
 			model.addAttribute("url", "/login");
 			return "redirect";
 		}
-		
-		if (req.getSession().getAttribute("sessionID") !=null){
-		String id = req.getSession().getAttribute("sessionID").toString();
 
-		MemberDto dto = member_service.getUserInfo(id);
+		if (req.getSession().getAttribute("sessionID") != null) {
+			String id = req.getSession().getAttribute("sessionID").toString();
 
-		req.getSession().setAttribute("memberInfo", dto);
-		
+			MemberDto dto = member_service.getUserInfo(id);
+
+			req.getSession().setAttribute("memberInfo", dto);
+
 		}
 		return "board/adopt_content_view";
 	}
+
 	@RequestMapping("/Mypage")
 	public String MemberInfoAction(HttpServletRequest req, RedirectAttributes redirect) {
 		String id = req.getSession().getAttribute("sessionID").toString();
@@ -411,6 +419,11 @@ public class MyController {
 		req.getSession().setAttribute("memberInfo", dto);
 		redirect.addAttribute("Mypage.jsp");
 		return "member/Mypage";
+	}
+
+	@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String adoptwriteAction(HttpServletRequest req, Model model) throws Exception {
+		return "nav/nav2-1_adopt";
 	}
 
 	@RequestMapping("/write")
@@ -443,7 +456,9 @@ public class MyController {
 			byte[] bytes = upload.getBytes();
 
 			// 이미지 경로 생성
-			String path = "C:/Users/01072/git/Happy/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는 전역
+			// "C:/Users/82107/git/GitTest/Happy/src/main/resources/static/"
+			String path = "C:/Users/82107/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";// fileDir는
+																											// 전역
 			// 변수라 그냥
 			// 이미지 경로
 			// 설정해주면 된다.
@@ -505,7 +520,7 @@ public class MyController {
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// 서버에 저장된 이미지 경로
-		String path = "C:/Users/01072/git/Happy/Happy/src/main/resources/static/images" + "ckImage/";
+		String path = "C:/Users/82107/git/GitTest/Happy/src/main/resources/static/images" + "ckImage/";
 
 		String sDirPath = path + uid + "_" + fileName;
 
