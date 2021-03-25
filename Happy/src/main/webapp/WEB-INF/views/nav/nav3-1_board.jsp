@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>입양후기</title>
      <script>
-        $(function() { 
+        $(function() {  
              var lnb = $("#nav_wrapper").offset().top;
              $(window).scroll(function() {
                 var window = $(this).scrollTop();

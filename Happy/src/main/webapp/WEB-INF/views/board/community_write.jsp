@@ -78,7 +78,7 @@
 		    width: 100%; 
 		    height:115px;
 		    background-color: white; 
-		    z-index:100; 
+		    z-index:100;  
 		}	
 	
 	    .menumaintd {
