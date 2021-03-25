@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.study.springboot.dto.MemberDto" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +11,13 @@
     <!-- bxslider의 css 추가 -->
     <link rel="stylesheet" href="css/jquery.bxslider.css">
     <!-- Bootstrap CSS -->
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양후기</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>고객센터</title>
+       
+    
      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +32,9 @@
              })
           });
     </script>
+    <%
+   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+	%>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -36,7 +43,7 @@
         * {
 			font-family: 'Noto Sans KR', sans-serif;
 	    }
- 		#head {
+	    #head {
 			margin: 0 auto;
 			width: 1200px;
 			height: 100px;
@@ -58,7 +65,7 @@
 	        font-size: 13px;
 	        text-decoration: none;
 	    }
-		#nav_wrapper{
+	    #nav_wrapper{
 		    width:100%;
 		    padding-bottom: 2px;
 			box-shadow: 3px 3px 3px 1px rgb(247, 245, 245); 
@@ -73,6 +80,7 @@
 		    background-color: white; 
 		    z-index:100; 
 		}	
+	
 	    .menumaintd {
 	        width: 200px;
 	        list-style-type: none;
@@ -129,19 +137,9 @@
 	    .menumaintd:hover .hov {
 	        display: block;
 	    }
-/* 푸터 */
-    #footer {
-        text-align: center;
-        margin: 0 auto;
-        height: 200px;
-        width: 100%;
-        background-color: #424141;
-    }
 
-    footer a {
-        color: white;
-    }
 /* 메인 */
+	  /* 메인 */
  		main{
 			width:1200px;
 			height:820px;
@@ -163,7 +161,7 @@
         #left_menu table{
             margin: 30px 0px 0px 10px;
             width: 200px;
-            height: 40px;
+            height: 80px;
         }
         #left_menu table td{
             height: 50px;
@@ -180,19 +178,37 @@
         .right{
 	        width: 1650px;
             height: 100%;
-            margin:20px;
-
+            margin:20px; 
         }
-        .right img{
-            float:right;
+		#footer_button{
+          text-align: center;
+		  padding-top: 20px;
         }
-        #h2_box{
+        input[type=submit]{
+           width:250px;
+           height:60px;
+           background-color:rgb(27, 40, 138);
+		   color: white;
+		   border: none;
+        }
+        input[type=button]{
+          margin-left:10px;
+          width:250px;
+          height:60px;
+          border:1px solid gray;
+		  background-color: white;
+		  color: gray;
+		  
+        }
+		#h2_box{
+			margin-left:280px;
 			width:870px;
 			border-bottom: 1px solid rgb(6, 15, 138);
 		}
 		#main_table{
 			width: 870px;
-			margin-bottom: 100px;
+			margin-bottom: 400px;
+
 		}
 		#main_table tr{
 			border-bottom: 1px solid rgb(233, 233, 233);
@@ -202,32 +218,17 @@
 			height: 60px;
 			font-weight: normal;
 		}
-		.hidden_td{
-			text-align: center;
+		
+		#title{ width:700px; margin-left:10px}
+		#editor4{width:700px; height: 400px; margin-left:50px;}
+		#site h3{
+			margin-top:5px;
 		}
-		.num{
-			width: 80px;
-			text-align: center;
-			height: 50px;
-		}
-		#btn_box{
-			text-align: right;
-		}
-		#btn_box input{
-			width: 150px;
-			height: 50px;
-			background-color:rgb(27, 40, 138) ;
-			color: white;
-		}
-		.title{
-			padding-left: 20px;
-		}
-		.title a{
-			cursor: pointer;
-			color: black;
-		}
-        #site{
+/* 오른쪽 배너 */
+		#site{
+			margin-top:-23px;
             display:inline-block;
+            width:800px;
         }
 
         #side_table td{
@@ -250,14 +251,27 @@
 			padding-top:10px;
 			text-align: center;
 		}
+/* 푸터 */
+		#footer {
+				text-align: center;
+				margin: 0 auto;
+				height: 200px;
+				width: 100%;
+				background-color: #424141;
+		}
+
+		footer a {
+			color: white;
+		}
+
         /* *{
             border: 1px solid red;
-        } */
+        }  */
     </style>
-
+</head>
 
 <body>
-     <div id ="nav_wrapper">
+   <div id ="nav_wrapper">
 		<table id="head">
 			<tr>
 				<td rowspan="2"><a href="Home"><img src="images/logo2.jpg"
@@ -331,60 +345,45 @@
 				</tr>
 			</table>
 		</div>
+
 <main>
-      		<div id="main_wrapper">
-              <div id="left_menu">
-				<h3><b>커뮤니티</b></h3>
-				<table>
-					<tr onclick="location.href='nav3-1_board'">
-						<td>게시판</td>
-						<td>></td>
-					</tr>
-				</table>
-			</div>
-            <div class="right">
-                <div id = "site">
-                <div id="h2_box">
-                    <h2><b>게시판</b></h2>
-                </div>
-                  <table id="main_table">
-					  <tr>
-						  <th>번호</th>
-						  <th>제목</th>
-						  <th>작성자</th>
-						  <th>작성일</th>
-						  <th>조회수</th>
-					  </tr>
-					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="community_content_view">동물을 입양하고 싶어요.</a></td>
-							<td class="hidden_td">강이린</td>
-							<td class="hidden_td">2021.03.24</td>
-							<td class="hidden_td">1123</td>
-					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="community_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-							<td class="hidden_td">이정현</td>
-							<td class="hidden_td">2021.03.25</td>
-							<td class="hidden_td">108</td>
-					</tr>
-
-				</table>
-				<%
-					if(session.getAttribute("sessionID") != null){
-				%>
-				<div id="btn_box">
-					<input type="button" value="글쓰기">
+     		<div id="main_wrapper">
+            
+				<div id="left_menu">
+					<h3><b>고객센터</b></h3>
+					<table>
+						<tr onclick="location.href='nav4-1_QnA'">
+							<td>Q&A</td>
+							<td>></td>
+						</tr>
+						<tr onclick="location.href='nav4-2_notice'">
+							<td>공지사항</td>
+							<td>></td>
+						</tr>
+					</table>
 				</div>
-				<%
-					}
-				%>
-				
-		</div>	
-
-
-		    	<script>
+            <div class="right">
+                 <div id = "site">
+                    <br>
+                    <h3><b>게시판 작성하기</b></h3>
+                     <form action="Q_A_writeAction" method="post"><hr>
+                        제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
+                        <textarea id = "editor4" name = "editor4" ></textarea>
+                    <script>
+                        CKEDITOR.replace('editor4',{width:800,height:400,
+                        filebrowserUploadUrl:'/images/imageUpload.do'});
+                    </script>
+                     <hr>
+                     <div id = "footer_button">
+                        <input type="submit"  value = "등 록"/>
+                        <input type="button"  value = "취 소" onclick="location.href='nav4-2_notice'"/>
+                    </div>
+                    </form>
+                 
+                </div> 
+            </div>
+        	</div>
+<script>
 		    $(function(){ 
 		        var $win = $(window); 
 		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
@@ -410,14 +409,11 @@
 		     });   
 		</script>
 		
-
-                  
-                </div>
-               </div>
+               
                 
-            </div>
-    </main>
-     <div id ="side_img" class="float_sidebar">
+           	
+        </main>
+         <div id ="side_img" class="float_sidebar">
 		<table id ="side_table">
 			<tr>
 				<td><img src="images/side_img.jpg"></td>
@@ -433,8 +429,7 @@
 			</tr>
 		</table>
 	</div>
-        
-    <div id="footer">
+     <div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>
 			<p>

@@ -202,18 +202,22 @@
 			height: 60px;
 			font-weight: normal;
 		}
-		.num{
-			width: 80px;
-			text-align: center;
-			height: 50px;
+		#main_td{
+			padding: 50px 20px 50px 20px;
 		}
-		.title{
+		#td_title{
+			height: 50px;
+			width: 500px;
 			padding-left: 20px;
 		}
-		.title a{
-			cursor: pointer;
-			color: black;
+		/* 버튼 */
+		#btn_box{
+			text-align: center;
 		}
+		#btn_update{ width: 150px; height: 50px; margin-right: 10px; background-color:rgb(27, 40, 138);color: white; border: none;}
+		#btn_delete{ width: 150px; height: 50px; margin-right: 10px;background-color:rgb(27, 40, 138);color: white; border: none;}
+		#btn_list{ width: 150px; height: 50px;background-color:rgb(27, 40, 138);color: white; border: none; }
+		/* 오른쪽 사이드바 */
         #site{
             display:inline-block;
         }
@@ -243,7 +247,7 @@
         } */
     </style>
 
-
+ 
 <body>
      <div id ="nav_wrapper">
 		<table id="head">
@@ -307,11 +311,12 @@
 					<td class="menumaintd">
 						<li><a href="nav4-1_QnA" class="mainmenu">
 								<h6>
-									<b>커뮤니티</b>
+									<b>고객센터</b>
 								</h6>
 						</a>
 							<ul class="hov">
-								<li><a href="nav3-1_board">게시판</a></li>
+								<li><a href="nav4-1_QnA">Q&A</a></li>
+								<li><a href="nav4-2_notice">공지사항</a></li>
 							</ul></li>
 					</td>
 				</ul>
@@ -336,19 +341,36 @@
                 </div>
                   <table id="main_table">
 					  <tr>
-						  <th>번호</th>
-						  <th>제목</th>
+						  <td id="td_title">자원봉사 신청합니다.</td>
+						  <td id="td_name">강이린</td>
+						  <td id="td_date">2021.03.24</td>
+						  <td id="td_hit">1203</td>
 					  </tr>
 					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="community_content_view">동물을 입양하고 싶어요.</a></td>
+							<td colspan="4" id="main_td">
+								강아지를 입양하길 원하신다면<br>
+								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br><br>
+								
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
+								perspiciatis laudantium, pariatur animi quo. Nobis, impedit accusantium.<br>
+								Alias numquam fuga voluptatem minus qui, non quidem modi similique accusantium.<br>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
+								perspiciatis laudantium, pariatur animi quo. Nobis,<br><br>
+								
+								impedit accusantium. Alias numquam fuga voluptatem minus qui, non quidem modi<br>
+								similique accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+								Excepturi quod ducimus perspiciatis<br>
+								laudantium, pariatur animi quo. Nobis, impedit accusantium.<br>
+								Alias numquam fuga voluptatem minus qui, non quidem modi similique accusantium. <br>
+								\Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
+								perspiciatis laudantium, pariatur animi quo. Nobis, impedit accusantium.</td>
 					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="community_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-					</tr>
-
 				</table>
+				<div id="btn_box">
+					<input type="button" id="btn_update" value="수정하기" onclick="location.href='#'">
+					<input type="button" id="btn_delete" value="삭제하기" onclick="location.href='#'">
+					<input type="button" id="btn_list" value="목록으로" onclick="location.href='nav3-1_board'">
+				</div>
 				
 		</div>	
 
