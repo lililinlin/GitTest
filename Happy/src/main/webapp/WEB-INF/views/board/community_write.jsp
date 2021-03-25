@@ -61,7 +61,7 @@
 	    }
 	
 	    .headerlog {
-	        color: rgb(150, 147, 147);
+	        color: rgb(150, 147, 147); 
 	        font-size: 13px;
 	        text-decoration: none;
 	    }

@@ -452,7 +452,7 @@
            	
         </main>
          <div id ="side_img" class="float_sidebar">
-		<table id ="side_table">
+		<table id ="side_table"> 
 			<tr>
 				<td><img src="images/side_img.jpg"></td>
 			</tr>
