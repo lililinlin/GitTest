@@ -375,7 +375,7 @@
 					if(session.getAttribute("sessionID") != null){
 				%>
 				<div id="btn_box">
-					<input type="button" value="글쓰기">
+					<input type="button" value="글쓰기" onclick="location.href='community_write'">
 				</div>
 				<%
 					}

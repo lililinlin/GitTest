@@ -161,7 +161,7 @@
         #left_menu table{
             margin: 30px 0px 0px 10px;
             width: 200px;
-            height: 80px;
+            height: 40px;
         }
         #left_menu table td{
             height: 50px;
@@ -175,11 +175,61 @@
             cursor: pointer;
             color: #22409a;
         }
+/* 오른쪽 */
         .right{
 	        width: 1650px;
             height: 100%;
             margin:20px; 
         }
+	/* 게시판 작성하기 감싼 div */
+		#h2_box{
+			margin-top:5px;
+			width:750px;
+			border-bottom: 1px solid rgb(6, 15, 138);
+			padding-bottom: 10px;
+			margin-bottom: 30px;
+		}
+	/* 테이블 */
+		#main_table{
+			width: 750px;
+			margin-bottom: 100px;
+			border: 1px solid rgb(244, 244, 244);
+		}
+		#main_table td:nth-child(1){
+			background-color: rgb(244, 244, 244);
+		}
+		#main_table td{
+			border: 1px solid rgb(237, 237, 237);
+		}
+		#main_table input{
+			border: 1px solid rgb(181, 181, 181);
+		}
+	/* 제목 작성자 내용 */
+		.td_title{
+			width: 120px;
+			text-align: center;
+			color: rgb(106, 106, 106);
+		}
+	/* 제목 input */
+		#title{
+			height: 30px;
+			width: 590px;
+			margin: 15px 10px 15px 20px;
+			 }
+	/* 작성자 input */
+		.name{
+			padding: 13px 10px 13px 20px;
+		}
+	/* 내용 input */
+		#editor4{
+			width:590px; 
+			height: 400px; 
+			margin: 20px 10px 20px 20px;
+			border: 1px solid rgb(181, 181, 181);
+			}
+
+		
+/* 버튼 */
 		#footer_button{
           text-align: center;
 		  padding-top: 20px;
@@ -200,30 +250,6 @@
 		  color: gray;
 		  
         }
-		#h2_box{
-			margin-left:280px;
-			width:870px;
-			border-bottom: 1px solid rgb(6, 15, 138);
-		}
-		#main_table{
-			width: 870px;
-			margin-bottom: 400px;
-
-		}
-		#main_table tr{
-			border-bottom: 1px solid rgb(233, 233, 233);
-		}
-		#main_table th{
-			text-align: center;
-			height: 60px;
-			font-weight: normal;
-		}
-		
-		#title{ width:700px; margin-left:10px}
-		#editor4{width:700px; height: 400px; margin-left:50px;}
-		#site h3{
-			margin-top:5px;
-		}
 /* 오른쪽 배너 */
 		#site{
 			margin-top:-23px;
@@ -251,6 +277,7 @@
 			padding-top:10px;
 			text-align: center;
 		}
+		
 /* 푸터 */
 		#footer {
 				text-align: center;
@@ -350,40 +377,51 @@
      		<div id="main_wrapper">
             
 				<div id="left_menu">
-					<h3><b>고객센터</b></h3>
-					<table>
-						<tr onclick="location.href='nav4-1_QnA'">
-							<td>Q&A</td>
-							<td>></td>
-						</tr>
-						<tr onclick="location.href='nav4-2_notice'">
-							<td>공지사항</td>
-							<td>></td>
-						</tr>
-					</table>
+					<h3><b>커뮤니티</b></h3>
+				<table>
+					<tr onclick="location.href='nav3-1_board'">
+						<td>게시판</td>
+						<td>></td>
+					</tr>
+				</table>
 				</div>
-            <div class="right">
-                 <div id = "site">
-                    <br>
-                    <h3><b>게시판 작성하기</b></h3>
-                     <form action="Q_A_writeAction" method="post"><hr>
-                        제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
-                        <textarea id = "editor4" name = "editor4" ></textarea>
-                    <script>
-                        CKEDITOR.replace('editor4',{width:800,height:400,
-                        filebrowserUploadUrl:'/images/imageUpload.do'});
-                    </script>
-                     <hr>
-                     <div id = "footer_button">
-                        <input type="submit"  value = "등 록"/>
-                        <input type="button"  value = "취 소" onclick="location.href='nav4-2_notice'"/>
-                    </div>
-                    </form>
-                 
-                </div> 
-            </div>
+           
+				<div class="right">
+					<div id = "site">
+						<br>
+						<div id="h2_box">
+							<h3><b>게시판 작성하기</b></h3>
+						</div>
+
+						<form action="communuty_writeAction" method="post">
+							
+							<table id="main_table">
+								<tr>
+									<td class="td_title">제목 &nbsp;</td>
+									<td><input type="text" id = "title" name="title"/></td>
+								</tr>
+								<tr>
+									<td class="td_title">작성자 </td>
+									<td class="name">해피퍼피 관리자<input type="hidden" id="name" name="name"></td>
+								</tr>
+								<tr>
+									<td class="td_title">내용</td>
+									<td> <textarea id = "editor4" name = "editor4" ></textarea></td>
+								</tr>
+							</table>
+
+							<div id = "footer_button">
+								<input type="submit"  value = "등 록"/>
+								<input type="button"  value = "취 소" onclick="location.href='nav3-1_board'"/>
+							</div>
+
+						</form>
+					</div> 
+          		 </div>
+
         	</div>
-<script>
+		
+		<script>
 		    $(function(){ 
 		        var $win = $(window); 
 		        var top = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다. 
