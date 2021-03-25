@@ -301,7 +301,7 @@ main {
 .side_p {
 	width: 156px;
 	padding-top: 10px;
-	text-align: center; 
+	text-align: center;  
 }
 
 /* 푸터 */

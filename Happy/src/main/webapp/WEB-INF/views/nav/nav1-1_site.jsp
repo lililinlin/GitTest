@@ -222,7 +222,6 @@
 			width:180px;
 			margin-right:38px;
 			margin-top:-880px;
-			
 		}
 		#side_img img{
 			width:160px;
