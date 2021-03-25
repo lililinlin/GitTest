@@ -292,7 +292,7 @@ main {
 	margin-right: 38px;
 	margin-top: -880px;
 }
-
+ 
 #side_img img {
 	width: 160px;
 	height: 200px;
