@@ -132,6 +132,11 @@ public class MyController {
 
 		return "board/community_content_view";
 	}
+	@RequestMapping("/community_write")
+	public String community_write(Model model) {
+		
+		return "board/community_write";
+	}
 
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
