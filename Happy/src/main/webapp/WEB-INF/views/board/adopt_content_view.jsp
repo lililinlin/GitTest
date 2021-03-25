@@ -34,8 +34,8 @@
 	});
 </script>
 <%
-   			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
-	%>
+	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+%>
 <style>
 a:link {
 	text-decoration: none;
@@ -148,14 +148,15 @@ a:hover {
 }
 
 /* 메인 */
-/* 메인 */
+
 main {
 	width: 1200px;
-	height: 820px;
+	height: 100%;
 	margin: 0 auto;
 	margin-top: 60px;
-	margin-bottom: 100px;
+	margin-bottom: 600px;
 }
+
 /* 왼쪽 오른쪽 담은 div */
 #main_wrapper {
 	width: 1200px;
@@ -216,6 +217,11 @@ main {
 	font-weight: normal;
 }
 
+#content_img {
+	width: 600px;
+	height: 400px;
+}
+
 .num {
 	width: 80px;
 	text-align: center;
@@ -233,6 +239,7 @@ main {
 
 #btn_box1 { /* admin 로그인시 */
 	margin-left: 500px;
+	margin-bottom: 500px;
 }
 
 #btn_box2 { /* 비로그인, 일반사용자 로그인시  */
@@ -257,6 +264,13 @@ main {
 	width: 870px;
 	border-bottom: 1px solid rgb(27, 40, 138);
 	margin-bottom: 50px;
+}
+
+#content_td {
+	border:1px solid red;
+	padding-top: 30px;
+	padding-left: 50px;
+	padding-bottom: 30px;
 }
 
 #main_content {
@@ -289,6 +303,7 @@ main {
 	padding-top: 10px;
 	text-align: center;
 }
+
 /* 푸터 */
 #footer {
 	text-align: center;
@@ -296,6 +311,7 @@ main {
 	height: 200px;
 	width: 100%;
 	background-color: #424141;
+	position: absolute;
 }
 
 footer a {
@@ -317,7 +333,7 @@ footer a {
 				<td></td>
 				<td></td>
 				<td></td>
-				<% 
+				<%
 					// 로그인 안되었을 경우 - 로그인, 회원가입 버튼을 보여준다.
 				if (session.getAttribute("sessionID") == null) {
 				%>
@@ -405,59 +421,74 @@ footer a {
 			<div class="right">
 				<div id="h2_box">
 					<b style="font-size: 30px;">입양하기 &nbsp;&nbsp;</b><small>-
-						고객님들의 소중한 가족이 기다립니다.</small><br>
-					<br>
+						고객님들의 소중한 가족이 기다립니다.</small><br> <br>
 				</div>
-				<div>
+				<div id="content_div">
 					<table id="right_table">
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;">루루는 소중한 가족이 필요해요</td>
+							<td style="width: 600px; padding-left: 20px;">루루는 소중한 가족이
+								필요해요</td>
 							<td><small>2021.03.19</small></td>
 							<td><small>조회 15,421</small></td>
 						</tr>
 						<tr>
-							<td colspan="3" id="main_content">강아지를 입양하길 원하신다면<br>
-								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
-							<br> Lorem ipsum dolor sit amet, consectetur adipisicing
-								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-								pariatur animi quo. Nobis, impedit accusantium. <br> Alias
-								numquam fuga voluptatem minus qui, non quidem modi similique
-								accusantium.<br> Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-								laudantium, pariatur animi quo. Nobis,<br>
-							<br> impedit accusantium. Alias numquam fuga voluptatem
-								minus qui, non quidem modi <br> similique accusantium.
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-								Excepturi quod ducimus perspiciatis<br> laudantium,
-								pariatur animi quo. Nobis, impedit accusantium.<br> Alias
-								numquam fuga voluptatem minus qui, non quidem modi similique
-								accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing
-								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-								pariatur animi quo. Nobis, impedit accusantium. <br>
-							</td>
+							<td id="content_td" colspan="3"><img src="images/dog1.jpg"
+								id="content_img"><br> <br>
+								<p>
+									강아지를 입양하길 원하신다면<br> 센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
+									<br> Lorem ipsum dolor sit amet, consectetur adipisicing
+									elit. Excepturi quod ducimus<br> perspiciatis laudantium,
+									pariatur animi quo. Nobis, impedit accusantium. <br> Alias
+									numquam fuga voluptatem minus qui, non quidem modi similique
+									accusantium.<br> Lorem ipsum dolor sit amet, consectetur
+									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+									laudantium, pariatur animi quo. Nobis,<br> Lorem ipsum
+									dolor sit amet, consectetur adipisicing elit. Excepturi quod
+									ducimus<br> perspiciatis laudantium, pariatur animi quo.
+									Nobis, impedit accusantium. <br> Alias numquam fuga
+									voluptatem minus qui, non quidem modi similique accusantium.<br>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Excepturi quod ducimus<br> perspiciatis laudantium,
+									pariatur animi quo. Nobis,<br> Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit. Excepturi quod ducimus<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis, impedit
+									accusantium. <br> Alias numquam fuga voluptatem minus qui,
+									non quidem modi similique accusantium.<br> Lorem ipsum
+									dolor sit amet, consectetur adipisicing elit. Excepturi quod
+									ducimus<br> perspiciatis laudantium, pariatur animi quo.
+									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
+									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									Alias numquam fuga voluptatem minus qui, non quidem modi
+									similique accusantium.<br> Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit. Excepturi quod ducimus<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+							<td>
 						</tr>
 					</table>
 				</div>
 				<%
-				String id = member.getId();
-				if( id.equals("admin")) {
+					String id = member.getId();
+				if (id.equals("admin")) {
 				%>
 				<div id="btn_box1">
 					<form action="adopt_modify" method="post">
-						<input onclick="location.href='adopt_write'" id="modify" type="button" value="수정"> 
-						<input id="delete" type="submit" value="삭제">
-						<input onclick="location.href='nav2-1_adopt'" class="list" type="button" value="목록">
+						<input onclick="location.href='adopt_write'" id="modify"
+							type="button" value="수정"> <input id="delete"
+							type="submit" value="삭제"> <input
+							onclick="location.href='nav2-1_adopt'" class="list" type="button"
+							value="목록">
 					</form>
 				</div>
 				<%
-				} else{
+					} else {
 				%>
 				<div id="btn_box2">
 					<input onclick="location.href='nav4-1_QnA'" class="list"
 						type="button" value="목록">
 				</div>
 				<%
-				}
+					}
 				%>
 
 			</div>
@@ -494,13 +525,10 @@ footer a {
 				});
 			});
 		</script>
-
-
-
-
 	</main>
+
 	<div id="side_img" class="float_sidebar">
-		<table id="side_table"> 
+		<table id="side_table">
 			<tr>
 				<td><img src="images/side_img.jpg"></td>
 			</tr>
@@ -517,6 +545,7 @@ footer a {
 			</tr>
 		</table>
 	</div>
+	<div id="white_div"></div>
 	<div id="footer">
 		<footer style="color: white;">
 			<br> <br> <br>

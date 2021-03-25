@@ -34,8 +34,8 @@
 	});
 </script>
 <%
-    MemberDto member = (MemberDto)session.getAttribute("memberInfo");
-   %>
+	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+%>
 <style>
 a:link {
 	text-decoration: none;
@@ -164,7 +164,7 @@ main {
 	height: 820px;
 	margin: 0 auto;
 	margin-top: 60px;
-	margin-bottom: 100px;
+	margin-bottom: 400px;
 }
 /* 왼쪽 오른쪽 담은 div */
 #main_wrapper {
@@ -204,6 +204,7 @@ main {
 	height: 100%;
 	margin: 20px;
 	margin-left: 250px;
+	margin-bottom: 250px;
 }
 
 #site {
@@ -217,12 +218,15 @@ main {
 }
 
 .piese_img {
-	float: left;
-	width: 200px;
-	height: 200px;
+	border: 1px solid #d2d2d2; 
+	float : left;
+	width: 302px;
+	height: 440px;
 	margin-top: 30px;
-	margin-right: 50px;
-	margin-bottom: 50px;
+	margin-left:30px;
+	margin-right: 30px;
+	float: left;
+	overflow:hidden;
 }
 
 .piese_img a {
@@ -234,20 +238,34 @@ main {
 	position: relative;
 	display: block;
 	background-color: #ccc;
-	height: 200px;
+	height: 300px;
 	color: #666;
 	text-align: center;
 	line-height: 200px;
 }
 
-.piese_img p {
+.piese_content {
 	color: #767676;
 	font-size: .9em;
+	/* overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	width: 300px;
+  	height: 60px; */
 }
 
 .piese_img img {
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
+	
+}
+.piese_img img:hover{
+	transform:scale(1.1);
+	
+}
+.piese_sub_p {
+	font-size: 14px;
+	color: #d2d2d2;
 }
 
 #write {
@@ -270,7 +288,7 @@ main {
 	float: right;
 	width: 180px;
 	margin-right: 38px;
-	margin-top: -880px;
+	margin-top: -1180px;
 }
 
 #side_img img {
@@ -386,40 +404,43 @@ main {
 					</h2>
 					<ul id="piese_ul">
 						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog1.jpg">
-							</span> <strong>이미지 제목</strong>
+								class="thumb"> <img src="images/dog1.jpg"><br>
+							</span><strong>이미지 제목</strong><br>
+								<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
+									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
-							<p>2021-2-01</p></li>
+							<p class="piese_sub_p">이정현 | 2021.02.01 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
 								class="thumb"> <img src="images/dog2.jpg">
-							</span> <strong>이미지 제목</strong>
+							</span><strong>이미지 제목</strong>
+							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
+									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
-							<p>2021-2-01</p></li>
+							<p class="piese_sub_p">강이린 | 2021.02.07 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
 								class="thumb"> <img src="images/dog3.jpg">
 							</span> <strong>이미지 제목</strong>
+							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
+									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
-							<p>2021-2-01</p></li>
+							<p class="piese_sub_p">이정현 | 2021.02.18 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
 								class="thumb"> <img src="images/dog4.jpg">
 							</span> <strong>이미지 제목</strong>
+							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
+									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>	
 						</a>
-							<p>2021-2-01</p></li>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog5.jpg">
-							</span> <strong>이미지 제목</strong>
-						</a>
-							<p>2021-2-01</p></li>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog6.jpg">
-							</span> <strong>이미지 제목</strong>
-						</a>
-							<p>2021-2-01</p></li>
+							<p class="piese_sub_p">강이린 | 2021.03.15 | 조회 129</p></li>
 					</ul>
-					<% if( session.getAttribute("sessionID") != null){
-							if(member.getId().equals("admin") ){ %> 
-							<input type="button"id="write" value="글작성" onclick="location.href='adopt_write'">
-					<%} %>
+					<%
+						if (session.getAttribute("sessionID") != null) {
+						if (member.getId().equals("admin")) {
+					%>
+					<input type="button" id="write" value="글작성"
+						onclick="location.href='adopt_write'">
+					<%
+						}
+					%>
 					<%
 						}
 					%>

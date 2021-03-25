@@ -197,7 +197,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav2-1_adopt">입양하기</a></li>
-								<li><a href="nav2-2_adopted">입양됐어요</a></li>
 								<li><a href="nav2-3_review">입양후기</a></li>
 							</ul></li>
 					</td>
@@ -209,7 +208,6 @@ footer a {
 						</a>
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
-								<li><a href="nav3-2_volunteer">자원봉사신청</a></li>
 							</ul></li>
 					</td>
 					<td class="menumaintd">
