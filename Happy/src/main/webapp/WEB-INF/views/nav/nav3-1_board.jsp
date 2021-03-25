@@ -202,10 +202,22 @@
 			height: 60px;
 			font-weight: normal;
 		}
+		.hidden_td{
+			text-align: center;
+		}
 		.num{
 			width: 80px;
 			text-align: center;
 			height: 50px;
+		}
+		#btn_box{
+			text-align: right;
+		}
+		#btn_box input{
+			width: 150px;
+			height: 50px;
+			background-color:rgb(27, 40, 138) ;
+			color: white;
 		}
 		.title{
 			padding-left: 20px;
@@ -307,11 +319,12 @@
 					<td class="menumaintd">
 						<li><a href="nav4-1_QnA" class="mainmenu">
 								<h6>
-									<b>커뮤니티</b>
+									<b>고객센터</b>
 								</h6>
 						</a>
 							<ul class="hov">
-								<li><a href="nav3-1_board">게시판</a></li>
+								<li><a href="nav4-1_QnA">Q&A</a></li>
+								<li><a href="nav4-2_notice">공지사항</a></li>
 							</ul></li>
 					</td>
 				</ul>
@@ -338,17 +351,29 @@
 					  <tr>
 						  <th>번호</th>
 						  <th>제목</th>
+						  <th>작성자</th>
+						  <th>작성일</th>
+						  <th>조회수</th>
 					  </tr>
 					  <tr>
 							<td class="num">1</td>
 							<td class="title"><a href="community_content_view">동물을 입양하고 싶어요.</a></td>
+							<td class="hidden_td">강이린</td>
+							<td class="hidden_td">2021.03.24</td>
+							<td class="hidden_td">1123</td>
 					  </tr>	
 					  <tr>
 							<td class="num">2</td>
 							<td class="title"><a href="community_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
+							<td class="hidden_td">이정현</td>
+							<td class="hidden_td">2021.03.25</td>
+							<td class="hidden_td">108</td>
 					</tr>
 
 				</table>
+				<div id="btn_box">
+					<input type="button" value="글쓰기">
+				</div>
 				
 		</div>	
 
