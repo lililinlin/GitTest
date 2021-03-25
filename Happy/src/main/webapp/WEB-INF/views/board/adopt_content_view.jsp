@@ -310,7 +310,7 @@ main {
 	margin: 0 auto;
 	height: 200px;
 	width: 100%;
-	background-color: #424141;
+	background-color: #424141; 
 	position: absolute;
 }
 
