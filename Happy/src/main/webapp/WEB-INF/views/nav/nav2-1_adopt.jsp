@@ -374,7 +374,7 @@ main {
 							<ul class="hov">
 								<li><a href="nav4-1_QnA">Q&A</a></li>
 								<li><a href="nav4-2_notice">공지사항</a></li>
-							</ul></li>
+							</ul></li> 
 					</td> 
 				</ul>
 			</tr>
