@@ -308,7 +308,7 @@ main {
 #footer {
 	text-align: center;
 	margin: 0 auto;
-	height: 200px;
+	height: 200px; 
 	width: 100%;
 	background-color: #424141; 
 	position: absolute;
