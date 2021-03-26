@@ -385,7 +385,7 @@ main {
 			<div id="left_menu">
 				<h3>
 					<b>입양후기</b>
-				</h3>
+				</h3> 
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
