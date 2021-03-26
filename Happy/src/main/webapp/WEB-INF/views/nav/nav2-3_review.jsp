@@ -18,7 +18,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<title>입양하기</title>
+<title>입양후기</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;
@@ -384,7 +384,7 @@ main {
 		<div id="main_wrapper">
 			<div id="left_menu">
 				<h3>
-					<b>입양하기</b>
+					<b>입양후기</b>
 				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
@@ -400,7 +400,7 @@ main {
 			<div class="right">
 				<div id="site">
 					<h2>
-						<b>입양하기</b>
+						<b>입양후기</b>
 					</h2>
 					<ul id="piese_ul">
 						<li class="piese_img"><a href="adopted_content_view"> <span
