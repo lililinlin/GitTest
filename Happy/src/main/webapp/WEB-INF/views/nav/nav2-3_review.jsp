@@ -215,7 +215,7 @@ main {
 #piese_ul {
 	list-style: none;
 	width:900px;
-	border-bottom: 1px solid #aaa;
+	border-bottom: 1px solid rgb(27, 40, 138);
 }
 
 .piese_img {
@@ -228,7 +228,7 @@ main {
 }
 .piese_img:hover{
 	transition-duration: 1.0s;
-	background-color: #e9e9e9;
+	background-color: #f5f5f5;
 	
 }
 .img_div{
@@ -286,7 +286,7 @@ main {
 }
 .piese_sub_p {
 	font-size: 14px;
-	color: #d2d2d2;
+	color: #acacac;
 	padding:0px 40px 0px 40px;
 }
 
@@ -423,7 +423,7 @@ main {
 				<div id="site">
 					<h2>
 						<b>입양후기</b>
-					</h2>
+					</h2><br>
 					<ul id="piese_ul">
 						<li class="piese_img"><a href="adopted_content_view"> <span
 								class="thumb"> <div class="img_div"><img src="images/dog1.jpg"></div>
