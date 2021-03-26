@@ -454,7 +454,7 @@ main {
 							<p class="piese_sub_p">강이린 | 2021.03.15 | 조회 129</p></li>
 					</ul>
 					<%
-						if (session.getAttribute("sessionID") != null) {
+						if (session.getAttribute("sessionID") != null) { 
 						if (member.getId() != null) {
 					%>
 					<input type="button" id="write" value="글작성"

@@ -370,7 +370,7 @@ input[type=button] {
 						<script>
 							CKEDITOR.replace('editor4', {
 								width : 800,
-								height : 400,
+								height : 400, 
 								filebrowserUploadUrl : '/images/imageUpload.do'
 							});
 						</script>
