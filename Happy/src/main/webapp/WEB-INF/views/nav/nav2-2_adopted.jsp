@@ -400,10 +400,10 @@ main {
 			<div class="right">
 				<div id="site">
 					<h2>
-						<b>입양됐어요</b>
+						<b>입양하기</b>
 					</h2>
 					<ul id="piese_ul">
-						<li class="piese_img"><a href="adopted_content_view"> <span
+						<li class="piese_img"><a href="adopt_content_view"> <span
 								class="thumb"> <img src="images/dog1.jpg"><br>
 							</span><strong>이미지 제목</strong><br>
 								<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이

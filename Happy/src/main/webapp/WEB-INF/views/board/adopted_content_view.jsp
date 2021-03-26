@@ -18,7 +18,7 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<title>고객센터</title>
+<title>입양후기</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;
@@ -291,7 +291,7 @@ a:hover {
 			float: right;
 			width: 180px;
 			margin-right: 38px;
-			margin-top: -2045px;
+			margin-top: -880px;
 		}
 		 
 		#side_img img {
@@ -407,14 +407,14 @@ a:hover {
 
 			<div id="left_menu">
 				<h3>
-					<b>입양하기</b>
+					<b>입양후기</b>
 				</h3>
 				<table>
-					<tr onclick="location.href='nav4-1_QnA'">
+					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
 						<td>></td>
 					</tr>
-					<tr onclick="location.href='nav4-2_notice'">
+					<tr onclick="location.href='nav2-3_review'">
 						<td>입양후기</td>
 						<td>></td>
 					</tr>
@@ -422,14 +422,13 @@ a:hover {
 			</div>
 			<div class="right">
 				<div id="h2_box">
-					<b style="font-size: 30px;">입양하기 &nbsp;&nbsp;</b><small>-
-						고객님들의 소중한 가족이 기다립니다.</small><br> <br>
+					<b style="font-size: 30px;">입양후기 &nbsp;&nbsp;</b><small>-
+						고객님들의 소중한 후기를 기다립니다.</small><br> <br>
 				</div>
 				<div id="content_div">
 					<table id="right_table">
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;">루루는 소중한 가족이
-								필요해요</td>
+							<td style="width: 600px; padding-left: 20px;">루루에게 소중한 가족이 생겼어요~</td>
 							<td><small>2021.03.19</small></td>
 							<td><small>조회 15,421</small></td>
 						</tr>
@@ -437,61 +436,18 @@ a:hover {
 							<td id="content_td" colspan="3"><img src="images/dog1.jpg"
 								id="content_img"><br> <br>
 								<p>
-									강아지를 입양하길 원하신다면<br> 센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
-									<br> Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-									pariatur animi quo. Nobis, impedit accusantium. <br> Alias
-									numquam fuga voluptatem minus qui, non quidem modi similique
-									accusantium.<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis,<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis, impedit accusantium. <br> Alias numquam fuga
-									voluptatem minus qui, non quidem modi similique accusantium.<br><br>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Excepturi quod ducimus<br> perspiciatis laudantium,
-									pariatur animi quo. Nobis,<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis, impedit
-									accusantium. <br> Alias numquam fuga voluptatem minus qui,
-									non quidem modi similique accusantium.<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
-									non quidem modi similique accusantium.<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br> <br>
-										ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+									루루가 드디어 새로운 가족이 생겼어요<br> 얼마전 방문해주신 한 부부께서 루루가 눈에 밟힌다고
+									새로운 가족이 되어주시겠다고 하셨답니다.<br>
+									루루는 유기견 센터에서 오래 머문 아이여서 <br>
+									꼭 좋은 가족에게 입양되었으면 했는데 너무 행복하네요 <br>
+									루루야 꼭 행복해~~<br><br>
+									
+									루루의 근황을 사진으로 보내주신다고 하셨습니다.<br>
+									루루의 사진이 도착하는대로<br>
+							  		업로드 할 예정입니다 ^^<br>
+									
+									
+									
 							</td>
 						</tr>
 					</table>

@@ -410,11 +410,11 @@ a:hover {
 					<b>입양하기</b>
 				</h3>
 				<table>
-					<tr onclick="location.href='nav4-1_QnA'">
+					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
 						<td>></td>
 					</tr>
-					<tr onclick="location.href='nav4-2_notice'">
+					<tr onclick="location.href='nav2-3_review'">
 						<td>입양후기</td>
 						<td>></td>
 					</tr>

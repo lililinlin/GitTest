@@ -83,8 +83,15 @@ public class MyController {
 	}
 
 	@RequestMapping("/nav2-3_review")
-	public String navreview(Model model) {
+	public String navreview(HttpServletRequest req, Model model) {
 
+		if (req.getSession().getAttribute("sessionID") == null) {
+			
+		} else {
+			String id = req.getSession().getAttribute("sessionID").toString();
+			MemberDto dto = member_service.getUserInfo(id);
+			req.getSession().setAttribute("memberInfo", dto);
+		}
 		return "nav/nav2-3_review";
 	}
 
