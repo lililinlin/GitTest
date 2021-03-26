@@ -476,7 +476,7 @@ a:hover {
 					</table>
 				<%
 					String id = member.getId();
-				if (id.equals("admin")) {
+				if (id.equals("admin")) { 
 				%>
 				<div id="btn_box1">
 					<form action="adopt_modify" method="post">
