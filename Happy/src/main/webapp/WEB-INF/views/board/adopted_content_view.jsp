@@ -200,6 +200,7 @@ a:hover {
 			margin-left: 280px;
 			width: 870px;
 			border-bottom: 1px solid rgb(6, 15, 138);
+			margin-bottom:10px;
 		}
 		
 		#main_table {
@@ -210,7 +211,9 @@ a:hover {
 		#main_table tr {
 			border-bottom: 1px solid rgb(233, 233, 233);
 		}
-		
+		#main_table img{
+			padding-left:10px;
+		}
 		#main_table th {
 			text-align: center;
 			height: 60px;
@@ -261,6 +264,15 @@ a:hover {
 			border-bottom: 1px solid rgb(216, 216, 216);
 			height: 50px;
 		}
+
+		#right_title small{
+			padding-left: 10px;
+			margin-right: 5px;
+			color: rgb(87, 87, 87);
+		}
+		#right_title td{
+			padding-left: 15px;
+		}
 		
 		#right_table {
 			width: 870px;
@@ -276,6 +288,14 @@ a:hover {
 		
 		#main_content {
 			padding: 40px 20px 40px 20px;
+		}
+
+		#tr_title{
+			height: 45px;
+		}
+		#tr_title td{
+			padding-left: 10px;
+			padding-top: 10px;
 		}
 /* 오른쪽 배너 */
 		#site {
@@ -427,10 +447,13 @@ a:hover {
 				</div>
 				<div id="content_div">
 					<table id="right_table">
+						<tr id="tr_title">
+							<td><h5>루루에게 소중한 가족이 생겼어요 ~ ^^</h5></td>
+						</tr>
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;">루루에게 소중한 가족이 생겼어요~</td>
-							<td><small>2021.03.19</small></td>
-							<td><small>조회 15,421</small></td>
+							<td><img src="images/notice_user.jpg"><small>해피퍼피관리자</small>
+							<small>2021.03.19</small>
+							<small>조회 15,421</small></td>
 						</tr>
 						<tr>
 							<td id="content_td" colspan="3"><img src="images/dog1.jpg"
@@ -460,7 +483,7 @@ a:hover {
 						<input onclick="location.href='adopt_write'" id="modify"
 							type="button" value="수정"> <input id="delete"
 							type="submit" value="삭제"> <input
-							onclick="location.href='nav2-1_adopt'" class="list" type="button"
+							onclick="location.href='nav2-3_review'" class="list" type="button"
 							value="목록">
 					</form>
 				</div>
