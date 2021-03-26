@@ -45,278 +45,279 @@ a:hover {
 	text-decoration: none;
 }
 /* 헤더 */
-* {
-	font-family: 'Noto Sans KR', sans-serif;
-}
-
-#head {
-	margin: 0 auto;
-	width: 1200px;
-	height: 100px;
-	background-color: white;
-}
-
-#logo {
-	width: 400px;
-	height: 100px;
-}
-
-.headerlogtd {
-	text-align: right;
-	vertical-align: bottom;
-}
-
-.headerlog {
-	color: rgb(150, 147, 147);
-	font-size: 13px;
-	text-decoration: none;
-}
-
-#nav_wrapper {
-	width: 100%;
-	padding-bottom: 2px;
-	box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
-}
-
-#nav_wrapper.fixed {
-	position: fixed;
-	padding-bottom: 20px;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 115px;
-	background-color: white;
-	z-index: 100;
-}
-
-.menumaintd {
-	width: 200px;
-	list-style-type: none;
-	text-decoration: none;
-	color: rgb(150, 147, 147);
-	text-align: center;
-}
-
-.mainmenu {
-	text-decoration: none;
-	color: black;
-}
-
-.hov {
-	background-color: white;
-	font-size: 25px;
-	width: 180px;
-	margin-top: 14px;
-	display: none;
-	position: absolute;
-	list-style-type: none;
-	text-decoration: none;
-	z-index: 100;
-	padding-top: 0px;
-	border-top: 2px solid rgb(189, 189, 193);
-	padding-left: 0px;
-	margin-left: 10px;
-	text-align: center;
-}
-
-.hov li {
-	height: 47px;
-	border-bottom: 2px solid rgb(189, 189, 193);
-}
-
-.hov a {
-	color: black;
-	font-size: 13px;
-}
-
-.hov:hover ul {
-	display: block;
-}
-
-.hov li:nth-child(n):hover {
-	background-color: rgb(118, 118, 118);
-}
-
-.hov li:nth-child(n):hover a {
-	color: white;
-}
-/* .hov:hover li:nth-child(n){
-	            background-color: hotpink;
-	            } */
-.menumaintd:hover .hov {
-	display: block;
-}
+			* {
+				font-family: 'Noto Sans KR', sans-serif;
+			}
+			
+			#head {
+				margin: 0 auto;
+				width: 1200px;
+				height: 100px;
+				background-color: white;
+			}
+			
+			#logo {
+				width: 400px;
+				height: 100px;
+			}
+			
+			.headerlogtd {
+				text-align: right;
+				vertical-align: bottom;
+			}
+			
+			.headerlog {
+				color: rgb(150, 147, 147);
+				font-size: 13px;
+				text-decoration: none;
+			}
+			
+			#nav_wrapper {
+				width: 100%;
+				padding-bottom: 2px;
+				box-shadow: 3px 3px 3px 1px rgb(247, 245, 245);
+			}
+			
+			#nav_wrapper.fixed {
+				position: fixed;
+				padding-bottom: 20px;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 115px;
+				background-color: white;
+				z-index: 100;
+			}
+			
+			.menumaintd {
+				width: 200px;
+				list-style-type: none;
+				text-decoration: none;
+				color: rgb(150, 147, 147);
+				text-align: center;
+			}
+			
+			.mainmenu {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.hov {
+				background-color: white;
+				font-size: 25px;
+				width: 180px;
+				margin-top: 14px;
+				display: none;
+				position: absolute;
+				list-style-type: none;
+				text-decoration: none;
+				z-index: 100;
+				padding-top: 0px;
+				border-top: 2px solid rgb(189, 189, 193);
+				padding-left: 0px;
+				margin-left: 10px;
+				text-align: center;
+			}
+			
+			.hov li {
+				height: 47px;
+				border-bottom: 2px solid rgb(189, 189, 193);
+			}
+			
+			.hov a {
+				color: black;
+				font-size: 13px;
+			}
+			
+			.hov:hover ul {
+				display: block;
+			}
+			
+			.hov li:nth-child(n):hover {
+				background-color: rgb(118, 118, 118);
+			}
+			
+			.hov li:nth-child(n):hover a {
+				color: white;
+			}
+			/* .hov:hover li:nth-child(n){
+				            background-color: hotpink;
+				            } */
+			.menumaintd:hover .hov {
+				display: block;
+			}
 
 /* 메인 */
 
-main {
-	width: 1200px;
-	height: 100%;
-	margin: 0 auto;
-	margin-top: 60px;
-	margin-bottom: 600px;
-}
+		main {
+			width: 1200px;
+/* 			height: 100%; */
+			margin: 0 auto;
+			margin-top: 60px;
+
+		}
 
 /* 왼쪽 오른쪽 담은 div */
-#main_wrapper {
-	width: 1200px;
-	height: 750px;
-	margin: 0 auto;
-}
+		#main_wrapper {
+			width: 1200px;
+/* 			height: 100%; */
+/* 			margin: 0 auto; */
+		}
 /* 왼쪽 카테고리 */
-#left_menu {
-	float: left;
-	width: 300px;
-}
-
-#left_menu table {
-	margin: 30px 0px 0px 10px;
-	width: 200px;
-	height: 80px;
-}
-
-#left_menu table td {
-	height: 50px;
-	padding-left: 20px;
-}
-
-#left_menu table tr {
-	border: 1px solid rgb(231, 231, 231);
-}
-
-#left_menu tr:hover {
-	background-color: rgb(251, 249, 249);
-	cursor: pointer;
-	color: #22409a;
-}
-
-.right {
-	width: 1650px;
-	height: 100%;
-	margin: 20px;
-}
-
-#h2_box {
-	margin-left: 280px;
-	width: 870px;
-	border-bottom: 1px solid rgb(6, 15, 138);
-}
-
-#main_table {
-	width: 870px;
-	margin-bottom: 100px;
-}
-
-#main_table tr {
-	border-bottom: 1px solid rgb(233, 233, 233);
-}
-
-#main_table th {
-	text-align: center;
-	height: 60px;
-	font-weight: normal;
-}
-
-#content_img {
-	width: 600px;
-	height: 400px;
-}
-
-.num {
-	width: 80px;
-	text-align: center;
-	height: 50px;
-}
-
-.title {
-	padding-left: 20px;
-}
-
-.title a {
-	cursor: pointer;
-	color: black;
-}
-
-#btn_box1 { /* admin 로그인시 */
-	margin-left: 500px;
-	margin-bottom: 500px;
-}
-
-#btn_box2 { /* 비로그인, 일반사용자 로그인시  */
-	margin-left: 650px;
-}
-
-#modify, #delete, .list { /* 버튼들 */
-	width: 150px;
-	height: 50px;
-	background-color: rgb(27, 40, 138);
-	color: white;
-	border: none;
-	margin-right: 10px;
-}
-
-#right_title {
-	border-bottom: 1px solid rgb(216, 216, 216);
-	height: 50px;
-}
-
-#right_table {
-	width: 870px;
-	border-bottom: 1px solid rgb(27, 40, 138);
-	margin-bottom: 50px;
-}
-
-#content_td {
-	border:1px solid red;
-	padding-top: 30px;
-	padding-left: 50px;
-	padding-bottom: 30px;
-}
-
-#main_content {
-	padding: 40px 20px 40px 20px;
-}
+		#left_menu {
+			float: left;
+			width: 300px;
+		}
+		
+		#left_menu table {
+			margin: 30px 0px 0px 10px;
+			width: 200px;
+			height: 80px;
+		}
+		
+		#left_menu table td {
+			height: 50px;
+			padding-left: 20px;
+		}
+		
+		#left_menu table tr {
+			border: 1px solid rgb(231, 231, 231);
+		}
+		
+		#left_menu tr:hover {
+			background-color: rgb(251, 249, 249);
+			cursor: pointer;
+			color: #22409a;
+		}
+/* 오른쪽 카테고리 */		
+		.right {
+			width: 1200px;
+/* 			height: 100%; */
+			margin: 20px;
+		}
+		
+		#h2_box {
+			margin-left: 280px;
+			width: 870px;
+			border-bottom: 1px solid rgb(6, 15, 138);
+		}
+		
+		#main_table {
+			width: 870px;
+			margin-bottom: 100px;
+		}
+		
+		#main_table tr {
+			border-bottom: 1px solid rgb(233, 233, 233);
+		}
+		
+		#main_table th {
+			text-align: center;
+			height: 60px;
+			font-weight: normal;
+		}
+		
+		#content_img {
+			width: 600px;
+			height: 400px;
+		}
+		
+		.num {
+			width: 80px;
+			text-align: center;
+			height: 50px;
+		}
+		
+		.title {
+			padding-left: 20px;
+		}
+		
+		.title a {
+			cursor: pointer;
+			color: black;
+		}
+		
+		#btn_box1 { /* admin 로그인시 */
+			margin-left: 450px;
+			margin-bottom: 100px;
+		}
+		
+		#btn_box2 { /*  일반사용자 로그인시  */
+			margin-left: 600px;
+			margin-bottom: 100px;
+		}
+		
+		#modify, #delete, .list { /* 버튼들 */
+			width: 150px;
+			height: 50px;
+			background-color: rgb(27, 40, 138);
+			color: white;
+			border: none;
+			margin-right: 10px;
+		}
+		/* 오른쪽 메인 테이블 */
+		#right_title {
+			border-bottom: 1px solid rgb(216, 216, 216);
+			height: 50px;
+		}
+		
+		#right_table {
+			width: 870px;
+			border-bottom: 1px solid rgb(27, 40, 138);
+			margin-bottom: 50px;
+		}
+		
+		#content_td {
+			padding-top: 30px;
+			padding-left: 50px;
+			padding-bottom: 30px;
+		}
+		
+		#main_content {
+			padding: 40px 20px 40px 20px;
+		}
 /* 오른쪽 배너 */
-#site {
-	display: inline-block;
-}
-
-#side_table td {
-	border: 1px solid #e5e5e5;
-	background-color: white;
-}
-
-#side_img {
-	float: right;
-	width: 180px;
-	margin-right: 38px;
-	margin-top: -880px;
-}
- 
-#side_img img {
-	width: 160px;
-	height: 200px;
-}
-
-.side_p {
-	width: 156px;
-	padding-top: 10px;
-	text-align: center;  
-}
+		#site {
+			display: inline-block;
+		}
+		
+		#side_table td {
+			border: 1px solid #e5e5e5;
+			background-color: white;
+		}
+		
+		#side_img {
+			float: right;
+			width: 180px;
+			margin-right: 38px;
+			margin-top: -880px;
+		}
+		 
+		#side_img img {
+			width: 160px;
+			height: 200px;
+		}
+		
+		.side_p {
+			width: 156px;
+			padding-top: 10px;
+			text-align: center;  
+		}
 
 /* 푸터 */
-#footer {
-	text-align: center;
-	margin: 0 auto;
-	height: 200px; 
-	width: 100%;
-	background-color: #424141; 
-	position: absolute;
-}
-
-footer a {
-	color: white;
-}
+		#footer {
+			text-align: center;
+			margin: 0 auto;
+			height: 200px; 
+			width: 100%;
+			background-color: #424141; 
+			position: absolute;
+			color: white;
+		}
+		
+		#footer a {
+			color: white;
+		}
 
 /* *{
             border: 1px solid red;
@@ -463,10 +464,36 @@ footer a {
 									similique accusantium.<br> Lorem ipsum dolor sit amet,
 									consectetur adipisicing elit. Excepturi quod ducimus<br>
 									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
-							<td>
+									non quidem modi similique accusantium.<br> Lorem ipsum
+									dolor sit amet, consectetur adipisicing elit. Excepturi quod
+									ducimus<br> perspiciatis laudantium, pariatur animi quo.
+									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
+									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									Alias numquam fuga voluptatem minus qui, non quidem modi
+									similique accusantium.<br> Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit. Excepturi quod ducimus<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+									dolor sit amet, consectetur adipisicing elit. Excepturi quod
+									ducimus<br> perspiciatis laudantium, pariatur animi quo.
+									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
+									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									Alias numquam fuga voluptatem minus qui, non quidem modi
+									similique accusantium.<br> Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit. Excepturi quod ducimus<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+										ducimus<br> perspiciatis laudantium, pariatur animi quo.
+									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
+									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									Alias numquam fuga voluptatem minus qui, non quidem modi
+									similique accusantium.<br> Lorem ipsum dolor sit amet,
+									consectetur adipisicing elit. Excepturi quod ducimus<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+							</td>
 						</tr>
 					</table>
-				</div>
 				<%
 					String id = member.getId();
 				if (id.equals("admin")) {
@@ -490,7 +517,7 @@ footer a {
 				<%
 					}
 				%>
-
+				</div>
 			</div>
 		</div>
 		<script>
@@ -545,9 +572,8 @@ footer a {
 			</tr>
 		</table>
 	</div>
-	<div id="white_div"></div>
+	
 	<div id="footer">
-		<footer style="color: white;">
 			<br> <br> <br>
 			<p>
 				<a href="footer_yak">이용약관&nbsp;&nbsp;</a> | <a href="footer_info">&nbsp;개인정보취급방침&nbsp;&nbsp;</a>
@@ -556,7 +582,7 @@ footer a {
 				: 강이린<br> Copyright ⓒ 2019, Seoul Abandoned Animal Adoption
 				Center All rights reserved. This is a nonprofit site.
 			</p>
-		</footer>
+
 	</div>
 </body>
 
