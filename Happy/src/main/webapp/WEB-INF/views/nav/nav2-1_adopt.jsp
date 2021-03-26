@@ -164,7 +164,7 @@ main {
 	height: 820px;
 	margin: 0 auto;
 	margin-top: 60px;
-	margin-bottom: 400px;
+	margin-bottom: 500px;
 }
 /* 왼쪽 오른쪽 담은 div */
 #main_wrapper {
@@ -203,7 +203,7 @@ main {
 	width: 950px;
 	height: 100%;
 	margin: 20px;
-	margin-left: 250px;
+	margin-left: 225px;
 	margin-bottom: 250px;
 }
 
@@ -214,21 +214,31 @@ main {
 
 #piese_ul {
 	list-style: none;
+	width:900px;
 	border-bottom: 1px solid #aaa;
 }
 
 .piese_img {
 	border: 1px solid #d2d2d2; 
 	float : left;
-	width: 302px;
-	height: 440px;
+	width: 400px;
+	height: 520px;
 	margin-top: 30px;
-	margin-left:30px;
-	margin-right: 30px;
-	float: left;
+	margin-right: 20px;
+}
+.piese_img:hover{
+	transition-duration: 1.0s;
+	background-color: #e9e9e9;
+	
+}
+.img_div{
+	width:250px;
+	height:300px;
+	margin:0 auto;
+	margin-top:40px;
+	margin-bottom:20px;
 	overflow:hidden;
 }
-
 .piese_img a {
 	display: block;
 	color: rgb(27, 40, 138);
@@ -245,31 +255,43 @@ main {
 }
 
 .piese_content {
+	position:relative;
 	color: #767676;
 	font-size: .9em;
-	/* overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
-  	width: 300px;
-  	height: 60px; */
+	padding:0px 40px 0px 40px;
+	margin-top:15px;
+	display: -webkit-box;
+	max-height:80px;
+	overflow:hidden;
+	vertical-align:top;
+	text-overflow: ellipsis;
+	word-break:break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+
 }
 
 .piese_img img {
-	width: 300px;
+	width: 250px;
 	height: 300px;
 	
 }
 .piese_img img:hover{
 	transform:scale(1.1);
-	
+	transition:transform 0.5s linear;
+}
+.new_icon{
+	width:100px;
+	height:50px;
 }
 .piese_sub_p {
 	font-size: 14px;
 	color: #d2d2d2;
+	padding:0px 40px 0px 40px;
 }
 
 #write {
-	margin-left: 590px;
+	margin-left: 710px;
 	margin-top: 50px;
 	width: 150px;
 	height: 45px;
@@ -288,7 +310,7 @@ main {
 	float: right;
 	width: 180px;
 	margin-right: 38px;
-	margin-top: -1180px;
+	margin-top: -1280px;
 }
 
 #side_img img {
@@ -404,29 +426,29 @@ main {
 					</h2>
 					<ul id="piese_ul">
 						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog1.jpg"><br>
-							</span><strong>이미지 제목</strong><br>
+								class="thumb"> <div class="img_div"><img src="images/dog1.jpg"></div>
+							</span><div style="display: flex;"><strong style="padding: 0px 0px 0px 40px; font-size: 22px;">두리와 오월이의 가족을 찾아요</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
 								<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
 									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
 							<p class="piese_sub_p">이정현 | 2021.02.01 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog2.jpg">
-							</span><strong>이미지 제목</strong>
+								class="thumb"> <div class="img_div"><img src="images/dog2.jpg"></div>
+							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
 							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
 									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
 							<p class="piese_sub_p">강이린 | 2021.02.07 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog3.jpg">
-							</span> <strong>이미지 제목</strong>
+								class="thumb"> <div class="img_div"><img src="images/dog3.jpg"></div>
+							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
 							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
 									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
 						</a>
 							<p class="piese_sub_p">이정현 | 2021.02.18 | 조회 129</p></li>
 						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <img src="images/dog4.jpg">
-							</span> <strong>이미지 제목</strong>
+								class="thumb"> <div class="img_div"><img src="images/dog4.jpg"></div>
+							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
 							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
 									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>	
 						</a>
