@@ -389,7 +389,7 @@ main {
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
 						<td>입양하기</td>
-						<td>></td>
+						<td>></td> 
 					</tr>
 					<tr onclick="location.href='nav2-3_review'">
 						<td>입양후기</td>
