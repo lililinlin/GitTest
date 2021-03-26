@@ -142,6 +142,11 @@ public class MyController {
 		
 		return "board/community_modify";
 	}
+	@RequestMapping("/adopted_content_view")
+	public String adopted_content_view(Model model) {
+		
+		return "board/adopted_content_view";
+	}
 
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
