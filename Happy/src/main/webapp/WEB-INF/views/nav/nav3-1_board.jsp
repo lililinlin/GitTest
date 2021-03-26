@@ -189,6 +189,7 @@
         #h2_box{
 			width:870px;
 			border-bottom: 1px solid rgb(6, 15, 138);
+			padding-bottom: 20px;
 		}
 		#main_table{
 			width: 870px;

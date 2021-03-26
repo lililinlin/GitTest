@@ -189,6 +189,7 @@
         #h2_box{
 			width:870px;
 			border-bottom: 1px solid rgb(6, 15, 138);
+			padding-bottom: 20px;
 		}
 		#main_table{
 			width: 870px;
@@ -367,7 +368,7 @@
 					  </tr>	
 				</table>
 				<div id="btn_box">
-					<input type="button" id="btn_update" value="수정하기" onclick="location.href='#'">
+					<input type="button" id="btn_update" value="수정하기" onclick="location.href='community_modify'">
 					<input type="button" id="btn_delete" value="삭제하기" onclick="location.href='#'">
 					<input type="button" id="btn_list" value="목록으로" onclick="location.href='nav3-1_board'">
 				</div>

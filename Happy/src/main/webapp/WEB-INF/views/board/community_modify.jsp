@@ -390,7 +390,7 @@
 					<div id = "site">
 						<br>
 						<div id="h2_box">
-							<h3><b>게시판 작성하기</b></h3>
+							<h3><b>글 수정하기</b></h3>
 						</div>
 
 						<form action="communuty_writeAction" method="post">
@@ -411,8 +411,8 @@
 							</table>
 
 							<div id = "footer_button">
-								<input type="submit"  value = "등 록"/>
-								<input type="button"  value = "취 소" onclick="location.href='nav3-1_board'"/>
+								<input type="submit"  value = "수정완료"/>
+								<input type="button"  value = "돌아가기" onclick="location.href='nav3-1_board'"/>
 							</div>
 
 						</form>
