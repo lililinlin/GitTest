@@ -427,7 +427,7 @@ main {
 					<ul id="piese_ul">
 						<li class="piese_img"><a href="adopt_content_view"> <span
 								class="thumb"> <div class="img_div"><img src="images/dog1.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 0px 0px 40px; font-size: 22px;">강아자 확대범 자수합니다</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
+							</span><div style="display: flex;"><strong style="padding: 0px 0px 0px 40px; font-size: 22px;">강아지 확대범 자수합니다</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
 								<P class="piese_content">막 입양했을 때는 겁도 많고 몸 상태도 많이 안좋았는데 지금은 잘 먹고 완전 개구쟁이 다 됐어요ㅎㅎ 지금은 저의 소중한 가족이랍니다</P>
 						</a>
 							<p class="piese_sub_p">이정현 | 2021.02.01 | 조회 129</p></li>
@@ -455,7 +455,7 @@ main {
 					</ul>
 					<%
 						if (session.getAttribute("sessionID") != null) { 
-						if (member.getId() != null) {
+						if (member.getId().equals("admin")) {
 					%>
 					<input type="button" id="write" value="글작성"
 						onclick="location.href='adopt_review_write'">
