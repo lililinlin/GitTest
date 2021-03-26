@@ -381,7 +381,7 @@ main {
 		</table>
 	</div>
 	<main>
-		<div id="main_wrapper">
+		<div id="main_wrapper"> 
 			<div id="left_menu">
 				<h3>
 					<b>입양후기</b>
