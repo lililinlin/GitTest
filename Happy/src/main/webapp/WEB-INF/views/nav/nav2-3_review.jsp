@@ -406,7 +406,7 @@ main {
 		<div id="main_wrapper">
 			<div id="left_menu">
 				<h3>
-					<b>입양하기</b>
+					<b>입양후기</b>
 				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
