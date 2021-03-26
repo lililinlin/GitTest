@@ -151,7 +151,7 @@ a:hover {
 
 		main {
 			width: 1200px;
-/* 			height: 100%; */
+			height: 100%; 
 			margin: 0 auto;
 			margin-top: 60px;
 
@@ -160,8 +160,8 @@ a:hover {
 /* 왼쪽 오른쪽 담은 div */
 		#main_wrapper {
 			width: 1200px;
-/* 			height: 100%; */
-/* 			margin: 0 auto; */
+ 			height: 100%; 
+ 			margin: 0 auto; 
 		}
 /* 왼쪽 카테고리 */
 		#left_menu {
@@ -203,7 +203,7 @@ a:hover {
 		}
 		
 		#main_table {
-			width: 870px;
+			width: 850px;
 			margin-bottom: 100px;
 		}
 		
@@ -218,8 +218,9 @@ a:hover {
 		}
 		
 		#content_img {
-			width: 600px;
-			height: 400px;
+			width: 680px;
+			height: 500px;
+			padding-bottom:30px;
 		}
 		
 		.num {
@@ -290,7 +291,7 @@ a:hover {
 			float: right;
 			width: 180px;
 			margin-right: 38px;
-			margin-top: -880px;
+			margin-top: -2045px;
 		}
 		 
 		#side_img img {
@@ -447,7 +448,7 @@ a:hover {
 									dolor sit amet, consectetur adipisicing elit. Excepturi quod
 									ducimus<br> perspiciatis laudantium, pariatur animi quo.
 									Nobis, impedit accusantium. <br> Alias numquam fuga
-									voluptatem minus qui, non quidem modi similique accusantium.<br>
+									voluptatem minus qui, non quidem modi similique accusantium.<br><br>
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 									Excepturi quod ducimus<br> perspiciatis laudantium,
 									pariatur animi quo. Nobis,<br> Lorem ipsum dolor sit amet,
@@ -459,7 +460,7 @@ a:hover {
 									ducimus<br> perspiciatis laudantium, pariatur animi quo.
 									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
 									Alias numquam fuga voluptatem minus qui, non quidem modi
 									similique accusantium.<br> Lorem ipsum dolor sit amet,
 									consectetur adipisicing elit. Excepturi quod ducimus<br>
@@ -469,7 +470,7 @@ a:hover {
 									ducimus<br> perspiciatis laudantium, pariatur animi quo.
 									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
+									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
 									Alias numquam fuga voluptatem minus qui, non quidem modi
 									similique accusantium.<br> Lorem ipsum dolor sit amet,
 									consectetur adipisicing elit. Excepturi quod ducimus<br>
@@ -482,7 +483,7 @@ a:hover {
 									Alias numquam fuga voluptatem minus qui, non quidem modi
 									similique accusantium.<br> Lorem ipsum dolor sit amet,
 									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+									perspiciatis laudantium, pariatur animi quo. Nobis,<br> <br>
 										ducimus<br> perspiciatis laudantium, pariatur animi quo.
 									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
 									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
