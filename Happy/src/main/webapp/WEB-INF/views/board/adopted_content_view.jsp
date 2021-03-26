@@ -449,7 +449,7 @@ a:hover {
 					<table id="right_table"> 
 						<tr id="tr_title">
 							<td><h5>루루에게 소중한 가족이 생겼어요 ~ ^^</h5></td>
-						</tr>
+						</tr> 
 						<tr id="right_title">
 							<td><img src="images/notice_user.jpg"><small>해피퍼피관리자</small>
 							<small>2021.03.19</small>
