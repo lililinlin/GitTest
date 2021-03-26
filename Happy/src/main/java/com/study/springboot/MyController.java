@@ -412,7 +412,15 @@ public class MyController {
 		System.out.println(id);
 		return "board/adopt_write"; // list.jsp
 	}
-
+	@RequestMapping("/adopt_review_write")
+	public String adopt_review_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+		HttpSession session = req.getSession();
+		String id = session.getAttribute("sessionID").toString();
+		MemberDto dto = member_service.getUserInfo(id);
+		session.setAttribute("memberInfo", dto);
+		System.out.println(id);
+		return "board/adopt_review_write"; // list.jsp
+	}
 	@RequestMapping("/adopt_content_view")
 	public String adopt_content_view(HttpServletRequest req, RedirectAttributes redirect, Model model) {
 		if (req.getSession().getAttribute("sessionID") == null) {
@@ -447,7 +455,10 @@ public class MyController {
 	public String adoptwriteAction(HttpServletRequest req, Model model) throws Exception {
 		return "nav/nav2-1_adopt";
 	}
-
+	@RequestMapping(value = "/adoptreviewwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String adoptreviewwriteAction(HttpServletRequest req, Model model) throws Exception {
+		return "nav/nav2-3_review";
+	}
 	@RequestMapping("/write")
 	public String write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
 		HttpSession session = req.getSession();
@@ -502,7 +513,7 @@ public class MyController {
 
 			String callback = request.getParameter("CKEditorFuncNum");
 			printWriter = response.getWriter();
-			String fileUrl = "/mine/ckImgSubmit.do?uid=" + uid + "&fileName=" + fileName; // 작성화면
+			String fileUrl = "/mine/.do?uid=" + uid + "&fileName=" + fileName; // 작성화면
 
 			// 업로드시 메시지 출력
 			printWriter.println("{\"filename\" : \"" + fileName + "\", \"uploaded\" : 1, \"url\":\"" + fileUrl + "\"}");
@@ -537,7 +548,7 @@ public class MyController {
 	 * @throws IOException
 	 */
 	//
-	@RequestMapping(value = "/mine/ckImgSubmit.do")
+	@RequestMapping(value = "/mine/.do")
 	public void ckSubmit(@RequestParam(value = "uid") String uid, @RequestParam(value = "fileName") String fileName,
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

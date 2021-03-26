@@ -15,9 +15,13 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+<script src="js/ckeditor/ckeditor.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
+<%
+	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+%>
 <title>입양후기</title>
 <script>
 	$(function() {
@@ -33,9 +37,6 @@
 		})
 	});
 </script>
-<%
-	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
-%>
 <style>
 a:link {
 	text-decoration: none;
@@ -164,7 +165,7 @@ main {
 	height: 820px;
 	margin: 0 auto;
 	margin-top: 60px;
-	margin-bottom: 500px;
+	margin-bottom: 100px;
 }
 /* 왼쪽 오른쪽 담은 div */
 #main_wrapper {
@@ -200,11 +201,14 @@ main {
 }
 
 .right {
-	width: 950px;
+	width: 1650px;
 	height: 100%;
-	margin: 20px;
-	margin-left: 225px;
-	margin-bottom: 250px;
+	margin-left:-125px;
+}
+
+#footer_button {
+	text-align: center;
+	padding-top: 20px;
 }
 
 #site {
@@ -212,94 +216,22 @@ main {
 	margin: 0 auto;
 }
 
-#piese_ul {
-	list-style: none;
-	width:900px;
-	border-bottom: 1px solid #aaa;
-}
-
-.piese_img {
-	border: 1px solid #d2d2d2; 
-	float : left;
-	width: 400px;
-	height: 520px;
-	margin-top: 30px;
-	margin-right: 20px;
-}
-.piese_img:hover{
-	transition-duration: 1.0s;
-	background-color: #e9e9e9;
-	
-}
-.img_div{
-	width:250px;
-	height:300px;
-	margin:0 auto;
-	margin-top:40px;
-	margin-bottom:20px;
-	overflow:hidden;
-}
-.piese_img a {
-	display: block;
-	color: rgb(27, 40, 138);
-}
-
-.piese_img a thumb {
-	position: relative;
-	display: block;
-	background-color: #ccc;
-	height: 300px;
-	color: #666;
-	text-align: center;
-	line-height: 200px;
-}
-
-.piese_content {
-	position:relative;
-	color: #767676;
-	font-size: .9em;
-	padding:0px 40px 0px 40px;
-	margin-top:15px;
-	display: -webkit-box;
-	max-height:80px;
-	overflow:hidden;
-	vertical-align:top;
-	text-overflow: ellipsis;
-	word-break:break-all;
-	-webkit-box-orient:vertical;
-	-webkit-line-clamp:2;
-
-}
-
-.piese_img img {
+input[type=submit] {
 	width: 250px;
-	height: 300px;
-	
-}
-.piese_img img:hover{
-	transform:scale(1.1);
-	transition:transform 0.5s linear;
-}
-.new_icon{
-	width:100px;
-	height:50px;
-}
-.piese_sub_p {
-	font-size: 14px;
-	color: #d2d2d2;
-	padding:0px 40px 0px 40px;
-}
-
-#write {
-	margin-left: 710px;
-	margin-top: 50px;
-	width: 150px;
-	height: 45px;
+	height: 60px;
 	background-color: rgb(27, 40, 138);
 	color: white;
 	border: none;
 }
 
+input[type=button] {
+	margin-left: 10px;
+	width: 250px;
+	height: 60px;
+	border: 1px solid gray;
+	background-color: white;
+	color: gray;
+}
 /* 오른쪽 배너 */
 #side_table td {
 	border: 1px solid #e5e5e5;
@@ -310,7 +242,7 @@ main {
 	float: right;
 	width: 180px;
 	margin-right: 38px;
-	margin-top: -1280px;
+	margin-top: -880px;
 }
 
 #side_img img {
@@ -396,8 +328,8 @@ main {
 							<ul class="hov">
 								<li><a href="nav4-1_QnA">Q&A</a></li>
 								<li><a href="nav4-2_notice">공지사항</a></li>
-							</ul></li>  
-					</td> 
+							</ul></li>
+					</td>
 				</ul>
 			</tr>
 		</table>
@@ -406,7 +338,7 @@ main {
 		<div id="main_wrapper">
 			<div id="left_menu">
 				<h3>
-					<b>입양하기</b>
+					<b>입양후기</b>
 				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
@@ -424,47 +356,31 @@ main {
 					<h2>
 						<b>입양후기</b>
 					</h2>
-					<ul id="piese_ul">
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog1.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 0px 0px 40px; font-size: 22px;">강아자 확대범 자수합니다</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-								<P class="piese_content">막 입양했을 때는 겁도 많고 몸 상태도 많이 안좋았는데 지금은 잘 먹고 완전 개구쟁이 다 됐어요ㅎㅎ 지금은 저의 소중한 가족이랍니다</P>
-						</a>
-							<p class="piese_sub_p">이정현 | 2021.02.01 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog2.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
-						</a>
-							<p class="piese_sub_p">강이린 | 2021.02.07 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog3.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
-						</a>
-							<p class="piese_sub_p">이정현 | 2021.02.18 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog4.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>	
-						</a>
-							<p class="piese_sub_p">강이린 | 2021.03.15 | 조회 129</p></li>
-					</ul>
-					<%
-						if (session.getAttribute("sessionID") != null) {
-						if (member.getId() != null) {
-					%>
-					<input type="button" id="write" value="글작성"
-						onclick="location.href='adopt_review_write'">
-					<%
-						}
-					%>
-					<%
-						}
-					%>
+					<hr>
+					<form action="adoptreviewwriteAction" method="post">
+						작성자 :&nbsp;&nbsp;<%=member.getName()%>
+						<input type="hidden" id="id" name="id" value="<%=member.getId()%>">
+						<input type="hidden" id="name" name="name"
+							value="<%=member.getName()%>">
+						<hr>
+						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
+						<hr>
+						<textarea id="editor4" name="editor4"></textarea>
+						<input type="hidden" name="idx" value="1" id="bidx">
+						<script>
+							CKEDITOR.replace('editor4', {
+								width : 800,
+								height : 400,
+								filebrowserUploadUrl : '/images/imageUpload.do'
+							});
+						</script>
+						<hr>
+						<div id="footer_button">
+							<input type="submit" class="btn btn-primary" value="등록" /> <input
+								type="button" class="btn btn-secondary" value="취소"
+								onclick="location.href='nav2-1_adopt'" />
+						</div>
+					</form>
 					<script>
 						$(function() {
 							var $win = $(window);
