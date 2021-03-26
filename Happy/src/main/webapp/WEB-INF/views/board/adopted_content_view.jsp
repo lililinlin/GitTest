@@ -446,7 +446,7 @@ a:hover {
 						고객님들의 소중한 후기를 기다립니다.</small><br> <br>
 				</div>
 				<div id="content_div">
-					<table id="right_table">
+					<table id="right_table"> 
 						<tr id="tr_title">
 							<td><h5>루루에게 소중한 가족이 생겼어요 ~ ^^</h5></td>
 						</tr>
