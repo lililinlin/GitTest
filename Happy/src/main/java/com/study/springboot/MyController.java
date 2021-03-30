@@ -31,6 +31,7 @@ import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
+import com.study.springboot.service.IQnAService;
 
 @Controller
 public class MyController {
@@ -38,6 +39,8 @@ public class MyController {
 	IMemberService member_service;
 	@Autowired
 	INoticeService notice_service;
+	@Autowired
+	IQnAService qna_service;
 
 	@RequestMapping("/")
 	public String root() throws Exception {
@@ -647,20 +650,20 @@ public class MyController {
 	public String Q_A_writeAction(HttpServletRequest req, Model model) throws Exception {
 
 		req.setCharacterEncoding("UTF-8");
+		String Id = req.getParameter("id");
 		String nbName = req.getParameter("name");
 		String nbTitle = req.getParameter("title");
 		String nbContent = req.getParameter("editor4");
-		String Id = req.getParameter("id");
 
-		/*
-		 * int nResult = notice_service.write(nbName, nbTitle, nbContent, Id);
-		 * 
-		 * if (nResult < 1) { System.out.println("글쓰기 실패"); model.addAttribute("msg",
-		 * "글쓰기 실패"); model.addAttribute("url", "/write");
-		 * 
-		 * } else { System.out.println("글쓰기 성공"); model.addAttribute("msg", "글쓰기 성공");
-		 * model.addAttribute("url", "/nav4-2_notice"); }
-		 */
+		
+		  int nResult = qna_service.write(Id,nbName, nbTitle, nbContent);
+		  
+		  if (nResult < 1) { System.out.println("글쓰기 실패"); model.addAttribute("msg",
+		  "글쓰기 실패"); model.addAttribute("url", "/write");
+		  
+		  } else { System.out.println("글쓰기 성공"); model.addAttribute("msg", "글쓰기 성공");
+		  model.addAttribute("url", "/nav4-2_notice"); }
+		
 
 		return "borad/4-1_QnA";
 	}
