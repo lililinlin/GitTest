@@ -367,6 +367,8 @@
                     <br>
                     <h3><b>Q & A 작성하기</b></h3>
                      <form action="Q_A_writeAction" method="post"><hr>
+                     <input type="hidden" id="id" name="id" value="<%=member.getId() %>">
+                     <input type="hidden" id="name" name="name" value="<%=member.getName() %>">
                         제목 :&nbsp;<input type="text" size="50" id = "title" name="title"/><hr>
                         <textarea id = "editor4" name = "editor4" ></textarea>
                     <script>

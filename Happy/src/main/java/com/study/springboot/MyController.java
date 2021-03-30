@@ -651,20 +651,25 @@ public class MyController {
 
 		req.setCharacterEncoding("UTF-8");
 		String Id = req.getParameter("id");
-		String nbName = req.getParameter("name");
-		String nbTitle = req.getParameter("title");
-		String nbContent = req.getParameter("editor4");
+		String qbName = req.getParameter("name");
+		String qbTitle = req.getParameter("title");
+		String qbContent = req.getParameter("editor4");
 
 		
-		  int nResult = qna_service.write(Id,nbName, nbTitle, nbContent);
+		  int nResult = qna_service.write(Id,qbName, qbTitle, qbContent);
 		  
-		  if (nResult < 1) { System.out.println("글쓰기 실패"); model.addAttribute("msg",
-		  "글쓰기 실패"); model.addAttribute("url", "/write");
+		  if (nResult < 1) { 
+			  System.out.println("글쓰기 실패"); 
+			  model.addAttribute("msg","글쓰기 실패"); 
+			  model.addAttribute("url", "/Q_A_Write");
 		  
-		  } else { System.out.println("글쓰기 성공"); model.addAttribute("msg", "글쓰기 성공");
-		  model.addAttribute("url", "/nav4-2_notice"); }
+		  } else { 
+			  System.out.println("글쓰기 성공"); 
+			  model.addAttribute("msg", "글쓰기 성공");
+			  model.addAttribute("url", "/nav4-1_QnA"); 
+		  }
 		
 
-		return "borad/4-1_QnA";
+		return "redirect";
 	}
 }
