@@ -12,7 +12,7 @@ import com.study.springboot.dto.QnADto;
 
 @Service
 public class QnAService implements IQnAService{
-
+ 
 	@Autowired
 	IQnADao qnadao;
 	@Autowired

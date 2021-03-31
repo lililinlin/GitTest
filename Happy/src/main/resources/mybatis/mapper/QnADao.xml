@@ -15,4 +15,12 @@
 		select * from qna_board
    	</select>
    	
+   	<select id="contentview" resultType="com.study.springboot.dto.QnADto">
+   		select * from qna_board where qbidx=#{param1}
+   	</select>
+   	
+   	<delete id="delete">
+		delete from qna_board where qbidx=#{param1}
+	</delete>
+   	
 </mapper>

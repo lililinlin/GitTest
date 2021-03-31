@@ -359,7 +359,9 @@ public class MyController {
 		if (req.getSession().getAttribute("sessionID") != null) {
 			String bid_str = req.getParameter("qbidx");
 			QnADto qnadto = qna_service.contentview(bid_str);
-			
+			req.getSession().setAttribute("content_view", qnadto);
+			System.out.println("bidx ?? " + req.getParameter("qbidx"));
+			System.out.println("dto"+qnadto);
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
@@ -367,6 +369,7 @@ public class MyController {
 		}
 		return "board/Q_A_content_view";
 	}
+
 	
 	@RequestMapping("/Q_A_delete")
 	public String Q_A_delete(HttpServletRequest req, Model model) {

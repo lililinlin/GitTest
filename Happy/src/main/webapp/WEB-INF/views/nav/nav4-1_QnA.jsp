@@ -370,7 +370,7 @@
 					  	%>
 						  <tr>
 								<td class="num"><%=qna.get(i).getQbidx()%></td>
-								<td class="title"><a href="Q_A_content_view"><%=qna.get(i).getQbTitle()%></a></td>
+								<td class="title"><a href="Q_A_content_view?qbidx=<%=qna.get(i).getQbidx()%>"><%=qna.get(i).getQbTitle()%></a></td>
 						  </tr>	
 					 <%  		
 					  	}

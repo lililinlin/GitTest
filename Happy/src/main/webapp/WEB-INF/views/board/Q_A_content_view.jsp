@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.QnADto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +36,7 @@
 </script>
 <%
    			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+			QnADto content_view = (QnADto)session.getAttribute("content_view");
 	%>
 <style>
 a:link {
@@ -411,29 +413,13 @@ footer a {
 				<div>
 					<table id="right_table">
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;">강아지를 입양하고 싶어요</td>
-							<td><small>2021.03.19</small></td>
+							<td style="width: 600px; padding-left: 20px;"><%=content_view.getQbTitle() %></td>
+							<td><small><%=content_view.getQbDate() %></small></td>
 							<td><small>조회 15,421</small></td>
 						</tr>
 						<tr>
-							<td colspan="3" id="main_content">강아지를 입양하길 원하신다면<br>
-								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
-							<br> Lorem ipsum dolor sit amet, consectetur adipisicing
-								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-								pariatur animi quo. Nobis, impedit accusantium. <br> Alias
-								numquam fuga voluptatem minus qui, non quidem modi similique
-								accusantium.<br> Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-								laudantium, pariatur animi quo. Nobis,<br>
-							<br> impedit accusantium. Alias numquam fuga voluptatem
-								minus qui, non quidem modi <br> similique accusantium.
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-								Excepturi quod ducimus perspiciatis<br> laudantium,
-								pariatur animi quo. Nobis, impedit accusantium.<br> Alias
-								numquam fuga voluptatem minus qui, non quidem modi similique
-								accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing
-								elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-								pariatur animi quo. Nobis, impedit accusantium. <br>
+							<td colspan="3" id="main_content">
+							<%=content_view.getQbContent() %>
 							</td>
 						</tr>
 					</table>
@@ -443,11 +429,10 @@ footer a {
 				if( id.equals("admin")) {
 				%>
 				<div id="btn_box1">
-					<input onclick="location.href='nav4-1_QnA'" id="modify"
-						type="button" value="수정"> <input
-						onclick="location.href='nav4-1_QnA'" id="delete" type="button"
-						value="삭제"> <input onclick="location.href='nav4-1_QnA'"
-						class="list" type="button" value="목록">
+					<input onclick="location.href='nav4-1_QnA'" id="modify"type="button" value="수정"> 
+					<!-- <input onclick="location.href='nav4-1_QnA'" id="delete" type="button"value="삭제"> --> 
+					 <button type="button"  id="delete"><a href="Q_A_delete?bidx=<%= content_view.getQbidx()%>"style="color:white">삭제</a></button>
+					<input onclick="location.href='nav4-1_QnA'"class="list" type="button" value="목록">
 				</div>
 				<%
 				} else{
