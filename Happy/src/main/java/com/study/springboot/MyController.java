@@ -401,7 +401,7 @@ public class MyController {
 			model.addAttribute("url", "/Q_A_Modify");
 		} else {
 			System.out.println("Q_A 수정 성공");
-
+ 
 			model.addAttribute("msg", "수정 성공");
 			model.addAttribute("url", "/nav4-1_QnA");
 		}
