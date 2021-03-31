@@ -360,8 +360,7 @@ input[type=button] {
 					<form action="adoptwriteAction" method="post">
 						작성자 :&nbsp;&nbsp;<%=member.getName()%>
 						<input type="hidden" id="id" name="id" value="<%=member.getId()%>">
-						<input type="hidden" id="name" name="name"
-							value="<%=member.getName()%>">
+						<input type="hidden" id="name" name="name" value="<%=member.getName()%>">
 						<hr>
 						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
 						<hr>

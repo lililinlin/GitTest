@@ -30,6 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.dto.QnADto;
+import com.study.springboot.service.IAdoptBoardService;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
 import com.study.springboot.service.IQnAService;
@@ -42,6 +43,8 @@ public class MyController {
 	INoticeService notice_service;
 	@Autowired
 	IQnAService qna_service;
+	@Autowired
+	IAdoptBoardService adoptBoard_service;
 
 	@RequestMapping("/")
 	public String root() throws Exception {
@@ -502,9 +505,23 @@ public class MyController {
 		return "member/Mypage";
 	}
 
-	@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST)
 	public String adoptwriteAction(HttpServletRequest req, Model model) throws Exception {
-		return "nav/nav2-1_adopt";
+		req.setCharacterEncoding("UTF-8");
+		
+		int nResult = adoptBoard_service.insertAdoptWrite(req);
+		
+		if (nResult <= 0) {
+			System.out.println("입양하기 글쓰기 실패");
+
+			model.addAttribute("msg", "입양하기 글쓰기 실패");
+			model.addAttribute("url", "/");
+		} else {
+			System.out.println("입양하기 글쓰기 성공");
+			model.addAttribute("msg", "입양하기 글쓰기 성공");
+			model.addAttribute("url", "/");
+		}
+		return "redirect";
 	}
 	@RequestMapping(value = "/adoptreviewwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 	public String adoptreviewwriteAction(HttpServletRequest req, Model model) throws Exception {
