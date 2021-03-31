@@ -8,7 +8,7 @@
 	<insert id="insertWriteDao"
 		parameterType="com.study.springboot.dto.AdoptBoardDto">
 		insert into ADOPT_BOARD(ID, AIMAGE, ABNAME, ABIDX, ABTITLE, ABCONTENT, ABDATE, AHIT)
-		value(#{id}, #{aImage}, #{aName}, SQ_ADOPTBOARD.NEXTVAL, #{aTitle}, #{aContent}, #{aDate}, #{aHit})
+		values (#{id}, #{aImage}, #{aName}, SQ_ADOPTBOARD.NEXTVAL, #{aTitle}, #{aContent}, #{aDate}, #{aHit})
 	</insert>
 
 </mapper>
