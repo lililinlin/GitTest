@@ -29,6 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
+import com.study.springboot.dto.QnADto;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
 import com.study.springboot.service.IQnAService;
@@ -113,11 +114,15 @@ public class MyController {
 	@RequestMapping("/nav4-1_QnA")
 	public String navQnAPage(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("sessionID") == null) {
-
+			ArrayList<QnADto> qna = qna_service.list();
+			req.getSession().setAttribute("qnalist", qna);
+			
 		} else {
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
+			ArrayList<QnADto> qna = qna_service.list();
+			req.getSession().setAttribute("qnalist", qna);
 		}
 		return "nav/nav4-1_QnA";
 	}
@@ -157,6 +162,7 @@ public class MyController {
 		
 		return "board/adopted_content_view";
 	}
+
 
 	@RequestMapping("/content_view")
 	public String content_view(HttpServletRequest req) {
@@ -336,6 +342,8 @@ public class MyController {
 
 		return "board/Q_A_Write";
 	}
+	
+	
 
 	@RequestMapping("/Q_A_content_view")
 	public String Q_A_content_view(HttpServletRequest req, RedirectAttributes redirect, Model model) {
@@ -346,18 +354,58 @@ public class MyController {
 		}
 
 		if (req.getSession().getAttribute("sessionID") != null) {
+			String bid_str = req.getParameter("qbidx");
+			QnADto qnadto = qna_service.contentview(bid_str);
+			
 			String id = req.getSession().getAttribute("sessionID").toString();
-
 			MemberDto dto = member_service.getUserInfo(id);
-
 			req.getSession().setAttribute("memberInfo", dto);
-			/*
-			 * model.addAttribute("msg", "회원수정 실패"); model.addAttribute("url",
-			 * "/Q_A_content_view");
-			 */
+			
 		}
 		return "board/Q_A_content_view";
 	}
+	
+	@RequestMapping("/Q_A_delete")
+	public String Q_A_delete(HttpServletRequest req, Model model) {
+
+		String bid = req.getParameter("bidx");
+
+		int nResult = qna_service.delete(bid);
+
+		if (nResult <= 0) {
+			System.out.println("글삭제 실패");
+			model.addAttribute("msg", "글삭제 실패");
+			model.addAttribute("url", "/");
+		} else {
+			System.out.println("글삭제 성공");
+			model.addAttribute("msg", "글삭제 성공");
+			model.addAttribute("url", "/nav4-1_QnA");
+		}
+
+		return "redirect";
+	}
+	
+	@RequestMapping(value = "/Q_A_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+	public String Q_A_ModifyAction(HttpServletRequest req, Model model) throws Exception {
+		req.setCharacterEncoding("utf-8");
+
+		int nResult = qna_service.update(req);
+		System.out.println(nResult);
+		if (nResult <= 0) {
+
+			System.out.println("Q_A 수정 실패");
+			model.addAttribute("msg", "수정 실패");
+			model.addAttribute("url", "/Q_A_Modify");
+		} else {
+			System.out.println("Q_A 수정 성공");
+
+			model.addAttribute("msg", "수정 성공");
+			model.addAttribute("url", "/nav4-1_QnA");
+		}
+
+		return "redirect";
+	}
+
 
 	@RequestMapping(value = "/MemberModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 	public String MemberModifyFormAction(HttpServletRequest req, Model model) throws Exception {

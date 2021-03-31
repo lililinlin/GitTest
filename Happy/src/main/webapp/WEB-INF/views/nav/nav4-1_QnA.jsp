@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.QnADto"%>
+<%@ page import="java.util.ArrayList"%> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +33,7 @@
     </script>
     <%
    			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    		ArrayList<QnADto> qna = (ArrayList<QnADto>)session.getAttribute("qnalist");
 	%>
     <style>
         a:link { text-decoration: none;}
@@ -362,15 +365,17 @@
 						  <th>번호</th>
 						  <th>제목</th>
 					  </tr>
-					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="Q_A_content_view">동물을 입양하고 싶어요.</a></td>
-					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="Q_A_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-					</tr>
-
+					  <%
+					  	for(int i=0; i<qna.size(); i++){
+					  	%>
+						  <tr>
+								<td class="num"><%=qna.get(i).getQbidx()%></td>
+								<td class="title"><a href="Q_A_content_view"><%=qna.get(i).getQbTitle()%></a></td>
+						  </tr>	
+					 <%  		
+					  	}
+					  %>
+					 
 				</table>
 				<%
 				if( session.getAttribute("sessionID") != null){

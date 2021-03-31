@@ -10,6 +10,9 @@
 		insert into qna_board(qbidx,Id,qbName,qbTitle,qbContent)
 			values (qna_seq.nextval,#{param1},#{param2}, #{param3}, #{param4})
 	</insert>
-
-
+	
+	<select id="list" resultType="com.study.springboot.dto.QnADto"> 
+		select * from qna_board
+   	</select>
+   	
 </mapper>
