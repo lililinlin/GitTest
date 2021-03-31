@@ -10,5 +10,13 @@
 		insert into ADOPT_BOARD(ID, AIMAGE, ABNAME, ABIDX, ABTITLE, ABCONTENT, ABDATE, AHIT)
 		values (#{id}, #{aImage}, #{aName}, SQ_ADOPTBOARD.NEXTVAL, #{aTitle}, #{aContent}, #{aDate}, #{aHit})
 	</insert>
-
+	<select id="adoptListDao" resultType="com.study.springboot.dto.NoticeDto"> 
+		select * from ADOPT_BOARD
+   	</select>
+	<select id="adoptContentViewDao" resultType="com.study.springboot.dto.AdoptBoardDto"> 
+		select * from ADOPT_BOARD where ABIDX = #{aidx}
+   	</select>
+   	<delete id="adoptBoardDeleteDao">
+		delete from notice_board where ABIDX=#{aidx}
+	</delete>
 </mapper>

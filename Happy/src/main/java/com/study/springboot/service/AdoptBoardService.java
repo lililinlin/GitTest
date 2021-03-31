@@ -50,9 +50,9 @@ public class AdoptBoardService implements IAdoptBoardService{
 	}
 
 	@Override
-	public int adoptBoardDelete(String id) {
+	public int adoptBoardDelete(int aidx) {
 		// TODO Auto-generated method stub
-		return adoptBoardDao.adoptBoardDeleteDao(id);
+		return adoptBoardDao.adoptBoardDeleteDao(aidx);
 	}
 
 }

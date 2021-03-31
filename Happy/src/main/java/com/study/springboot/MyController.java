@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.study.springboot.dto.AdoptBoardDto;
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.dto.QnADto;
@@ -73,11 +74,15 @@ public class MyController {
 	@RequestMapping("/nav2-1_adopt")
 	public String navadoptPage(HttpServletRequest req, Model model) {
 		if (req.getSession().getAttribute("sessionID") == null) {
-
+			ArrayList<AdoptBoardDto> qna = adoptBoard_service.adoptList();
+			req.getSession().setAttribute("adoptlist", qna);
 		} else {
 			String id = req.getSession().getAttribute("sessionID").toString();
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
+			ArrayList<AdoptBoardDto> qna = adoptBoard_service.adoptList();
+			req.getSession().setAttribute("adoptlist", qna);
+			
 		}
 
 		return "nav/nav2-1_adopt";

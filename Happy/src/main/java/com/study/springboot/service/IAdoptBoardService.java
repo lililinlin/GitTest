@@ -10,5 +10,5 @@ public interface IAdoptBoardService {
 	public int insertAdoptWrite(HttpServletRequest req);
 	public ArrayList<AdoptBoardDto> adoptList();
 	public String adoptContentView(int aidx);
-	public int adoptBoardDelete(String id);
+	public int adoptBoardDelete(int aidx);
 }
