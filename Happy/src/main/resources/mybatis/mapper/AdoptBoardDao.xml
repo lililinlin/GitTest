@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.study.springboot.dao.IAdoptBoardDao">
+
+	<insert id="insertWriteDao"
+		parameterType="com.study.springboot.dto.AdoptBoardDto">
+		insert into ADOPT_BOARD(ID, AIMAGE, ABNAME, ABIDX, ABTITLE, ABCONTENT, ABDATE, AHIT)
+		value(#{id}, #{aImage}, #{aName}, SQ_ADOPTBOARD.NEXTVAL, #{aTitle}, #{aContent}, #{aDate}, #{aHit})
+	</insert>
+
+</mapper>
