@@ -15,3 +15,4 @@ public interface IQnAService {
 	public QnADto contentview(String bid_str);
 	public int delete(String bid);
 }
+ 
