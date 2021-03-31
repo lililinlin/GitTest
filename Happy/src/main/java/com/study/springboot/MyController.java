@@ -366,7 +366,7 @@ public class MyController {
 			MemberDto dto = member_service.getUserInfo(id);
 			req.getSession().setAttribute("memberInfo", dto);
 			
-		}
+		} 
 		return "board/Q_A_content_view";
 	}
 
