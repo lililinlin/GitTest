@@ -369,7 +369,7 @@
 					  	for(int i=0; i<qna.size(); i++){
 					  	%>
 						  <tr>
-								<td class="num"><%=qna.get(i).getQbidx()%></td>
+								<td class="num"><%-- <%=qna.get(i).getQbidx()%> --%><%=i+1 %></td>
 								<td class="title"><a href="Q_A_content_view?qbidx=<%=qna.get(i).getQbidx()%>"><%=qna.get(i).getQbTitle()%></a></td>
 						  </tr>	
 					 <%  		

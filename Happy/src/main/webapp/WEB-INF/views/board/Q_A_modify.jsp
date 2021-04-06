@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="com.study.springboot.dto.MemberDto" %>
+<%@ page import="com.study.springboot.dto.QnADto"%>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <title>게시판 수정하기</title>
+    <title>QnA 수정하기</title>
        
     
      <script>
@@ -34,6 +35,7 @@
     </script>
     <%
    			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    		QnADto content_view = (QnADto)session.getAttribute("content_view");
     		
 	%>
     <style>
@@ -162,7 +164,7 @@
         #left_menu table{
             margin: 30px 0px 0px 10px;
             width: 200px;
-            height: 40px;
+            height: 80px;
         }
         #left_menu table td{
             height: 50px;
@@ -378,28 +380,32 @@
      		<div id="main_wrapper">
             
 				<div id="left_menu">
-					<h3><b>커뮤니티</b></h3>
+				<h3><b>고객센터</b></h3>
 				<table>
-					<tr onclick="location.href='nav3-1_board'">
-						<td>게시판</td>
+					<tr onclick="location.href='nav4-1_QnA'">
+						<td>Q&A</td>
+						<td>></td>
+					</tr>
+					<tr onclick="location.href='nav4-2_notice'">
+						<td>공지사항</td>
 						<td>></td>
 					</tr>
 				</table>
-				</div>
+			</div>
            
 				<div class="right">
 					<div id = "site">
 						<br>
 						<div id="h2_box">
-							<h3><b>글 수정하기</b></h3>
+							<h3><b>Q_A 수정하기</b></h3>
 						</div>
 
-						<form action="communuty_writeAction" method="post">
+						<form action="Q_A_ModifyAction" method="post">
 							
 							<table id="main_table">
 								<tr>
 									<td class="td_title">제목 &nbsp;</td>
-									<td><input type="text" id = "title" name="title"/></td>
+									<td><input type="text" id = "title" name="title" value="<%=content_view.getQbTitle() %>"/></td>
 								</tr>
 								<tr>
 									<td class="td_title">작성자 </td>
@@ -407,7 +413,7 @@
 								</tr>
 								<tr>
 									<td class="td_title">내용</td>
-									<td> <textarea id = "editor4" name = "editor4" ></textarea></td>
+									<td> <textarea id = "editor4" name = "editor4" ><%=content_view.getQbContent() %></textarea></td>
 								</tr>
 							</table>
 

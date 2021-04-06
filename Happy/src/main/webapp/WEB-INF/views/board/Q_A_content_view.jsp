@@ -429,9 +429,9 @@ footer a {
 				if( id.equals("admin")) {
 				%>
 				<div id="btn_box1">
-					<input onclick="location.href='nav4-1_QnA'" id="modify"type="button" value="수정"> 
-					<!-- <input onclick="location.href='nav4-1_QnA'" id="delete" type="button"value="삭제"> --> 
-					 <button type="button"  id="delete"><a href="Q_A_delete?bidx=<%= content_view.getQbidx()%>"style="color:white">삭제</a></button>
+				<!-- 	<input onclick="location.href='Q_A_modify'" id="modify"type="button" value="수정">  -->
+					 <button type="button"  id="modify"><a href="Q_A_modify?qbidx=<%=content_view.getQbidx()%>"style="color:white">수정</a></button>
+					 <button type="button"  id="delete"><a href="Q_A_delete?qbidx=<%=content_view.getQbidx()%>"style="color:white">삭제</a></button>
 					<input onclick="location.href='nav4-1_QnA'"class="list" type="button" value="목록">
 				</div>
 				<%
