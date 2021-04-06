@@ -13,4 +13,5 @@ public interface IAdoptBoardDao {
 	public ArrayList<AdoptBoardDto> adoptListDao();
 	public String adoptContentViewDao(@Param("aidx") int aidx);
 	public int adoptBoardDeleteDao(@Param("aidx") int aidx);
+	public AdoptBoardDto adoptBoardInfoDao(@Param("aidx") int aidx);
 }
