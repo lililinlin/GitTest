@@ -214,7 +214,7 @@
 			color: rgb(106, 106, 106);
 		}
 	/* 제목 input */
-		#title{
+		#qbTitle{
 			height: 30px;
 			width: 590px;
 			margin: 15px 10px 15px 20px;
@@ -224,7 +224,7 @@
 			padding: 13px 10px 13px 20px;
 		}
 	/* 내용 input */
-		#editor4{
+		#qbContent{
 			width:590px; 
 			height: 400px; 
 			margin: 20px 10px 20px 20px;
@@ -405,7 +405,8 @@
 							<table id="main_table">
 								<tr>
 									<td class="td_title">제목 &nbsp;</td>
-									<td><input type="text" id = "title" name="title" value="<%=content_view.getQbTitle() %>"/></td>
+								<%-- <td><input type="text" id="title" name="title" ><%=content_view.getQbTitle() %></td> --%>
+								<td><textarea id="qbTitle" name="qbTitle" ><%=content_view.getQbTitle() %></textarea></td>
 								</tr>
 								<tr>
 									<td class="td_title">작성자 </td>
@@ -413,7 +414,7 @@
 								</tr>
 								<tr>
 									<td class="td_title">내용</td>
-									<td> <textarea id = "editor4" name = "editor4" ><%=content_view.getQbContent() %></textarea></td>
+									<td> <textarea id="qbContent" name="qbContent" ><%=content_view.getQbContent() %></textarea></td>
 								</tr>
 							</table>
 

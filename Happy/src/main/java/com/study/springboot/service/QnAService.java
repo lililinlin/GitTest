@@ -3,6 +3,7 @@ package com.study.springboot.service;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,9 +33,18 @@ public class QnAService implements IQnAService{
 	
 	@Override
 	public int update(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		String id = session.getAttribute("sessionID").toString();
+		
+		qnadto.setId(id);
+		
+		qnadto.setQbTitle(req.getParameter("qbTitle"));
+		qnadto.setQbContent(req.getParameter("qbContent"));
+		
 		int nResult = qnadao.update(qnadto);
 		return nResult;
 	}
+	
 	@Override
 	public QnADto contentview(String bid_str) {
 		return qnadao.contentview(bid_str);

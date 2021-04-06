@@ -22,5 +22,9 @@
    	<delete id="delete">
 		delete from qna_board where qbidx=#{param1}
 	</delete>
+	
+	<update id="update" parameterType="com.study.springboot.dto.QnADto">
+		update qna_board set qbTitle=#{qbTitle},qbContent=#{qbContent}
+	</update>
    	
 </mapper>
