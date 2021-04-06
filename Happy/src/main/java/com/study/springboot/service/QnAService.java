@@ -16,7 +16,7 @@ public class QnAService implements IQnAService{
  
 	@Autowired
 	IQnADao qnadao;
-	@Autowired
+	@Autowired 
 	QnADto qnadto;
 	
 	@Override

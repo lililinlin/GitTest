@@ -194,7 +194,7 @@
 		}
 	/* 테이블 */
 		#main_table{
-			width: 750px;
+			width: 750px; 
 			margin-bottom: 100px;
 			border: 1px solid rgb(244, 244, 244);
 		}
