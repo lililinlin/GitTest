@@ -365,7 +365,6 @@ input[type=button] {
 						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
 						<hr>
 						<textarea id="editor4" name="editor4"></textarea>
-						<input type="hidden" name="idx" value="1" id="bidx">
 						<script>
 							CKEDITOR.replace('editor4', {
 								width : 800,

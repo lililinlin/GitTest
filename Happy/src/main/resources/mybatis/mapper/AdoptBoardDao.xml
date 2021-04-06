@@ -13,10 +13,12 @@
 		select * from ADOPT_BOARD
    	</select>
 	<select id="adoptContentViewDao" resultType="com.study.springboot.dto.AdoptBoardDto"> 
-		select * from ADOPT_BOARD where ABIDX = #{aidx}
+		select * from ADOPT_BOARD where ABIDX =#{param1}
    	</select>
    	<delete id="adoptBoardDeleteDao">
-		delete from ADOPT_BOARD where ABIDX=#{aidx}
+		delete from ADOPT_BOARD where ABIDX=#{param1}
 	</delete>
-	
+	<update id="adoptBoardUpdateDao" parameterType="com.study.springboot.dto.AdoptBoardDto">
+		update ADOPT_BOARD set ABTITLE=#{aTitle},ABCONTENT=#{aContent}
+	</update>
 </mapper>

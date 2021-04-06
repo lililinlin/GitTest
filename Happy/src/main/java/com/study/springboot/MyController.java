@@ -45,7 +45,7 @@ public class MyController {
 		@Autowired
 		IQnAService qna_service;
 		@Autowired
-		IAdoptBoardService adoptBoard_service;
+		IAdoptBoardService adoptBoard_service; 
 	
 			@RequestMapping("/")
 			public String root() throws Exception {
@@ -74,20 +74,25 @@ public class MyController {
 			@RequestMapping("/nav2-1_adopt")
 			public String navadoptPage(HttpServletRequest req, Model model) {
 				if (req.getSession().getAttribute("sessionID") == null) {
-					ArrayList<AdoptBoardDto> qna = adoptBoard_service.adoptList();
-					req.getSession().setAttribute("adoptlist", qna);
+					ArrayList<AdoptBoardDto> adopt = adoptBoard_service.adoptList();
+					req.getSession().setAttribute("adoptlist", adopt);
 				} else {
 					String id = req.getSession().getAttribute("sessionID").toString();
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
-					ArrayList<AdoptBoardDto> qna = adoptBoard_service.adoptList();
-					req.getSession().setAttribute("adoptlist", qna);
-					
+					ArrayList<AdoptBoardDto> adopt = adoptBoard_service.adoptList();
+					for(int i = 0; i<adopt.size(); i++) {
+						System.out.println("title =" + adopt.get(i).getATitle());
+						System.out.println("idx = " + adopt.get(i).getAIdx());
+						System.out.println("id = " + adopt.get(i).getId());
+						System.out.println("name = " + adopt.get(i).getAName());
+						System.out.println("date = " + adopt.get(i).getADate());
+					}
+					req.getSession().setAttribute("adoptlist", adopt);
 				}
-		
 				return "nav/nav2-1_adopt";
 			}
-		
+			
 			@RequestMapping("/nav2-2_adopted")
 			public String navadoptedPage(Model model) {
 		
@@ -497,7 +502,7 @@ public class MyController {
 					String id = req.getSession().getAttribute("sessionID").toString();
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
-					
+					 
 				
 				return "board/Q_A_modify";
 			}
@@ -575,22 +580,14 @@ public class MyController {
 
 		
 			@RequestMapping("/adopt_write")
-			public String adopt_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
-				HttpSession session = req.getSession();
-				String id = session.getAttribute("sessionID").toString();
-				MemberDto dto = member_service.getUserInfo(id);
-				session.setAttribute("memberInfo", dto);
-				System.out.println(id);
+			public String adopt_write(Model model) {
+				
 				return "board/adopt_write"; // list.jsp
 			}
 			
 			@RequestMapping("/adopt_review_write")
 			public String adopt_review_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
-				HttpSession session = req.getSession();
-				String id = session.getAttribute("sessionID").toString();
-				MemberDto dto = member_service.getUserInfo(id);
-				session.setAttribute("memberInfo", dto);
-				System.out.println(id);
+	
 				return "board/adopt_review_write"; // list.jsp
 			}
 			
@@ -603,25 +600,26 @@ public class MyController {
 				}
 		
 				if (req.getSession().getAttribute("sessionID") != null) {
+					String bid_str = req.getParameter("aidx");
+					AdoptBoardDto adoptBoarddto = adoptBoard_service.adoptContentView(Integer.parseInt(bid_str));
+					req.getSession().setAttribute("content_view", adoptBoarddto);
+					
 					String id = req.getSession().getAttribute("sessionID").toString();
-		
 					MemberDto dto = member_service.getUserInfo(id);
-		
 					req.getSession().setAttribute("memberInfo", dto);
-		
-				}
+					
+				} 
 				return "board/adopt_content_view";
 			}
 		
-			@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST)
+			@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String adoptwriteAction(HttpServletRequest req, Model model) throws Exception {
-				req.setCharacterEncoding("UTF-8");
 				
 				int nResult = adoptBoard_service.insertAdoptWrite(req);
 				
 				if (nResult <= 0) {
 					System.out.println("입양하기 글쓰기 실패");
-		
+					
 					model.addAttribute("msg", "입양하기 글쓰기 실패");
 					model.addAttribute("url", "/");
 				} else {

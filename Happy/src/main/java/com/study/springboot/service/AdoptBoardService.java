@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,7 +45,7 @@ public class AdoptBoardService implements IAdoptBoardService{
 	}
 
 	@Override
-	public String adoptContentView(int aidx) {
+	public AdoptBoardDto adoptContentView(int aidx) {
 		// TODO Auto-generated method stub
 		return adoptBoardDao.adoptContentViewDao(aidx);
 	}
@@ -56,9 +57,19 @@ public class AdoptBoardService implements IAdoptBoardService{
 	}
 
 	@Override
-	public AdoptBoardDto adoptBoardInfo(int aidx) {
+	public int adoptBoardUpdate(HttpServletRequest req) {
 		// TODO Auto-generated method stub
-		return adoptBoardDao.adoptBoardInfoDao(aidx);
+		HttpSession session = req.getSession();
+		//세션 속성명이 sessionID인 속성의 값을 오브젝트타입으로 가져온다
+		String id = session.getAttribute("sessionID").toString();
+		
+		adoptBoardDto.setId(id);
+		
+		adoptBoardDto.setATitle(req.getParameter("titie"));
+		adoptBoardDto.setAContent(req.getParameter("editor4"));
+		
+		int nResult = adoptBoardDao.adoptBoardUpdateDao(adoptBoardDto);
+		return nResult;
 	}
 
 }
