@@ -55,4 +55,10 @@ public class AdoptBoardService implements IAdoptBoardService{
 		return adoptBoardDao.adoptBoardDeleteDao(aidx);
 	}
 
+	@Override
+	public AdoptBoardDto adoptBoardInfo(int aidx) {
+		// TODO Auto-generated method stub
+		return adoptBoardDao.adoptBoardInfoDao(aidx);
+	}
+
 }
