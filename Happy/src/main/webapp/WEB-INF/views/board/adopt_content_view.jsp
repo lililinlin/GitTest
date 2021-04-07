@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.AdoptBoardDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +36,7 @@
 </script>
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+	AdoptBoardDto content_view = (AdoptBoardDto)session.getAttribute("content_view");
 %>
 <style>
 a:link {
@@ -428,70 +430,14 @@ a:hover {
 				<div id="content_div">
 					<table id="right_table">
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;">루루는 소중한 가족이
-								필요해요</td>
-							<td><small>2021.03.19</small></td>
-							<td><small>조회 15,421</small></td>
+							<td style="width: 600px; padding-left: 20px;"><%=content_view.getATitle()%></td>
+							<td><small><%=content_view.getADate() %></small></td>
+							<td><small><%=content_view.getAHit() + 1%></small></td>
 						</tr>
 						<tr>
 							<td id="content_td" colspan="3"><img src="images/dog1.jpg"
 								id="content_img"><br> <br>
-								<p>
-									강아지를 입양하길 원하신다면<br> 센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br>
-									<br> Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Excepturi quod ducimus<br> perspiciatis laudantium,
-									pariatur animi quo. Nobis, impedit accusantium. <br> Alias
-									numquam fuga voluptatem minus qui, non quidem modi similique
-									accusantium.<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis,<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis, impedit accusantium. <br> Alias numquam fuga
-									voluptatem minus qui, non quidem modi similique accusantium.<br><br>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Excepturi quod ducimus<br> perspiciatis laudantium,
-									pariatur animi quo. Nobis,<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis, impedit
-									accusantium. <br> Alias numquam fuga voluptatem minus qui,
-									non quidem modi similique accusantium.<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
-									non quidem modi similique accusantium.<br> Lorem ipsum
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br> <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
-									dolor sit amet, consectetur adipisicing elit. Excepturi quod
-									ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br> <br>
-										ducimus<br> perspiciatis laudantium, pariatur animi quo.
-									Nobis,<br> Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Excepturi quod ducimus<br> perspiciatis
-									laudantium, pariatur animi quo. Nobis, impedit accusantium. <br>
-									Alias numquam fuga voluptatem minus qui, non quidem modi
-									similique accusantium.<br> Lorem ipsum dolor sit amet,
-									consectetur adipisicing elit. Excepturi quod ducimus<br>
-									perspiciatis laudantium, pariatur animi quo. Nobis,<br>
+								<%=content_view.getAContent() %>
 							</td>
 						</tr>
 					</table>

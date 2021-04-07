@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.AdoptBoardDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +22,7 @@
 	rel="stylesheet">
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+	AdoptBoardDto content_view = (AdoptBoardDto)session.getAttribute("content_view");
 %>
 <title>입양후기</title>
 <script>
@@ -366,7 +368,6 @@ input[type=button] {
 						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
 						<hr>
 						<textarea id="editor4" name="editor4"></textarea>
-						<input type="hidden" name="idx" value="1" id="bidx">
 						<script>
 							CKEDITOR.replace('editor4', {
 								width : 800,

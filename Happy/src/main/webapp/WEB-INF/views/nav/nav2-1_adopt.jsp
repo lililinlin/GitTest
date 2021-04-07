@@ -435,11 +435,11 @@ main {
 						<%
 							for (int i = 0; i < adopt.size(); i++) {
 						%>
-						<li class="piese_img"><a href="adopt_content_view"> <span
-								class="thumb">
+						<li class="piese_img"><a href="adopt_content_view?aidx=<%=adopt.get(i).getAIdx()%>">
+								<span class="thumb">
 									<div class="img_div"><%=adopt.get(i).getAImage()%></div>
 							</span>
-							<div style="display: flex;">
+								<div style="display: flex;">
 									<strong style="padding: 0px 0px 0px 40px; font-size: 22px;"><%=adopt.get(i).getATitle()%></strong><img
 										src="images/new_icon1.png"
 										style="width: 50px; height: 15px; margin: 10px 0px 0px 10px;">
