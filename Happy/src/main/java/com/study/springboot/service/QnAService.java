@@ -47,7 +47,12 @@ public class QnAService implements IQnAService{
 	
 	@Override
 	public QnADto contentview(String bid_str) {
+		
 		return qnadao.contentview(bid_str);
+	}
+	@Override
+	public int updateCount(String qidx) {
+		return qnadao.updateCount(qidx);
 	}
 	
 	@Override

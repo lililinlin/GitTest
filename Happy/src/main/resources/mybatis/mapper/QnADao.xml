@@ -26,5 +26,9 @@
 	<update id="update" parameterType="com.study.springboot.dto.QnADto">
 		update qna_board set qbTitle=#{qbTitle},qbContent=#{qbContent}
 	</update>
+	
+	<update id="updateCount" parameterType="string">
+		update qna_board set qHit = qHit+1 where qbidx=#{param1}
+	</update>
    	
 </mapper>

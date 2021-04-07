@@ -415,7 +415,7 @@ footer a {
 						<tr id="right_title">
 							<td style="width: 600px; padding-left: 20px;"><%=content_view.getQbTitle() %></td>
 							<td><small><%=content_view.getQbDate() %></small></td>
-							<td><small>조회 15,421</small></td>
+							<td><small>조회수 <%=content_view.getQHit() %></small></td>
 						</tr>
 						<tr>
 							<td colspan="3" id="main_content">

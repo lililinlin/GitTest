@@ -366,10 +366,13 @@
 						  <th>제목</th>
 					  </tr>
 					  <%
+					  int num=qna.size();
 					  	for(int i=0; i<qna.size(); i++){
 					  	%>
 						  <tr>
-								<td class="num"><%-- <%=qna.get(i).getQbidx()%> --%><%=i+1 %></td>
+								<td class="num"><%=num %>
+								<% --num; %>
+								</td>
 								<td class="title"><a href="Q_A_content_view?qbidx=<%=qna.get(i).getQbidx()%>"><%=qna.get(i).getQbTitle()%></a></td>
 						  </tr>	
 					 <%  		
