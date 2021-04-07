@@ -1,3 +1,4 @@
+<%@page import="ch.qos.logback.core.net.SyslogOutputStream"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
@@ -37,7 +38,7 @@
 </script>
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
-	ArrayList<AdoptBoardDto> adopt = (ArrayList<AdoptBoardDto>) session.getAttribute("adoptlist");
+	ArrayList<AdoptBoardDto> adopt = (ArrayList<AdoptBoardDto>)session.getAttribute("adoptlist");
 %>
 <style>
 a:link {
