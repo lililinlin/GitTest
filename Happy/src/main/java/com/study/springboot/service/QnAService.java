@@ -32,16 +32,8 @@ public class QnAService implements IQnAService{
 	}
 	
 	@Override
-	public int update(HttpServletRequest req) {
-		HttpSession session = req.getSession();
-		String id = session.getAttribute("sessionID").toString();
-		
-		qnadto.setId(id);
-		
-		qnadto.setQbTitle(req.getParameter("qbTitle"));
-		qnadto.setQbContent(req.getParameter("qbContent"));
-		
-		int nResult = qnadao.update(qnadto);
+	public int update(String qbTitle,String qbContent,String qbidx) {
+		int nResult = qnadao.update(qbTitle,qbContent,qbidx);
 		return nResult;
 	}
 	

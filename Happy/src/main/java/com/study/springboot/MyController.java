@@ -481,7 +481,11 @@ public class MyController {
 		
 				if (req.getSession().getAttribute("sessionID") != null) {
 					String bid_str = req.getParameter("qbidx");
+					String qidx = req.getParameter("qbidx");
 					QnADto qnadto = qna_service.contentview(bid_str);
+					int hit = qna_service.updateCount(qidx);
+					System.out.println("조회수는 ?"+hit);
+					req.getSession().setAttribute("content_view_hit", hit);
 					req.getSession().setAttribute("content_view", qnadto);
 					System.out.println("bidx ?? " + req.getParameter("qbidx"));
 					System.out.println("dto"+qnadto);
@@ -492,6 +496,7 @@ public class MyController {
 				} 
 				return "board/Q_A_content_view";
 			}
+			
 			@RequestMapping("/Q_A_modify")
 			public String Q_A_modify(HttpServletRequest req, RedirectAttributes redirect, Model model) {
 					String bid_str = req.getParameter("qbidx");
@@ -531,23 +536,29 @@ public class MyController {
 			@RequestMapping(value = "/Q_A_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String Q_A_ModifyAction(HttpServletRequest req, Model model) throws Exception {
 				req.setCharacterEncoding("utf-8");
+				
+				String qbTitle = req.getParameter("qbTitle");
+				String qbContent = req.getParameter("qbContent");
+				String qbidx = req.getParameter("qbidx");
 		
-				int nResult = qna_service.update(req);
+				System.out.println("출력 "+qbTitle+qbContent+qbidx);
+				int nResult = qna_service.update(qbTitle,qbContent,qbidx);
+				
 				System.out.println(nResult);
+				
 				if (nResult <= 0) {
-		
 					System.out.println("Q_A 수정 실패");
 					model.addAttribute("msg", "수정 실패");
 					model.addAttribute("url", "/Q_A_Modify");
 				} else {
 					System.out.println("Q_A 수정 성공");
-		 
 					model.addAttribute("msg", "수정 성공");
 					model.addAttribute("url", "/nav4-1_QnA");
 				}
 		
 				return "redirect";
 			}
+			
 			@RequestMapping(value = "/Q_A_writeAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String Q_A_writeAction(HttpServletRequest req, Model model) throws Exception {
 		

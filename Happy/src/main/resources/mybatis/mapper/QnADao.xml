@@ -24,7 +24,7 @@
 	</delete>
 	
 	<update id="update" parameterType="com.study.springboot.dto.QnADto">
-		update qna_board set qbTitle=#{qbTitle},qbContent=#{qbContent}
+		update qna_board set qbTitle=#{param1},qbContent=#{param2} where qbidx=#{param3}
 	</update>
 	
 	<update id="updateCount" parameterType="string">

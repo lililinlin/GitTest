@@ -13,7 +13,7 @@ public interface IQnADao {
 
 	public int writedao(String Id, String qbName, String qbTitle, String qbContent);
 	public ArrayList<QnADto> list();
-	public int update(QnADto qnadto);
+	public int update(String qbTitle,String qbContent,String qbidx);
 	public int updateCount(String qidx);
 	public QnADto contentview(String bid_str);
 	public int delete(String bid) ;

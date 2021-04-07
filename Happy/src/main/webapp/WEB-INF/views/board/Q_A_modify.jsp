@@ -406,6 +406,7 @@
 								<tr>
 									<td class="td_title">제목 &nbsp;</td>
 								<%-- <td><input type="text" id="title" name="title" ><%=content_view.getQbTitle() %></td> --%>
+								<input type="hidden" id="qbidx" name="qbidx" value="<%=content_view.getQbidx() %>">
 								<td><textarea id="qbTitle" name="qbTitle" ><%=content_view.getQbTitle() %></textarea></td>
 								</tr>
 								<tr>
