@@ -6,7 +6,7 @@
 <mapper namespace="com.study.springboot.dao.IAdoptBoardDao">
 
 	<insert id="insertWriteDao" parameterType="com.study.springboot.dto.AdoptBoardDto">
-		insert into ADOPT_BOARD(ID, AIMAGE, ABNAME, ABIDX, ABTITLE, ABCONTENT, ABDATE, AHIT)
+		insert into ADOPT_BOARD(Id, aImage, abName, abIdx, abTitle, abContent, abDate, aHit)
 		values (#{id}, #{aImage}, #{aName}, SQ_ADOPTBOARD.NEXTVAL, #{aTitle}, #{aContent}, #{aDate}, #{aHit})
 	</insert>
 	<select id="adoptListDao" resultType="com.study.springboot.dto.AdoptBoardDto"> 

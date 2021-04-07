@@ -78,16 +78,10 @@ public class MyController {
 					req.getSession().setAttribute("adoptlist", adopt);
 				} else {
 					String id = req.getSession().getAttribute("sessionID").toString();
+					System.out.println("가져온 id 의 값은 ?"+id);
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
 					ArrayList<AdoptBoardDto> adopt = adoptBoard_service.adoptList();
-					for(int i = 0; i<adopt.size(); i++) {
-						System.out.println("title =" + adopt.get(i).getATitle());
-						System.out.println("idx = " + adopt.get(i).getAIdx());
-						System.out.println("id = " + adopt.get(i).getId());
-						System.out.println("name = " + adopt.get(i).getAName());
-						System.out.println("date = " + adopt.get(i).getADate());
-					}
 					req.getSession().setAttribute("adoptlist", adopt);
 				}
 				return "nav/nav2-1_adopt";

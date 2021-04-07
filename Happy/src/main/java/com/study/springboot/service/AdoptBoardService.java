@@ -26,10 +26,10 @@ public class AdoptBoardService implements IAdoptBoardService{
 		adoptBoardDto.setId(req.getParameter("id"));
 		String img = "<img src=\"images/dog1.jpg\">";
 		adoptBoardDto.setAImage(img);
-		adoptBoardDto.setAName(req.getParameter("name"));
-		adoptBoardDto.setATitle(req.getParameter("title"));
-		adoptBoardDto.setAContent(req.getParameter("editor4"));
-		adoptBoardDto.setADate(new Date());
+		adoptBoardDto.setAbName(req.getParameter("name"));
+		adoptBoardDto.setAbTitle(req.getParameter("title"));
+		adoptBoardDto.setAbContent(req.getParameter("editor4"));
+		adoptBoardDto.setAbDate(new Date());
 		int hitCount = 0;
 		adoptBoardDto.setAHit(hitCount);
 		
@@ -65,8 +65,8 @@ public class AdoptBoardService implements IAdoptBoardService{
 		
 		adoptBoardDto.setId(id);
 		
-		adoptBoardDto.setATitle(req.getParameter("titie"));
-		adoptBoardDto.setAContent(req.getParameter("editor4"));
+		adoptBoardDto.setAbTitle(req.getParameter("titie"));
+		adoptBoardDto.setAbContent(req.getParameter("editor4"));
 		
 		int nResult = adoptBoardDao.adoptBoardUpdateDao(adoptBoardDto);
 		return nResult;
