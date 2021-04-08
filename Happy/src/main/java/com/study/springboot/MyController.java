@@ -562,8 +562,7 @@ public class MyController {
 				String qbTitle = req.getParameter("title");
 				String qbContent = req.getParameter("editor4");
 		
-				
-				  int nResult = qna_service.write(Id,qbName, qbTitle, qbContent);
+				int nResult = qna_service.write(Id,qbName, qbTitle, qbContent);
 				  
 				  if (nResult < 1) { 
 					  System.out.println("글쓰기 실패"); 
@@ -616,7 +615,46 @@ public class MyController {
 				} 
 				return "board/adopt_content_view";
 			}
+			@RequestMapping("/adopt_modify")
+			public String adopt_modify(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+					String bid_str = req.getParameter("aidx");
+					AdoptBoardDto adoptBoarddto = adoptBoard_service.adoptContentView(Integer.parseInt(bid_str));
+					req.getSession().setAttribute("content_view", adoptBoarddto);
+					System.out.println("aidx ?? " + req.getParameter("qbidx"));
+					System.out.println("dto"+adoptBoarddto);
+					
+					String id = req.getSession().getAttribute("sessionID").toString();
+					MemberDto dto = member_service.getUserInfo(id);
+					req.getSession().setAttribute("memberInfo", dto);
+					 
+				
+				return "board/adopt_modify";
+			}
+			@RequestMapping(value = "/adopt_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+			public String adopt_ModifyAction(HttpServletRequest req, Model model) throws Exception {
+				req.setCharacterEncoding("utf-8");
+				
+				String title = req.getParameter("title");
+				String content = req.getParameter("editor4");
+				String aidx = req.getParameter("aidx");
 		
+				System.out.println("출력 "+title+content+aidx);
+				int nResult = adoptBoard_service.adoptBoardUpdate(title,content,aidx);
+				
+				System.out.println(nResult);
+				
+				if (nResult <= 0) {
+					System.out.println("Q_A 수정 실패");
+					model.addAttribute("msg", "수정 실패");
+					model.addAttribute("url", "/Q_A_Modify");
+				} else {
+					System.out.println("Q_A 수정 성공");
+					model.addAttribute("msg", "수정 성공");
+					model.addAttribute("url", "/nav2-1_adopt");
+				}
+		
+				return "redirect";
+			}
 			@RequestMapping(value = "/adoptwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String adoptwriteAction(HttpServletRequest req, Model model) throws Exception {
 				
@@ -624,7 +662,6 @@ public class MyController {
 				
 				if (nResult <= 0) {
 					System.out.println("입양하기 글쓰기 실패");
-					
 					model.addAttribute("msg", "입양하기 글쓰기 실패");
 					model.addAttribute("url", "/");
 				} else {

@@ -18,7 +18,7 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<title>입양후기</title>
+<title>입양하기 본문내용</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;

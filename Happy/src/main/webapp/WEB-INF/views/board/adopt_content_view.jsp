@@ -19,7 +19,7 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<title>고객센터</title>
+<title>입양하기 본문내용</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;
@@ -430,14 +430,13 @@ a:hover {
 				<div id="content_div">
 					<table id="right_table">
 						<tr id="right_title">
-							<td style="width: 600px; padding-left: 20px;"><%=content_view.getATitle()%></td>
-							<td><small><%=content_view.getADate() %></small></td>
-							<td><small><%=content_view.getAHit() + 1%></small></td>
+							<td style="width: 600px; padding-left: 20px;"><%=content_view.getAbTitle()%></td>
+							<td><small><%=content_view.getAbDate()%></small></td>
+							<td><small><%=content_view.getAHit()%></small></td>
 						</tr>
 						<tr>
-							<td id="content_td" colspan="3"><img src="images/dog1.jpg"
-								id="content_img"><br> <br>
-								<%=content_view.getAContent() %>
+							<td id="content_td" colspan="3">
+								<%=content_view.getAbContent() %>
 							</td>
 						</tr>
 					</table>
@@ -446,13 +445,9 @@ a:hover {
 				if (id.equals("admin")) {
 				%>
 				<div id="btn_box1">
-					<form action="adopt_modify" method="post">
-						<input onclick="location.href='adopt_write'" id="modify"
-							type="button" value="수정"> <input id="delete"
-							type="submit" value="삭제"> <input
-							onclick="location.href='nav2-1_adopt'" class="list" type="button"
-							value="목록">
-					</form>
+					<button type ="button" id="modify"><a href="adopt_modify?aidx=<%=content_view.getAbIdx()%>"style="color:white">수정</a></button>
+					<button type ="button" id="delete"><a href="adopt_delete?aidx=<%=content_view.getAbIdx()%>"style="color:white">삭제</a></button>
+					<input onclick="location.href='nav2-1_adopt'" class="list" type="button" value="목록">
 				</div>
 				<%
 					} else {

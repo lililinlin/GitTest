@@ -38,7 +38,7 @@
 </script>
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
-	ArrayList<AdoptBoardDto> adopt = (ArrayList<AdoptBoardDto>)session.getAttribute("adoptlist");
+ArrayList<AdoptBoardDto> adopt = (ArrayList<AdoptBoardDto>) session.getAttribute("adoptlist");
 %>
 <style>
 a:link {
@@ -275,7 +275,9 @@ main {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 }
-
+.piese_content img{
+	display:none;
+}
 .piese_img img {
 	width: 250px;
 	height: 300px;
@@ -435,8 +437,11 @@ main {
 					<ul id="piese_ul">
 						<%
 							for (int i = 0; i < adopt.size(); i++) {
+
 						%>
-						<li class="piese_img"><a href="adopt_content_view?aidx=<%=adopt.get(i).getAbIdx()%>">
+						
+						<li class="piese_img"><a
+							href="adopt_content_view?aidx=<%=adopt.get(i).getAbIdx()%>">
 								<span class="thumb">
 									<div class="img_div"><%=adopt.get(i).getAImage()%></div>
 							</span>
@@ -445,7 +450,7 @@ main {
 										src="images/new_icon1.png"
 										style="width: 50px; height: 15px; margin: 10px 0px 0px 10px;">
 								</div>
-								<P class="piese_content"><%=adopt.get(i).getAbContent()%></P>
+								<strong class="piese_content"><%=adopt.get(i).getAbContent()%></strong>
 						</a>
 							<p class="piese_sub_p"><%=adopt.get(i).getAbName()%>
 								|

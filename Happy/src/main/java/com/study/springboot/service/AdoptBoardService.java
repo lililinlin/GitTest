@@ -56,19 +56,10 @@ public class AdoptBoardService implements IAdoptBoardService{
 		return adoptBoardDao.adoptBoardDeleteDao(aidx);
 	}
 
-	@Override
-	public int adoptBoardUpdate(HttpServletRequest req) {
+
+	public int adoptBoardUpdate(String title, String content, String aidx) {
 		// TODO Auto-generated method stub
-		HttpSession session = req.getSession();
-		//세션 속성명이 sessionID인 속성의 값을 오브젝트타입으로 가져온다
-		String id = session.getAttribute("sessionID").toString();
-		
-		adoptBoardDto.setId(id);
-		
-		adoptBoardDto.setAbTitle(req.getParameter("titie"));
-		adoptBoardDto.setAbContent(req.getParameter("editor4"));
-		
-		int nResult = adoptBoardDao.adoptBoardUpdateDao(adoptBoardDto);
+		int nResult = adoptBoardDao.adoptBoardUpdateDao(title,content,aidx);
 		return nResult;
 	}
 

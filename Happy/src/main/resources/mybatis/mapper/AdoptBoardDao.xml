@@ -19,6 +19,6 @@
 		delete from ADOPT_BOARD where ABIDX=#{param1}
 	</delete>
 	<update id="adoptBoardUpdateDao" parameterType="com.study.springboot.dto.AdoptBoardDto">
-		update ADOPT_BOARD set ABTITLE=#{aTitle},ABCONTENT=#{aContent}
+		update ADOPT_BOARD set abTitle=#{param1},abContent=#{param2} where abidx=#{param3}
 	</update>
 </mapper>
