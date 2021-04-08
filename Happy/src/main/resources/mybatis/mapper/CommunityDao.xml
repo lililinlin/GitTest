@@ -6,8 +6,28 @@
     
 <mapper namespace="com.study.springboot.dao.ICommunityDao"> 
 
-	<insert id="writeDao" parameterType="com.study.springboot.dto.CommunityDto">
+	<insert id="writedao" parameterType="com.study.springboot.dto.CommunityDto">
 		insert into community_board(cbidx,Id,cbName,cbTitle,cbContent)
 		values (com_seq.nextval,#{param1},#{param2},#{param3},#{param4})
 	</insert>
+	
+	<select id="list" resultType="com.study.springboot.dto.CommunityDto"> 
+		select * from community_board
+   	</select>
+	
+	<select id="contentview" resultType="com.study.springboot.dto.CommunityDto">
+   		select * from community_board where cbidx=#{param1}
+   	</select>
+   	
+   	<update id="updateCount" parameterType="string">
+		update community_board set cHit = cHit+1 where cbidx=#{param1}
+	</update>
+	
+	<delete id="delete">
+		delete from community_board where cbidx=#{param1}
+	</delete>
+	
+	<update id="update" parameterType="com.study.springboot.dto.CommunityDto">
+		update community_board set cbTitle=#{param1},cbContent=#{param2} where cbidx=#{param3}
+	</update>
 </mapper>

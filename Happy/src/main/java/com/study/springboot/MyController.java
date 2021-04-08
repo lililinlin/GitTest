@@ -28,6 +28,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.AdoptBoardDto;
+import com.study.springboot.dto.CommunityDto;
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.dto.QnADto;
@@ -116,6 +117,7 @@ public class MyController {
 					
 				} else {
 					String id = req.getSession().getAttribute("sessionID").toString();
+					System.out.println("id 값 "+id);
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
 
@@ -377,18 +379,47 @@ public class MyController {
 	
 		
 			@RequestMapping("/community_content_view")
-			public String community_content_view(Model model) {
+			public String community_content_view(HttpServletRequest req,Model model) {
+				if (req.getSession().getAttribute("sessionID") == null) {
+					model.addAttribute("msg", "로그인이 필요합니다.");
+					model.addAttribute("url", "/login");
+					return "redirect";
+				}
 		
+				if (req.getSession().getAttribute("sessionID") != null) {
+
+					String cidx = req.getParameter("cbidx");
+					CommunityDto comdto = community_service.contentview(cidx);
+					int hit = community_service.updateCount(cidx);
+					System.out.println("조회수는 ?"+hit);
+					req.getSession().setAttribute("content_view_hit", hit);
+					req.getSession().setAttribute("content_view", comdto);
+					System.out.println("bidx ?? " + req.getParameter("cbidx"));
+					System.out.println("dto"+comdto);
+					String id = req.getSession().getAttribute("sessionID").toString();
+					MemberDto dto = member_service.getUserInfo(id);
+					req.getSession().setAttribute("memberInfo", dto);
+				}
 				return "board/community_content_view";
 			}
+			
 			@RequestMapping("/community_write")
 			public String community_write(Model model) {
 				
 				return "board/community_write";
 			}
 			@RequestMapping("/community_modify")
-			public String community_modify(Model model) {
-				
+			public String community_modify(HttpServletRequest req,Model model) {
+				String cbidx = req.getParameter("cbidx");
+				CommunityDto comdto = community_service.contentview(cbidx);
+				req.getSession().setAttribute("content_view", comdto);
+				System.out.println("cbidx ?? " + req.getParameter("cbidx"));
+				System.out.println("dto"+comdto);
+				String id = req.getSession().getAttribute("sessionID").toString();
+				MemberDto dto = member_service.getUserInfo(id);
+				req.getSession().setAttribute("memberInfo", dto);
+				 
+			
 				return "board/community_modify";
 			}
 			 
@@ -396,11 +427,11 @@ public class MyController {
 			public String communuty_writeAction(HttpServletRequest req,Model model) throws Exception {
 				
 				req.setCharacterEncoding("UTF-8");
-				String Id = req.getParameter("Id");
+				String Id = req.getParameter("id");
 				String cbName  = req.getParameter("name");
 				String cbTitle  = req.getParameter("title");
 				String cbContent = req.getParameter("editor4");
-				
+				System.out.println(Id+cbName+cbTitle+cbContent);
 				int nResult=community_service.write(Id,cbName,cbTitle,cbContent);
 				
 				if(nResult<1) {
@@ -413,6 +444,53 @@ public class MyController {
 				}
 				return "redirect";
 			}
+			
+			@RequestMapping("/community_delete")
+			public String community_delete(HttpServletRequest req, Model model) {
+		
+				String cbidx = req.getParameter("cbidx");
+		
+				int nResult = community_service.delete(cbidx);
+		
+				if (nResult <= 0) {
+					System.out.println("글삭제 실패");
+					model.addAttribute("msg", "글삭제 실패");
+					model.addAttribute("url", "/");
+				} else {
+					System.out.println("글삭제 성공");
+					model.addAttribute("msg", "글삭제 성공");
+					model.addAttribute("url", "/nav3-1_board");
+				}
+		
+				return "redirect";
+			}
+			
+			@RequestMapping(value = "/community_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+			public String community_ModifyAction(HttpServletRequest req, Model model) throws Exception {
+				req.setCharacterEncoding("utf-8");
+				
+				String cbTitle = req.getParameter("cbTitle");
+				String cbContent = req.getParameter("cbContent");
+				String cbidx = req.getParameter("cbidx");
+		
+				System.out.println("출력 "+cbTitle+cbContent+cbidx);
+				int nResult = community_service.update(cbTitle,cbContent,cbidx);
+				
+				System.out.println(nResult);
+				
+				if (nResult <= 0) {
+					System.out.println("수정 실패");
+					model.addAttribute("msg", "수정 실패");
+					model.addAttribute("url", "/Q_A_Modify");
+				} else {
+					System.out.println("수정 성공");
+					model.addAttribute("msg", "수정 성공");
+					model.addAttribute("url", "/nav3-1_board");
+				}
+		
+				return "redirect";
+			}
+			
 		
 
 	
@@ -487,6 +565,8 @@ public class MyController {
 				System.out.println(id);
 				return "board/write"; // list.jsp
 			}
+			
+			
 	
 
 //------------------------------- [ Q & A ] ---------------------------------------------
