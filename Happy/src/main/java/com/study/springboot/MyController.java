@@ -32,6 +32,7 @@ import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.dto.QnADto;
 import com.study.springboot.service.IAdoptBoardService;
+import com.study.springboot.service.ICommunityService;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
 import com.study.springboot.service.IQnAService;
@@ -46,6 +47,8 @@ public class MyController {
 		IQnAService qna_service;
 		@Autowired
 		IAdoptBoardService adoptBoard_service; 
+		@Autowired
+		ICommunityService community_service;
 	
 			@RequestMapping("/")
 			public String root() throws Exception {
@@ -107,8 +110,16 @@ public class MyController {
 			}
 		
 			@RequestMapping("/nav3-1_board")
-			public String navboardPage(Model model) {
-		
+			public String navboardPage(HttpServletRequest req,Model model) {
+				if (req.getSession().getAttribute("sessionID") == null) {
+					
+					
+				} else {
+					String id = req.getSession().getAttribute("sessionID").toString();
+					MemberDto dto = member_service.getUserInfo(id);
+					req.getSession().setAttribute("memberInfo", dto);
+
+				}
 				return "nav/nav3-1_board";
 			}
 		
@@ -379,6 +390,28 @@ public class MyController {
 			public String community_modify(Model model) {
 				
 				return "board/community_modify";
+			}
+			 
+			@RequestMapping(value = "/communuty_writeAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+			public String communuty_writeAction(HttpServletRequest req,Model model) throws Exception {
+				
+				req.setCharacterEncoding("UTF-8");
+				String Id = req.getParameter("Id");
+				String cbName  = req.getParameter("name");
+				String cbTitle  = req.getParameter("title");
+				String cbContent = req.getParameter("editor4");
+				
+				int nResult=community_service.write(Id,cbName,cbTitle,cbContent);
+				
+				if(nResult<1) {
+					model.addAttribute("msg", "업로드 실패했습니다.");
+					model.addAttribute("url", "nav3-1_board");
+				}
+				else {
+					model.addAttribute("msg", "업로드 되었습니다.");
+					model.addAttribute("url", "nav3-1_board");
+				}
+				return "redirect";
 			}
 		
 

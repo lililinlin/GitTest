@@ -401,6 +401,8 @@
 									<td><input type="text" id = "title" name="title"/></td>
 								</tr>
 								<tr>
+								 <input type="hidden" id="id" name="id" value="<%=member.getId() %>">
+								 <input type="hidden" id="name" name="name" value="<%=member.getName() %>">
 									<td class="td_title">작성자 </td>
 									<td class="name">해피퍼피 관리자<input type="hidden" id="name" name="name"></td>
 								</tr>

@@ -7,6 +7,7 @@
 <mapper namespace="com.study.springboot.dao.ICommunityDao"> 
 
 	<insert id="writeDao" parameterType="com.study.springboot.dto.CommunityDto">
-		insert into community_board(Id,cbName,cbTitle,cbContent,)
+		insert into community_board(cbidx,Id,cbName,cbTitle,cbContent)
+		values (com_seq.nextval,#{param1},#{param2},#{param3},#{param4})
 	</insert>
 </mapper>
