@@ -663,6 +663,25 @@ public class MyController {
 				
 				return "board/adopt_modify";
 			}
+			@RequestMapping("/adopt_delete")
+			public String adopt_delete(HttpServletRequest req, Model model) {
+		
+				String bid = req.getParameter("aidx");
+		
+				int nResult = adoptBoard_service.adoptBoardDelete(Integer.parseInt(bid));
+		
+				if (nResult <= 0) {
+					System.out.println("글삭제 실패");
+					model.addAttribute("msg", "글삭제 실패");
+					model.addAttribute("url", "/");
+				} else {
+					System.out.println("글삭제 성공");
+					model.addAttribute("msg", "글삭제 성공");
+					model.addAttribute("url", "/nav2-1_adopt");
+				}
+		
+				return "redirect";
+			}
 			@RequestMapping(value = "/adopt_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String adopt_ModifyAction(HttpServletRequest req, Model model) throws Exception {
 				req.setCharacterEncoding("utf-8");
