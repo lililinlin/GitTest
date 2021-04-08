@@ -741,7 +741,7 @@ public class MyController {
 							out.close();
 						}
 						if (printWriter != null) {
-							printWriter.close();
+							printWriter.close(); 
 						}
 					} catch (IOException e) {
 						e.printStackTrace(); 

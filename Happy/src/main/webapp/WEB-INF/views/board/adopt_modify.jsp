@@ -128,7 +128,7 @@
 	        display: block;
 	    }
 	
-	    .hov li:nth-child(n):hover {
+	    .hov li:nth-child(n):hover { 
 	        background-color: rgb(118, 118, 118);
 	    }
 	

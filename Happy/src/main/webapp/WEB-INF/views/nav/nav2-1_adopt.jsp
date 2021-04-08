@@ -19,7 +19,7 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 <link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" 
 	rel="stylesheet">
 <title>입양하기</title>
 <script>

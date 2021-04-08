@@ -24,7 +24,7 @@ public class AdoptBoardService implements IAdoptBoardService{
 	public int insertAdoptWrite(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		adoptBoardDto.setId(req.getParameter("id"));
-		String img = "<img src=\"images/dog1.jpg\">";
+		String img = "<img src=\"images/dog1.jpg\">"; 
 		adoptBoardDto.setAImage(img);
 		adoptBoardDto.setAbName(req.getParameter("name"));
 		adoptBoardDto.setAbTitle(req.getParameter("title"));

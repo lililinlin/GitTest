@@ -14,3 +14,4 @@ public interface IAdoptBoardDao {
 	public int adoptBoardDeleteDao(int aidx);
 	public int adoptBoardUpdateDao(String title,String content,String aidx);
 }
+ 

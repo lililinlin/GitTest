@@ -14,3 +14,4 @@ public interface IAdoptBoardService {
 	public int adoptBoardDelete(int aidx);
 	public int adoptBoardUpdate(String title, String content, String aidx);
 }
+ 

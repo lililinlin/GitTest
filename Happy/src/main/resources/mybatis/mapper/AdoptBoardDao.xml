@@ -11,7 +11,7 @@
 	</insert>
 	<select id="adoptListDao" resultType="com.study.springboot.dto.AdoptBoardDto"> 
 		select*from ADOPT_BOARD
-   	</select>
+   	</select> 
 	<select id="adoptContentViewDao" resultType="com.study.springboot.dto.AdoptBoardDto"> 
 		select * from ADOPT_BOARD where ABIDX =#{param1}
    	</select>
