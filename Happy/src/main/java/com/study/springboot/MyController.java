@@ -733,10 +733,10 @@ public class MyController {
 					printWriter.println("{\"filename\" : \"" + fileName + "\", \"uploaded\" : 1, \"url\":\"" + fileUrl + "\"}");
 					printWriter.flush();
 		
-				} catch (IOException e) {
+				} catch (IOException e) { 
 					e.printStackTrace();
 				} finally {
-					try {
+					try { 
 						if (out != null) {
 							out.close();
 						}

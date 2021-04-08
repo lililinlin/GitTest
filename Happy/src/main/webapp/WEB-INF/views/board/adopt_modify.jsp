@@ -139,7 +139,7 @@
 	            background-color: hotpink;
 	            } */
 	    .menumaintd:hover .hov {
-	        display: block;
+	        display: block; 
 	    }
 
 /* 메인 */

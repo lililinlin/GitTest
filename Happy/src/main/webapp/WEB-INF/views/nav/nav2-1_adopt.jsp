@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- bxslider의 css 추가 -->
+<!-- bxslider의 css 추가 -->  
 <link rel="stylesheet" href="css/jquery.bxslider.css">
 <!-- Bootstrap CSS -->
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

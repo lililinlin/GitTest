@@ -12,6 +12,6 @@ public interface IAdoptBoardService {
 	public ArrayList<AdoptBoardDto> adoptList();
 	public AdoptBoardDto adoptContentView(int aidx);
 	public int adoptBoardDelete(int aidx);
-	public int adoptBoardUpdate(String title, String content, String aidx);
+	public int adoptBoardUpdate(String title, String content, String aidx); 
 }
  
