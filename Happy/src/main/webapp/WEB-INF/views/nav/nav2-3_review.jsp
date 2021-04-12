@@ -1,6 +1,9 @@
+<%@page import="ch.qos.logback.core.net.SyslogOutputStream"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.AdoptReviewDto"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +38,7 @@
 </script>
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
+	ArrayList<AdoptReviewDto> adopt = (ArrayList<AdoptReviewDto>) session.getAttribute("adoptlist");
 %>
 <style>
 a:link {
@@ -425,33 +429,31 @@ main {
 						<b>입양후기</b>
 					</h2><br>
 					<ul id="piese_ul">
-						<li class="piese_img"><a href="adopted_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog1.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 0px 0px 40px; font-size: 22px;">강아지 확대범 자수합니다</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-								<P class="piese_content">막 입양했을 때는 겁도 많고 몸 상태도 많이 안좋았는데 지금은 잘 먹고 완전 개구쟁이 다 됐어요ㅎㅎ 지금은 저의 소중한 가족이랍니다</P>
+						<%
+							for (int i = 0; i < adopt.size(); i++) {
+
+						%>
+						
+						<li class="piese_img"><a
+							href="adopt_content_view?aidx=<%=adopt.get(i).getRIdx()%>">
+								<span class="thumb">
+									<div class="img_div"><%=adopt.get(i).getRImage()%></div>
+							</span>
+								<div style="display: flex;">
+									<strong style="padding: 0px 0px 0px 40px; font-size: 22px;"><%=adopt.get(i).getRTitle()%></strong><img
+										src="images/new_icon1.png"
+										style="width: 50px; height: 15px; margin: 10px 0px 0px 10px;">
+								</div>
+								<strong class="piese_content"><%=adopt.get(i).getRContent()%></strong>
 						</a>
-							<p class="piese_sub_p">이정현 | 2021.02.01 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopted_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog2.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
-						</a>
-							<p class="piese_sub_p">강이린 | 2021.02.07 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopted_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog3.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>
-						</a>
-							<p class="piese_sub_p">이정현 | 2021.02.18 | 조회 129</p></li>
-						<li class="piese_img"><a href="adopted_content_view"> <span
-								class="thumb"> <div class="img_div"><img src="images/dog4.jpg"></div>
-							</span><div style="display: flex;"><strong style="padding: 0px 00px 0px 40px; font-size: 22px;">이미지 제목</strong><img src="images/new_icon1.png" style="width:50px; height:15px;margin:10px 0px 0px 10px;"></div>
-							<P class="piese_content">이름:보리 성별:암컷 나이:2살추정 특징:건강해요,예민한 부분이
-									있어서 잘 훈련하 실 수 있는 분이 데려가셔야 할 것 같아요.</P>	
-						</a>
-							<p class="piese_sub_p">강이린 | 2021.03.15 | 조회 129</p></li>
+							<p class="piese_sub_p"><%=adopt.get(i).getRName()%>
+								|
+								<%=adopt.get(i).getRDate()%>
+								|
+								<%=adopt.get(i).getRHit()%></p></li>
+						<%
+							}
+						%>
 					</ul>
 					<%
 						if (session.getAttribute("sessionID") != null) { 

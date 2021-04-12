@@ -28,11 +28,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.study.springboot.dto.AdoptBoardDto;
+import com.study.springboot.dto.AdoptReviewDto;
 import com.study.springboot.dto.CommunityDto;
 import com.study.springboot.dto.MemberDto;
 import com.study.springboot.dto.NoticeDto;
 import com.study.springboot.dto.QnADto;
 import com.study.springboot.service.IAdoptBoardService;
+import com.study.springboot.service.IAdoptReviewService;
 import com.study.springboot.service.ICommunityService;
 import com.study.springboot.service.IMemberService;
 import com.study.springboot.service.INoticeService;
@@ -50,7 +52,8 @@ public class MyController {
 		IAdoptBoardService adoptBoard_service; 
 		@Autowired
 		ICommunityService community_service;
-	
+		@Autowired
+		IAdoptReviewService adoptReview_service;
 			@RequestMapping("/")
 			public String root() throws Exception {
 				// return "트랜잭션 없음(예제1)";
@@ -99,13 +102,16 @@ public class MyController {
 		
 			@RequestMapping("/nav2-3_review")
 			public String navreview(HttpServletRequest req, Model model) {
-		
 				if (req.getSession().getAttribute("sessionID") == null) {
-					
+					ArrayList<AdoptReviewDto> adopt = adoptReview_service.adoptList();
+					req.getSession().setAttribute("adoptlist", adopt);
 				} else {
 					String id = req.getSession().getAttribute("sessionID").toString();
+					System.out.println("가져온 id 의 값은 ?"+id);
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
+					ArrayList<AdoptReviewDto> adopt = adoptReview_service.adoptList();
+					req.getSession().setAttribute("adoptlist", adopt);
 				}
 				return "nav/nav2-3_review";
 			}
@@ -707,12 +713,6 @@ public class MyController {
 				return "board/adopt_write"; // list.jsp
 			}
 			
-			@RequestMapping("/adopt_review_write")
-			public String adopt_review_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
-	
-				return "board/adopt_review_write"; // list.jsp
-			}
-			
 			@RequestMapping("/adopt_content_view")
 			public String adopt_content_view(HttpServletRequest req, RedirectAttributes redirect, Model model) {
 				if (req.getSession().getAttribute("sessionID") == null) {
@@ -810,9 +810,48 @@ public class MyController {
 				return "redirect";
 			}
 			
+//------------------------------- [ 입 양 후 기 ] ---------------------------------------------
+			@RequestMapping("/adopt_review_write")
+			public String adopt_review_write(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+	
+				return "board/adopt_review_write"; // list.jsp
+			}
+			@RequestMapping("/adopt_Review_Review")
+			public String adopt_Review_Review(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+				if (req.getSession().getAttribute("sessionID") == null) {
+					model.addAttribute("msg", "로그인이 필요합니다.");
+					model.addAttribute("url", "/login");
+					return "redirect";
+				}
+		
+				if (req.getSession().getAttribute("sessionID") != null) {
+					String bid_str = req.getParameter("aidx");
+					int hit_up = adoptReview_service.adoptReviewHitUp(Integer.parseInt(bid_str));
+					AdoptReviewDto adoptReviewdto = adoptReview_service.adoptContentView(Integer.parseInt(bid_str));
+					System.out.println("조회수는 ?"+hit_up);
+					req.getSession().setAttribute("content_view", adoptReviewdto);
+					String id = req.getSession().getAttribute("sessionID").toString();
+					MemberDto dto = member_service.getUserInfo(id);
+					req.getSession().setAttribute("memberInfo", dto);
+					
+				}
+				return "board/adopt_content_view";
+			}
+			
 			@RequestMapping(value = "/adoptreviewwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String adoptreviewwriteAction(HttpServletRequest req, Model model) throws Exception {
-				return "nav/nav2-3_review";
+				int nResult = adoptReview_service.insertAdoptWrite(req);
+				
+				if (nResult <= 0) {
+					System.out.println("입양하기 글쓰기 실패");
+					model.addAttribute("msg", "입양후기 글쓰기 실패");
+					model.addAttribute("url", "/");
+				} else {
+					System.out.println("입양하기 글쓰기 성공");
+					model.addAttribute("msg", "입양후기 글쓰기 성공");
+					model.addAttribute("url", "/");
+				}
+				return "redirect";
 			}
 			
 			@RequestMapping("/adopted_content_view")
