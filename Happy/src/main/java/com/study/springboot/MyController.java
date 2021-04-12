@@ -113,7 +113,8 @@ public class MyController {
 			@RequestMapping("/nav3-1_board")
 			public String navboardPage(HttpServletRequest req,Model model) {
 				if (req.getSession().getAttribute("sessionID") == null) {
-					
+					ArrayList<CommunityDto> comdto = community_service.list();
+					req.getSession().setAttribute("list", comdto);
 					
 				} else {
 					String id = req.getSession().getAttribute("sessionID").toString();
