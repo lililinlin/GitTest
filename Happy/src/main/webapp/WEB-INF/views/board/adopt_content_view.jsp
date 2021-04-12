@@ -432,7 +432,7 @@ a:hover {
 						<tr id="right_title">
 							<td style="width: 600px; padding-left: 20px;"><%=content_view.getAbTitle()%></td>
 							<td><small><%=content_view.getAbDate()%></small></td>
-							<td><small><%=content_view.getAHit()%></small></td>
+							<td><small>조회수:<%=content_view.getAHit()%></small></td>
 						</tr>
 						<tr>
 							<td id="content_td" colspan="3">

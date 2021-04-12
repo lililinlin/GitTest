@@ -63,4 +63,9 @@ public class AdoptBoardService implements IAdoptBoardService{
 		return nResult;
 	}
 
+	@Override
+	public int adoptBoardHitUp(int aidx) {
+		return adoptBoardDao.adoptBoardHitUpDao(aidx);
+	}
+
 }

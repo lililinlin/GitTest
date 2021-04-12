@@ -718,14 +718,15 @@ public class MyController {
 		
 				if (req.getSession().getAttribute("sessionID") != null) {
 					String bid_str = req.getParameter("aidx");
+					int hit_up = adoptBoard_service.adoptBoardHitUp(Integer.parseInt(bid_str));
 					AdoptBoardDto adoptBoarddto = adoptBoard_service.adoptContentView(Integer.parseInt(bid_str));
+					System.out.println("조회수는 ?"+hit_up);
 					req.getSession().setAttribute("content_view", adoptBoarddto);
-					
 					String id = req.getSession().getAttribute("sessionID").toString();
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
 					
-				} 
+				}
 				return "board/adopt_content_view";
 			}
 			@RequestMapping("/adopt_modify")
