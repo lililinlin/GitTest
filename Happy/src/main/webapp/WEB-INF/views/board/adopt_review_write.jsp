@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
-<%@ page import="com.study.springboot.dto.AdoptBoardDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +12,7 @@
 <!-- Bootstrap CSS -->
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"  
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 <script src="js/ckeditor/ckeditor.js"></script>
@@ -22,9 +21,8 @@
 	rel="stylesheet">
 <%
 	MemberDto member = (MemberDto) session.getAttribute("memberInfo");
-	AdoptBoardDto content_view = (AdoptBoardDto)session.getAttribute("content_view");
 %>
-<title>입양후기</title>
+<title>입양하기</title>
 <script>
 	$(function() {
 		var lnb = $("#nav_wrapper").offset().top;
@@ -340,7 +338,7 @@ input[type=button] {
 		<div id="main_wrapper">
 			<div id="left_menu">
 				<h3>
-					<b>입양후기</b>
+					<b>입양하기</b>
 				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
@@ -356,14 +354,13 @@ input[type=button] {
 			<div class="right">
 				<div id="site">
 					<h2>
-						<b>입양후기</b>
+						<b>입양하기</b>
 					</h2>
 					<hr>
 					<form action="adoptreviewwriteAction" method="post">
 						작성자 :&nbsp;&nbsp;<%=member.getName()%>
 						<input type="hidden" id="id" name="id" value="<%=member.getId()%>">
-						<input type="hidden" id="name" name="name"
-							value="<%=member.getName()%>">
+						<input type="hidden" id="name" name="name" value="<%=member.getName()%>">
 						<hr>
 						제목 :&nbsp;<input type="text" size="50" id="title" name="title" />
 						<hr>
@@ -371,7 +368,7 @@ input[type=button] {
 						<script>
 							CKEDITOR.replace('editor4', {
 								width : 800,
-								height : 400, 
+								height : 400,
 								filebrowserUploadUrl : '/images/imageUpload.do'
 							});
 						</script>
