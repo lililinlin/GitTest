@@ -12,6 +12,7 @@ public interface IAdoptBoardDao {
 	public ArrayList<AdoptBoardDto> adoptListDao();
 	public AdoptBoardDto adoptContentViewDao(int aidx);
 	public int adoptBoardDeleteDao(int aidx);
-	public int adoptBoardUpdateDao(String title,String content,String aidx); 
+	public int adoptBoardUpdateDao(String title,String content,String aidx);
+	public int adoptBoardHitUpDao(int adix);
 }
  
