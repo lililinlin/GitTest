@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.CommunityDto"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양후기</title>
+    <title>게시판 contentview</title>
      <script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +30,10 @@
              })
           });
     </script>
+    <%
+   		MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    	CommunityDto content_view = (CommunityDto)session.getAttribute("content_view");
+    %>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -342,34 +348,20 @@
                 </div>
                   <table id="main_table">
 					  <tr>
-						  <td id="td_title">자원봉사 신청합니다.</td>
-						  <td id="td_name">강이린</td>
-						  <td id="td_date">2021.03.24</td>
-						  <td id="td_hit">1203</td>
+						  <td id="td_title"><%=content_view.getCbTitle() %></td>
+						  <td id="td_name"><%=content_view.getCbName() %></td>
+						  <td id="td_date"><%=content_view.getCbDate() %></td>
+						  <td id="td_hit"><%=content_view.getCHit() %></td>
+						  
 					  </tr>
 					  <tr>
 							<td colspan="4" id="main_td">
-								강아지를 입양하길 원하신다면<br>
-								센터로 전화예약을 주신 후 방문하여 입양신청을 하실 수 있습니다.<br><br>
-								
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
-								perspiciatis laudantium, pariatur animi quo. Nobis, impedit accusantium.<br>
-								Alias numquam fuga voluptatem minus qui, non quidem modi similique accusantium.<br>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
-								perspiciatis laudantium, pariatur animi quo. Nobis,<br><br>
-								
-								impedit accusantium. Alias numquam fuga voluptatem minus qui, non quidem modi<br>
-								similique accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
-								Excepturi quod ducimus perspiciatis<br>
-								laudantium, pariatur animi quo. Nobis, impedit accusantium.<br>
-								Alias numquam fuga voluptatem minus qui, non quidem modi similique accusantium. <br>
-								\Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quod ducimus<br>
-								perspiciatis laudantium, pariatur animi quo. Nobis, impedit accusantium.</td>
+								<%=content_view.getCbContent() %></td>
 					  </tr>	
 				</table>
-				<div id="btn_box">
-					<input type="button" id="btn_update" value="수정하기" onclick="location.href='community_modify'">
-					<input type="button" id="btn_delete" value="삭제하기" onclick="location.href='#'">
+				<div id="btn_box">s
+					<button type="button"  id="btn_update"><a href="community_delete?qbidx=<%=content_view.getCbidx() %>"style="color:white">수정하기</a></button>
+					<button type="button"  id="dbtn_deleteelete"><a href="community_delete?qbidx=<%=content_view.getCbidx()%>"style="color:white">삭제하기</a></button>
 					<input type="button" id="btn_list" value="목록으로" onclick="location.href='nav3-1_board'">
 				</div>
 				

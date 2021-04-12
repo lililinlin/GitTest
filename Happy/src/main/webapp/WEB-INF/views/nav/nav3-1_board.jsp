@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.study.springboot.dto.MemberDto"%>
 <!DOCTYPE html>
 <html lang="en">
  
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <title>입양후기</title>
+    <title>게시판</title>
      <script>
         $(function() {  
              var lnb = $("#nav_wrapper").offset().top;
@@ -28,6 +29,10 @@
              })
           });
     </script>
+    <% 
+     	MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+    	CommunityDto comdto = (CommunityDto)session.getAttribute("list");
+    %>
     <style>
         a:link { text-decoration: none;}
     	/* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
@@ -356,6 +361,9 @@
 						  <th>작성일</th>
 						  <th>조회수</th>
 					  </tr>
+					  <%
+					  for(int i=1; i<)
+					  %>
 					  <tr>
 							<td class="num">1</td>
 							<td class="title"><a href="community_content_view">동물을 입양하고 싶어요.</a></td>
