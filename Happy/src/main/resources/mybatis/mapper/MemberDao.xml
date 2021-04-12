@@ -41,5 +41,8 @@
    <select id="idSearchDao" resultType="String" >
    		select id from happy_member where name = #{name} and phone = #{phone}
    </select>
+   <select id="pwSearchDao" resultType="String" >
+   		select password from happy_member where id = #{id} and phone = #{phone}
+   </select>
 </mapper>
 

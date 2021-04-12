@@ -20,7 +20,7 @@
  a:link { text-decoration: none;}
     /* a:visited { color: rgb(168, 40, 40); text-decoration: none;} */
  a:hover { text-decoration: none;}
-h2 {
+* {
 	font-family: 'Noto Sans KR', sans-serif;
 }
 /* 헤더 */
@@ -124,7 +124,7 @@ footer a {
 #mid_login {
 	text-align: center;
 	margin-top: 100px;
-	margin-bottom: -100px;
+	margin-bottom: 50px;
 }
 
 .idpw {

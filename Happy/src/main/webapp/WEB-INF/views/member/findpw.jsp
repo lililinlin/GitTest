@@ -17,7 +17,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
-<title>비밀번호 찾기</title>
+<title>아이디찾기</title>
 	<script>
         $(function() { 
              var lnb = $("#nav_wrapper").offset().top;
@@ -141,35 +141,42 @@
 		margin: 0 auto;
 		padding-top:130px;
 	}
+	#center_box{
+		margin: 0 auto;
+		width:450px;
+	}
 	#content_title{
 		width:420px;
 		height:150px;
 		display:flex;
-		margin-left:680px;
+		margin-left:20px;
+		margin-bottom:10px;
 	}
 	#content_title img{
 		margin-top:10px;
 		width:130px;
 		height:130px;
 	}
-	#content_title h2{
+	#content_title h1{
 		font-weight:bold;
-		margin-left:30px;
+		margin-left:20px;
 		line-height: 150px;
+		color:gray;
 	}
 	#mid_login {
 	text-align: center;
-	margin-top: 70px;
+	margin-top: 80px;
 	height:494px;
 	padding-top:30px;
-	margin-bottom:105px;
+	margin-bottom:280px;
 	}
 	#mid_login h2{
 		margin-bottom:50px;
 	}
 
 	.idpw {
-		width: 350px;
+		margin-left:10px;
+		width: 310px;
 		height: 60px;
 		font-size: 30px;
 	}
@@ -180,8 +187,10 @@
 	}
 	
 	#submit_login {
-		width: 425px;
+		margin-top:30px;
+		width: 410px;
 		height: 80px;
+		margin-bottom:200px;
 	}
 	
 /* footer */
@@ -278,18 +287,23 @@
 		</div>
 		<!-- 사이드광고 자동 스크롤 -->
 		<div id="mid_login">
-			<div id ="content_title">
-				<img src="images/logo3.jpg">
-				<h2>비밀번호 찾기</h2>
+			<div id="center_box">
+				<div id ="content_title">
+					<img src="images/logo3.jpg">
+					<h1>비밀번호 찾기</h1>
+				</div>
+				<form method="post" action="pwSearchAction">
+					<br> 
+						아&nbsp;이&nbsp;디&nbsp;&nbsp;&nbsp;&nbsp;
+						<input class="idpw" type="text" name="id" size="42"><br> <br>
+						
+						전화번호&nbsp;&nbsp;
+						<input type="text" class="idpw" name="phone"size="42"><br> <br> <br> 
+						
+						<input type="submit" id="submit_login" class="btn btn-dark" value="확인"><br>
+					<br> <br>
+				</form>
 			</div>
-			<form method="post" action="MemberIdSearchAction">
-				<br> 아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="idpw"
-					type="text" name="id" size="42"><br> <br>
-				전화번호&nbsp;&nbsp;<input type="password" class="idpw" name="phone"
-					size="42"><br> <br> <br> 
-					<input type="submit" id="submit_login" class="btn btn-dark" value="확인"><br>
-				<br> <br>
-			</form>
 		</div>
 	<div id="footer">
 		<footer style="color: white;">

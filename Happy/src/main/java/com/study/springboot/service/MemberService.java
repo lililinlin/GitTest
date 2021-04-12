@@ -114,8 +114,8 @@ public class MemberService implements IMemberService{
 
 	@Override
 	public String pwSearch(String id, String phone) {
-		// TODO Auto-generated method stub
-		return null;
+		String search = memberDao.pwSearchDao(id, phone);
+		return search;
 	}
 	
 	
