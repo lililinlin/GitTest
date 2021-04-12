@@ -120,7 +120,8 @@ public class MyController {
 					System.out.println("id 값 "+id);
 					MemberDto dto = member_service.getUserInfo(id);
 					req.getSession().setAttribute("memberInfo", dto);
-
+					ArrayList<CommunityDto> comdto = community_service.list();
+					req.getSession().setAttribute("list", comdto);
 				}
 				return "nav/nav3-1_board";
 			}
@@ -394,7 +395,7 @@ public class MyController {
 					System.out.println("조회수는 ?"+hit);
 					req.getSession().setAttribute("content_view_hit", hit);
 					req.getSession().setAttribute("content_view", comdto);
-					System.out.println("bidx ?? " + req.getParameter("cbidx"));
+					System.out.println("cbidx ?? " + req.getParameter("cbidx"));
 					System.out.println("dto"+comdto);
 					String id = req.getSession().getAttribute("sessionID").toString();
 					MemberDto dto = member_service.getUserInfo(id);
@@ -408,6 +409,8 @@ public class MyController {
 				
 				return "board/community_write";
 			}
+			
+			
 			@RequestMapping("/community_modify")
 			public String community_modify(HttpServletRequest req,Model model) {
 				String cbidx = req.getParameter("cbidx");
@@ -465,12 +468,13 @@ public class MyController {
 				return "redirect";
 			}
 			
+			
 			@RequestMapping(value = "/community_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
 			public String community_ModifyAction(HttpServletRequest req, Model model) throws Exception {
 				req.setCharacterEncoding("utf-8");
 				
-				String cbTitle = req.getParameter("cbTitle");
-				String cbContent = req.getParameter("cbContent");
+				String cbTitle = req.getParameter("title");
+				String cbContent = req.getParameter("editor4");
 				String cbidx = req.getParameter("cbidx");
 		
 				System.out.println("출력 "+cbTitle+cbContent+cbidx);
@@ -481,7 +485,7 @@ public class MyController {
 				if (nResult <= 0) {
 					System.out.println("수정 실패");
 					model.addAttribute("msg", "수정 실패");
-					model.addAttribute("url", "/Q_A_Modify");
+					model.addAttribute("url", "/community_Modify");
 				} else {
 					System.out.println("수정 성공");
 					model.addAttribute("msg", "수정 성공");

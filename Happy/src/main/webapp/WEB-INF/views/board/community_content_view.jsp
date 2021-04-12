@@ -359,9 +359,9 @@
 								<%=content_view.getCbContent() %></td>
 					  </tr>	
 				</table>
-				<div id="btn_box">s
-					<button type="button"  id="btn_update"><a href="community_delete?qbidx=<%=content_view.getCbidx() %>"style="color:white">수정하기</a></button>
-					<button type="button"  id="dbtn_deleteelete"><a href="community_delete?qbidx=<%=content_view.getCbidx()%>"style="color:white">삭제하기</a></button>
+				<div id="btn_box">
+					<button type="button"  id="btn_update"><a href="community_modify?cbidx=<%=content_view.getCbidx() %>"style="color:white">수정하기</a></button>
+					<button type="button"  id="btn_delete"><a href="community_delete?cbidx=<%=content_view.getCbidx()%>"style="color:white">삭제하기</a></button>
 					<input type="button" id="btn_list" value="목록으로" onclick="location.href='nav3-1_board'">
 				</div>
 				

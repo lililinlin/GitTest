@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.study.springboot.dto.MemberDto"%>
+<%@ page import="com.study.springboot.dto.CommunityDto"%>
+<%@ page import="java.util.ArrayList"%> 
 <!DOCTYPE html>
 <html lang="en">
  
@@ -31,7 +33,7 @@
     </script>
     <% 
      	MemberDto member = (MemberDto)session.getAttribute("memberInfo");
-    	CommunityDto comdto = (CommunityDto)session.getAttribute("list");
+   		 ArrayList<CommunityDto> comdto = (ArrayList<CommunityDto>)session.getAttribute("list");
     %>
     <style>
         a:link { text-decoration: none;}
@@ -362,22 +364,21 @@
 						  <th>조회수</th>
 					  </tr>
 					  <%
-					  for(int i=1; i<)
+					  int num = 1;
+					  for(int i=0; i<comdto.size(); i++){
 					  %>
+					  
 					  <tr>
-							<td class="num">1</td>
-							<td class="title"><a href="community_content_view">동물을 입양하고 싶어요.</a></td>
-							<td class="hidden_td">강이린</td>
-							<td class="hidden_td">2021.03.24</td>
-							<td class="hidden_td">1123</td>
+							<td class="num"><%=num %></td><%num++; %>
+							<td class="title"><a href="community_content_view?cbidx=<%=comdto.get(i).getCbidx() %>"><%=comdto.get(i).getCbTitle() %></a></td>
+							<td class="hidden_td"><%=comdto.get(i).getCbName() %></td>
+							<td class="hidden_td"><%=comdto.get(i).getCbDate()%></td>
+							<td class="hidden_td"><%=comdto.get(i).getCHit() %></td>
 					  </tr>	
-					  <tr>
-							<td class="num">2</td>
-							<td class="title"><a href="community_content_view">봉사활동 하고 싶은데 신청은 어디서 하나요?</a></td>
-							<td class="hidden_td">이정현</td>
-							<td class="hidden_td">2021.03.25</td>
-							<td class="hidden_td">108</td>
-					</tr>
+					  <%
+					  }
+					  %>
+					
 
 				</table>
 				<%

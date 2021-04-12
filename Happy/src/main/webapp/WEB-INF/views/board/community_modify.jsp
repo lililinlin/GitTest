@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="com.study.springboot.dto.MemberDto" %>
+    <%@ page import="com.study.springboot.dto.CommunityDto" %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +35,7 @@
     </script>
     <%
    			 MemberDto member = (MemberDto)session.getAttribute("memberInfo");
+   			 CommunityDto content_view = (CommunityDto)session.getAttribute("content_view");
     		
 	%>
     <style>
@@ -394,12 +396,12 @@
 							<h3><b>글 수정하기</b></h3>
 						</div>
 
-						<form action="communuty_writeAction" method="post">
+						<form action="community_ModifyAction" method="post">
 							
 							<table id="main_table">
 								<tr>
 									<td class="td_title">제목 &nbsp;</td>
-									<td><input type="text" id = "title" name="title"/></td>
+									<td><input type="text" id = "title" name="title" value="<%=content_view.getCbTitle() %>"/></td>
 								</tr>
 								<tr>
 									<td class="td_title">작성자 </td>
@@ -407,7 +409,8 @@
 								</tr>
 								<tr>
 									<td class="td_title">내용</td>
-									<td> <textarea id = "editor4" name = "editor4" ></textarea></td>
+									<td> <textarea id = "editor4" name = "editor4" ><%=content_view.getCbContent() %></textarea></td>
+									<input type="hidden" id = "cbidx" name = "cbidx" value="<%=content_view.getCbidx() %>"/>
 								</tr>
 							</table>
 
