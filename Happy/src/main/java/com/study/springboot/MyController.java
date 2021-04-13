@@ -308,6 +308,31 @@ public class MyController {
 				return "redirect";
 			}
 			
+			@RequestMapping(value = "/pwSearchAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+			public String pwSearchAction(HttpServletRequest req, Model model) throws Exception {
+				req.setCharacterEncoding("utf-8"); // 인코딩
+				String id = req.getParameter("id");
+				String phone = req.getParameter("phone");
+				
+				String search = member_service.pwSearch(id, phone);
+				
+				System.out.println(search);
+				if (search != null) {
+					
+					System.out.println("회원비번 찾기 성공");
+					//
+					model.addAttribute("msg", search);
+					model.addAttribute("url", "login");
+				} else {
+					System.out.println("회원비번 찾기 실패");
+					//
+					model.addAttribute("msg", "정보 다름");
+					model.addAttribute("url", "findpw");
+				}
+				
+				return "redirect";
+			}
+			
 			@RequestMapping("/join_agree")
 			public String join_agree(Model model) {
 		
