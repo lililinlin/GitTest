@@ -453,7 +453,7 @@ a:hover {
 					} else {
 				%>
 				<div id="btn_box2">
-					<input onclick="location.href='nav4-1_QnA'" class="list"
+					<input onclick="location.href='nav2-1_adopt'" class="list"
 						type="button" value="목록">
 				</div>
 				<%
