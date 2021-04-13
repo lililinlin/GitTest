@@ -12,7 +12,7 @@ import com.study.springboot.dto.MemberDto;
 public interface IMemberDao {
 
 	public Date stringToDateDao(MemberDto member);
-	public int insertMemberDao(MemberDto member);
+	public int insertMemberDao(MemberDto member); 
 	public MemberDto getUserInfoDao(@Param("id") String id);
 	public int updateMemberDao(MemberDto member);
 	public int deleteMemberDao(@Param("id") String id, @Param("pw") String pw);

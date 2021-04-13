@@ -114,7 +114,7 @@ public class MemberService implements IMemberService{
 
 	@Override
 	public String pwSearch(String id, String phone) {
-		String search = memberDao.pwSearchDao(id, phone);
+		String search = memberDao.pwSearchDao(id, phone); 
 		return search;
 	}
 	

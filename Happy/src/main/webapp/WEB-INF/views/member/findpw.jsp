@@ -265,7 +265,7 @@
 								<h6>
 									<b>커뮤니티</b>
 								</h6>
-						</a>
+						</a> 
 							<ul class="hov">
 								<li><a href="nav3-1_board">게시판</a></li>
 							</ul></li>
