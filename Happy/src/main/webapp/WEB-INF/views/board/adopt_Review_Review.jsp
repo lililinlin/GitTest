@@ -409,7 +409,7 @@ a:hover {
 
 			<div id="left_menu">
 				<h3>
-					<b>입양하기</b>
+					<b>입양후기</b>
 				</h3>
 				<table>
 					<tr onclick="location.href='nav2-1_adopt'">
@@ -424,7 +424,7 @@ a:hover {
 			</div>
 			<div class="right">
 				<div id="h2_box">
-					<b style="font-size: 30px;">입양하기 &nbsp;&nbsp;</b><small>-
+					<b style="font-size: 30px;">입양후기 &nbsp;&nbsp;</b><small>-
 						고객님들의 소중한 가족이 기다립니다.</small><br> <br>
 				</div>
 				<div id="content_div">
@@ -436,7 +436,7 @@ a:hover {
 						</tr>
 						<tr>
 							<td id="content_td" colspan="3">
-								<%=content_view.getRContent() %>
+								<%=content_view.getRContent()%>
 							</td>
 						</tr>
 					</table>
@@ -445,15 +445,15 @@ a:hover {
 				if (id.equals("admin")) {
 				%>
 				<div id="btn_box1">
-					<button type ="button" id="modify"><a href="adopt__Review_modify?aidx=<%=content_view.getRIdx()%>"style="color:white">수정</a></button>
-					<button type ="button" id="delete"><a href="adopt__Review_delete?aidx=<%=content_view.getRIdx()%>"style="color:white">삭제</a></button>
-					<input onclick="location.href='nav2-3_Review'" class="list" type="button" value="목록">
+					<button type ="button" id="modify"><a href="adopt_Review_modify?aidx=<%=content_view.getRIdx()%>"style="color:white">수정</a></button>
+					<button type ="button" id="delete"><a href="adopt_Review_delete?aidx=<%=content_view.getRIdx()%>"style="color:white">삭제</a></button>
+					<input onclick="location.href='nav2-3_review'" class="list" type="button" value="목록">
 				</div>
 				<%
 					} else {
 				%>
 				<div id="btn_box2">
-					<input onclick="location.href='nav2-3_Review'" class="list"
+					<input onclick="location.href='nav2-3_review'" class="list"
 						type="button" value="목록">
 				</div>
 				<%

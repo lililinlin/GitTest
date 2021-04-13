@@ -835,7 +835,7 @@ public class MyController {
 					req.getSession().setAttribute("memberInfo", dto);
 					
 				}
-				return "board/adopt_content_view";
+				return "board/adopt_Review_Review";
 			}
 			
 			@RequestMapping(value = "/adoptreviewwriteAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
@@ -853,7 +853,65 @@ public class MyController {
 				}
 				return "redirect";
 			}
-			
+			@RequestMapping("/adopt_Review_modify")
+			public String adopt__Review_modify(HttpServletRequest req, RedirectAttributes redirect, Model model) {
+					String bid_str = req.getParameter("aidx");
+					AdoptReviewDto adoptReviewdto = adoptReview_service.adoptContentView(Integer.parseInt(bid_str));
+					req.getSession().setAttribute("content_view", adoptReviewdto);
+					System.out.println("aidx ?? " + req.getParameter("qbidx"));
+					System.out.println("dto"+adoptReviewdto);
+					
+					String id = req.getSession().getAttribute("sessionID").toString();
+					MemberDto dto = member_service.getUserInfo(id);
+					req.getSession().setAttribute("memberInfo", dto);
+					 
+				
+				return "board/adopt_Review_modify";
+			}
+			@RequestMapping(value = "/adopt_Review_ModifyAction", method = RequestMethod.POST, produces = "text/html; charset=UTF-8")
+			public String adopt_Review_ModifyAction(HttpServletRequest req, Model model) throws Exception {
+				req.setCharacterEncoding("utf-8");
+				
+				String title = req.getParameter("title");
+				String content = req.getParameter("editor4");
+				String aidx = req.getParameter("aidx");
+		
+				System.out.println("출력 "+title+content+aidx);
+				int nResult = adoptReview_service.adoptReviewUpdate(title,content,aidx);
+				
+				System.out.println(nResult);
+				
+				if (nResult <= 0) {
+					System.out.println("Q_A 수정 실패");
+					model.addAttribute("msg", "수정 실패");
+					model.addAttribute("url", "/Q_A_Modify");
+				} else {
+					System.out.println("Q_A 수정 성공");
+					model.addAttribute("msg", "수정 성공");
+					model.addAttribute("url", "/nav2-1_adopt");
+				}
+		
+				return "redirect";
+			}
+			@RequestMapping("/adopt_Review_delete")
+			public String adopt_Review_delete(HttpServletRequest req, Model model) {
+		
+				String bid = req.getParameter("aidx");
+		
+				int nResult = adoptReview_service.adoptReviewDelete(Integer.parseInt(bid));
+		
+				if (nResult <= 0) {
+					System.out.println("글삭제 실패");
+					model.addAttribute("msg", "글삭제 실패");
+					model.addAttribute("url", "/");
+				} else {
+					System.out.println("글삭제 성공");
+					model.addAttribute("msg", "글삭제 성공");
+					model.addAttribute("url", "/nav2-3_review");
+				}
+		
+				return "redirect";
+			}
 			@RequestMapping("/adopted_content_view")
 			public String adopted_content_view(Model model) {
 				

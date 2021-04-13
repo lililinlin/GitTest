@@ -218,31 +218,33 @@ main {
 
 #piese_ul {
 	list-style: none;
-	width:900px;
+	width: 900px;
 	border-bottom: 1px solid rgb(27, 40, 138);
 }
 
 .piese_img {
-	border: 1px solid #d2d2d2; 
-	float : left;
+	border: 1px solid #d2d2d2;
+	float: left;
 	width: 400px;
 	height: 520px;
 	margin-top: 30px;
 	margin-right: 20px;
 }
-.piese_img:hover{
+
+.piese_img:hover {
 	transition-duration: 1.0s;
 	background-color: #f5f5f5;
-	
 }
-.img_div{
-	width:250px;
-	height:300px;
-	margin:0 auto;
-	margin-top:40px;
-	margin-bottom:20px;
-	overflow:hidden;
+
+.img_div {
+	width: 250px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	overflow: hidden;
 }
+
 .piese_img a {
 	display: block;
 	color: rgb(27, 40, 138);
@@ -259,39 +261,42 @@ main {
 }
 
 .piese_content {
-	position:relative;
+	position: relative;
 	color: #767676;
 	font-size: .9em;
-	padding:0px 40px 0px 40px;
-	margin-top:15px;
+	padding: 0px 40px 0px 40px;
+	margin-top: 15px;
 	display: -webkit-box;
-	max-height:80px;
-	overflow:hidden;
-	vertical-align:top;
+	max-height: 80px;
+	overflow: hidden;
+	vertical-align: top;
 	text-overflow: ellipsis;
-	word-break:break-all;
-	-webkit-box-orient:vertical;
-	-webkit-line-clamp:2;
-
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
-
+.piese_content img{
+	display:none;
+}
 .piese_img img {
 	width: 250px;
 	height: 300px;
-	
 }
-.piese_img img:hover{
-	transform:scale(1.1);
-	transition:transform 0.5s linear;
+
+.piese_img img:hover {
+	transform: scale(1.1);
+	transition: transform 0.5s linear;
 }
-.new_icon{
-	width:100px;
-	height:50px;
+
+.new_icon {
+	width: 100px;
+	height: 50px;
 }
+
 .piese_sub_p {
 	font-size: 14px;
 	color: #acacac;
-	padding:0px 40px 0px 40px;
+	padding: 0px 40px 0px 40px;
 }
 
 #write {
@@ -435,7 +440,7 @@ main {
 						%>
 						
 						<li class="piese_img"><a
-							href="adopt_content_view?aidx=<%=adopt.get(i).getRIdx()%>">
+							href="adopt_Review_Review?aidx=<%=adopt.get(i).getRIdx()%>">
 								<span class="thumb">
 									<div class="img_div"><%=adopt.get(i).getRImage()%></div>
 							</span>
