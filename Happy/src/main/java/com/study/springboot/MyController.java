@@ -913,7 +913,7 @@ public class MyController {
 				} else {
 					System.out.println("Q_A 수정 성공");
 					model.addAttribute("msg", "수정 성공");
-					model.addAttribute("url", "/nav2-1_adopt");
+					model.addAttribute("url", "/nav2-3_review");
 				}
 		
 				return "redirect";
